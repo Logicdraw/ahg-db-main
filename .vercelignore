@@ -1,0 +1,10 @@
+.env
+/venv
+
+
+*.egg-info
+
+
+*.db
+
+__pycache__
