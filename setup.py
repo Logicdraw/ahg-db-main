@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(
-	name='ahg-serv-database',
+	name='ahg-db',
 	version='1.1',
 	py_modules=['cli', 'cli.commands'],
 	install_requires=[
@@ -10,7 +10,7 @@ setup(
 	],
 	entry_points='''
 		[console_scripts]
-		ahg-serv-database-cli=cli.cli:cli
+		ahg-db-cli=cli.cli:cli
 	''',
 )
 

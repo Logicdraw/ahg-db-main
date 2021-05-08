@@ -1,3 +1,4 @@
+-e git+https://github.com/Logicdraw/ahg-db.git@68ad2d1f39803ec61307f337b85baa6ffbf7ab40#egg=ahg_db
 aiomcache==0.6.0
 alembic==1.5.8
 amqp==5.0.6
@@ -5,7 +6,6 @@ appdirs==1.4.4
 argcomplete==1.12.2
 attrs==20.3.0
 billiard==3.6.4.0
-celery==5.0.5
 certifi==2020.12.5
 cffi==1.14.5
 chardet==4.0.0
@@ -19,7 +19,6 @@ distlib==0.3.1
 dnspython==2.1.0
 ecdsa==0.14.1
 email-validator==1.1.2
-fastapi==0.63.0
 fasteners==0.16
 filelock==3.0.12
 gcs-oauth2-boto-plugin==2.7
@@ -62,7 +61,6 @@ python-multipart==0.0.5
 pytz==2021.1
 pyu2f==0.1.5
 raven==6.10.0
-redis==3.5.3
 retry-decorator==1.1.1
 rsa==4.7.1
 six==1.15.0

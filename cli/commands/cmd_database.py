@@ -7,39 +7,35 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-from app.config import get_settings
-settings = get_settings()
 
-
-
-from app.database.helpers import (
+from main.database.helpers import (
 	init_db,
 	reset_db,
 	drop_db,
 )
 
 
-from app.database.dev_sqlite.session import (
+from main.database.dev_sqlite.session import (
 	SessionDevSQLite,
 	engine_dev_sqlite,
 )
 
-from app.database.testing_sqlite.session import (
+from main.database.testing_sqlite.session import (
 	SessionTestingSQLite,
 	engine_testing_sqlite,
 )
 
-from app.database.dev.session import (
+from main.database.dev.session import (
 	SessionDev,
 	engine_dev,
 )
 
-from app.database.testing.session import (
+from main.database.testing.session import (
 	SessionTesting,
 	engine_testing,
 )
 
-from app.database.prod.session import (
+from main.database.prod.session import (
 	SessionProd,
 	engine_prod,
 )
@@ -68,7 +64,7 @@ def init_dev_sqlite() -> None:
 
 	logger.info('Initializing DEV SQLITE database!')
 
-	settings.USE_SQLITE_FOR_TESTING = True
+	# settings.USE_SQLITE_FOR_TESTING = True
 
 	db = SessionDevSQLite()
 	try:
@@ -97,7 +93,7 @@ def init_testing_sqlite() -> None:
 
 	logger.info('Initializing TESTING SQLITE database!')
 
-	settings.USE_SQLITE_FOR_TESTING = True
+	# settings.USE_SQLITE_FOR_TESTING = True
 
 	db = SessionTestingSQLite()
 	try:
@@ -213,7 +209,7 @@ def reset_dev_sqlite() -> None:
 
 	logger.info('Resetting DEV SQLITE database!')
 
-	settings.USE_SQLITE_FOR_TESTING = True
+	# settings.USE_SQLITE_FOR_TESTING = True
 
 	db = SessionDevSQLite()
 	try:
@@ -242,7 +238,7 @@ def reset_testing_sqlite() -> None:
 
 	logger.info('Resetting TESTING SQLITE database!')
 
-	settings.USE_SQLITE_FOR_TESTING = True
+	# settings.USE_SQLITE_FOR_TESTING = True
 
 	db = SessionDevSQLite()
 	try:
@@ -358,7 +354,7 @@ def drop_dev_sqlite() -> None:
 
 	logger.info('Dropping DEV SQLITE database!')
 
-	settings.USE_SQLITE_FOR_TESTING = True
+	# settings.USE_SQLITE_FOR_TESTING = True
 
 	db = SessionDevSQLite()
 	try:
@@ -386,7 +382,7 @@ def drop_testing_sqlite() -> None:
 
 	logger.info('dropping TESTING SQLITE database!')
 
-	settings.USE_SQLITE_FOR_TESTING = True
+	# settings.USE_SQLITE_FOR_TESTING = True
 
 	db = SessionDev()
 	try:
@@ -523,23 +519,23 @@ cli.add_command(drop_prod)
 # In use:
 # -------
 
-# ahg-serv-database-cli database init-dev-sqlite
-# ahg-serv-database-cli database init-testing-sqlite
-# ahg-serv-database-cli database init-testing
-# ahg-serv-database-cli database init-dev
-# ahg-serv-database-cli database init-prod
+# ahg-db-cli database init-dev-sqlite
+# ahg-db-cli database init-testing-sqlite
+# ahg-db-cli database init-testing
+# ahg-db-cli database init-dev
+# ahg-db-cli database init-prod
 
-# ahg-serv-database-cli database reset-dev-sqlite
-# ahg-serv-database-cli database reset-testing-sqlite
-# ahg-serv-database-cli database reset-testing
-# ahg-serv-database-cli database reset-dev
-# ahg-serv-database-cli database reset-prod
+# ahg-db-cli database reset-dev-sqlite
+# ahg-db-cli database reset-testing-sqlite
+# ahg-db-cli database reset-testing
+# ahg-db-cli database reset-dev
+# ahg-db-cli database reset-prod
 
-# ahg-serv-database-cli database drop-dev-sqlite
-# ahg-serv-database-cli database drop-testing-sqlite
-# ahg-serv-database-cli database drop-testing
-# ahg-serv-database-cli database drop-dev
-# ahg-serv-database-cli database drop-prod
+# ahg-db-cli database drop-dev-sqlite
+# ahg-db-cli database drop-testing-sqlite
+# ahg-db-cli database drop-testing
+# ahg-db-cli database drop-dev
+# ahg-db-cli database drop-prod
 
 
 
