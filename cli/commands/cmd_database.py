@@ -122,7 +122,7 @@ def init_testing() -> None:
 
 	logger.info('Initializing TESTING database!')
 
-	db = SessionDevTesting()
+	db = SessionTesting()
 	try:
 		init_db(
 			db=db,
@@ -268,7 +268,7 @@ def reset_testing() -> None:
 
 	logger.info('Resetting TESTING database!')
 
-	db = SessionDevTesting()
+	db = SessionTesting()
 	try:
 		reset_db(
 			db=db,
@@ -411,7 +411,7 @@ def drop_testing() -> None:
 
 	logger.info('Dropping TESTING database!')
 
-	db = SessionDevTesting()
+	db = SessionTesting()
 	try:
 		drop_db(
 			db=db,

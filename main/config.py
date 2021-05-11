@@ -47,11 +47,6 @@ class Settings(BaseSettings):
 	SQLALCHEMY_PROD_DATABASE_URI: str
 
 
-	SQLALCHEMY_DATABASE_URI: str
-
-	SQLALCHEMY_DATABASE_URI_TESTING: str
-
-
 	SQLALCHEMY_DEV_SQLITE_DATABASE_URI: str = 'sqlite:///' + os.path.join(base_dir, '_dev_.db')
 
 	SQLALCHEMY_TESTING_SQLITE_DATABASE_URI: str = 'sqlite:///' + os.path.join(base_dir, '_testing_.db')
@@ -59,8 +54,11 @@ class Settings(BaseSettings):
 
 
 	@validator(
-		'SQLALCHEMY_DATABASE_URI',
-		'SQLALCHEMY_DATABASE_URI_TESTING',
+		'SQLALCHEMY_TESTING_DATABASE_URI',
+		'SQLALCHEMY_DEV_DATABASE_URI',
+		'SQLALCHEMY_PROD_DATABASE_URI',
+		'SQLALCHEMY_DEV_SQLITE_DATABASE_URI',
+		'SQLALCHEMY_TESTING_SQLITE_DATABASE_URI',
 		pre=True,
 	)
 	def assemble_db_connection(cls, v: Optional[str], values: Dict[str, Any]) -> Any:

@@ -19,7 +19,3 @@ SessionTesting = sessionmaker(
 	autoflush=False,
 	bind=engine_testing,
 )
-
-
-
-
