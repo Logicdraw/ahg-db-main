@@ -16,8 +16,7 @@ from lib.util_sqlalchemy import (
 )
 
 
-from main.config import get_settings
-settings = get_settings()
+from main.config import settings
 
 
 
@@ -28,6 +27,7 @@ class GSMetaModel(Base, ResourceMixin):
 	__tablename__ = 'gs_meta'
 
 	id = Column(Integer, primary_key=True, index=True)
+
 
 	access_token_encoded = Column(String)
 

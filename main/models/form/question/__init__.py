@@ -17,6 +17,7 @@ from lib.util_sqlalchemy import (
 	ResourceMixin,
 )
 
+from sqlalchemy import JSON
 
 
 
@@ -25,21 +26,35 @@ from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy_json import mutable_json_type
 
 
-from main.config import get_settings
-settings = get_settings()
+from main.config import settings
 
 
 
 
 
-class FormQuestionModel(Base, ResourceMixin):
+class FormQuestionModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'form_questions'
 
 	id = Column(Integer, primary_key=True, index=True)
 
 
+	form = relationship(
+		'FormModel',
+		back_populates='questions',
+		uselist=False,
+	)
 	form_id = Column(Integer, ForeignKey('forms.id'))
+
+
+	answers = relationship(
+		'FormAnswerModel',
+		back_populates='question',
+		lazy='selectin',
+	)
 
 
 	label = Column(String)
@@ -53,21 +68,29 @@ class FormQuestionModel(Base, ResourceMixin):
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_questions',
 		'polymorphic_on': type,
+		'with_polymorphic': '*',
 	}
 
 
 
 class FormQuestionInputModel(FormQuestionModel):
 
+	__tablename__ = 'form_question_inputs'
+
+	id = Column(Integer, ForeignKey('form_questions.id'), primary_key=True)
+
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_inputs',
-		'polymorphic_load': 'inline',
+		'polymorphic_load': 'inline', # inline correct
 	}
 
 
 
-
 class FormQuestionTextareaModel(FormQuestionModel):
+
+	__tablename__ = 'form_question_textareas'
+
+	id = Column(Integer, ForeignKey('form_questions.id'), primary_key=True)
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_textareas',
@@ -78,21 +101,20 @@ class FormQuestionTextareaModel(FormQuestionModel):
 
 
 class FormQuestionSelectModel(FormQuestionModel):
+
+	__tablename__ = 'form_question_selects'
+
+	id = Column(Integer, ForeignKey('form_questions.id'), primary_key=True)
 	
 	select_is_multiple = Column(Boolean, default=False)
 
-	if settings.USE_SQLITE_FOR_TESTING:
 
-		select_answers = Column(JSON)
-
-	else:
-
-		select_answers = Column(
-			mutable_json_type(
-				dbtype=JSONB,
-				nested=False,
-			)
+	select_answers = Column(
+		mutable_json_type(
+			dbtype=JSONB,
+			nested=False,
 		)
+	)
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_selects',
@@ -102,6 +124,10 @@ class FormQuestionSelectModel(FormQuestionModel):
 
 
 class FormQuestionCheckboxModel(FormQuestionModel):
+
+	__tablename__ = 'form_question_checkboxes'
+
+	id = Column(Integer, ForeignKey('form_questions.id'), primary_key=True)
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_checkboxes',
@@ -113,20 +139,18 @@ class FormQuestionCheckboxModel(FormQuestionModel):
 
 class FormQuestionRadioModel(FormQuestionModel):
 
-	if settings.USE_SQLITE_FOR_TESTING:
-		
-		radio_answers = Column(JSON)
+	__tablename__ = 'form_question_radios'
 
-	else:
+	id = Column(Integer, ForeignKey('form_questions.id'), primary_key=True)
 
-		radio_answers = Column(
-			mutable_json_type(
-				dbtype=JSONB,
-				nested=False,
-			)
+
+	radio_answers = Column(
+		mutable_json_type(
+			dbtype=JSONB,
+			nested=False,
 		)
+	)
 
-	# radio_answers = Column(JSON)
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_radios',

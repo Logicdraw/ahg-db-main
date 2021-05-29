@@ -13,6 +13,14 @@ import sys
 from dotenv import load_dotenv
 
 
+from main.config import settings
+
+
+import asyncio
+
+from sqlalchemy.ext.asyncio import AsyncEngine
+
+
 
 
 # This is so we can load our Database URIs from our .env file :) --
@@ -66,25 +74,62 @@ if 'db' not in cmd_kwargs:
 
 
 # Our DB URLS :) --
-db_urls = {
-	'dev_sqlite': 'sqlite:///{}'.format(os.path.join(base_dir, '_dev_.db')),
-	'testing_sqlite': 'sqlite:///{}'.format(os.path.join(base_dir, '_testing_.db')),
-	'dev': os.environ['SQLALCHEMY_DEV_DATABASE_URI'],
-	'testing': os.environ['SQLALCHEMY_TESTING_DATABASE_URI'],
-	'prod': os.environ['SQLALCHEMY_PROD_DATABASE_URI'],
+db_uris = {
+	# SQLITE --
+	'sqlite_dev': settings.SQLITE_DEV_URI,
+	'sqlite_testing': settings.SQLITE_TESTING_URI,
+	# PSQL --
+	# 'psql_dev': settings.PSQL_DEV_URI,
+	# 'psql_testing': settings.PSQL_TESTING_URI,
+	# 'psql_prod': settings.PSQL_PROD_URI,
+	# PSQL Async
+	'psql_async_dev': settings.PSQL_ASYNC_DEV_URI,
+	'psql_async_testing': settings.PSQL_ASYNC_TESTING_URI,
+	'psql_async_prod': settings.PSQL_ASYNC_PROD_URI,
 }
 
 
 try:
-	db_url = db_urls[cmd_kwargs['db']]
+	db_uri = db_uris[cmd_kwargs['db']]
 	# Set -- DB URL in .ini in main section (under [alembic])
-	config.set_main_option("sqlalchemy.url", db_url)
+	config.set_main_option('sqlalchemy.url', db_uri)
 except ValueError:
 	raise Exception(
 		'Invalid database given! '
-		'Must be one of: {}.'.format(','.join(db_urls.keys()))
+		'Must be one of: {}.'.format(','.join(db_uris.keys()))
 	)
 
+
+
+
+# https://gist.github.com/nathancahill/aeec99f6a3423c5ada77
+# exclude spatial_ref_sys --
+
+def exclude_tables_from_config(config_):
+	tables_ = config_.get('tables', None)
+	if tables_ is not None:
+		tables = tables_.split(",")
+	return tables
+
+
+exclude_tables = exclude_tables_from_config(config.get_section('alembic:exclude'))
+
+
+def include_object(object, name, type_, reflected, compare_to):
+	return not (type_ == 'table' and name in exclude_tables)
+
+
+
+
+def do_run_migrations(connection):
+    context.configure(
+    	connection=connection,
+    	target_metadata=target_metadata,
+    	include_object=include_object,
+    )
+
+    with context.begin_transaction():
+        context.run_migrations()
 
 
 
@@ -100,7 +145,7 @@ def run_migrations_offline():
 	script output.
 
 	"""
-	url = config.get_main_option("sqlalchemy.url")
+	url = config.get_main_option('sqlalchemy.url')
 	context.configure(
 		url=url,
 		target_metadata=target_metadata,
@@ -113,7 +158,7 @@ def run_migrations_offline():
 		context.run_migrations()
 
 
-def run_migrations_online():
+async def run_migrations_online():
 	"""Run migrations in 'online' mode.
 
 	In this scenario we need to create an Engine
@@ -121,25 +166,23 @@ def run_migrations_online():
 
 	"""
 
-	connectable = engine_from_config(
-		config.get_section(config.config_ini_section),
-		prefix="sqlalchemy.",
-		poolclass=pool.NullPool,
-	)
-	with connectable.connect() as connection:
-		context.configure(
-			connection=connection,
-			target_metadata=target_metadata,
+	connectable = AsyncEngine(
+		engine_from_config(
+			config.get_section(config.config_ini_section),
+			prefix="sqlalchemy.",
+			poolclass=pool.NullPool,
+			future=True,
 		)
+	)
+	async with connectable.connect() as connection:
+		await connection.run_sync(do_run_migrations)
 
-		with context.begin_transaction():
-			context.run_migrations()
 
 
 if context.is_offline_mode():
 	run_migrations_offline()
 else:
-	run_migrations_online()
+	asyncio.run(run_migrations_online())
 
 
 

@@ -16,20 +16,40 @@ from lib.util_sqlalchemy import (
 )
 
 
-from main.config import get_settings
-settings = get_settings()
+from main.config import settings
 
 
 
 # Form Entry
 
 
-class FormEntryModel(Base, ResourceMixin):
+class FormEntryModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'form_entries'
 
 	id = Column(Integer, primary_key=True, index=True)
 
 	# --
+
+	form = relationship(
+		'FormModel',
+		back_populates='entries',
+		uselist=False,
+	)
+	form_id = Column(Integer, ForeignKey('forms.id'))
+
+
+	# which form ? id ...
+
+	answers = relationship(
+		'FormAnswerModel',
+		back_populates='entry',
+		lazy='selectin',
+	)
+
+
 
 

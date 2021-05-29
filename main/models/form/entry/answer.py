@@ -17,6 +17,7 @@ from lib.util_sqlalchemy import (
 	ResourceMixin,
 )
 
+from sqlalchemy import JSON
 
 
 from sqlalchemy.dialects.postgresql import JSONB
@@ -24,8 +25,7 @@ from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy_json import mutable_json_type
 
 
-from main.config import get_settings
-settings = get_settings()
+from main.config import settings
 
 
 
@@ -40,8 +40,18 @@ class FormEntryAnswerModel(Base, ResourceMixin):
 	id = Column(Integer, primary_key=True, index=True)
 
 
+	entry = relationship(
+		'FormEntryModel',
+		back_populates='answers',
+		uselist=False,
+	)
 	entry_id = Column(Integer, ForeignKey('form_entries.id'))
 
+	question = relationship(
+		'FormEntryModel',
+		back_populates='answers',
+		uselist=False,
+	)
 	question_id = Column(Integer, ForeignKey('form_questions.id'))
 
 
@@ -51,6 +61,7 @@ class FormEntryAnswerModel(Base, ResourceMixin):
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answers',
 		'polymorphic_on': type,
+		'with_polymorphic': '*',
 	}
 
 
@@ -58,6 +69,10 @@ class FormEntryAnswerModel(Base, ResourceMixin):
 
 
 class FormEntryAnswerInputModel(FormEntryAnswerModel):
+
+	__tablename__ = 'form_entry_answer_inputs'
+
+	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
 
 	input_answer = Column(String)
 
@@ -70,6 +85,10 @@ class FormEntryAnswerInputModel(FormEntryAnswerModel):
 
 class FormEntryAnswerTextareaModel(FormEntryAnswerModel):
 
+	__tablename__ = 'form_entry_answer_textareas'
+
+	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
+
 	textarea_answer = Column(Text)
 	
 	__mapper_args__ = {
@@ -81,22 +100,18 @@ class FormEntryAnswerTextareaModel(FormEntryAnswerModel):
 
 class FormEntryAnswerSelectModel(FormEntryAnswerModel):
 
+	__tablename__ = 'form_entry_answer_selects'
+
+	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
+
 	# Selected --
 
-	if settings.USE_SQLITE_FOR_TESTING:
-
-		select_selected = Column(JSON)
-
-	else:
-
-		select_selected = Column(
-			mutable_json_type(
-				dbtype=JSONB,
-				nested=False,
-			)
+	select_selected = Column(
+		mutable_json_type(
+			dbtype=JSONB,
+			nested=False,
 		)
-
-	# select_selected = Column(JSON)
+	)
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_selects',
@@ -106,6 +121,10 @@ class FormEntryAnswerSelectModel(FormEntryAnswerModel):
 
 
 class FormEntryAnswerCheckboxModel(FormEntryAnswerModel):
+
+	__tablename__ = 'form_entry_answer_checkboxes'
+
+	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
 	
 	checkbox_checked = Column(Boolean, default=False)
 
@@ -118,20 +137,17 @@ class FormEntryAnswerCheckboxModel(FormEntryAnswerModel):
 
 class FormEntryAnswerRadioModel(FormEntryAnswerModel):
 
-	if settings.USE_SQLITE_FOR_TESTING:
+	__tablename__ = 'form_entry_answer_radios'
 
-		radio_selected = Column(JSON)
+	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
 
-	else:
 
-		radio_selected = Column(
-			mutable_json_type(
-				dbtype=JSONB,
-				nested=False,
-			)
+	radio_selected = Column(
+		mutable_json_type(
+			dbtype=JSONB,
+			nested=False,
 		)
-
-	# radio_selected = Column(JSON)
+	)
 	
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_radios',

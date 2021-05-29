@@ -28,9 +28,19 @@ class CampGroupModel(Base, ResourceMixin):
 	name = Column(String)
 
 
+	camp = relationship(
+		'CampModel',
+		back_populates='groups',
+		uselist=False,
+	)
 	camp_id = Column(Integer, ForeignKey('camps.id'))
 
 
-	instances = relationship('CampInstanceGroupModel', backref='camp_group', lazy='dynamic', cascade='all, delete')
+	instances = relationship(
+		'CampInstanceGroupModel',
+		back_populates='camp_group',
+		lazy='selectin',
+		cascade='all, delete',
+	)
 
 

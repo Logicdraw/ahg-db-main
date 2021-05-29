@@ -1,9 +1,11 @@
--e git+https://github.com/Logicdraw/ahg-db.git@68ad2d1f39803ec61307f337b85baa6ffbf7ab40#egg=ahg_db
+-e git+https://github.com/Logicdraw/ahg-db.git@92769f4a903d78ec1206d4999b6d933db5d794a9#egg=ahg_db
 aiomcache==0.6.0
 alembic==1.5.8
 amqp==5.0.6
 appdirs==1.4.4
 argcomplete==1.12.2
+asyncio==3.4.3
+asyncpg==0.23.0
 attrs==20.3.0
 billiard==3.6.4.0
 certifi==2020.12.5
@@ -52,19 +54,19 @@ pycparser==2.20
 pydantic==1.8.1
 pyOpenSSL==20.0.1
 pyparsing==2.4.7
-pytest==6.2.2
 python-dateutil==2.8.1
 python-dotenv==0.15.0
 python-editor==1.0.4
 python-jose==3.2.0
 python-multipart==0.0.5
+python-redis-cache==1.1.0
 pytz==2021.1
 pyu2f==0.1.5
 raven==6.10.0
 retry-decorator==1.1.1
 rsa==4.7.1
 six==1.15.0
-SQLAlchemy==1.3.24
+SQLAlchemy==1.4.15
 sqlalchemy-json==0.4.0
 starlette==0.13.6
 timeago==1.0.15

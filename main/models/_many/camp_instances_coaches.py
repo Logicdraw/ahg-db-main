@@ -26,12 +26,35 @@ class CampInstancesCoachesModel(Base, ResourceMixin):
 
 	__tablename__ = 'camp_instances_coaches'
 
-	camp_instance_id = Column(Integer, ForeignKey('camp_instances.id'), primary_key=True)
-	coach_id = Column(Integer, ForeignKey('coaches.id'), primary_key=True)
+	camp_instance_id = Column(
+		Integer,
+		ForeignKey('camp_instances.id'),
+		primary_key=True,
+	)
+
+	coach_id = Column(
+		Integer,
+		ForeignKey('coaches.id'),
+		primary_key=True,
+	)
+
 
 
 	role = Column(String)
 
 
-	camp_instance = relationship('CampInstanceModel', back_populates='coaches')
-	coach = relationship('CoachModel', back_populates='camp_instances')
+
+	camp_instance = relationship(
+		'CampInstanceModel',
+		back_populates='coaches',
+	)
+
+	coach = relationship(
+		'CoachModel',
+		back_populates='camp_instances',
+	)
+
+
+
+
+

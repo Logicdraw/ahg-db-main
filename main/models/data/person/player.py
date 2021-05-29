@@ -32,38 +32,49 @@ class PlayerModel(Base, ResourceMixin):
 
 	# Relationships
 
+	registrations = relationship(
+		'RegistrationBaseModel',
+		back_populates='player',
+		lazy='selectin',
+		cascade='all, delete',
+	)
+
 	team_instance_registrations = relationship(
 		'TeamInstanceRegistrationModel',
-		backref='player',
-		lazy='dynamic',
+		back_populates='player',
+		lazy='selectin',
 		cascade='all, delete',
 	)
 
 	program_instance_registrations = relationship(
 		'ProgramInstanceRegistrationModel',
-		backref='player',
-		lazy='dynamic',
+		back_populates='player',
+		lazy='selectin',
 		cascade='all, delete',
 	)
 
 	camp_instance_registrations = relationship(
 		'CampInstanceRegistrationModel',
-		backref='player',
-		lazy='dynamic',
+		back_populates='player',
+		lazy='selectin',
 		cascade='all, delete',
 	)
 
 
+	# Many - to - Many
+
 	guardians = relationship(
 		'GuardiansPlayersModel',
 		back_populates='player',
-		lazy='dynamic',
+		lazy='selectin',
 	)
+
+	# Many - to - Many
 
 	team_instances = relationship(
 		'TeamInstancesPlayersModel',
 		back_populates='player',
-		lazy='dynamic',
+		lazy='selectin',
 	)
 
 

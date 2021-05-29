@@ -28,7 +28,17 @@ class ProgramModel(Base, ResourceMixin):
 	name = Column(String)
 
 
-	instances = relationship('ProgramInstanceModel', backref='program', lazy='dynamic', cascade='all, delete')
+	instances = relationship(
+		'ProgramInstanceModel',
+		back_populates='program',
+		lazy='selectin',
+		cascade='all, delete',
+	)
 
-	groups = relationship('ProgramGroupModel', backref='program', lazy='dynamic', cascade='all, delete')
+	groups = relationship(
+		'ProgramGroupModel',
+		back_populates='program',
+		lazy='selectin',
+		cascade='all, delete',
+	)
 

@@ -25,8 +25,19 @@ class CampInstanceGroupModel(Base, ResourceMixin):
 	id = Column(Integer, primary_key=True)
 
 
+	camp_instance = relationship(
+		'CampInstanceModel',
+		back_populates='groups',
+		uselist=False,
+	)
 	camp_instance_id = Column(Integer, ForeignKey('camp_instances.id'))
 
+
+	camp_group = relationship(
+		'CampGroupModel',
+		back_populates='instances',
+		uselist=False,
+	)
 	camp_group_id = Column(Integer, ForeignKey('camp_groups.id'))
 
 

@@ -23,8 +23,13 @@ class SpngMetaModel(Base, ResourceMixin):
 
 	id = Column(Integer, primary_key=True, index=True)
 
+
 	access_token_encoded = Column(String)
+
 	refresh_token_encoded = Column(String)
 
+
+	# last_ ...
+	# last fetched registrations ...
 
 

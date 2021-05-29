@@ -13,15 +13,13 @@ from pydantic import (
 	EmailStr,
 	HttpUrl,
 	PostgresDsn,
+	RedisDsn,
 	validator,
+	SecretStr,
 )
 
 
 import os
-
-
-from functools import lru_cache
-
 
 
 
@@ -38,33 +36,174 @@ class Settings(BaseSettings):
 
 
 	USE_SQLITE_FOR_TESTING: bool = False
+	# USE_SQLITE_FOR_TESTING: bool = True
 
 
-	SQLALCHEMY_TESTING_DATABASE_URI: str
-	
-	SQLALCHEMY_DEV_DATABASE_URI: str
 
-	SQLALCHEMY_PROD_DATABASE_URI: str
+	# DB --
 
 
-	SQLALCHEMY_DEV_SQLITE_DATABASE_URI: str = 'sqlite:///' + os.path.join(base_dir, '_dev_.db')
+	PSQL_DEV_DB: str
+	PSQL_DEV_HOST: str
+	PSQL_DEV_USER: str
+	PSQL_DEV_PASSWORD: SecretStr
 
-	SQLALCHEMY_TESTING_SQLITE_DATABASE_URI: str = 'sqlite:///' + os.path.join(base_dir, '_testing_.db')
-
-
+	PSQL_DEV_URI: Optional[PostgresDsn] = None
 
 	@validator(
-		'SQLALCHEMY_TESTING_DATABASE_URI',
-		'SQLALCHEMY_DEV_DATABASE_URI',
-		'SQLALCHEMY_PROD_DATABASE_URI',
-		'SQLALCHEMY_DEV_SQLITE_DATABASE_URI',
-		'SQLALCHEMY_TESTING_SQLITE_DATABASE_URI',
+		'PSQL_DEV_URI',
 		pre=True,
 	)
-	def assemble_db_connection(cls, v: Optional[str], values: Dict[str, Any]) -> Any:
-		if not isinstance(v, str):
-			raise ValueError('Not a valid string!')
-		return v
+	def assemble_psql_dev_db_connection(
+		cls,
+		v: Optional[str],
+		values: Dict[str, Any],
+	) -> Any:
+		if isinstance(v, str):
+			return v
+		password: SecretStr = values.get('PSQL_DEV_PASSWORD', SecretStr(''))
+		return '{scheme}://{user}:{password}@{host}/{db}'.format(
+			scheme='postgresql',
+			user=values.get('PSQL_DEV_USER'),
+			password=password.get_secret_value(),
+			host=values.get('PSQL_DEV_HOST'),
+			db=values.get('PSQL_DEV_DB'),
+		)
+
+	PSQL_ASYNC_DEV_URI: Optional[str] = None
+
+	@validator(
+		'PSQL_ASYNC_DEV_URI',
+		pre=True,
+	)
+	def assemble_psql_async_dev_db_connection(
+		cls,
+		v: Optional[str],
+		values: Dict[str, Any],
+	) -> Any:
+		if isinstance(v, str):
+			return v
+		password: SecretStr = values.get('PSQL_DEV_PASSWORD', SecretStr(''))
+		return '{scheme}://{user}:{password}@{host}/{db}'.format(
+			scheme='postgresql+asyncpg',
+			user=values.get('PSQL_DEV_USER'),
+			password=password.get_secret_value(),
+			host=values.get('PSQL_DEV_HOST'),
+			db=values.get('PSQL_DEV_DB'),
+		)
+
+
+
+	PSQL_TESTING_DB: str
+	PSQL_TESTING_HOST: str
+	PSQL_TESTING_USER: str
+	PSQL_TESTING_PASSWORD: SecretStr
+
+	PSQL_TESTING_URI: Optional[PostgresDsn] = None
+
+	@validator(
+		'PSQL_TESTING_URI',
+		pre=True,
+	)
+	def assemble_psql_testing_db_connection(
+		cls,
+		v: Optional[str],
+		values: Dict[str, Any],
+	) -> Any:
+		if isinstance(v, str):
+			return v
+		password: SecretStr = values.get('PSQL_TESTING_PASSWORD', SecretStr(''))
+		return '{scheme}://{user}:{password}@{host}/{db}'.format(
+			scheme='postgresql',
+			user=values.get('PSQL_TESTING_USER'),
+			password=password.get_secret_value(),
+			host=values.get('PSQL_TESTING_HOST'),
+			db=values.get('PSQL_TESTING_DB'),
+		)
+
+	PSQL_ASYNC_TESTING_URI: Optional[str] = None
+
+	@validator(
+		'PSQL_ASYNC_TESTING_URI',
+		pre=True,
+	)
+	def assemble_psql_async_testing_db_connection(
+		cls,
+		v: Optional[str],
+		values: Dict[str, Any],
+	) -> Any:
+		if isinstance(v, str):
+			return v
+		password: SecretStr = values.get('PSQL_TESTING_PASSWORD', SecretStr(''))
+		return '{scheme}://{user}:{password}@{host}/{db}'.format(
+			scheme='postgresql+asyncpg',
+			user=values.get('PSQL_TESTING_USER'),
+			password=password.get_secret_value(),
+			host=values.get('PSQL_TESTING_HOST'),
+			db=values.get('PSQL_TESTING_DB'),
+		)
+
+
+
+	PSQL_PROD_DB: str
+	PSQL_PROD_HOST: str
+	PSQL_PROD_USER: str
+	PSQL_PROD_PASSWORD: SecretStr
+
+	PSQL_PROD_URI: Optional[PostgresDsn] = None
+
+	@validator(
+		'PSQL_PROD_URI',
+		pre=True,
+	)
+	def assemble_psql_prod_db_connection(
+		cls,
+		v: Optional[str],
+		values: Dict[str, Any],
+	) -> Any:
+		if isinstance(v, str):
+			return v
+		password: SecretStr = values.get('PSQL_PROD_PASSWORD', SecretStr(''))
+		return '{scheme}://{user}:{password}@{host}/{db}'.format(
+			scheme='postgresql',
+			user=values.get('PSQL_PROD_USER'),
+			password=password.get_secret_value(),
+			host=values.get('PSQL_PROD_HOST'),
+			db=values.get('PSQL_PROD_DB'),
+		)
+
+
+	PSQL_ASYNC_PROD_URI: Optional[str] = None
+
+	@validator(
+		'PSQL_ASYNC_PROD_URI',
+		pre=True,
+	)
+	def assemble_psql_async_prod_db_connection(
+		cls,
+		v: Optional[str],
+		values: Dict[str, Any],
+	) -> Any:
+		if isinstance(v, str):
+			return v
+		password: SecretStr = values.get('PSQL_PROD_PASSWORD', SecretStr(''))
+		return '{scheme}://{user}:{password}@{host}/{db}'.format(
+			scheme='postgresql+asyncpg',
+			user=values.get('PSQL_PROD_USER'),
+			password=password.get_secret_value(),
+			host=values.get('PSQL_PROD_HOST'),
+			db=values.get('PSQL_PROD_DB'),
+		)
+
+
+
+
+
+	SQLITE_DEV_URI: str = 'sqlite:///' + os.path.join(base_dir, '_dev_.db')
+
+	SQLITE_TESTING_URI: str = 'sqlite:///' + os.path.join(base_dir, '_testing_.db')
+
+
 
 
 	CLI_PASSWORD: str
@@ -79,9 +218,10 @@ class Settings(BaseSettings):
 
 
 
-@lru_cache()
-def get_settings():
-	return Settings()
+
+
+settings = Settings()
+
 
 
 

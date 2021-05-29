@@ -25,3 +25,19 @@ class TeamInstanceTracksuitOrderModel(Base, ResourceMixin):
 	id = Column(Integer, primary_key=True)
 
 
+	team_instance = relationship(
+		'TeamInstanceModel',
+		back_populates='tracksuit_orders',
+		uselist=False,
+	)
+	team_instance_id = Column(
+		Integer,
+		ForeignKey('team_instances.id'),
+	)
+
+
+	jacket_size = Column(String(50))
+
+	pants_size = Column(String(50))
+
+

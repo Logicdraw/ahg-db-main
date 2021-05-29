@@ -25,28 +25,32 @@ class CampInstanceModel(Base, ResourceMixin):
 	id = Column(Integer, primary_key=True)
 
 
+	camp = relationship(
+		'CampModel',
+		back_populates='instances',
+		uselist=False,
+	)
 	camp_id = Column(Integer, ForeignKey('camps.id'))
 
 
 
 	registrations = relationship(
 		'CampInstanceRegistrationModel',
-		backref='camp_instance',
-		lazy='dynamic',
-		cascade='all, delete',
+		back_populates='camp_instance',
+		lazy='selectin',
 	)
 
 	groups = relationship(
 		'CampInstanceGroupModel',
-		backref='camp_instance',
-		lazy='dynamic',
+		back_populates='camp_instance',
+		lazy='selectin',
 		cascade='all, delete',
 	)
 
 	coaches = relationship(
 		'CampInstancesCoachesModel',
 		back_populates='camp_instance',
-		lazy='dynamic',
+		lazy='selectin',
 	)
 
 
@@ -59,4 +63,7 @@ class CampInstanceModel(Base, ResourceMixin):
 	se_name_snake = Column(String, index=True)
 
 	se_shared_question_id = Column(Integer, index=True)
+
+
+
 

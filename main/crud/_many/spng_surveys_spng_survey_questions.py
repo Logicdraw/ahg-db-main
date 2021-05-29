@@ -1,0 +1,61 @@
+from typing import (
+	Any,
+	Dict,
+	Optional,
+	Union,
+	List,
+)
+
+
+from sqlalchemy.ext.asyncio import AsyncSession
+
+
+from sqlalchemy import (
+	func,
+	or_,
+)
+
+
+from app.crud.base import CRUDBase
+
+from app.models._many.spng_surveys_spng_survey_questions import SpngSurveysSpngSurveyQuestionsModel
+
+from app.schemas._many.spng_surveys_spng_survey_questions import (
+	SpngSurveysSpngSurveyQuestionsSchemaCreate,
+	SpngSurveysSpngSurveyQuestionsSchemaUpdate,
+)
+
+
+
+class CRUDSpngSurveysSpngSurveyQuestions(
+	CRUDBase[
+		SpngSurveysSpngSurveyQuestionsModel,
+		SpngSurveysSpngSurveyQuestionsSchemaCreate,
+		SpngSurveysSpngSurveyQuestionsSchemaUpdate,
+	]):
+
+	async def get(
+		self,
+		db: AsyncSession,
+		spng_survey_id: int,
+		spng_survey_question_id: int,
+	) -> Optional[SpngSurveysSpngSurveyQuestionsModel]:
+		# --
+
+		result = await db.execute(
+			select(SpngSurveysSpngSurveyQuestionsModel).\
+			filter_by(
+				spng_survey_id=spng_survey_id,
+				spng_survey_question_id=spng_survey_question_id,
+			)
+		)
+
+		return result.scalars().first()
+
+
+
+
+spng_surveys_spng_survey_questions_crud = CRUDSpngSurveysSpngSurveyQuestions(SpngSurveysSpngSurveyQuestionsModel)
+
+
+

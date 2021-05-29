@@ -33,27 +33,30 @@ class CoachModel(Base, ResourceMixin):
 	team_instances = relationship(
 		'TeamInstancesCoachesModel',
 		back_populates='coach',
-		lazy='dynamic',
+		lazy='selectin',
 		cascade='all, delete-orphan',
 	)
 
 	camp_instances = relationship(
 		'CampInstancesCoachesModel',
 		back_populates='coach',
-		lazy='dynamic',
+		lazy='selectin',
 		cascade='all, delete-orphan',
 	)
 
 	program_instances = relationship(
 		'ProgramInstancesCoachesModel',
 		back_populates='coach',
-		lazy='dynamic',
+		lazy='selectin',
 		cascade='all, delete-orphan',
 	)
 
 
 
-	user = relationship('UserModel', uselist=False)
+	user = relationship(
+		'UserModel',
+		uselist=False,
+	)
 	user_id = Column(Integer, ForeignKey('users.id'))
 
 

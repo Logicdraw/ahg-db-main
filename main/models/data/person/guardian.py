@@ -35,7 +35,7 @@ class GuardianModel(Base, ResourceMixin):
 	players = relationship(
 		'GuardiansPlayersModel',
 		back_populates='guardian',
-		lazy='dynamic',
+		lazy='selectin',
 	)
 
 
@@ -51,6 +51,18 @@ class GuardianModel(Base, ResourceMixin):
 
 	# Email -- will be unique identifier of guardian!
 	email = Column(String, unique=True)
+
+
+
+	user = relationship(
+		'UserModel',
+		uselist=False,
+	)
+	user_id = Column(Integer, ForeignKey('users.id'))
+
+
+
+
 
 
 

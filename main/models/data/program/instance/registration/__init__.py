@@ -18,6 +18,7 @@ from lib.util_sqlalchemy import (
 
 
 from main.models._base.registration import (
+	RegistrationBaseModel,
 	PlayerRegistrationBase,
 	SpngRegistrationBase,
 	SpngRegistrationFinancialsBase,
@@ -26,8 +27,7 @@ from main.models._base.registration import (
 
 
 class ProgramInstanceRegistrationModel(
-	Base,
-	ResourceMixin,
+	RegistrationBaseModel,
 	SpngRegistrationBase,
 	SpngRegistrationFinancialsBase,
 	PlayerRegistrationBase,
@@ -35,15 +35,49 @@ class ProgramInstanceRegistrationModel(
 
 	__tablename__ = 'program_instance_registrations'
 
-	id = Column(Integer, primary_key=True)
+
+	id = Column(Integer, ForeignKey('registrations.id'), primary_key=True)
 
 
-	program_instance_id = Column(Integer, ForeignKey('program_instances.id'))
+	program_instance = relationship(
+		'ProgramInstanceModel',
+		back_populates='registrations',
+		uselist=False,
+	)
+	program_instance_id = Column(
+		Integer,
+		ForeignKey('program_instances.id'),
+	)
 	
 
-	program_instance_group = relationship('ProgramInstanceGroupModel', uselist=False)
-	program_instance_group_id = Column(Integer, ForeignKey('program_instance_groups.id'))
+	# Optional :) - nice dropdown on interface --
+	program_instance_group = relationship(
+		'ProgramInstanceGroupModel',
+		back_populates='registrations',
+		uselist=False,
+	)
+	program_instance_group_id = Column(
+		Integer,
+		ForeignKey('program_instance_groups.id'),
+	)
 
+
+	spng_survey_program = relationship(
+		'SpngSurveyProgramModel',
+		back_populates='registrations',
+		uselist=False,
+	)
+	spng_survey_program_id = Column(
+		Integer,
+		ForeignKey('spng_survey_programs.id'),
+	)
+
+
+	# polymorphic identity --
+
+	__mapper_args__ = {
+		'polymorphic_identity': 'program_instance',
+	}
 
 
 

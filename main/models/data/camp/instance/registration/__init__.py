@@ -18,6 +18,7 @@ from lib.util_sqlalchemy import (
 
 
 from main.models._base.registration import (
+	RegistrationBaseModel,
 	SpngRegistrationBase,
 	SpngRegistrationFinancialsBase,
 	PlayerRegistrationBase,
@@ -25,8 +26,7 @@ from main.models._base.registration import (
 
 
 class CampInstanceRegistrationModel(
-	Base,
-	ResourceMixin,
+	RegistrationBaseModel,
 	SpngRegistrationBase,
 	SpngRegistrationFinancialsBase,
 	PlayerRegistrationBase,
@@ -34,15 +34,43 @@ class CampInstanceRegistrationModel(
 
 	__tablename__ = 'camp_instance_registrations'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(Integer, ForeignKey('registrations.id'), primary_key=True)
 
 
 	camp_instance_id = Column(Integer, ForeignKey('camp_instances.id'))
+	camp_instance = relationship(
+		'CampInstanceModel',
+		back_populates='registrations',
+		uselist=False,
+	)
 
 
-	camp_instance_group = relationship('CampInstanceGroupModel', uselist=False)
+	# Optional :) - nice dropdown on interface --
+	camp_instance_group = relationship(
+		'CampInstanceGroupModel',
+		back_populates='registrations',
+		uselist=False,
+	)
 	camp_instance_group_id = Column(Integer, ForeignKey('camp_instance_groups.id'))
 
+
+
+	spng_survey_camp = relationship(
+		'SpngSurveyCampModel',
+		back_populates='registrations',
+		uselist=False,
+	)
+	spng_survey_camp_id = Column(
+		Integer,
+		ForeignKey('spng_survey_camps.id'),
+	)
+
+
+	# polymorphic identity --
+
+	__mapper_args__ = {
+		'polymorphic_identity': 'camp_instance',
+	}
 
 
 	# other information

@@ -16,8 +16,7 @@ from lib.util_sqlalchemy import (
 )
 
 
-from main.config import get_settings
-settings = get_settings()
+from main.config import settings
 
 
 
@@ -31,7 +30,28 @@ class FormModel(Base, ResourceMixin):
 	id = Column(Integer, primary_key=True, index=True)
 
 
-	questions = relationship('FormQuestionModel', backref='form', lazy='dynamic')
+	title = Column(String(500), index=True, nullable=False)
 
+	description = Column(String, nullable=True)
+
+
+	has_deadline = Column(Boolean, default=False)
+
+	deadline_on = Column(AwareDateTime())
+
+
+
+	questions = relationship(
+		'FormQuestionModel',
+		back_populates='form',
+		lazy='selectin',
+	)
+
+
+	entries = relationship(
+		'FormEntryModel',
+		back_populates='form',
+		lazy='selectin',
+	)
 
 

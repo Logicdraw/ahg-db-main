@@ -25,28 +25,33 @@ class ProgramInstanceModel(Base, ResourceMixin):
 	id = Column(Integer, primary_key=True)
 
 
+
+	program = relationship(
+		'ProgramModel',
+		back_populates='instances',
+		uselist=False,
+	)
 	program_id = Column(Integer, ForeignKey('programs.id'))
 
 
 
 	registrations = relationship(
 		'ProgramInstanceRegistrationModel',
-		backref='program_instance',
-		lazy='dynamic',
-		cascade='all, delete',
+		back_populates='program_instance',
+		lazy='selectin',
 	)
 
 	groups = relationship(
 		'ProgramInstanceGroupModel',
-		backref='program_instance',
-		lazy='dynamic',
+		back_populates='program_instance',
+		lazy='selectin',
 		cascade='all, delete',
 	)
 
 	coaches = relationship(
 		'ProgramInstancesCoachesModel',
 		back_populates='program_instance',
-		lazy='dynamic',
+		lazy='selectin',
 	)
 
 
@@ -55,6 +60,9 @@ class ProgramInstanceModel(Base, ResourceMixin):
 
 	year_end = Column(Integer)
 
+
+
+	# SportsEngine --
 
 	se_name_snake = Column(String, index=True)
 

@@ -13,8 +13,10 @@ from sqlalchemy import (
 
 from lib.util_sqlalchemy import (
 	AwareDateTime,
+	ResourceMixin,
 )
 
+from main.database.base_class import Base
 
 
 from sqlalchemy.dialects.postgresql import JSONB
@@ -23,12 +25,19 @@ from sqlalchemy_json import mutable_json_type
 
 
 
-from main.config import get_settings
-settings = get_settings()
+from main.config import settings
 
 
 
-class RegistrationBase:
+class RegistrationBaseModel(
+	Base,
+	ResourceMixin,
+):
+	
+	__tablename__ = 'registrations'
+
+	id = Column(Integer, primary_key=True, index=True)
+	
 
 	placed_at_datetime = Column(AwareDateTime())
 
@@ -38,7 +47,18 @@ class RegistrationBase:
 
 	notes = Column(String)
 
+	type = Column(String(50))
 
+
+	# ????
+	# default ...
+
+
+	__mapper_args__ = {
+		'polymorphic_identity': 'registrations',
+		'polymorphic_on': type,
+		'with_polymorphic': '*',
+	}
 
 
 
@@ -68,18 +88,13 @@ class SpngRegistrationBase:
 	registrant_type = Column(String)
 
 
-	if settings.USE_SQLITE_FOR_TESTING:
 
-		extra_question_answers = Column(JSON)
-
-	else:
-
-		extra_question_answers = Column(
-			mutable_json_type(
-				dbtype=JSONB,
-				nested=False,
-			)
+	extra_question_answers = Column(
+		mutable_json_type(
+			dbtype=JSONB,
+			nested=False,
 		)
+	)
 
 
 
@@ -117,17 +132,7 @@ class PlayerRegistrationBase:
 	position = Column(String)
 
 
-	invited_by_coach = Column(Boolean, default=False)
-
 	registration_insurance = Column(Boolean, default=False)
-
-
-	current_minor_hockey_level = Column(String)
-
-	current_division_played = Column(String)
-
-
-	preferred_language = Column(String)
 
 	player_submitted_notes = Column(String)
 

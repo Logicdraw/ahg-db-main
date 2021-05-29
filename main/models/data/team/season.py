@@ -27,16 +27,36 @@ class SeasonModel(Base, ResourceMixin):
 	name = Column(String, nullable=False, index=True)
 
 
-	instances = relationship('SeasonInstanceModel', backref='season', lazy='dynamic')
+	instances = relationship(
+		'SeasonInstanceModel',
+		back_populates='season',
+		lazy='selectin',
+	)
 
 
-	leagues = relationship('LeagueModel', backref='season', lazy='dynamic')
+	leagues = relationship(
+		'LeagueModel',
+		back_populates='season',
+		lazy='selectin',
+	)
 
-	conferences = relationship('ConferenceModel', backref='season', lazy='dynamic')
+	conferences = relationship(
+		'ConferenceModel',
+		back_populates='season',
+		lazy='selectin',
+	)
 
-	divisions = relationship('DivisionModel', backref='season', lazy='dynamic')
+	divisions = relationship(
+		'DivisionModel',
+		back_populates='season',
+		lazy='selectin',
+	)
 
-	teams = relationship('TeamModel', backref='season', lazy='dynamic')
+	teams = relationship(
+		'TeamModel',
+		back_populates='season',
+		lazy='selectin',
+	)
 
 
 

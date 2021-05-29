@@ -28,10 +28,20 @@ class ProgramGroupModel(Base, ResourceMixin):
 	name = Column(String)
 
 
-	camp_id = Column(Integer, ForeignKey('camps.id'))
+	program = relationship(
+		'ProgramModel',
+		back_populates='groups',
+		uselist=False,
+	)
+	program_id = Column(Integer, ForeignKey('programs.id'))
 
 
-	instances = relationship('ProgramInstanceGroupModel', backref='program_group', lazy='dynamic', cascade='all, delete')
+	instances = relationship(
+		'ProgramInstanceGroupModel',
+		back_populates='program_group',
+		lazy='selectin',
+		cascade='all, delete',
+	)
 
 
 

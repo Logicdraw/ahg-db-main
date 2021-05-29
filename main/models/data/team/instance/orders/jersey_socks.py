@@ -25,3 +25,46 @@ class TeamInstanceJerseySocksOrderModel(Base, ResourceMixin):
 	id = Column(Integer, primary_key=True)
 
 
+	team_instance = relationship(
+		'TeamInstanceModel',
+		back_populates='jersey_socks_orders',
+		uselist=False,
+	)
+	team_instance_id = Column(
+		Integer,
+		ForeignKey('team_instances.id'),
+	)
+
+
+	team_instance_registration = relationship(
+		'TeamInstanceRegistrationModel',
+		back_populates='jersey_socks_order',
+		uselist=False,
+	)
+	team_instance_registration_id = Column(
+		Integer,
+		ForeignKey('team_instance_registrations.id')
+	)
+
+
+	jersey_number = Column(Integer)
+
+	jersey_size = Column(String)
+
+
+	socks_size = Column(String)
+
+
+	# size --
+
+	# number --
+
+
+	# data...
+
+
+
+
+
+
+

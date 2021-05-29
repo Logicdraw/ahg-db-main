@@ -25,8 +25,18 @@ class ProgramInstanceGroupModel(Base, ResourceMixin):
 	id = Column(Integer, primary_key=True)
 
 
+	program_instance = relationship(
+		'ProgramInstanceModel',
+		back_populates='groups',
+		uselist=False,
+	)
 	program_instance_id = Column(Integer, ForeignKey('program_instances.id'))
 
+	program_group = relationship(
+		'ProgramInstanceModel',
+		back_populates='instances',
+		uselist=False,
+	)
 	program_group_id = Column(Integer, ForeignKey('program_groups.id'))
 
 

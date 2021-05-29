@@ -47,17 +47,49 @@ class TeamModel(Base, ResourceMixin):
 
 
 
-	division_id = Column(Integer, ForeignKey('divisions.id'))
+	division = relationship(
+		'DivisionModel',
+		back_populates='teams',
+		uselist=False,
+	)
+	division_id = Column(
+		Integer,
+		ForeignKey('divisions.id'),
+	)
 
-	conference_id = Column(Integer, ForeignKey('conferences.id'))
+	conference = relationship(
+		'ConferenceModel',
+		back_populates='teams',
+		uselist=False,
+	)
+	conference_id = Column(
+		Integer,
+		ForeignKey('conferences.id'),
+	)
 
-	league_id = Column(Integer, ForeignKey('leagues.id'))
+	league = relationship(
+		'LeagueModel',
+		back_populates='teams',
+		uselist=False,
+	)
+	league_id = Column(
+		Integer,
+		ForeignKey('leagues.id'),
+	)
 
-	season_id = Column(Integer, ForeignKey('seasons.id'))
+	season = relationship(
+		'SeasonModel',
+		back_populates='teams',
+		uselist=False,
+	)
+	season_id = Column(
+		Integer,
+		ForeignKey('seasons.id'),
+	)
 
 
 
-	instances = relationship('TeamInstanceModel', backref='team', lazy='dynamic')
+	instances = relationship('TeamInstanceModel', back_populates='team', lazy='selectin')
 
 
 
