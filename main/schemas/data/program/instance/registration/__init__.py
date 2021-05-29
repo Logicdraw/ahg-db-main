@@ -13,10 +13,20 @@ from main.schemas._base.registration import (
 )
 
 
+from main.schemas._base.registration import (
+	RegistrationBaseSchemaBase,
+	RegistrationBaseSchemaCreate,
+	RegistrationBaseSchemaUpdate,
+	RegistrationBaseSchemaInDBBase,
+	RegistrationBaseSchema,
+	RegistrationBaseSchemaInDB,
+)
+
+
 
 
 class ProgramInstanceRegistrationSchemaBase(
-	BaseModel,
+	RegistrationBaseSchemaBase,
 	SpngRegistrationBaseSchema,
 	SpngRegistrationFinancialsBaseSchema,
 	PlayerRegistrationBaseSchema,
@@ -25,17 +35,26 @@ class ProgramInstanceRegistrationSchemaBase(
 
 
 
-class ProgramInstanceRegistrationSchemaCreate(ProgramInstanceRegistrationSchemaBase):
+class ProgramInstanceRegistrationSchemaCreate(
+	ProgramInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaCreate,
+):
 	pass
 
 
 
-class ProgramInstanceRegistrationSchemaUpdate(ProgramInstanceRegistrationSchemaBase):
+class ProgramInstanceRegistrationSchemaUpdate(
+	ProgramInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaUpdate,
+):
 	pass
 
 
 
-class ProgramInstanceRegistrationSchemaInDBBase(ProgramInstanceRegistrationSchemaBase):
+class ProgramInstanceRegistrationSchemaInDBBase(
+	ProgramInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaInDBBase,
+):
 	id: int
 
 	class Config:
@@ -43,13 +62,20 @@ class ProgramInstanceRegistrationSchemaInDBBase(ProgramInstanceRegistrationSchem
 
 
 
-class ProgramInstanceRegistrationSchema(ProgramInstanceRegistrationSchemaInDBBase):
+class ProgramInstanceRegistrationSchema(
+	ProgramInstanceRegistrationSchemaInDBBas,
+	RegistrationBaseSchema,
+):
 	pass
 
 
 
-class ProgramInstanceRegistrationSchemaInDB(ProgramInstanceRegistrationSchemaInDBBase):
+class ProgramInstanceRegistrationSchemaInDB(
+	ProgramInstanceRegistrationSchemaInDBBase,
+	RegistrationBaseSchemaInDB,
+):
 	pass
+
 
 
 

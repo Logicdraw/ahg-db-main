@@ -6,25 +6,45 @@ from pydantic import (
 )
 
 
+from main.schemas._base.spng_survey import (
+	SpngSurveyBaseSchemaBase,
+	SpngSurveyBaseSchemaCreate,
+	SpngSurveyBaseSchemaUpdate,
+	SpngSurveyBaseSchemaInDBBase,
+	SpngSurveyBaseSchema,
+	SpngSurveyBaseSchemaInDB,
+)
 
 
 
-class SpngSurveyTeamSchemaBase(BaseModel):
+
+class SpngSurveyTeamSchemaBase(
+	SpngSurveyBaseSchemaBase,
+):
 	pass
 
 
 
-class SpngSurveyTeamSchemaCreate(SpngSurveyTeamSchemaBase):
+class SpngSurveyTeamSchemaCreate(
+	SpngSurveyTeamSchemaBase,
+	SpngSurveyBaseSchemaCreate,
+):
 	pass
 
 
 
-class SpngSurveyTeamSchemaUpdate(SpngSurveyTeamSchemaBase):
+class SpngSurveyTeamSchemaUpdate(
+	SpngSurveyTeamSchemaBase,
+	SpngSurveyBaseSchemaUpdate,
+):
 	pass
 
 
 
-class SpngSurveyTeamSchemaInDBBase(SpngSurveyTeamSchemaBase):
+class SpngSurveyTeamSchemaInDBBase(
+	SpngSurveyTeamSchemaBase,
+	SpngSurveyBaseSchemaInDBBase,
+):
 	id: int
 
 	class Config:
@@ -32,12 +52,21 @@ class SpngSurveyTeamSchemaInDBBase(SpngSurveyTeamSchemaBase):
 
 
 
-class SpngSurveyTeamSchema(SpngSurveyTeamSchemaInDBBase):
+class SpngSurveyTeamSchema(
+	SpngSurveyTeamSchemaInDBBase,
+	SpngSurveyBaseSchema,
+):
 	pass
 
 
 
-class SpngSurveyTeamSchemaInDB(SpngSurveyTeamSchemaInDBBase):
+class SpngSurveyTeamSchemaInDB(
+	SpngSurveyTeamSchemaInDBBase,
+	SpngSurveyBaseSchemaInDB,
+):
 	pass
+
+
+
 
 

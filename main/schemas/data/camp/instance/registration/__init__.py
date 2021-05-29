@@ -13,10 +13,20 @@ from main.schemas._base.registration import (
 )
 
 
+from main.schemas._base.registration import (
+	RegistrationBaseSchemaBase,
+	RegistrationBaseSchemaCreate,
+	RegistrationBaseSchemaUpdate,
+	RegistrationBaseSchemaInDBBase,
+	RegistrationBaseSchema,
+	RegistrationBaseSchemaInDB,
+)
+
+
 
 
 class CampInstanceRegistrationSchemaBase(
-	BaseModel,
+	RegistrationBaseSchemaBase,
 	SpngRegistrationBaseSchema,
 	SpngRegistrationFinancialsBaseSchema,
 	PlayerRegistrationBaseSchema,
@@ -25,17 +35,26 @@ class CampInstanceRegistrationSchemaBase(
 
 
 
-class CampInstanceRegistrationSchemaCreate(CampInstanceRegistrationSchemaBase):
+class CampInstanceRegistrationSchemaCreate(
+	CampInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaCreate,
+):
 	pass
 
 
 
-class CampInstanceRegistrationSchemaUpdate(CampInstanceRegistrationSchemaBase):
+class CampInstanceRegistrationSchemaUpdate(
+	CampInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaUpdate,
+):
 	pass
 
 
 
-class CampInstanceRegistrationSchemaInDBBase(CampInstanceRegistrationSchemaBase):
+class CampInstanceRegistrationSchemaInDBBase(
+	CampInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaInDBBase,
+):
 	id: int
 
 	class Config:
@@ -43,13 +62,20 @@ class CampInstanceRegistrationSchemaInDBBase(CampInstanceRegistrationSchemaBase)
 
 
 
-class CampInstanceRegistrationSchema(CampInstanceRegistrationSchemaInDBBase):
+class CampInstanceRegistrationSchema(
+	CampInstanceRegistrationSchemaInDBBas,
+	RegistrationBaseSchema,
+):
 	pass
 
 
 
-class CampInstanceRegistrationSchemaInDB(CampInstanceRegistrationSchemaInDBBase):
+class CampInstanceRegistrationSchemaInDB(
+	CampInstanceRegistrationSchemaInDBBase,
+	RegistrationBaseSchemaInDB,
+):
 	pass
+
 
 
 

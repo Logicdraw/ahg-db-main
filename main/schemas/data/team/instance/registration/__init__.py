@@ -13,10 +13,20 @@ from main.schemas._base.registration import (
 )
 
 
+from main.schemas._base.registration import (
+	RegistrationBaseSchemaBase,
+	RegistrationBaseSchemaCreate,
+	RegistrationBaseSchemaUpdate,
+	RegistrationBaseSchemaInDBBase,
+	RegistrationBaseSchema,
+	RegistrationBaseSchemaInDB,
+)
+
+
 
 
 class TeamInstanceRegistrationSchemaBase(
-	BaseModel,
+	RegistrationBaseSchemaBase,
 	SpngRegistrationBaseSchema,
 	SpngRegistrationFinancialsBaseSchema,
 	PlayerRegistrationBaseSchema,
@@ -25,17 +35,26 @@ class TeamInstanceRegistrationSchemaBase(
 
 
 
-class TeamInstanceRegistrationSchemaCreate(TeamInstanceRegistrationSchemaBase):
+class TeamInstanceRegistrationSchemaCreate(
+	TeamInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaCreate,
+):
 	pass
 
 
 
-class TeamInstanceRegistrationSchemaUpdate(TeamInstanceRegistrationSchemaBase):
+class TeamInstanceRegistrationSchemaUpdate(
+	TeamInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaUpdate,
+):
 	pass
 
 
 
-class TeamInstanceRegistrationSchemaInDBBase(TeamInstanceRegistrationSchemaBase):
+class TeamInstanceRegistrationSchemaInDBBase(
+	TeamInstanceRegistrationSchemaBase,
+	RegistrationBaseSchemaInDBBase,
+):
 	id: int
 
 	class Config:
@@ -43,12 +62,18 @@ class TeamInstanceRegistrationSchemaInDBBase(TeamInstanceRegistrationSchemaBase)
 
 
 
-class TeamInstanceRegistrationSchema(TeamInstanceRegistrationSchemaInDBBase):
+class TeamInstanceRegistrationSchema(
+	TeamInstanceRegistrationSchemaInDBBas,
+	RegistrationBaseSchema,
+):
 	pass
 
 
 
-class TeamInstanceRegistrationSchemaInDB(TeamInstanceRegistrationSchemaInDBBase):
+class TeamInstanceRegistrationSchemaInDB(
+	TeamInstanceRegistrationSchemaInDBBase,
+	RegistrationBaseSchemaInDB,
+):
 	pass
 
 
