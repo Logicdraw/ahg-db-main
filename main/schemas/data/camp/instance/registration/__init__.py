@@ -31,7 +31,9 @@ class CampInstanceRegistrationSchemaBase(
 	SpngRegistrationFinancialsBaseSchema,
 	PlayerRegistrationBaseSchema,
 ):
-	pass
+	camp_instance_id: Optional[int] = None
+	camp_instance_group_id: Optional[int] = None
+	spng_survey_camp_id: Optional[int] = None
 
 
 

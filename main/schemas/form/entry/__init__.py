@@ -10,7 +10,7 @@ from pydantic import (
 
 
 class FormEntrySchemaBase(BaseModel):
-	pass
+	form_id: Optional[int] = None
 
 
 

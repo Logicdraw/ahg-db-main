@@ -1,4 +1,7 @@
-from typing import Optional
+from typing import (
+	Optional,
+	Any,
+)
 
 from pydantic import (
 	BaseModel,
@@ -10,7 +13,9 @@ from pydantic import (
 
 
 class SpngSurveyQuestionSchemaBase(BaseModel):
-	pass
+	use_answer_text_mappings: Optional[str] = None
+	shared_question_ids: Optional[Any] = None
+	answer_text_mappings: Optional[str] = None
 
 
 

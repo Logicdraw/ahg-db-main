@@ -31,7 +31,10 @@ class TeamInstanceRegistrationSchemaBase(
 	SpngRegistrationFinancialsBaseSchema,
 	PlayerRegistrationBaseSchema,
 ):
-	pass
+	team_instance_id: Optional[int] = None
+	spng_survey_team_id: Optional[int] = None
+	needs_jersey: Optional[bool] = None
+	needs_socks: Optional[bool] = None
 
 
 

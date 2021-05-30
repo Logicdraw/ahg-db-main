@@ -10,7 +10,11 @@ from pydantic import (
 
 
 class ConferenceInstanceSchemaBase(BaseModel):
-	pass
+	year_start: Optional[int] = None
+	year_end: Optional[int] = None
+	conference_id: Optional[int] = None
+	league_instance_id: Optional[int] = None
+	season_instance_id: Optional[int] = None
 
 
 

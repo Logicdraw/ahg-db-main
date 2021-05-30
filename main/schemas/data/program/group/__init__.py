@@ -10,7 +10,8 @@ from pydantic import (
 
 
 class ProgramGroupSchemaBase(BaseModel):
-	pass
+	name: Optional[str] = None
+	program_id: Optional[int] = None
 
 
 

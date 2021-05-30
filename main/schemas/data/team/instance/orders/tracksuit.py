@@ -10,7 +10,9 @@ from pydantic import (
 
 
 class TeamInstanceTracksuitOrderSchemaBase(BaseModel):
-	pass
+	team_instance_id: Optional[int] = None
+	jacket_size: Optional[str] = None
+	pants_size: Optional[str] = None
 
 
 

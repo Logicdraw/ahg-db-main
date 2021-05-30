@@ -10,12 +10,15 @@ from pydantic import (
 
 
 class SpngMetaSchemaBase(BaseModel):
-	pass
+	access_token_encoded: Optional[str] = None
+	refresh_token_encoded: Optional[str] = None
 
 
 
 class SpngMetaSchemaCreate(SpngMetaSchemaBase):
 	pass
+	# access_token ...
+	# refresh_token ...
 
 
 

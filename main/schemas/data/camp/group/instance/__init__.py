@@ -10,7 +10,10 @@ from pydantic import (
 
 
 class CampGroupInstanceSchemaBase(BaseModel):
-	pass
+	camp_instance_id: Optional[int] = None
+	camp_group_id: Optional[int] = None
+	year_end: Optional[int] = None
+	year_start: Optional[int] = None
 
 
 

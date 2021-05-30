@@ -10,7 +10,9 @@ from pydantic import (
 
 
 class SpngSurveysSpngSurveyQuestionsSchemaBase(BaseModel):
-	pass
+	spng_survey_id: Optional[int] = None
+	spng_survey_question_id: Optional[int] = None
+	included_in_db: Optional[bool] = None
 
 
 
@@ -25,7 +27,6 @@ class SpngSurveysSpngSurveyQuestionsSchemaUpdate(SpngSurveysSpngSurveyQuestionsS
 
 
 class SpngSurveysSpngSurveyQuestionsSchemaInDBBase(SpngSurveysSpngSurveyQuestionsSchemaBase):
-	id: int
 
 	class Config:
 		orm_mode = True

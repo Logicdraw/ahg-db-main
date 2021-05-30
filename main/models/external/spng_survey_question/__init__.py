@@ -74,35 +74,31 @@ class SpngSurveyQuestionModel(
 
 	use_answer_text_mappings = Column(Boolean)
 
-	if settings.USE_SQLITE_FOR_TESTING:
 
-		answer_text_mappings = Column(JSON)
+	shared_question_ids = Column(postgresql.ARRAY(Integer))
 
-	else:
-
-		shared_question_ids = Column(postgresql.ARRAY(Integer))
-
-		answer_text_mappings = Column(
-			mutable_json_type(
-				dbtype=JSONB,
-				nested=False,
-			)
+	answer_text_mappings = Column(
+		mutable_json_type(
+			dbtype=JSONB,
+			nested=False,
 		)
-		"""
-		Example:
+	)
+	
+	"""
+	Example:
 
-		answers = {
-			'no': 'False',
-			'yes': 'True',
-			'no_non': 'False',
-			'yes_oui': 'True',
-			'non': 'False',
-			'out': 'True',
-		}
-		# Always -- put booleans in capital strings --
-		# Pydantic will make the transition to boolean
-		# Pydantic - ...
-		"""
+	answers = {
+		'no': 'False',
+		'yes': 'True',
+		'no_non': 'False',
+		'yes_oui': 'True',
+		'non': 'False',
+		'out': 'True',
+	}
+	# Always -- put booleans in capital strings --
+	# Pydantic will make the transition to boolean
+	# Pydantic - ...
+	"""
 
 
 

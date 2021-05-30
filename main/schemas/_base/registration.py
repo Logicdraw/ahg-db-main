@@ -14,6 +14,7 @@ import datetime
 
 
 
+
 class RegistrationBaseSchemaBase(BaseModel):
 	placed_at_datetime: Optional[datetime.datetime] = None
 	comment: Optional[str] = None

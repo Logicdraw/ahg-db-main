@@ -10,7 +10,10 @@ from pydantic import (
 
 
 class GuardiansPlayersSchemaBase(BaseModel):
-	pass
+	guardian_id: Optional[int] = None
+	player_id: Optional[int] = None
+	role: Optional[str] = None
+	is_emergency_contact: Optional[bool] = None
 
 
 
@@ -25,7 +28,6 @@ class GuardiansPlayersSchemaUpdate(GuardiansPlayersSchemaBase):
 
 
 class GuardiansPlayersSchemaInDBBase(GuardiansPlayersSchemaBase):
-	id: int
 
 	class Config:
 		orm_mode = True

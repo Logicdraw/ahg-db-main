@@ -10,7 +10,10 @@ from pydantic import (
 
 
 class ProgramGroupInstanceSchemaBase(BaseModel):
-	pass
+	program_instance_id: Optional[int] = None
+	program_group_id: Optional[int] = None
+	year_start: Optional[int] = None
+	year_end: Optional[int] = None
 
 
 

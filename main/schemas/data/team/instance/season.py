@@ -10,7 +10,9 @@ from pydantic import (
 
 
 class SeasonInstanceSchemaBase(BaseModel):
-	pass
+	year_start: Optional[int] = None
+	year_end: Optional[int] = None
+	season_id: Optional[int] = None
 
 
 

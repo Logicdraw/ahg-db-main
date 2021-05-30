@@ -10,7 +10,7 @@ from pydantic import (
 
 
 class ProgramSchemaBase(BaseModel):
-	pass
+	name: Optional[str] = None
 
 
 

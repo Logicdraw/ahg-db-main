@@ -10,7 +10,8 @@ from pydantic import (
 
 
 class LeagueSchemaBase(BaseModel):
-	pass
+	season_id: Optional[int] = None
+	name: Optional[str] = None
 
 
 

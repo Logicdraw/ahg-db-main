@@ -9,7 +9,8 @@ from pydantic import (
 
 
 class CampGroupSchemaBase(BaseModel):
-	pass
+	name: Optional[str] = None
+	camp_id: Optional[int] = None
 
 
 

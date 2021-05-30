@@ -21,7 +21,7 @@ from main.schemas._base.spng_survey import (
 class SpngSurveyCampSchemaBase(
 	SpngSurveyBaseSchemaBase,
 ):
-	pass
+	default_camp_instance_id: Optional[int] = None
 
 
 

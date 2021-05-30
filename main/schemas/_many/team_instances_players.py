@@ -10,7 +10,11 @@ from pydantic import (
 
 
 class TeamInstancesPlayersSchemaBase(BaseModel):
-	pass
+	team_instance_id: Optional[int] = None
+	player_id: Optional[int] = None
+	comment: Optional[str] = None
+	position: Optional[str] = None
+	sponsors: Optional[str] = None
 
 
 

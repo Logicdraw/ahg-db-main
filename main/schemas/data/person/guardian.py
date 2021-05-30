@@ -10,8 +10,12 @@ from pydantic import (
 
 
 class GuardianSchemaBase(BaseModel):
-	pass
-
+	full_name: Optional[str] = None
+	mobile_phone: Optional[str] = None
+	home_phone: Optional[str] = None
+	work_phone: Optional[str] = None
+	email: Optional[EmailStr] = None
+	user_id: Optional[int] = None
 
 
 class GuardianSchemaCreate(GuardianSchemaBase):

@@ -10,7 +10,10 @@ from pydantic import (
 
 
 class FormEntryQuestionSchemaBase(BaseModel):
-	pass
+	form_id: Optional[int] = None
+	label: Optional[str] = None
+	type: Optional[str] = None
+	is_active: Optional[bool] = None
 
 
 
@@ -158,7 +161,8 @@ class FormQuestionTextareaSchemaInDB(
 class FormQuestionSelectSchemaBase(
 	FormQuestionSchemaBase,
 ):
-	pass
+	select_is_multiple: Optional[bool] = None
+	select_answers: Optional[str] = None
 
 
 
@@ -267,7 +271,7 @@ class FormQuestionCheckboxSchemaInDB(
 class FormQuestionRadioSchemaBase(
 	FormQuestionSchemaBase,
 ):
-	pass
+	radio_answers: Optional[Any] = None
 
 
 

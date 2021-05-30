@@ -10,7 +10,8 @@ from pydantic import (
 
 
 class TeamInstanceRegistrationJerseySponsorSchemaBase(BaseModel):
-	pass
+	name: Optional[str] = None
+	amount: Optional[float] = None
 
 
 

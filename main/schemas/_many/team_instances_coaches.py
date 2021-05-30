@@ -10,7 +10,9 @@ from pydantic import (
 
 
 class TeamInstancesCoachesSchemaBase(BaseModel):
-	pass
+	team_instance_id: Optional[int] = None
+	coach_id: Optional[int] = None
+	role: Optional[str] = None
 
 
 
@@ -25,7 +27,6 @@ class TeamInstancesCoachesSchemaUpdate(TeamInstancesCoachesSchemaBase):
 
 
 class TeamInstancesCoachesSchemaInDBBase(TeamInstancesCoachesSchemaBase):
-	id: int
 
 	class Config:
 		orm_mode = True

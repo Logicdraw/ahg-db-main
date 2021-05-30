@@ -1,4 +1,7 @@
-from typing import Optional
+from typing import (
+	Optional,
+	Any,
+)
 
 from pydantic import (
 	BaseModel,
@@ -10,7 +13,9 @@ from pydantic import (
 
 
 class FormEntryAnswerSchemaBase(BaseModel):
-	pass
+	entry_id: Optional[int] = None
+	question_id: Optional[int] = None
+	type: Optional[str] = None
 
 
 
@@ -52,7 +57,7 @@ class FormEntryAnswerSchemaInDB(FormEntryAnswerSchemaInDBBase):
 class FormEntryAnswerInputSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
-	pass
+	input_answer: Optional[str] = None
 
 
 
@@ -106,7 +111,7 @@ class FormEntryAnswerInputSchemaInDB(
 class FormEntryAnswerTextareaSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
-	pass
+	textarea_answer: Optional[str] = None
 
 
 
@@ -160,7 +165,7 @@ class FormEntryAnswerTextareaSchemaInDB(
 class FormEntryAnswerSelectSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
-	pass
+	select_selected: Optional[Any] = None
 
 
 
@@ -215,7 +220,7 @@ class FormEntryAnswerSelectSchemaInDB(
 class FormEntryAnswerCheckboxSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
-	pass
+	checkbox_checked: Optional[str] = None
 
 
 
@@ -269,7 +274,7 @@ class FormEntryAnswerCheckboxSchemaInDB(
 class FormEntryAnswerRadioSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
-	pass
+	radio_selected: Optional[Any] = None
 
 
 

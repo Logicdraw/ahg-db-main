@@ -79,6 +79,8 @@ class FormQuestionInputModel(FormQuestionModel):
 
 	id = Column(Integer, ForeignKey('form_questions.id'), primary_key=True)
 
+	# max length ... ?
+
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_inputs',
 		'polymorphic_load': 'inline', # inline correct
@@ -91,6 +93,8 @@ class FormQuestionTextareaModel(FormQuestionModel):
 	__tablename__ = 'form_question_textareas'
 
 	id = Column(Integer, ForeignKey('form_questions.id'), primary_key=True)
+
+	# max length ... ?
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_textareas',

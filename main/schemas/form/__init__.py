@@ -10,7 +10,10 @@ from pydantic import (
 
 
 class FormSchemaBase(BaseModel):
-	pass
+	title: Optional[str] = None
+	description: Optional[str] = None
+	has_deadline: Optional[bool] = None
+	deadline_on: Optional[str] = None
 
 
 

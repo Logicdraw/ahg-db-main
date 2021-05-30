@@ -10,7 +10,7 @@ from pydantic import (
 
 
 class CampSchemaBase(BaseModel):
-	pass
+	name: Optional[str] = None
 
 
 

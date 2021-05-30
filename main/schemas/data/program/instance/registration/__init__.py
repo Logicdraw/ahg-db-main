@@ -31,7 +31,9 @@ class ProgramInstanceRegistrationSchemaBase(
 	SpngRegistrationFinancialsBaseSchema,
 	PlayerRegistrationBaseSchema,
 ):
-	pass
+	program_instance_id: Optional[int] = None
+	program_instance_group_id: Optional[int] = None
+	spng_survey_id: Optional[int] = None
 
 
 

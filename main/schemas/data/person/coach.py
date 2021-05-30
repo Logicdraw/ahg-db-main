@@ -10,7 +10,9 @@ from pydantic import (
 
 
 class CoachSchemaBase(BaseModel):
-	pass
+	full_name: Optional[str] = None
+	email: Optional[EmailStr] = None
+	user_id: Optional[int] = None
 
 
 
