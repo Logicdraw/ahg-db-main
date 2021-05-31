@@ -28,3 +28,27 @@ def test_create_registration_base(
 	pass
 
 
+
+def test_get_registration_base(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+def test_update_registration_base(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+def test_delete_registration_base(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+
+
