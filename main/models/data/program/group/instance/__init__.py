@@ -40,6 +40,14 @@ class ProgramGroupInstanceModel(Base, ResourceMixin):
 	program_group_id = Column(Integer, ForeignKey('program_groups.id'))
 
 
+
+	registrations = relationship(
+		'ProgramInstanceRegistrationModel',
+		back_populates='program_group_instance',
+		lazy='selectin',
+	)
+
+
 	year_start = Column(Integer)
 
 	year_end = Column(Integer)

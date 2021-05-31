@@ -39,26 +39,29 @@ class PlayerModel(Base, ResourceMixin):
 		cascade='all, delete',
 	)
 
-	team_instance_registrations = relationship(
-		'TeamInstanceRegistrationModel',
-		back_populates='player',
-		lazy='selectin',
-		cascade='all, delete',
-	)
 
-	program_instance_registrations = relationship(
-		'ProgramInstanceRegistrationModel',
-		back_populates='player',
-		lazy='selectin',
-		cascade='all, delete',
-	)
+	# Change!!
 
-	camp_instance_registrations = relationship(
-		'CampInstanceRegistrationModel',
-		back_populates='player',
-		lazy='selectin',
-		cascade='all, delete',
-	)
+	# team_instance_registrations = relationship(
+	# 	'TeamInstanceRegistrationModel',
+	# 	back_populates='player',
+	# 	lazy='selectin',
+	# 	cascade='all, delete',
+	# )
+
+	# program_instance_registrations = relationship(
+	# 	'ProgramInstanceRegistrationModel',
+	# 	back_populates='player',
+	# 	lazy='selectin',
+	# 	cascade='all, delete',
+	# )
+
+	# camp_instance_registrations = relationship(
+	# 	'CampInstanceRegistrationModel',
+	# 	back_populates='player',
+	# 	lazy='selectin',
+	# 	cascade='all, delete',
+	# )
 
 
 	# Many - to - Many

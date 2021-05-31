@@ -41,6 +41,13 @@ class CampGroupInstanceModel(Base, ResourceMixin):
 	camp_group_id = Column(Integer, ForeignKey('camp_groups.id'))
 
 
+	registrations = relationship(
+		'CampInstanceRegistrationModel',
+		back_populates='camp_group_instance',
+		lazy='selectin',
+	)
+
+
 	year_start = Column(Integer)
 
 	year_end = Column(Integer)

@@ -8,8 +8,8 @@ from main.crud.data.team.conference import (
 )
 
 from main.schemas.data.team.conference import (
-	DivisionSchemaCreate,
-	DivisionSchemaUpdate,
+	ConferenceSchemaCreate,
+	ConferenceSchemaUpdate,
 )
 
 

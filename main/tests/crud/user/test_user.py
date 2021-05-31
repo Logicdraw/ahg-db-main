@@ -19,8 +19,11 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-@pytest.mark.asyncio()
+
+
+@pytest.mark.asyncio
 async def test_create_user(
 	db: AsyncSession,
 ) -> None:
@@ -30,10 +33,17 @@ async def test_create_user(
 
 	email = random_email()
 	password = random_lower_string()
+	confirm_password = password
 	name = random_name()
 	role = 'superadmin'
 
-	user_in = UserSchemaCreate(email=email, password=password, name=name)
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		confirm_password=confirm_password,
+		name=name,
+		role=role,
+	)
 	user = await user_crud.create(db=db, obj_in=user_in)
 
 
@@ -42,7 +52,8 @@ async def test_create_user(
 
 
 
-def test_get_user(
+@pytest.mark.asyncio
+async def test_get_user(
 	db: AsyncSession,
 ) -> None:
 	# Get User --
@@ -51,22 +62,24 @@ def test_get_user(
 
 
 
-def test_update_user(
+@pytest.mark.asyncio
+async def test_update_user(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_user(
+@pytest.mark.asyncio
+async def test_delete_user(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-
-def test_check_if_user_is_active(
+@pytest.mark.asyncio
+async def test_check_if_user_is_active(
 	db: AsyncSession,
 ) -> None:
 	"""
@@ -75,10 +88,17 @@ def test_check_if_user_is_active(
 
 	email = random_email()
 	password = random_lower_string()
+	confirm_password = password
 	name = random_name()
 
-	user_in = UserSchemaCreate(email=email, password=password, name=name, role='superuser')
-	user = user_crud.create(db=db, obj_in=user_in)
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		confirm_password=confirm_password,
+		name=name,
+		role='superadmin',
+	)
+	user = await user_crud.create(db=db, obj_in=user_in)
 
 	is_active = user_crud.is_active(user)
 
@@ -87,7 +107,8 @@ def test_check_if_user_is_active(
 
 
 
-def test_check_if_user_is_active_inactive(
+@pytest.mark.asyncio
+async def test_check_if_user_is_active_inactive(
 	db: AsyncSession,
 ) -> None:
 	"""
@@ -96,10 +117,17 @@ def test_check_if_user_is_active_inactive(
 
 	email = random_email()
 	password = random_lower_string()
+	confirm_password = password
 	name = random_name()
 
-	user_in = UserSchemaCreate(email=email, password=password, name=name, is_active=False)
-	user = user_crud.create(db=db, obj_in=user_in)
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		is_active=False,
+	)
+	user = await user_crud.create(db=db, obj_in=user_in)
 
 
 	is_active = user_crud.is_active(user)
@@ -111,7 +139,8 @@ def test_check_if_user_is_active_inactive(
 # Roles --
 
 
-def test_check_if_user_is_superadmin(
+@pytest.mark.asyncio
+async def test_check_if_user_is_superadmin(
 	db: AsyncSession,
 ) -> None:
 	# Check if user is superadmin --
@@ -119,7 +148,8 @@ def test_check_if_user_is_superadmin(
 	pass
 
 
-def test_check_if_user_is_admin(
+@pytest.mark.asyncio
+async def test_check_if_user_is_admin(
 	db: AsyncSession,
 ) -> None:
 	# Check if user is admin --
@@ -127,102 +157,107 @@ def test_check_if_user_is_admin(
 	pass
 
 
-
-def test_check_if_user_is_coach(
+@pytest.mark.asyncio
+async def test_check_if_user_is_coach(
 	db: AsyncSession,
 ) -> None:
 
 	pass
 
 
-
-def test_check_if_user_is_guardian(
+@pytest.mark.asyncio
+async def test_check_if_user_is_guardian(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-
-def test_check_if_user_is_superadmin_as_admin(
+@pytest.mark.asyncio
+async def test_check_if_user_is_superadmin_as_admin(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
-def test_check_if_user_is_superadmin_as_coach(
+@pytest.mark.asyncio
+async def test_check_if_user_is_superadmin_as_coach(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
-def test_check_if_user_is_superadmin_as_guardian(
-	db: AsyncSession,
-) -> None:
-	pass
-
-
-
-
-def test_check_if_user_is_admin_as_superadmin(
-	db: AsyncSession,
-) -> None:
-	pass
-
-
-def test_check_fi_user_is_admin_as_coach(
-	db: AsyncSession,
-) -> None:
-	pass
-
-
-def test_check_if_user_is_admin_as_guardian(
+@pytest.mark.asyncio
+async def test_check_if_user_is_superadmin_as_guardian(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-
-def test_check_if_user_is_coach_as_superadmin(
+@pytest.mark.asyncio
+async def test_check_if_user_is_admin_as_superadmin(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
-def test_check_if_user_is_coach_as_admin(
+@pytest.mark.asyncio
+async def test_check_fi_user_is_admin_as_coach(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
-def test_check_if_user_is_coach_as_guardian(
-	db: AsyncSession,
-) -> None:
-	pass
-
-
-
-
-def test_check_if_user_is_guardian_as_superadmin(
-	db: AsyncSession,
-) -> None:
-	pass
-
-
-def test_check_if_user_is_guardian_as_admin(
-	db: AsyncSession,
-) -> None:
-	pass
-
-
-def test_check_if_user_is_guardian_as_coach(
+@pytest.mark.asyncio
+async def test_check_if_user_is_admin_as_guardian(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
+@pytest.mark.asyncio
+async def test_check_if_user_is_coach_as_superadmin(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_coach_as_admin(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_coach_as_guardian(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_guardian_as_superadmin(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_guardian_as_admin(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_guardian_as_coach(
+	db: AsyncSession,
+) -> None:
+	pass
 
 
 

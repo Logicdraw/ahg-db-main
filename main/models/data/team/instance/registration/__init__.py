@@ -59,9 +59,20 @@ class TeamInstanceRegistrationModel(
 
 
 
+	jersey_sponsors = relationship(
+		'TeamInstanceRegistrationJerseySponsorModel',
+		back_populates='team_instance_registration',
+		lazy='selectin',
+	)
+
+	# sum jersey_sponsors total (quick function)
+
+
+
 	needs_jersey = Column(Boolean, default=False)
 
 	needs_socks = Column(Boolean, default=False)
+
 
 
 	# One - to - One
@@ -70,7 +81,6 @@ class TeamInstanceRegistrationModel(
 		back_populates='team_instance_registration',
 		uselist=False,
 	)
-
 
 
 

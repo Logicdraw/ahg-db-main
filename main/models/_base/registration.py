@@ -11,6 +11,8 @@ from sqlalchemy import (
 )
 
 
+from sqlalchemy.orm import relationship
+
 from lib.util_sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
@@ -48,6 +50,18 @@ class RegistrationBaseModel(
 	notes = Column(String)
 
 	type = Column(String(50))
+
+
+
+	player = relationship(
+		'PlayerModel',
+		back_populates='registrations',
+		uselist=False,
+	)
+	player_id = Column(
+		Integer,
+		ForeignKey('players.id'),
+	)
 
 
 	# ????

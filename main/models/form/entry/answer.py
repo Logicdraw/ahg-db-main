@@ -48,7 +48,7 @@ class FormEntryAnswerModel(Base, ResourceMixin):
 	entry_id = Column(Integer, ForeignKey('form_entries.id'))
 
 	question = relationship(
-		'FormEntryModel',
+		'FormQuestionModel',
 		back_populates='answers',
 		uselist=False,
 	)

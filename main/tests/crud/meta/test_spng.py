@@ -3,11 +3,11 @@ from fastapi.encoders import jsonable_encoder
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from main.crud.meta.gs import (
-	gs_meta_crud,
+from main.crud.meta.spng import (
+	spng_meta_crud,
 )
 
-from main.schemas.form import (
+from main.schemas.meta.spng import (
 	SpngMetaSchemaCreate,
 	SpngMetaSchemaUpdate,
 )

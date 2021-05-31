@@ -45,7 +45,7 @@ class FormEntryModel(
 	# which form ? id ...
 
 	answers = relationship(
-		'FormAnswerModel',
+		'FormEntryAnswerModel',
 		back_populates='entry',
 		lazy='selectin',
 	)

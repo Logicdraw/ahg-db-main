@@ -210,6 +210,15 @@ class Settings(BaseSettings):
 
 
 
+	USER_ROLES = [
+		'superadmin',
+		'admin',
+		'coach',
+		'guardian',
+	]
+
+
+
 	class Config:
 		case_sensitive = True
 

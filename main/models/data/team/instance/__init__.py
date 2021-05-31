@@ -40,31 +40,43 @@ class TeamInstanceModel(Base, ResourceMixin):
 
 	division_instance = relationship(
 		'DivisionInstanceModel',
-		back_populates='teams',
+		back_populates='team_instances',
 		uselist=False,
 	)
-	division_instance_id = Column(Integer, ForeignKey('division_instances.id'))
+	division_instance_id = Column(
+		Integer,
+		ForeignKey('division_instances.id'),
+	)
 
 	conference_instance = relationship(
 		'ConferenceInstanceModel',
-		back_populates='teams',
+		back_populates='team_instances',
 		uselist=False,
 	)
-	conference_instance_id = Column(Integer, ForeignKey('conference_instances.id'))
+	conference_instance_id = Column(
+		Integer,
+		ForeignKey('conference_instances.id'),
+	)
 
 	league_instance = relationship(
 		'LeagueInstanceModel',
-		back_populates='teams',
+		back_populates='team_instances',
 		uselist=False,
 	)
-	league_instance_id = Column(Integer, ForeignKey('league_instances.id'))
+	league_instance_id = Column(
+		Integer,
+		ForeignKey('league_instances.id'),
+	)
 
 	season_instance = relationship(
-		'ConferenceInstanceModel',
-		back_populates='teams',
+		'SeasonInstanceModel',
+		back_populates='team_instances',
 		uselist=False,
 	)
-	season_instance_id = Column(Integer, ForeignKey('season_instances.id'))
+	season_instance_id = Column(
+		Integer,
+		ForeignKey('season_instances.id'),
+	)
 
 
 

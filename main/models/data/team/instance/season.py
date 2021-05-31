@@ -37,27 +37,27 @@ class SeasonInstanceModel(Base, ResourceMixin):
 	season_id = Column(Integer, ForeignKey('seasons.id'))
 
 	
-	leagues = relationship(
+	league_instances = relationship(
 		'LeagueInstanceModel',
-		back_populates='season',
+		back_populates='season_instance',
 		lazy='selectin',
 	)
 
-	conferences = relationship(
+	conference_instances = relationship(
 		'ConferenceInstanceModel',
-		back_populates='season',
+		back_populates='season_instance',
 		lazy='selectin',
 	)
 
-	divisions = relationship(
+	division_instances = relationship(
 		'DivisionInstanceModel',
-		back_populates='season',
+		back_populates='season_instance',
 		lazy='selectin',
 	)
 
-	teams = relationship(
+	team_instances = relationship(
 		'TeamInstanceModel',
-		back_populates='season',
+		back_populates='season_instance',
 		lazy='selectin',
 	)
 

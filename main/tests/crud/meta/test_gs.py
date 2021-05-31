@@ -7,7 +7,7 @@ from main.crud.meta.gs import (
 	gs_meta_crud,
 )
 
-from main.schemas.form import (
+from main.schemas.meta.gs import (
 	GSMetaSchemaCreate,
 	GSMetaSchemaUpdate,
 )

@@ -35,7 +35,7 @@ class SpngSurveysSpngSurveyQuestionsModel(Base, ResourceMixin):
 
 
 	spng_survey = relationship(
-		'SpngSurveyModel',
+		'SpngSurveyBaseModel',
 		back_populates='spng_survey_questions',
 	)
 	spng_survey_question = relationship(

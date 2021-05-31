@@ -51,7 +51,7 @@ class FormQuestionModel(
 
 
 	answers = relationship(
-		'FormAnswerModel',
+		'FormEntryAnswerModel',
 		back_populates='question',
 		lazy='selectin',
 	)
