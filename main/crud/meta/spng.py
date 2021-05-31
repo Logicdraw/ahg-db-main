@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.meta.spng import SpngMetaModel
+from main.models.meta.spng import SpngMetaModel
 
-from app.schemas.meta.spng import (
+from main.schemas.meta.spng import (
 	SpngMetaSchemaCreate,
 	SpngMetaSchemaUpdate,
 )

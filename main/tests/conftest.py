@@ -1,71 +1,54 @@
+import asyncio
+
 import pytest
 
 
 from typing import (
 	Dict,
 	Generator,
+	Any,
+)
+
+# from httpx import AsyncClient
+
+from sqlalchemy.ext.asyncio import (
+	AsyncConnection,
+	AsyncSession,
 )
 
 
-# from fastapi.testclient import TestClient
+from main.config import settings
 
 
-# from main.config import settings
-
-
-# from main.database.testing.helpers import (
-# 	init_testing_db,
-# 	reset_testing_db,
-# 	# drop_testing_db,
-# 	create_testing_db_data,
-# )
-
-
-# from main.database.testing import (
-# 	SessionTesting,
-# )
-
-
-# from main.main import app
-
-
-# from main.api.deps import get_db
+from main.database.psql_async.testing.session import (
+	engine_psql_async_testing,
+)
 
 
 
-
-# def get_testing_db() -> Generator:
-# 	try:
-# 		db = SessionTesting()
-# 		yield db
-# 	finally:
-# 		db.close()
+@pytest.fixture()
+async def connection():
+	async with engine_psql_async_testing.begin() as conn:
+		yield conn
+		await conn.rollback()
 
 
-
-
-# @pytest.fixture(scope="session")
-# def db() -> Generator:
-# 	try:
-# 		db = SessionTesting()
-
-# 		# "Reset" db -- every session!
-
-# 		reset_testing_db(db=db)
-# 		create_testing_db_data(db=db)
-
-# 		yield db
-# 	finally:
-# 		db.close()
+@pytest.fixture()
+async def db(connection: AsyncConnection):
+	async with AsyncSession(connection, expire_on_commit=False) as _db:
+		yield _db
 
 
 
+@pytest.fixture(scope='session', autouse=True)
+def event_loop():
+	# Reference: https://github.com/pytest-dev/pytest-asyncio/issues/38#issuecomment-264418154 --
+	loop = asyncio.get_event_loop_policy().new_event_loop()
+	yield loop
+	loop.close()
 
 
 
-
-
-# # ...
 
 
 

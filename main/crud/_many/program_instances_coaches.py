@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models._many.program_instances_coaches import ProgramInstancesCoachesModel
+from main.models._many.program_instances_coaches import ProgramInstancesCoachesModel
 
-from app.schemas._many.program_instances_coaches import (
+from main.schemas._many.program_instances_coaches import (
 	ProgramInstancesCoachesSchemaCreate,
 	ProgramInstancesCoachesSchemaUpdate,
 )

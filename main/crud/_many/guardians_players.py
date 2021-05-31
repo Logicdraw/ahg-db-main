@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models._many.guardians_players import GuardiansPlayersModel
+from main.models._many.guardians_players import GuardiansPlayersModel
 
-from app.schemas._many.guardians_players import (
+from main.schemas._many.guardians_players import (
 	GuardiansPlayersSchemaCreate,
 	GuardiansPlayersSchemaUpdate,
 )

@@ -45,3 +45,4 @@ class CampInstanceSchemaInDB(CampInstanceSchemaInDBBase):
 	pass
 
 
+

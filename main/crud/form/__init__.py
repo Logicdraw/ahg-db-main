@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.form import FormModel
+from main.models.form import FormModel
 
-from app.schemas.data.form import (
+from main.schemas.form import (
 	FormSchemaCreate,
 	FormSchemaUpdate,
 )

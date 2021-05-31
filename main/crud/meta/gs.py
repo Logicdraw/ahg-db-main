@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.meta.gs import GSMetaModel
+from main.models.meta.gs import GSMetaModel
 
-from app.schemas.meta.gs import (
+from main.schemas.meta.gs import (
 	GSMetaSchemaCreate,
 	GSMetaSchemaUpdate,
 )

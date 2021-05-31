@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.camp.group.instance import CampGroupInstanceModel
+from main.models.data.camp.group.instance import CampGroupInstanceModel
 
-from app.schemas.data.camp.group.instance import (
+from main.schemas.data.camp.group.instance import (
 	CampGroupInstanceSchemaCreate,
 	CampGroupInstanceSchemaUpdate,
 )
@@ -39,7 +39,7 @@ class CRUDCampGroupInstance(
 
 
 
-camp_group_crud = CRUDCampGroupInstance(CampGroupInstanceModel)
+camp_group_instance_crud = CRUDCampGroupInstance(CampGroupInstanceModel)
 
 
 

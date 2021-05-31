@@ -16,17 +16,17 @@ from sqlalchemy import (
 )
 
 
-from app.security import (
+from main.security import (
 	get_password_hash,
 	verify_password,
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.user import UserModel
+from main.models.user import UserModel
 
-from app.schemas.user import (
+from main.schemas.user import (
 	UserSchemaCreate,
 	UserSchemaUpdate,
 )

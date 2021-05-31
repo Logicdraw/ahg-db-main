@@ -1,4 +1,7 @@
-from typing import Optional
+from typing import (
+	Optional,
+	Any,
+)
 
 from pydantic import (
 	BaseModel,
@@ -9,7 +12,7 @@ from pydantic import (
 
 
 
-class FormEntryQuestionSchemaBase(BaseModel):
+class FormQuestionSchemaBase(BaseModel):
 	form_id: Optional[int] = None
 	label: Optional[str] = None
 	type: Optional[str] = None
@@ -17,17 +20,17 @@ class FormEntryQuestionSchemaBase(BaseModel):
 
 
 
-class FormEntryQuestionSchemaCreate(FormEntryQuestionSchemaBase):
+class FormQuestionSchemaCreate(FormQuestionSchemaBase):
 	pass
 
 
 
-class FormEntryQuestionSchemaUpdate(FormEntryQuestionSchemaBase):
+class FormQuestionSchemaUpdate(FormQuestionSchemaBase):
 	pass
 
 
 
-class FormEntryQuestionSchemaInDBBase(FormEntryQuestionSchemaBase):
+class FormQuestionSchemaInDBBase(FormQuestionSchemaBase):
 	id: int
 
 	class Config:
@@ -35,12 +38,12 @@ class FormEntryQuestionSchemaInDBBase(FormEntryQuestionSchemaBase):
 
 
 
-class FormEntryQuestionSchema(FormEntryQuestionSchemaInDBBase):
+class FormQuestionSchema(FormQuestionSchemaInDBBase):
 	pass
 
 
 
-class FormEntryQuestionSchemaInDB(FormEntryQuestionSchemaInDBBase):
+class FormQuestionSchemaInDB(FormQuestionSchemaInDBBase):
 	pass
 
 

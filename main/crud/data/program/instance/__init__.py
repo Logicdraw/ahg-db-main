@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.program.instance import ProgramInstanceModel
+from main.models.data.program.instance import ProgramInstanceModel
 
-from app.schemas.data.program.instance import (
+from main.schemas.data.program.instance import (
 	ProgramInstanceSchemaCreate,
 	ProgramInstanceSchemaUpdate,
 )

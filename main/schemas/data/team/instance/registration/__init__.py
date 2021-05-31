@@ -66,7 +66,7 @@ class TeamInstanceRegistrationSchemaInDBBase(
 
 
 class TeamInstanceRegistrationSchema(
-	TeamInstanceRegistrationSchemaInDBBas,
+	TeamInstanceRegistrationSchemaInDBBase,
 	RegistrationBaseSchema,
 ):
 	pass

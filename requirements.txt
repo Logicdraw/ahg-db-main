@@ -1,4 +1,4 @@
--e git+https://github.com/Logicdraw/ahg-db.git@92769f4a903d78ec1206d4999b6d933db5d794a9#egg=ahg_db
+-e git+https://github.com/Logicdraw/ahg-db.git@64f4aa37b9a12accc590c25084ab5e44bc339504#egg=ahg_db
 aiomcache==0.6.0
 alembic==1.5.8
 amqp==5.0.6
@@ -21,6 +21,7 @@ distlib==0.3.1
 dnspython==2.1.0
 ecdsa==0.14.1
 email-validator==1.1.2
+fastapi==0.65.1
 fasteners==0.16
 filelock==3.0.12
 gcs-oauth2-boto-plugin==2.7
@@ -51,9 +52,10 @@ py==1.10.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
-pydantic==1.8.1
+pydantic==1.8.2
 pyOpenSSL==20.0.1
 pyparsing==2.4.7
+pytest==6.2.4
 python-dateutil==2.8.1
 python-dotenv==0.15.0
 python-editor==1.0.4
@@ -68,7 +70,7 @@ rsa==4.7.1
 six==1.15.0
 SQLAlchemy==1.4.15
 sqlalchemy-json==0.4.0
-starlette==0.13.6
+starlette==0.14.2
 timeago==1.0.15
 toml==0.10.2
 typing-extensions==3.7.4.3

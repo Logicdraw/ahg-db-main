@@ -37,7 +37,7 @@ class ProgramGroupModel(Base, ResourceMixin):
 
 
 	instances = relationship(
-		'ProgramInstanceGroupModel',
+		'ProgramGroupInstanceModel',
 		back_populates='program_group',
 		lazy='selectin',
 		cascade='all, delete',

@@ -16,10 +16,10 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
 
-from app.models.data.form.question import (
+from main.models.form.question import (
 	FormQuestionModel,
 	FormQuestionInputModel,
 	FormQuestionTextareaModel,
@@ -28,7 +28,7 @@ from app.models.data.form.question import (
 	FormQuestionRadioModel,
 )
 
-from app.schemas.data.form.question import (
+from main.schemas.form.question import (
 	FormQuestionSchemaCreate,
 	FormQuestionSchemaUpdate,
 	FormQuestionInputSchemaCreate,

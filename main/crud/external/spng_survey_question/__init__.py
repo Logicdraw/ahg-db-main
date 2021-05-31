@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.external.spng_survey_question import SpngSurveyQuestionModel
+from main.models.external.spng_survey_question import SpngSurveyQuestionModel
 
-from app.schemas.data.external.spng_survey_question import (
+from main.schemas.external.spng_survey_question import (
 	SpngSurveyQuestionSchemaCreate,
 	SpngSurveyQuestionSchemaUpdate,
 )

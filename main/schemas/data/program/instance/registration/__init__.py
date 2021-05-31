@@ -65,7 +65,7 @@ class ProgramInstanceRegistrationSchemaInDBBase(
 
 
 class ProgramInstanceRegistrationSchema(
-	ProgramInstanceRegistrationSchemaInDBBas,
+	ProgramInstanceRegistrationSchemaInDBBase,
 	RegistrationBaseSchema,
 ):
 	pass

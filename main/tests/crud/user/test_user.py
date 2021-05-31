@@ -20,8 +20,8 @@ from main.tests.utils import (
 
 
 
-
-def test_create_user(
+@pytest.mark.asyncio()
+async def test_create_user(
 	db: AsyncSession,
 ) -> None:
 	"""
@@ -31,9 +31,10 @@ def test_create_user(
 	email = random_email()
 	password = random_lower_string()
 	name = random_name()
+	role = 'superadmin'
 
 	user_in = UserSchemaCreate(email=email, password=password, name=name)
-	user = user_crud.create(db=db, obj_in=user_in)
+	user = await user_crud.create(db=db, obj_in=user_in)
 
 
 	assert user.email == email

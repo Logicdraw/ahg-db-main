@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.team.instance.orders.tracksuit import TeamInstanceTracksuitOrderModel
+from main.models.data.team.instance.orders.tracksuit import TeamInstanceTracksuitOrderModel
 
-from app.schemas.data.team.instance.orders.tracksuit import (
+from main.schemas.data.team.instance.orders.tracksuit import (
 	TeamInstanceTracksuitOrderSchemaCreate,
 	TeamInstanceTracksuitOrderSchemaUpdate,
 )

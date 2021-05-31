@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.team.instance.orders.jersey_socks import TeamInstanceJerseySocksOrderModel
+from main.models.data.team.instance.orders.jersey_socks import TeamInstanceJerseySocksOrderModel
 
-from app.schemas.data.team.instance.orders.jersey_socks import (
+from main.schemas.data.team.instance.orders.jersey_socks import (
 	TeamInstanceJerseySocksOrderSchemaCreate,
 	TeamInstanceJerseySocksOrderSchemaUpdate,
 )

@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.person.guardian import GuardianModel
+from main.models.data.person.guardian import GuardianModel
 
-from app.schemas.data.person.guardian import (
+from main.schemas.data.person.guardian import (
 	GuardianSchemaCreate,
 	GuardianSchemaUpdate,
 )

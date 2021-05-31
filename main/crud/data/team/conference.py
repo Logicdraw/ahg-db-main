@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.team.conference import ConferenceModel
+from main.models.data.team.conference import ConferenceModel
 
-from app.schemas.data.team.conference import (
+from main.schemas.data.team.conference import (
 	ConferenceSchemaCreate,
 	ConferenceSchemaUpdate,
 )

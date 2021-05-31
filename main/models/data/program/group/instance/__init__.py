@@ -18,9 +18,9 @@ from lib.util_sqlalchemy import (
 
 
 
-class ProgramInstanceGroupModel(Base, ResourceMixin):
+class ProgramGroupInstanceModel(Base, ResourceMixin):
 
-	__tablename__ = 'program_instance_groups'
+	__tablename__ = 'program_group_instances'
 
 	id = Column(Integer, primary_key=True)
 
@@ -33,7 +33,7 @@ class ProgramInstanceGroupModel(Base, ResourceMixin):
 	program_instance_id = Column(Integer, ForeignKey('program_instances.id'))
 
 	program_group = relationship(
-		'ProgramInstanceModel',
+		'ProgramGroupModel',
 		back_populates='instances',
 		uselist=False,
 	)

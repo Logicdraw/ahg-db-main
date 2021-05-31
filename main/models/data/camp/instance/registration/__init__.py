@@ -46,12 +46,12 @@ class CampInstanceRegistrationModel(
 
 
 	# Optional :) - nice dropdown on interface --
-	camp_instance_group = relationship(
-		'CampInstanceGroupModel',
+	camp_group_instance = relationship(
+		'CampGroupInstanceModel',
 		back_populates='registrations',
 		uselist=False,
 	)
-	camp_instance_group_id = Column(Integer, ForeignKey('camp_instance_groups.id'))
+	camp_group_instance_id = Column(Integer, ForeignKey('camp_group_instances.id'))
 
 
 

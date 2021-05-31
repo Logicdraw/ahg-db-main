@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.team.division import DivisionModel
+from main.models.data.team.division import DivisionModel
 
-from app.schemas.data.team.division import (
+from main.schemas.data.team.division import (
 	DivisionSchemaCreate,
 	DivisionSchemaUpdate,
 )

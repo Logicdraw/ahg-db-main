@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.team.instance.registration import TeamInstanceRegistrationModel
+from main.models.data.team.instance.registration import TeamInstanceRegistrationModel
 
-from app.schemas.data.team.instance.registration import (
+from main.schemas.data.team.instance.registration import (
 	TeamInstanceRegistrationSchemaCreate,
 	TeamInstanceRegistrationSchemaUpdate,
 )

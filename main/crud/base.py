@@ -19,7 +19,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from app.database.base import Base
+from main.database.base import Base
 
 
 

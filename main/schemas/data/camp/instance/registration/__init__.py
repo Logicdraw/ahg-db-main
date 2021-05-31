@@ -65,7 +65,7 @@ class CampInstanceRegistrationSchemaInDBBase(
 
 
 class CampInstanceRegistrationSchema(
-	CampInstanceRegistrationSchemaInDBBas,
+	CampInstanceRegistrationSchemaInDBBase,
 	RegistrationBaseSchema,
 ):
 	pass

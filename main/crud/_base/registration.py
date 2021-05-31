@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models._base.registration import RegistrationBaseModel
+from main.models._base.registration import RegistrationBaseModel
 
-from app.schemas._base.registration import (
+from main.schemas._base.registration import (
 	RegistrationBaseSchemaCreate,
 	RegistrationBaseSchemaUpdate,
 )

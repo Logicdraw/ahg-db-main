@@ -6,7 +6,7 @@ from main.crud._many.camp_instances_coaches import camp_instances_coaches_crud
 from main.crud._many.program_instances_coaches import program_instances_coaches_crud
 from main.crud._many.team_instances_coaches import team_instances_coaches_crud
 from main.crud._many.team_instances_players import team_instances_players_crud
-from main.crud._many.spng_surveys_spng_survey_questions import spng_surveys_question_spng_survey_questions_crud
+from main.crud._many.spng_surveys_spng_survey_questions import spng_surveys_spng_survey_questions_crud
 from main.crud._many.guardians_players import guardians_players_crud
 
 
@@ -38,8 +38,8 @@ from main.crud.data.team.instance.division import division_instance_crud
 from main.crud.data.team.instance.league import league_instance_crud
 from main.crud.data.team.instance.season import season_instance_crud
 
-from main.crud.data.team.instance.orders.jersey_socks import team_instance_registration_jersey_sponsor_crud
-from main.crud.data.team.instance.orders.tracksuit import team_instance_registration_tracksuit_crud
+from main.crud.data.team.instance.orders.jersey_socks import team_instance_jersey_socks_order_crud
+from main.crud.data.team.instance.orders.tracksuit import team_instance_tracksuit_order_crud
 
 from main.crud.data.team.instance.registration import team_instance_registration_crud
 from main.crud.data.team.instance.registration.jersey_sponsor import team_instance_registration_jersey_sponsor_crud

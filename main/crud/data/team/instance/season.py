@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.team.instance.season import SeasonInstanceModel
+from main.models.data.team.instance.season import SeasonInstanceModel
 
-from app.schemas.data.team.instance.season import (
+from main.schemas.data.team.instance.season import (
 	SeasonInstanceSchemaCreate,
 	SeasonInstanceSchemaUpdate,
 )

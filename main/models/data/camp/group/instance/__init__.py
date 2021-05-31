@@ -18,9 +18,9 @@ from lib.util_sqlalchemy import (
 
 
 
-class CampInstanceGroupModel(Base, ResourceMixin):
+class CampGroupInstanceModel(Base, ResourceMixin):
 
-	__tablename__ = 'camp_instance_groups'
+	__tablename__ = 'camp_group_instances'
 
 	id = Column(Integer, primary_key=True)
 

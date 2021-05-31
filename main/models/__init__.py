@@ -16,13 +16,13 @@ from main.models.data.person.player import PlayerModel
 
 from main.models.data.camp import CampModel
 from main.models.data.camp.group import CampGroupModel
-from main.models.data.camp.group.instance import CampInstanceGroupModel
+from main.models.data.camp.group.instance import CampGroupInstanceModel
 from main.models.data.camp.instance import CampInstanceModel
 from main.models.data.camp.instance.registration import CampInstanceRegistrationModel
 
 from main.models.data.program import ProgramModel
 from main.models.data.program.group import ProgramGroupModel
-from main.models.data.program.group.instance import ProgramInstanceGroupModel
+from main.models.data.program.group.instance import ProgramGroupInstanceModel
 from main.models.data.program.instance import ProgramInstanceModel
 from main.models.data.program.instance.registration import ProgramInstanceRegistrationModel
 

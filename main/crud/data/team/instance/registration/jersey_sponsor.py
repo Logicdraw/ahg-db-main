@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.team.instance.registration.jersey_sponsor import TeamInstanceRegistrationJerseySponsorModel
+from main.models.data.team.instance.registration.jersey_sponsor import TeamInstanceRegistrationJerseySponsorModel
 
-from app.schemas.data.team.instance.registration.jersey_sponsor import (
+from main.schemas.data.team.instance.registration.jersey_sponsor import (
 	TeamInstanceRegistrationJerseySponsorSchemaCreate,
 	TeamInstanceRegistrationJerseySponsorSchemaUpdate,
 )

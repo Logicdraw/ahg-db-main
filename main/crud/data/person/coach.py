@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.person.coach import CoachModel
+from main.models.data.person.coach import CoachModel
 
-from app.schemas.data.person.coach import (
+from main.schemas.data.person.coach import (
 	CoachSchemaCreate,
 	CoachSchemaUpdate,
 )

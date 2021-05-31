@@ -16,9 +16,9 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.form.entry.answer import (
+from main.models.form.entry.answer import (
 	FormEntryAnswerModel,
 	FormEntryAnswerInputModel,
 	FormEntryAnswerTextareaModel,
@@ -27,7 +27,7 @@ from app.models.data.form.entry.answer import (
 	FormEntryAnswerRadioModel,
 )
 
-from app.schemas.data.form.entry.answer import (
+from main.schemas.form.entry.answer import (
 	FormEntryAnswerSchemaCreate,
 	FormEntryAnswerSchemaUpdate,
 	FormEntryAnswerInputSchemaCreate,

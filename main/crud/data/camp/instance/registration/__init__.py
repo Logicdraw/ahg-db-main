@@ -16,11 +16,11 @@ from sqlalchemy import (
 )
 
 
-from app.crud.base import CRUDBase
+from main.crud.base import CRUDBase
 
-from app.models.data.camp.instance.registration import CampInstanceRegistrationModel
+from main.models.data.camp.instance.registration import CampInstanceRegistrationModel
 
-from app.schemas.data.camp.instance.registration import (
+from main.schemas.data.camp.instance.registration import (
 	CampInstanceRegistrationSchemaCreate,
 	CampInstanceRegistrationSchemaUpdate,
 )

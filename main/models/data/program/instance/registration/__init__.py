@@ -51,14 +51,14 @@ class ProgramInstanceRegistrationModel(
 	
 
 	# Optional :) - nice dropdown on interface --
-	program_instance_group = relationship(
-		'ProgramInstanceGroupModel',
+	program_group_instance = relationship(
+		'ProgramGroupInstanceModel',
 		back_populates='registrations',
 		uselist=False,
 	)
-	program_instance_group_id = Column(
+	program_group_instance_id = Column(
 		Integer,
-		ForeignKey('program_instance_groups.id'),
+		ForeignKey('program_group_instances.id'),
 	)
 
 
