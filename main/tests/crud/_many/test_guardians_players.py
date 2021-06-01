@@ -21,29 +21,37 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_guardian_player(
+
+
+
+@pytest.mark.asyncio
+async def test_create_guardian_player(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_guardian_player(
+@pytest.mark.asyncio
+async def test_get_guardian_player(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_guardian_player(
+@pytest.mark.asyncio
+async def test_update_guardian_player(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_guardian_player(
+@pytest.mark.asyncio
+async def test_delete_guardian_player(
 	db: AsyncSession,
 ) -> None:
 	pass

@@ -40,7 +40,7 @@ class PlayerModel(Base, ResourceMixin):
 	)
 
 
-	# Change!!
+	# Change!! -- column property ... ?
 
 	# team_instance_registrations = relationship(
 	# 	'TeamInstanceRegistrationModel',

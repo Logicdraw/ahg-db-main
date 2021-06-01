@@ -30,7 +30,7 @@ from main.database.psql_async.testing.session import (
 async def connection():
 	async with engine_psql_async_testing.begin() as conn:
 		yield conn
-		await conn.rollback()
+		await conn.rollback() # Resets db.
 
 
 @pytest.fixture()

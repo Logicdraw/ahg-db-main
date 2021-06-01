@@ -21,29 +21,36 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_league(
+
+
+@pytest.mark.asyncio
+async def test_create_league(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_league(
+@pytest.mark.asyncio
+async def test_get_league(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_league(
+@pytest.mark.asyncio
+async def test_update_league(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_league(
+@pytest.mark.asyncio
+async def test_delete_league(
 	db: AsyncSession,
 ) -> None:
 	pass

@@ -21,29 +21,36 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_form_question(
+
+
+@pytest.mark.asyncio
+async def test_create_form_question(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_form_question(
+@pytest.mark.asyncio
+async def test_get_form_question(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_form_question(
+@pytest.mark.asyncio
+async def test_update_form_question(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_form_question(
+@pytest.mark.asyncio
+async def test_delete_form_question(
 	db: AsyncSession,
 ) -> None:
 	pass

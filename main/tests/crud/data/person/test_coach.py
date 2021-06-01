@@ -21,29 +21,36 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_coach(
+
+
+@pytest.mark.asyncio
+async def test_create_coach(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_coach(
+@pytest.mark.asyncio
+async def test_get_coach(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_coach(
+@pytest.mark.asyncio
+async def test_update_coach(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_coach(
+@pytest.mark.asyncio
+async def test_delete_coach(
 	db: AsyncSession,
 ) -> None:
 	pass

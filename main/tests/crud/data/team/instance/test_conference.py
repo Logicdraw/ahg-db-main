@@ -21,29 +21,36 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_conference_instance(
+
+
+@pytest.mark.asyncio
+async def test_create_conference_instance(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_conference_instance(
+@pytest.mark.asyncio
+async def test_get_conference_instance(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_conference_instance(
+@pytest.mark.asyncio
+async def test_update_conference_instance(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_conference_instance(
+@pytest.mark.asyncio
+async def test_delete_conference_instance(
 	db: AsyncSession,
 ) -> None:
 	pass

@@ -3,13 +3,13 @@ from fastapi.encoders import jsonable_encoder
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from main.crud.data.person.guardian import (
-	guardian_crud,
+from main.crud.data.camp import (
+	camp_crud,
 )
 
-from main.schemas.data.person.guardian import (
-	GuardianSchemaCreate,
-	GuardianSchemaUpdate,
+from main.schemas.data.camp import (
+	CampSchemaCreate,
+	CampSchemaUpdate,
 )
 
 
@@ -21,29 +21,36 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_guardian(
+
+
+@pytest.mark.asyncio
+async def test_create_camp(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_guardian(
+@pytest.mark.asyncio
+async def test_get_camp(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_guardian(
+@pytest.mark.asyncio
+async def test_update_camp(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_guardian(
+@pytest.mark.asyncio
+async def test_delete_camp(
 	db: AsyncSession,
 ) -> None:
 	pass

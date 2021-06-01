@@ -21,29 +21,35 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_spng_meta(
+
+@pytest.mark.asyncio
+async def test_create_spng_meta(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_spng_meta(
+@pytest.mark.asyncio
+async def test_get_spng_meta(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_spng_meta(
+@pytest.mark.asyncio
+async def test_update_spng_meta(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_spng_meta(
+@pytest.mark.asyncio
+async def test_delete_spng_meta(
 	db: AsyncSession,
 ) -> None:
 	pass

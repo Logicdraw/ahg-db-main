@@ -21,29 +21,36 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_spng_survey_team(
+
+
+@pytest.mark.asyncio
+async def test_create_spng_survey_team(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_spng_survey_team(
+@pytest.mark.asyncio
+async def test_get_spng_survey_team(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_spng_survey_team(
+@pytest.mark.asyncio
+async def test_update_spng_survey_team(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_spng_survey_team(
+@pytest.mark.asyncio
+async def test_delete_spng_survey_team(
 	db: AsyncSession,
 ) -> None:
 	pass

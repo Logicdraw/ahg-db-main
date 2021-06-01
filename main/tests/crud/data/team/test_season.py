@@ -21,29 +21,36 @@ from main.tests.utils import (
 )
 
 
+import pytest
 
-def test_create_season(
+
+
+@pytest.mark.asyncio
+async def test_create_season(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_get_season(
+@pytest.mark.asyncio
+async def test_get_season(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_update_season(
+@pytest.mark.asyncio
+async def test_update_season(
 	db: AsyncSession,
 ) -> None:
 	pass
 
 
 
-def test_delete_season(
+@pytest.mark.asyncio
+async def test_delete_season(
 	db: AsyncSession,
 ) -> None:
 	pass
