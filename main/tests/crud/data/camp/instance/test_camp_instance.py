@@ -278,7 +278,7 @@ async def test_delete_camp_instance(
 	)
 
 
-	assert camp_instance_3
+	assert camp_instance_3 is None
 	assert camp_instance_2.id == camp_instance.id
 
 
@@ -319,7 +319,7 @@ async def test_delete_sync_camp_instance(
 	)
 
 
-	assert camp_instance_3
+	assert camp_instance_3 is None
 	assert camp_instance_2.id == camp_instance.id
 
 
