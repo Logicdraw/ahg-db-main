@@ -10,7 +10,7 @@ from sqlalchemy import (
 
 from sqlalchemy.orm import (
 	relationship,
-	column_property,
+	# column_property,
 )
 
 from main.database.base_class import Base
@@ -19,6 +19,13 @@ from lib.util_sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
 )
+
+
+from sqlalchemy.ext.hybrid import (
+	hybrid_property,
+	hybrid_method,
+)
+
 
 
 
@@ -86,8 +93,6 @@ class PlayerModel(Base, ResourceMixin):
 
 	last_name = Column(String, index=True)
 
-	full_name = column_property(first_name + ' ' + last_name)
-
 
 	date_of_birth = Column(Date, index=True)
 
@@ -123,6 +128,13 @@ class PlayerModel(Base, ResourceMixin):
 
 	# Parents
 
+
+
+	@hybrid_property
+	def full_name(self):
+		return f'{self.first_name} {self.last_name}'
+
+	
 
 
 

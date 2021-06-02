@@ -1,17 +1,6 @@
 # For testing purposes ONLY --- !
+# All real AUTH will be done through AUTH Microservice -- !!!
 
-from datetime import (
-	datetime,
-	timedelta,
-)
-
-from typing import (
-	Any,
-	Union,
-)
-
-
-from jose import jwt
 
 from passlib.context import CryptContext
 

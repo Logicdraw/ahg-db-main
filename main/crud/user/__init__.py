@@ -145,7 +145,7 @@ class CRUDUser(
 
 
 		result = super().\
-					update(
+					update_sync(
 						db=db,
 						db_obj=db_obj,
 						obj_in=update_data,

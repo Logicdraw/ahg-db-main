@@ -48,11 +48,13 @@ class ProgramInstancesCoachesModel(Base, ResourceMixin):
 	program_instance = relationship(
 		'ProgramInstanceModel',
 		back_populates='coaches',
+		uselist=False,
 	)
 
 	coach = relationship(
 		'CoachModel',
 		back_populates='program_instances',
+		uselist=False,
 	)
 
 

@@ -188,8 +188,8 @@ async def test_update_guardian(
 
 	guardian_2 = await guardian_crud.update(
 		db=db,
-		db_obj=coach,
-		obj_in=coach_in_update,
+		db_obj=guardian,
+		obj_in=guardian_in_update,
 	)
 
 	assert guardian_2

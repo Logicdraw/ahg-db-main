@@ -51,11 +51,13 @@ class GuardiansPlayersModel(Base, ResourceMixin):
 	guardian = relationship(
 		'GuardianModel',
 		back_populates='players',
+		uselist=False,
 	)
 
 	player = relationship(
 		'PlayerModel',
 		back_populates='guardians',
+		uselist=False,
 	)
 
 

@@ -47,11 +47,13 @@ class CampInstancesCoachesModel(Base, ResourceMixin):
 	camp_instance = relationship(
 		'CampInstanceModel',
 		back_populates='coaches',
+		uselist=False,
 	)
 
 	coach = relationship(
 		'CoachModel',
 		back_populates='camp_instances',
+		uselist=False,
 	)
 
 

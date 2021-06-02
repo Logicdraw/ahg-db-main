@@ -57,15 +57,15 @@ class CRUDTeamInstancesPlayers(
 		self,
 		db: AsyncSession,
 		team_instance_id: int,
-		coach_id: int,
-	) -> Optional[TeamInstancesCoachesModel]:
+		player_id: int,
+	) -> Optional[TeamInstancesPlayersModel]:
 		# --
 
 		result = db.execute(
-			select(TeamInstancesCoachesModel).\
+			select(TeamInstancesPlayersModel).\
 			filter_by(
 				team_instance_id=team_instance_id,
-				coach_id=coach_id,
+				player_id=player_id,
 			)
 		)
 
