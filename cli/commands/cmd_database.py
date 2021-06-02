@@ -109,16 +109,10 @@ def init_sqlite_dev() -> None:
 
 	# settings.USE_SQLITE_FOR_TESTING = True
 
-	db = SessionSQLiteDev()
-	try:
-		init_sqlite_db(
-			engine_sqlite=engine_sqlite_dev,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	init_sqlite_db(
+		engine_sqlite=engine_sqlite_dev,
+	)
+
 
 	logger.info('Finished initializing SQLITE DEV database!')
 
@@ -137,16 +131,9 @@ def init_sqlite_testing() -> None:
 
 	# settings.USE_SQLITE_FOR_TESTING = True
 
-	db = SessionSQLiteTesting()
-	try:
-		init_sqlite_db(
-			engine_sqlite=engine_sqlite_testing,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	init_sqlite_db(
+		engine_sqlite=engine_sqlite_testing,
+	)
 
 	logger.info('Finished initializing SQLITE TESTING database!')
 
@@ -163,16 +150,10 @@ def init_psql_testing() -> None:
 
 	logger.info('Initializing PSQL TESTING database!')
 
-	db = SessionPSQLTesting()
-	try:
-		init_psql_db(
-			engine_psql=engine_psql_testing,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	init_psql_db(
+		engine_psql=engine_psql_testing,
+	)
+
 
 	logger.info('Finished initializing PSQL TESTING database!')
 
@@ -188,16 +169,10 @@ def init_psql_dev() -> None:
 
 	logger.info('Initializing PSQL DEV database!')
 
-	db = SessionPSQLDev()
-	try:
-		init_psql_db(
-			engine_psql=engine_psql_dev,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+
+	init_psql_db(
+		engine_psql=engine_psql_dev,
+	)
 
 	logger.info('Finished initializing PSQL DEV database!')
 
@@ -217,16 +192,9 @@ def init_psql_prod(password) -> None:
 
 	logger.info('Initializing PSQL PROD database!')
 
-	db = SessionPSQLProd()
-	try:
-		init_psql_db(
-			engine_psql=engine_psql_prod,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	init_psql_db(
+		engine_psql=engine_psql_prod,
+	)
 
 	logger.info('Finished initializing PSQL PROD database!')
 
@@ -302,16 +270,9 @@ def reset_sqlite_dev() -> None:
 
 	# settings.USE_SQLITE_FOR_TESTING = True
 
-	db = SessionSQLiteDev()
-	try:
-		reset_sqlite_db(
-			engine_sqlite=engine_sqlite_dev,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	reset_sqlite_db(
+		engine_sqlite=engine_sqlite_dev,
+	)
 
 	logger.info('Finished resetting SQLITE DEV database!')
 
@@ -330,16 +291,9 @@ def reset_sqlite_testing() -> None:
 
 	# settings.USE_SQLITE_FOR_TESTING = True
 
-	db = SessionSQLiteTesting()
-	try:
-		reset_sqlite_db(
-			engine_sqlite=engine_sqlite_testing,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	reset_sqlite_db(
+		engine_sqlite=engine_sqlite_testing,
+	)
 
 	logger.info('Finished resetting SQLITE TESTING database!')
 
@@ -357,16 +311,9 @@ def reset_psql_testing() -> None:
 
 	logger.info('Resetting PSQL TESTING database!')
 
-	db = SessionPSQLTesting()
-	try:
-		reset_sqlite_db(
-			engine_sqlite=engine_psql_testing,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	reset_sqlite_db(
+		engine_sqlite=engine_psql_testing,
+	)
 
 	logger.info('Finished resetting PSQL TESTING database!')
 
@@ -382,16 +329,9 @@ def reset_psql_dev() -> None:
 
 	logger.info('Resetting PSQL DEV database!')
 
-	db = SessionPSQLDev()
-	try:
-		reset_sqlite_db(
-			engine_sqlite=engine_psql_dev,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	reset_sqlite_db(
+		engine_sqlite=engine_psql_dev,
+	)
 
 	logger.info('Finished resetting PSQL DEV database!')
 
@@ -411,16 +351,11 @@ def reset_psql_prod(password) -> None:
 
 	logger.info('Resetting PSQL PROD database!')
 
-	db = SessionPSQLProd()
-	try:
-		reset_prod_db(
-			engine_psql=engine_psql_prod,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+
+	reset_prod_db(
+		engine_psql=engine_psql_prod,
+	)
+
 
 	logger.info('Finished resetting PSQL PROD database!')
 
@@ -495,16 +430,9 @@ def drop_sqlite_dev() -> None:
 
 	# settings.USE_SQLITE_FOR_TESTING = True
 
-	db = SessionSQLiteDev()
-	try:
-		drop_sqlite_db(
-			engine_sqlite=engine_sqlite_dev,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	drop_sqlite_db(
+		engine_sqlite=engine_sqlite_dev,
+	)
 
 	logger.info('Finished dropping SQLITE DEV database!')
 
@@ -522,16 +450,9 @@ def drop_sqlite_testing() -> None:
 
 	# settings.USE_SQLITE_FOR_TESTING = True
 
-	db = SessionPSQLDev()
-	try:
-		drop_sqlite_db(
-			engine_sqlite=engine_sqlite_testing,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	drop_sqlite_db(
+		engine_sqlite=engine_sqlite_testing,
+	)
 
 	logger.info('Finished dropping SQLITE TESTING database!')
 
@@ -548,16 +469,10 @@ def drop_psql_testing() -> None:
 
 	logger.info('Dropping PSQL TESTING database!')
 
-	db = SessionPSQLTesting()
-	try:
-		drop_psql_db(
-			engine_psql=engine_psql_testing,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+
+	drop_psql_db(
+		engine_psql=engine_psql_testing,
+	)
 
 	logger.info('Finished dropping PSQL TESTING database!')
 
@@ -573,16 +488,11 @@ def drop_psql_dev() -> None:
 
 	logger.info('Dropping PSQL DEV database!')
 
-	db = SessionPSQLDev()
-	try:
-		drop_psql_db(
-			engine_psql=engine_psql_dev,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+
+	drop_psql_db(
+		engine_psql=engine_psql_dev,
+	)
+
 
 	logger.info('Finished dropping PSQL DEV database!')
 
@@ -604,16 +514,9 @@ def drop_psql_prod(password) -> None:
 
 	logger.info('Dropping PSQL PROD database!')
 
-	db = SessionPSQLProd()
-	try:
-		drop_psql_db(
-			engine_psql=engine_psql_prod,
-		)
-	except:
-		db.rollback()
-		raise
-	finally:
-		db.close()
+	drop_psql_db(
+		engine_psql=engine_psql_prod,
+	)
 
 	logger.info('Finished dropping PSQL PROD database!')
 
@@ -744,9 +647,3 @@ cli.add_command(drop_psql_async_prod)
 
 
 
-
-# import asyncio
-
-# asyncio.run(init_db())
-# asyncio.run(drop_db())
-# asyncio.run(reset_db())

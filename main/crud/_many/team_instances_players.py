@@ -73,7 +73,6 @@ class CRUDTeamInstancesPlayers(
 
 
 
-
 team_instances_players_crud = CRUDTeamInstancesPlayers(TeamInstancesPlayersModel)
 
 
