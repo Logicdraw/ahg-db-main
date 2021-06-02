@@ -54,7 +54,7 @@ class SpngSurveyQuestionModel(
 		'SpngSurveyQuestionTableMapModel',
 		back_populates='spng_survey_question',
 		lazy='selectin',
-		cascade='all, delete', # Correct > ???
+		cascade='delete', # Correct > ???
 	)
 
 

@@ -44,7 +44,7 @@ class CampInstanceModel(Base, ResourceMixin):
 		'CampGroupInstanceModel',
 		back_populates='camp_instance',
 		lazy='selectin',
-		cascade='all, delete',
+		cascade='delete',
 	)
 
 	coaches = relationship(

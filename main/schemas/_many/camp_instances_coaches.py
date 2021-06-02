@@ -17,7 +17,8 @@ class CampInstancesCoachesSchemaBase(BaseModel):
 
 
 class CampInstancesCoachesSchemaCreate(CampInstancesCoachesSchemaBase):
-	pass
+	camp_instance_id: int
+	coach_id: int
 
 
 

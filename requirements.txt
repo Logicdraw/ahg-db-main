@@ -1,9 +1,11 @@
--e git+https://github.com/Logicdraw/ahg-db.git@b8c10f30a5d34fde75c5d6edd5f4112758fa70f8#egg=ahg_db
+-e git+https://github.com/Logicdraw/ahg-db.git@32fd39eec3f3123254be13192fa8932b3589362a#egg=ahg_db
+aiohttp==3.7.4.post0
 aiomcache==0.6.0
 alembic==1.5.8
 amqp==5.0.6
 appdirs==1.4.4
 argcomplete==1.12.2
+async-timeout==3.0.1
 asyncio==3.4.3
 asyncpg==0.23.0
 attrs==20.3.0
@@ -46,6 +48,7 @@ MarkupSafe==1.1.1
 MiniMock==1.2.8
 mock==2.0.0
 monotonic==1.5
+multidict==5.1.0
 oauth2client==4.1.3
 packaging==20.9
 passlib==1.7.4
@@ -90,3 +93,4 @@ uvicorn==0.13.4
 vine==5.0.0
 virtualenv==20.1.0
 wcwidth==0.2.5
+yarl==1.6.3

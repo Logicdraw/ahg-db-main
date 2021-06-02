@@ -11,6 +11,7 @@ from main.config import settings
 engine_psql_prod = create_engine(
 	settings.PSQL_PROD_URI,
 	pool_pre_ping=True,
+	echo=True,
 )
 
 

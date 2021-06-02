@@ -32,13 +32,13 @@ class ProgramModel(Base, ResourceMixin):
 		'ProgramInstanceModel',
 		back_populates='program',
 		lazy='selectin',
-		cascade='all, delete',
+		cascade='delete',
 	)
 
 	groups = relationship(
 		'ProgramGroupModel',
 		back_populates='program',
 		lazy='selectin',
-		cascade='all, delete',
+		cascade='delete',
 	)
 

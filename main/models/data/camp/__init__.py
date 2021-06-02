@@ -32,13 +32,13 @@ class CampModel(Base, ResourceMixin):
 		'CampInstanceModel',
 		back_populates='camp',
 		lazy='selectin',
-		cascade='all, delete',
+		cascade='delete',
 	)
 
 	groups = relationship(
 		'CampGroupModel',
 		back_populates='camp',
 		lazy='selectin',
-		cascade='all, delete',
+		cascade='delete',
 	)
 

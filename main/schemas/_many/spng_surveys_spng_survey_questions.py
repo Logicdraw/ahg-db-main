@@ -17,7 +17,8 @@ class SpngSurveysSpngSurveyQuestionsSchemaBase(BaseModel):
 
 
 class SpngSurveysSpngSurveyQuestionsSchemaCreate(SpngSurveysSpngSurveyQuestionsSchemaBase):
-	pass
+	spng_survey_id: int
+	spng_survey_question_id: int
 
 
 

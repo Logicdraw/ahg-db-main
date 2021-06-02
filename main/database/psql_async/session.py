@@ -28,6 +28,7 @@ elif settings.PRODUCTION:
 engine_psql_async = create_async_engine(
 	SQLALCHEMY_URI,
 	pool_pre_ping=True,
+	echo=True,
 )
 
 

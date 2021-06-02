@@ -20,6 +20,7 @@ elif settings.PRODUCTION:
 engine_psql = create_engine(
 	SQLALCHEMY_URI,
 	pool_pre_ping=True,
+	echo=True,
 )
 
 

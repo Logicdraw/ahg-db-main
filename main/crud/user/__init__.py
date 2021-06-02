@@ -65,6 +65,27 @@ class CRUDUser(
 		return db_obj
 
 
+	def create_sync(
+		self,
+		db: AsyncSession,
+		*,
+		obj_in: UserSchemaCreate,
+	) -> UserModel:
+		# Create Sync --
+
+		db_obj = UserModel(
+			email=obj_in.email,
+			password_hash=get_password_hash(obj_in.password),
+			name=obj_in.name,
+			role=obj_in.role,
+		)
+
+		db.add(db_obj)
+
+		db.commit()
+
+		return db_obj
+
 
 	async def update(
 		self,
@@ -74,6 +95,40 @@ class CRUDUser(
 		obj_in: Union[UserSchemaUpdate, Dict[str, Any]],
 	) -> UserModel:
 		# Update --
+
+		if isinstance(obj_in, dict):
+			update_data = obj_in
+		else:
+			update_data = obj_in.dict(exclude_unset=True)
+
+		try:
+			if update_data['password']:
+				password_hash = get_password_hash(update_data['password'])
+				del update_data['password']
+				update_data['password_hash'] = password_hash
+		except KeyError:
+			pass
+
+
+		result = await super().\
+						update(
+							db=db,
+							db_obj=db_obj,
+							obj_in=update_data,
+						)
+
+		return result
+
+
+
+	def update_sync(
+		self,
+		db: AsyncSession,
+		*,
+		db_obj: UserModel,
+		obj_in: Union[UserSchemaUpdate, Dict[str, Any]],
+	) -> UserModel:
+		# Update Sync --
 
 		if isinstance(obj_in, dict):
 			update_data = obj_in
@@ -118,6 +173,23 @@ class CRUDUser(
 		return result.scalars().first()
 
 
+	def get_by_email_sync(
+		self,
+		db: AsyncSession,
+		*,
+		email: str,
+	) -> Optional[UserModel]:
+		# Get by email Sync --
+
+		result = db.execute(
+			select(UserModel).\
+			filter(
+				func.lower(UserModel.email) == func.lower(email),
+			)
+		)
+
+		return result.scalars().first()
+
 
 	async def authenticate(
 		self,
@@ -128,7 +200,7 @@ class CRUDUser(
 	) -> Optional[UserModel]:
 		# Authenticate --
 
-		user = self.get_by_email(db=db, email=email)
+		user = await self.get_by_email(db=db, email=email)
 
 		if not user:
 			return None
@@ -139,6 +211,26 @@ class CRUDUser(
 
 		return user
 
+
+	def authenticate_sync(
+		self,
+		db: AsyncSession,
+		*,
+		email: str,
+		password: str,
+	) -> Optional[UserModel]:
+		# Authenticate Sync --
+
+		user = self.get_by_email_sync(db=db, email=email)
+
+		if not user:
+			return None
+
+		if not verify_password(password, user.password_hash):
+			return None
+
+
+		return user
 
 
 	def is_active(

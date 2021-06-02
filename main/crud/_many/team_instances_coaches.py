@@ -53,6 +53,25 @@ class CRUDTeamInstancesCoaches(
 		return result.scalars().first()
 
 
+	def get_sync(
+		self,
+		db: AsyncSession,
+		team_instance_id: int,
+		coach_id: int,
+	) -> Optional[TeamInstancesCoachesModel]:
+		# --
+
+		result = db.execute(
+			select(TeamInstancesCoachesModel).\
+			filter_by(
+				team_instance_id=team_instance_id,
+				coach_id=coach_id,
+			)
+		)
+
+		return result.scalars().first()
+
+
 
 
 team_instances_coaches_crud = CRUDTeamInstancesCoaches(TeamInstancesCoachesModel)

@@ -65,6 +65,22 @@ class CRUDBase(
 		return result.scalars().first()
 
 
+	def get_sync(
+		self,
+		db: AsyncSession,
+		*args,
+		**kwargs,
+	) -> Optional[ModelType]:
+		# Get Sync --
+
+		result = db.execute(
+			select(self.model).\
+			filter(*args).\
+			filter_by(**kwargs)
+		)
+
+		return result.scalars().first()
+
 
 	async def get_multi(
 		self,
@@ -88,6 +104,28 @@ class CRUDBase(
 
 
 
+	def get_multi_sync(
+		self,
+		db: AsyncSession,
+		*args,
+		offset: int = 0,
+		limit: int = 100,
+		**kwargs,
+	) -> List[ModelType]:
+		# Get Multi Sync --
+
+		result = db.execute(
+			select(self.model).\
+			filter(*args).\
+			filter_by(**kwargs).\
+			offset(offset).\
+			limit(limit)
+		)
+
+		return result.scalars().all()
+
+
+
 	async def create(
 		self,
 		db: AsyncSession,
@@ -95,7 +133,10 @@ class CRUDBase(
 	) -> ModelType:
 		# Create --
 
-		obj_in_data = jsonable_encoder(obj_in)
+		# obj_in_data = jsonable_encoder(obj_in)
+
+		# ...?
+		obj_in_data = obj_in.dict()
 
 		db_obj = self.model(**obj_in_data)
 
@@ -104,6 +145,26 @@ class CRUDBase(
 		await db.commit()
 
 		return db_obj
+
+
+
+	def create_sync(
+		self,
+		db: AsyncSession,
+		obj_in: CreateSchemaType,
+	) -> ModelType:
+		# Create Sync --
+
+		obj_in_data = obj_in.dict()
+
+		db_obj = self.model(**obj_in_data)
+
+		db.add(db_obj)
+
+		db.commit()
+
+		return db_obj
+
 
 
 	async def update(
@@ -119,7 +180,8 @@ class CRUDBase(
 
 		if db_obj is not None:
 
-			obj_data = db_obj.dict()
+			# ...? 
+			obj_data = jsonable_encoder(db_obj.as_dict())
 
 			if isinstance(obj_in, dict):
 				update_data = obj_in
@@ -143,6 +205,44 @@ class CRUDBase(
 
 
 
+	def update_sync(
+		self,
+		db: AsyncSession,
+		obj_in: Union[UpdateSchemaType, Dict[str, Any]],
+		db_obj: Optional[ModelType] = None,
+		**kwargs,
+	) -> Optional[ModelType]:
+		# Update Sync --
+
+		db_obj = db_obj or self.get_sync(session, **kwargs)
+
+		if db_obj is not None:
+
+			# ...? 
+			obj_data = jsonable_encoder(db_obj.as_dict())
+
+			if isinstance(obj_in, dict):
+				update_data = obj_in
+			else:
+				update_data = obj_in.dict(
+					exclude_unset=True,
+				)
+			for field in obj_data:
+				if field in update_data:
+					setattr(
+						db_obj,
+						field,
+						update_data[field],
+					)
+
+			db.add(db_obj)
+
+			db.commit()
+
+		return db_obj
+
+
+
 	async def delete(
 		self,
 		db: AsyncSession,
@@ -154,7 +254,6 @@ class CRUDBase(
 		# Explain ... ?
 		db_obj = db_obj or await self.get(
 			db,
-			*args,
 			**kwargs,
 		)
 
@@ -162,6 +261,30 @@ class CRUDBase(
 		await db.commit()
 
 		return db_obj
+
+
+
+	def delete_sync(
+		self,
+		db: AsyncSession,
+		db_obj: Optional[ModelType] = None,
+		**kwargs,
+	) -> ModelType:
+		# Delete Sync --
+
+		# Explain ... ?
+		db_obj = db_obj or self.get_sync(
+			db,
+			**kwargs,
+		)
+
+		db.delete(db_obj)
+		db.commit()
+
+		return db_obj
+
+
+
 
 
 

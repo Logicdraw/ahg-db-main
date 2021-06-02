@@ -34,21 +34,21 @@ class CoachModel(Base, ResourceMixin):
 		'TeamInstancesCoachesModel',
 		back_populates='coach',
 		lazy='selectin',
-		cascade='all, delete-orphan',
+		cascade='delete',
 	)
 
 	camp_instances = relationship(
 		'CampInstancesCoachesModel',
 		back_populates='coach',
 		lazy='selectin',
-		cascade='all, delete-orphan',
+		cascade='delete',
 	)
 
 	program_instances = relationship(
 		'ProgramInstancesCoachesModel',
 		back_populates='coach',
 		lazy='selectin',
-		cascade='all, delete-orphan',
+		cascade='delete',
 	)
 
 

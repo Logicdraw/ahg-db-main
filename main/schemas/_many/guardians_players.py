@@ -18,7 +18,8 @@ class GuardiansPlayersSchemaBase(BaseModel):
 
 
 class GuardiansPlayersSchemaCreate(GuardiansPlayersSchemaBase):
-	pass
+	guardian_id: int
+	player_id: int
 
 
 

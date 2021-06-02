@@ -19,8 +19,8 @@ class TeamInstancesPlayersSchemaBase(BaseModel):
 
 
 class TeamInstancesPlayersSchemaCreate(TeamInstancesPlayersSchemaBase):
-	pass
-
+	team_instance_id: int
+	player_id: int
 
 
 class TeamInstancesPlayersSchemaUpdate(TeamInstancesPlayersSchemaBase):

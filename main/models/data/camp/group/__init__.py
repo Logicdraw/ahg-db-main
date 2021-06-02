@@ -40,7 +40,7 @@ class CampGroupModel(Base, ResourceMixin):
 		'CampGroupInstanceModel',
 		back_populates='camp_group',
 		lazy='selectin',
-		cascade='all, delete',
+		cascade='delete',
 	)
 
 

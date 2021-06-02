@@ -25,10 +25,24 @@ import pytest
 
 
 
+
+
 @pytest.mark.asyncio
 async def test_create_camp_instance_coach(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_camp_instance_coach(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -37,6 +51,18 @@ async def test_create_camp_instance_coach(
 async def test_get_camp_instance_coach(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_get_sync_camp_instance_coach(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -45,6 +71,18 @@ async def test_get_camp_instance_coach(
 async def test_update_camp_instance_coach(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_update_sync_camp_instance_coach(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -53,6 +91,18 @@ async def test_update_camp_instance_coach(
 async def test_delete_camp_instance_coach(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_camp_instance_coach(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 

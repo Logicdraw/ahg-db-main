@@ -40,7 +40,7 @@ class ProgramGroupModel(Base, ResourceMixin):
 		'ProgramGroupInstanceModel',
 		back_populates='program_group',
 		lazy='selectin',
-		cascade='all, delete',
+		cascade='delete',
 	)
 
 

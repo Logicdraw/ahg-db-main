@@ -16,6 +16,7 @@ engine_sqlite_testing = create_engine(
 	connect_args={
 		'check_same_thread': False,
 	},
+	echo=True,
 )
 
 

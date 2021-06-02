@@ -18,7 +18,10 @@ elif settings.TESTING:
 
 engine_sqlite = create_engine(
 	SQLALCHEMY_URI,
-	connect_args={"check_same_thread": False},
+	connect_args={
+		"check_same_thread": False
+	},
+	echo=True,
 )
 
 

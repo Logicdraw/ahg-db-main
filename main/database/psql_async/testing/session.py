@@ -15,6 +15,7 @@ from main.config import settings
 engine_psql_async_testing = create_async_engine(
 	settings.PSQL_ASYNC_TESTING_URI,
 	pool_pre_ping=True,
+	echo=True,
 )
 
 

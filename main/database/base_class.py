@@ -15,3 +15,8 @@ class Base:
 	id: Any
 	__name__: str
 
+
+	def as_dict(self) -> dict:
+		return {c.key: getattr(self, c.key) for c in inspect(self).mapper.column_attrs}
+
+

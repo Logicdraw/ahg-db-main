@@ -45,7 +45,7 @@ class ProgramInstanceModel(Base, ResourceMixin):
 		'ProgramGroupInstanceModel',
 		back_populates='program_instance',
 		lazy='selectin',
-		cascade='all, delete',
+		cascade='delete',
 	)
 
 	coaches = relationship(
