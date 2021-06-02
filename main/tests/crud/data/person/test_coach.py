@@ -160,7 +160,7 @@ async def test_update_coach(
 
 	assert coach_2
 	assert coach_2.full_name
-	assert coach_2.full_name != full_name
+	assert coach_2.full_name == new_full_name
 
 
 
@@ -198,7 +198,7 @@ async def test_update_sync_coach(
 
 	assert coach_2
 	assert coach_2.full_name
-	assert coach_2.full_name != full_name
+	assert coach_2.full_name == new_full_name
 
 
 

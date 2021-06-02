@@ -10,6 +10,11 @@ from fastapi.testclient import TestClient
 from main.config import settings
 
 
+import random
+
+import math
+
+
 from faker import Faker
 
 
@@ -29,3 +34,12 @@ def random_email() -> str:
 def random_name() -> str:
 	return fake.name()
 
+
+
+def random_address() -> str:
+	return fake.address()
+
+
+
+def random_number(min_digits: int = 6, max_digits: int = 6) -> int:
+	return random.randint(math.pow(10, min_digits), math.pow(10, max_digits + 1) - 1)

@@ -53,6 +53,38 @@ async def test_create_user(
 
 
 @pytest.mark.asyncio
+async def test_create_sync_user(
+	db: AsyncSession,
+) -> None:
+	"""
+	Create user
+	"""
+
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'superadmin'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		confirm_password=confirm_password,
+		name=name,
+		role=role,
+	)
+
+	user = await db.run_sync(
+		user_crud.create,
+		obj_in=user_in,
+	)
+
+	assert user.email == email
+	assert hasattr(user, 'password_hash')
+
+
+
+@pytest.mark.asyncio
 async def test_get_user(
 	db: AsyncSession,
 ) -> None:
