@@ -53,7 +53,7 @@ async def test_create_camp_instance(
 
 
 	assert camp_instance.year_start == year_start
-	assert camp_instance.se_name_snake = se_name_snake
+	assert camp_instance.se_name_snake == se_name_snake
 
 
 
@@ -82,7 +82,7 @@ async def test_create_sync_camp_instance(
 
 
 	assert camp_instance.year_start == year_start
-	assert camp_instance.se_name_snake = se_name_snake
+	assert camp_instance.se_name_snake == se_name_snake
 
 
 

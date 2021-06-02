@@ -24,10 +24,25 @@ from main.tests.utils import (
 import pytest
 
 
+
+
+
 @pytest.mark.asyncio
 async def test_create_program_instance(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_program_instance(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -36,6 +51,18 @@ async def test_create_program_instance(
 async def test_get_program_instance(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_get_sync_program_instance(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -44,6 +71,17 @@ async def test_get_program_instance(
 async def test_update_program_instance(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+@pytest.mark.asyncio
+async def test_update_sync_program_instance(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -52,6 +90,18 @@ async def test_update_program_instance(
 async def test_delete_program_instance(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_program_instance(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 

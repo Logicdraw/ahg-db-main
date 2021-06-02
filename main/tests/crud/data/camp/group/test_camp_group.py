@@ -224,7 +224,7 @@ async def test_delete_camp_group(
 		id=camp_group.id,
 	)
 
-	assert camp_group_3
+	assert camp_group_3 is None
 	assert camp_group_2.id == camp_group.id
 
 
@@ -256,7 +256,7 @@ async def test_delete_sync_camp_group(
 		id=camp_group.id,
 	)
 
-	assert camp_group_3
+	assert camp_group_3 is None
 	assert camp_group_2.id == camp_group.id
 
 

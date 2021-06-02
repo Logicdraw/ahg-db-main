@@ -197,7 +197,7 @@ async def test_update_sync_camp_group_instance(
 	)
 
 	camp_group_instance_2 = await db.run_sync(
-		camp_group_instance.get_sync,
+		camp_group_instance_crud.get_sync,
 		id=camp_group_instance.id,
 	)
 

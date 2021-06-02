@@ -25,8 +25,17 @@ import pytest
 
 
 
+
 @pytest.mark.asyncio
 async def test_create_league(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_league(
 	db: AsyncSession,
 ) -> None:
 	pass
@@ -42,6 +51,14 @@ async def test_get_league(
 
 
 @pytest.mark.asyncio
+async def test_get_sync_league(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
 async def test_update_league(
 	db: AsyncSession,
 ) -> None:
@@ -50,7 +67,23 @@ async def test_update_league(
 
 
 @pytest.mark.asyncio
+async def test_update_sync_league(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
 async def test_delete_league(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_league(
 	db: AsyncSession,
 ) -> None:
 	pass

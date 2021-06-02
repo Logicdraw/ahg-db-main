@@ -24,10 +24,24 @@ from main.tests.utils import (
 import pytest
 
 
+
+
 @pytest.mark.asyncio
 async def test_create_division(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_division(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -36,6 +50,18 @@ async def test_create_division(
 async def test_get_division(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_get_sync_division(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -44,6 +70,18 @@ async def test_get_division(
 async def test_update_division(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_update_sync_division(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -52,6 +90,18 @@ async def test_update_division(
 async def test_delete_division(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_division(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 

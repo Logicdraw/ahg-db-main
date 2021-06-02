@@ -1,3 +1,6 @@
+# SAVE FOR LATER (LAST) !
+
+
 from fastapi.encoders import jsonable_encoder
 
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -25,10 +28,25 @@ import pytest
 
 
 
+
+
+
 @pytest.mark.asyncio
 async def test_create_program_instance_registration(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_program_instance_registration(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -37,6 +55,18 @@ async def test_create_program_instance_registration(
 async def test_get_program_instance_registration(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_get_sync_program_instance_registration(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -45,6 +75,18 @@ async def test_get_program_instance_registration(
 async def test_update_program_instance_registration(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_update_sync_program_instance_registration(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -53,6 +95,18 @@ async def test_update_program_instance_registration(
 async def test_delete_program_instance_registration(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_program_instance_registration(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 

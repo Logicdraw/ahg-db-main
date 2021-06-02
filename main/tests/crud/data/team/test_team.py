@@ -29,6 +29,18 @@ import pytest
 async def test_create_team(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_team(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -37,6 +49,18 @@ async def test_create_team(
 async def test_get_team(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_get_sync_team(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -45,6 +69,18 @@ async def test_get_team(
 async def test_update_team(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_update_sync_team(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -53,6 +89,18 @@ async def test_update_team(
 async def test_delete_team(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_team(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 

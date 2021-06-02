@@ -25,8 +25,17 @@ import pytest
 
 
 
+
 @pytest.mark.asyncio
 async def test_create_conference(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_conference(
 	db: AsyncSession,
 ) -> None:
 	pass
@@ -42,6 +51,14 @@ async def test_get_conference(
 
 
 @pytest.mark.asyncio
+async def test_get_sync_conference(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
 async def test_update_conference(
 	db: AsyncSession,
 ) -> None:
@@ -50,7 +67,23 @@ async def test_update_conference(
 
 
 @pytest.mark.asyncio
+async def test_update_sync_conference(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
 async def test_delete_conference(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_conference(
 	db: AsyncSession,
 ) -> None:
 	pass
