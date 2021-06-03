@@ -11,13 +11,13 @@ from pydantic import (
 
 class TeamInstanceSchemaBase(BaseModel):
 	team_id: Optional[int] = None
-	division_id: Optional[int] = None
-	conference_id: Optional[int] = None
-	league_id: Optional[int] = None
-	season_id: Optional[int] = None
+	division_instance_id: Optional[int] = None
+	conference_instance_id: Optional[int] = None
+	league_instance_id: Optional[int] = None
+	season_instance_id: Optional[int] = None
 
-	year_start: Optional[str] = None
-	year_end: Optional[str] = None
+	year_start: Optional[int] = None
+	year_end: Optional[int] = None
 
 	birth_year: Optional[int] = None
 

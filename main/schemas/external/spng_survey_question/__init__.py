@@ -13,7 +13,7 @@ from pydantic import (
 
 
 class SpngSurveyQuestionSchemaBase(BaseModel):
-	use_answer_text_mappings: Optional[str] = None
+	use_answer_text_mappings: Optional[bool] = None
 	shared_question_ids: Optional[Any] = None
 	answer_text_mappings: Optional[str] = None
 

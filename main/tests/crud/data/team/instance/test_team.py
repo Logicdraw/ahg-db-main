@@ -550,12 +550,12 @@ async def test_delete_sync_team_instance(
 	)
 
 	team_instance_2 = await db.run_sync(
-		team_instance.delete_sync,
+		team_instance_crud.delete_sync,
 		id=team_instance.id,
 	)
 
 	team_instance_3 = await db.run_sync(
-		team_instance.delete_sync,
+		team_instance_crud.get_sync,
 		id=team_instance.id,
 	)
 
