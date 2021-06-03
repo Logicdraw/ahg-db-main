@@ -147,6 +147,8 @@ class TeamInstanceModel(Base, ResourceMixin):
 	# Jersey orders --
 
 	jersey_numbers_options = Column(String)
+	# Example: 0:68-70:99 | (inclusive)
+	# or: 0:10-11,12,13-15:99
 
 
 	has_jersey_size_option = Column(Boolean, default=False)
@@ -155,6 +157,7 @@ class TeamInstanceModel(Base, ResourceMixin):
 
 
 
+	# What does this mean? --
 	registrations_needs_jersey_default_value = Column(
 		Boolean,
 		default=False,
@@ -168,6 +171,7 @@ class TeamInstanceModel(Base, ResourceMixin):
 	socks_sizes_options = Column(String)
 
 
+	# What does this mean? --
 	registrations_needs_socks_default_value = Column(
 		Boolean,
 		default=False,

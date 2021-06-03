@@ -25,10 +25,25 @@ import pytest
 
 
 
+
+
+
 @pytest.mark.asyncio
 async def test_create_spng_survey_program(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_spng_survey_program(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -37,6 +52,18 @@ async def test_create_spng_survey_program(
 async def test_get_spng_survey_program(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_get_sync_spng_survey_program(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -45,6 +72,18 @@ async def test_get_spng_survey_program(
 async def test_update_spng_survey_program(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_update_sync_spng_survey_program(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -53,6 +92,18 @@ async def test_update_spng_survey_program(
 async def test_delete_spng_survey_program(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_spng_survey_program(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 

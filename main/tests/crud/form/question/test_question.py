@@ -1,3 +1,6 @@
+# POLYMORPHIC -- 
+
+
 from fastapi.encoders import jsonable_encoder
 
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -25,10 +28,23 @@ import pytest
 
 
 
+
 @pytest.mark.asyncio
 async def test_create_form_question(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_form_question(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -37,6 +53,18 @@ async def test_create_form_question(
 async def test_get_form_question(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_get_sync_form_question(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -45,6 +73,18 @@ async def test_get_form_question(
 async def test_update_form_question(
 	db: AsyncSession,
 ) -> None:
+	# --
+
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_update_sync_form_question(
+	db: AsyncSession,
+) -> None:
+	# --
+
 	pass
 
 
@@ -53,7 +93,23 @@ async def test_update_form_question(
 async def test_delete_form_question(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_form_question(
+	db: AsyncSession,
+) -> None:
+	# --
+
+	pass
+
+
+
+
 
 
 

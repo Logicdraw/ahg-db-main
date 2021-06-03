@@ -1,5 +1,5 @@
-# For testing purposes ONLY --- !
-# All real AUTH will be done through AUTH Microservice -- !!!
+# !!! -- For TESTING purposes ONLY -- !!!
+# !!! -- All real AUTH will be done through AUTH Microservice -- !!!
 
 
 from passlib.context import CryptContext

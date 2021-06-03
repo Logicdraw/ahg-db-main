@@ -12,7 +12,7 @@ from pydantic import (
 class SpngSurveyQuestionTableMapSchemaBase(BaseModel):
 	db_table_name: Optional[str] = None
 	db_table_column_name: Optional[str] = None
-	spng_survey_question_id: Optional[int] = None
+	spng_survey_question_id: Optional[int] = None # Foreign
 
 
 

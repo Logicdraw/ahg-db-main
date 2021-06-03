@@ -6,14 +6,14 @@ from pydantic import (
 )
 
 
-
+import datetime
 
 
 class FormSchemaBase(BaseModel):
 	title: Optional[str] = None
 	description: Optional[str] = None
 	has_deadline: Optional[bool] = None
-	deadline_on: Optional[str] = None
+	deadline_on: Optional[datetime.datetime] = None
 
 
 
