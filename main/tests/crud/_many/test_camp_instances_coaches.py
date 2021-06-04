@@ -74,6 +74,7 @@ async def test_create_camp_instance_coach(
 	camp_instance_coach_in = CampInstancesCoachesSchemaCreate(
 		camp_instance_id=camp_instance.id,
 		coach_id=coach.id,
+		role='banana',
 	)
 
 	camp_instance_coach = await camp_instances_coaches_crud.create(
@@ -112,6 +113,7 @@ async def test_create_sync_camp_instance_coach(
 	camp_instance_coach_in = CampInstancesCoachesSchemaCreate(
 		camp_instance_id=camp_instance.id,
 		coach_id=coach.id,
+		role='banana',
 	)
 
 	camp_instance_coach = await db.run_sync(
@@ -150,6 +152,7 @@ async def test_get_camp_instance_coach(
 	camp_instance_coach_in = CampInstancesCoachesSchemaCreate(
 		camp_instance_id=camp_instance.id,
 		coach_id=coach.id,
+		role='banana',
 	)
 
 	camp_instance_coach = await camp_instances_coaches_crud.create(
@@ -194,6 +197,7 @@ async def test_get_sync_camp_instance_coach(
 	camp_instance_coach_in = CampInstancesCoachesSchemaCreate(
 		camp_instance_id=camp_instance.id,
 		coach_id=coach.id,
+		role='banana',
 	)
 
 	camp_instance_coach = await db.run_sync(
@@ -238,12 +242,29 @@ async def test_update_camp_instance_coach(
 	camp_instance_coach_in = CampInstancesCoachesSchemaCreate(
 		camp_instance_id=camp_instance.id,
 		coach_id=coach.id,
+		role='banana',
 	)
 
 	camp_instance_coach = await camp_instances_coaches_crud.create(
 		db=db,
 		obj_in=camp_instance_coach_in,
 	)
+
+	new_role = 'apple'
+
+	camp_instance_coach_in_update = CampInstancesCoachesSchemaUpdate(
+		role=new_role,
+	)
+
+	camp_instance_coach_2 = await camp_instances_coaches_crud.update(
+		db=db,
+		obj_in=camp_instance_coach_in_update,
+	)
+
+	assert camp_instance_coach_2
+	assert camp_instance_coach_2.role
+	assert camp_instance_coach_2.role == new_role
+
 
 
 
@@ -272,6 +293,7 @@ async def test_update_sync_camp_instance_coach(
 	camp_instance_coach_in = CampInstancesCoachesSchemaCreate(
 		camp_instance_id=camp_instance.id,
 		coach_id=coach.id,
+		role='banana',
 	)
 
 	camp_instance_coach = await db.run_sync(
@@ -279,6 +301,21 @@ async def test_update_sync_camp_instance_coach(
 		obj_in=camp_instance_coach_in,
 	)
 
+
+	new_role = 'apple'
+
+	camp_instance_coach_in_update = CampInstancesCoachesSchemaUpdate(
+		role=new_role,
+	)
+
+	camp_instance_coach_2 = await db.run_sync(
+		camp_instances_coaches_crud.update_sync,
+		obj_in=camp_instance_coach_in_update,
+	)
+
+	assert camp_instance_coach_2
+	assert camp_instance_coach_2.role
+	assert camp_instance_coach_2.role == new_role
 
 
 
@@ -308,12 +345,29 @@ async def test_delete_camp_instance_coach(
 	camp_instance_coach_in = CampInstancesCoachesSchemaCreate(
 		camp_instance_id=camp_instance.id,
 		coach_id=coach.id,
+		role='banana',
 	)
 
 	camp_instance_coach = await camp_instances_coaches_crud.create(
 		db=db,
 		obj_in=camp_instance_coach_in,
 	)
+
+	camp_instance_coach_2 = await camp_instances_coaches_crud.delete(
+		db=db,
+		camp_instance_id=camp_instance.id,
+		coach_id=coach.id,
+	)
+
+	camp_instance_coach_3 = await camp_instances_coaches_crud.get(
+		db=db,
+		camp_instance_id=camp_instance.id,
+		coach_id=coach.id,
+	)
+
+	assert camp_instance_coach_3 is None
+	assert camp_instance_coach_2.camp_instance_id == camp_instance_coach.camp_instance_id
+	assert camp_instance_coach_2.coach_id == camp_instance_coach.coach_id
 
 
 
@@ -342,6 +396,7 @@ async def test_delete_sync_camp_instance_coach(
 	camp_instance_coach_in = CampInstancesCoachesSchemaCreate(
 		camp_instance_id=camp_instance.id,
 		coach_id=coach.id,
+		role='banana',
 	)
 
 	camp_instance_coach = await db.run_sync(
@@ -349,6 +404,21 @@ async def test_delete_sync_camp_instance_coach(
 		obj_in=camp_instance_coach_in,
 	)
 
+	camp_instance_coach_2 = await db.run_sync(
+		camp_instances_coaches_crud.delete_sync,
+		camp_instance_id=camp_instance.id,
+		coach_id=coach.id,
+	)
+
+	camp_instance_coach_3 = await db.run_sync(
+		camp_instances_coaches_crud.get_sync,
+		camp_instance_id=camp_instance.id,
+		coach_id=coach.id,
+	)
+
+	assert camp_instance_coach_3 is None
+	assert camp_instance_coach_2.camp_instance_id == camp_instance_coach.camp_instance_id
+	assert camp_instance_coach_2.coach_id == camp_instance_coach.coach_id
 
 
 

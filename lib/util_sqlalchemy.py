@@ -33,6 +33,10 @@ class AwareDateTime(TypeDecorator):
 	impl = DateTime(timezone=True)
 
 
+	# To be safe ... (Not an expert...)
+	cache_ok = False
+
+
 	def process_bind_param(self, value, dialect):
 
 		if isinstance(value, datetime) and value.tzinfo is None:

@@ -61,7 +61,7 @@ class SpngSurveyBaseModel(
 
 
 	__mapper_args__ = {
-		'polymorphic_identity': 'spng_survey',
+		'polymorphic_identity': 'other',
 		'polymorphic_on': type,
 		'with_polymorphic': '*',
 	}

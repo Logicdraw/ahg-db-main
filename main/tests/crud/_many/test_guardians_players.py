@@ -13,6 +13,26 @@ from main.schemas._many.guardians_players import (
 )
 
 
+from main.crud.data.person.guardian import (
+	guardian_crud,
+)
+
+from main.schemas.data.person.guardian import (
+	GuardianSchemaCreate,
+	GuardianSchemaUpdate,
+)
+
+
+from main.crud.data.person.player import (
+	player_crud,
+)
+
+from main.schemas.data.person.player import (
+	PlayerSchemaCreate,
+	PlayerSchemaUpdate,
+)
+
+
 
 from main.tests.utils import (
 	random_email,

@@ -1,4 +1,4 @@
-# Really should be on CRUD !
+# Really should be only CRUD (too late haha) !
 
 
 from fastapi.encoders import jsonable_encoder

@@ -14,6 +14,27 @@ from main.schemas._many.team_instances_players import (
 
 
 
+from main.crud.data.team.instance import (
+	team_instance_crud,
+)
+
+from main.schemas.data.team.instance import (
+	TeamInstanceSchemaCreate,
+	TeamInstanceSchemaUpdate,
+)
+
+
+from main.crud.data.person.player import (
+	player_crud,
+)
+
+from main.schemas.data.person.player import (
+	PlayerSchemaCreate,
+	PlayerSchemaUpdate,
+)
+
+
+
 from main.tests.utils import (
 	random_email,
 	random_lower_string,
@@ -26,8 +47,18 @@ import pytest
 
 
 
+
+
 @pytest.mark.asyncio
 async def test_create_team_instance_player(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_create_sync_team_instance_player(
 	db: AsyncSession,
 ) -> None:
 	pass
@@ -43,6 +74,14 @@ async def test_get_team_instance_player(
 
 
 @pytest.mark.asyncio
+async def test_get_sync_team_instance_player(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
 async def test_update_team_instance_player(
 	db: AsyncSession,
 ) -> None:
@@ -51,7 +90,23 @@ async def test_update_team_instance_player(
 
 
 @pytest.mark.asyncio
+async def test_update_sync_team_instance_player(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
 async def test_delete_team_instance_player(
+	db: AsyncSession,
+) -> None:
+	pass
+
+
+
+@pytest.mark.asyncio
+async def test_delete_sync_team_instance_player(
 	db: AsyncSession,
 ) -> None:
 	pass
