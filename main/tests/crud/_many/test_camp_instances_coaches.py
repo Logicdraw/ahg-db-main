@@ -262,7 +262,7 @@ async def test_update_camp_instance_coach(
 	)
 
 	assert camp_instance_coach_2
-	assert camp_instance_coach_2.role
+	assert camp_instance_coach_2.role is not None
 	assert camp_instance_coach_2.role == new_role
 
 
@@ -314,7 +314,7 @@ async def test_update_sync_camp_instance_coach(
 	)
 
 	assert camp_instance_coach_2
-	assert camp_instance_coach_2.role
+	assert camp_instance_coach_2.role is not None
 	assert camp_instance_coach_2.role == new_role
 
 
