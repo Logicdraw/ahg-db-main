@@ -30,6 +30,10 @@ from main.config import settings
 
 
 
+from sqlalchemy.ext.declarative import AbstractConcreteBase
+
+from sqlalchemy.ext.declarative import declared_attr
+
 
 
 class SpngSurveyBaseModel(
@@ -52,12 +56,8 @@ class SpngSurveyBaseModel(
 	type = Column(String(50))
 
 
-	# Many To Many with SpngSurvey --
-	spng_survey_questions = relationship(
-		'SpngSurveysSpngSurveyQuestionsModel',
-		back_populates='spng_survey',
-		lazy='selectin',
-	)
+	spng_survey_questions = relationship('SpngSurveysSpngSurveyQuestionsModel', back_populates='spng_survey', lazy='selectin',)
+
 
 
 	__mapper_args__ = {

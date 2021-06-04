@@ -1,4 +1,6 @@
 # Import all the models, so that Base has them before being
+from sqlalchemy.orm import configure_mappers
+
 
 from main.database.base_class import Base  # noqa
 
@@ -86,3 +88,4 @@ from main.models.user import UserModel
 
 
 
+configure_mappers()

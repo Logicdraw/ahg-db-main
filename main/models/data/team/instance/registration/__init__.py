@@ -28,14 +28,13 @@ from main.models._base.registration import (
 
 class TeamInstanceRegistrationModel(
 	RegistrationBaseModel,
+	ResourceMixin,
 	SpngRegistrationBase,
 	SpngRegistrationFinancialsBase,
 	PlayerRegistrationBase,
 ):
 
 	__tablename__ = 'team_instance_registrations'
-
-	id = Column(Integer, ForeignKey('registrations.id'), primary_key=True)
 
 
 	# team_instance ...
@@ -88,6 +87,7 @@ class TeamInstanceRegistrationModel(
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'team_instance',
+		'concrete': True,
 	}
 
 

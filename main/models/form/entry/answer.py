@@ -28,81 +28,89 @@ from sqlalchemy_json import mutable_json_type
 from main.config import settings
 
 
+from sqlalchemy.ext.declarative import AbstractConcreteBase
+
+from sqlalchemy.ext.declarative import declared_attr
+
+
 
 
 # Form Entry Answers
 
 
-class FormEntryAnswerModel(Base, ResourceMixin):
-
-	__tablename__ = 'form_entry_answers'
+class FormEntryAnswerModel(
+	AbstractConcreteBase,
+	Base,
+):
 
 	id = Column(Integer, primary_key=True, index=True)
 
 
-	entry = relationship(
-		'FormEntryModel',
-		back_populates='answers',
-		uselist=False,
-	)
-	entry_id = Column(Integer, ForeignKey('form_entries.id'))
+	@declared_attr
+	def entry(cls):
+		return relationship('FormEntryModel', back_populates='answers', uselist=False,)
 
-	question = relationship(
-		'FormQuestionModel',
-		back_populates='answers',
-		uselist=False,
-	)
-	question_id = Column(Integer, ForeignKey('form_questions.id'))
-
-
-	type = Column(String(50))
-
-
-	__mapper_args__ = {
-		'polymorphic_identity': 'form_entry_answers',
-		'polymorphic_on': type,
-		'with_polymorphic': '*',
-	}
+	@declared_attr
+	def entry_id(cls):
+		return Column(Integer, ForeignKey('form_entries.id'))
 
 
 
 
-
-class FormEntryAnswerInputModel(FormEntryAnswerModel):
+class FormEntryAnswerInputModel(
+	FormEntryAnswerModel,
+	ResourceMixin,
+):
 
 	__tablename__ = 'form_entry_answer_inputs'
 
-	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
-
 	input_answer = Column(String)
+
+	question = relationship(
+		'FormQuestionInputModel',
+		back_populates='answers',
+		uselist=False,
+	)
+
+	question_id = Column(Integer, ForeignKey('form_question_inputs.id'))
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_inputs',
-		'polymorphic_load': 'inline',
+		'concrete': True,
 	}
 
 
 
-class FormEntryAnswerTextareaModel(FormEntryAnswerModel):
+class FormEntryAnswerTextareaModel(
+	FormEntryAnswerModel,
+	ResourceMixin,
+):
 
 	__tablename__ = 'form_entry_answer_textareas'
 
-	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
-
 	textarea_answer = Column(Text)
+
+	question = relationship(
+		'FormQuestionTextareaModel',
+		back_populates='answers',
+		uselist=False,
+	)
+
+	question_id = Column(Integer, ForeignKey('form_question_textareas.id'))
 	
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_textareas',
-		'polymorphic_load': 'inline',
+		'concrete': True,
 	}
 
 
 
-class FormEntryAnswerSelectModel(FormEntryAnswerModel):
+class FormEntryAnswerSelectModel(
+	FormEntryAnswerModel,
+	ResourceMixin,
+):
 
 	__tablename__ = 'form_entry_answer_selects'
-
-	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
 
 	# Selected --
 
@@ -113,33 +121,53 @@ class FormEntryAnswerSelectModel(FormEntryAnswerModel):
 		)
 	)
 
+
+	question = relationship(
+		'FormQuestionSelectModel',
+		back_populates='answers',
+		uselist=False,
+	)
+
+	question_id = Column(Integer, ForeignKey('form_question_selects.id'))
+	
+
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_selects',
-		'polymorphic_load': 'inline',
+		'concrete': True,
 	}
 
 
 
-class FormEntryAnswerCheckboxModel(FormEntryAnswerModel):
+class FormEntryAnswerCheckboxModel(
+	FormEntryAnswerModel,
+	ResourceMixin,
+):
 
 	__tablename__ = 'form_entry_answer_checkboxes'
-
-	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
 	
 	checkbox_checked = Column(Boolean, default=False)
 
+	question = relationship(
+		'FormQuestionCheckboxModel',
+		back_populates='answers',
+		uselist=False,
+	)
+
+	question_id = Column(Integer, ForeignKey('form_question_checkboxes.id'))
+
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_checkboxes',
-		'polymorphic_load': 'inline',
+		'concrete': True,
 	}
 
 
 
-class FormEntryAnswerRadioModel(FormEntryAnswerModel):
+class FormEntryAnswerRadioModel(
+	FormEntryAnswerModel,
+	ResourceMixin,
+):
 
 	__tablename__ = 'form_entry_answer_radios'
-
-	id = Column(Integer, ForeignKey('form_entry_answers.id'), primary_key=True)
 
 
 	radio_selected = Column(
@@ -148,14 +176,19 @@ class FormEntryAnswerRadioModel(FormEntryAnswerModel):
 			nested=False,
 		)
 	)
+
+	question = relationship(
+		'FormQuestionRadioModel',
+		back_populates='answers',
+		uselist=False,
+	)
+
+	question_id = Column(Integer, ForeignKey('form_question_radios.id'))
 	
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_radios',
-		'polymorphic_load': 'inline',
+		'concrete': True,
 	}
-
-
-
 
 
 

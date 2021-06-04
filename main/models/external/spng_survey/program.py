@@ -28,8 +28,8 @@ class SpngSurveyProgramModel(
 	SpngSurveyBaseModel,
 ):
 	# -- Program
-
 	__tablename__ = 'spng_survey_programs'
+
 
 	id = Column(Integer, ForeignKey('spng_surveys.id'), primary_key=True)
 

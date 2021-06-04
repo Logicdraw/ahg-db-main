@@ -30,13 +30,19 @@ from sqlalchemy_json import mutable_json_type
 from main.config import settings
 
 
+from sqlalchemy.ext.declarative import AbstractConcreteBase
+
+
+
+from sqlalchemy.ext.declarative import declared_attr
+
+
+
 
 class RegistrationBaseModel(
+	AbstractConcreteBase,
 	Base,
-	ResourceMixin,
-):
-	
-	__tablename__ = 'registrations'
+):	
 
 	id = Column(Integer, primary_key=True, index=True)
 	
@@ -49,30 +55,14 @@ class RegistrationBaseModel(
 
 	notes = Column(String)
 
-	type = Column(String(50))
 
+	@declared_attr
+	def player(cls):
+		return relationship('PlayerModel', back_populates='registrations', uselist=False,)
 
-
-	player = relationship(
-		'PlayerModel',
-		back_populates='registrations',
-		uselist=False,
-	)
-	player_id = Column(
-		Integer,
-		ForeignKey('players.id'),
-	)
-
-
-	# ????
-	# default ...
-
-
-	__mapper_args__ = {
-		'polymorphic_identity': 'registrations',
-		'polymorphic_on': type,
-		'with_polymorphic': '*',
-	}
+	@declared_attr
+	def player_id(cls):
+		return Column(Integer, ForeignKey('players.id'))
 
 
 
@@ -114,7 +104,6 @@ class SpngRegistrationBase:
 
 
 
-
 class SpngRegistrationFinancialsBase:
 
 	gross = Column(Float)
@@ -149,8 +138,5 @@ class PlayerRegistrationBase:
 	registration_insurance = Column(Boolean, default=False)
 
 	player_submitted_notes = Column(String)
-
-
-
 
 

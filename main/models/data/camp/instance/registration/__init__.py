@@ -17,6 +17,7 @@ from lib.util_sqlalchemy import (
 )
 
 
+
 from main.models._base.registration import (
 	RegistrationBaseModel,
 	SpngRegistrationBase,
@@ -27,14 +28,13 @@ from main.models._base.registration import (
 
 class CampInstanceRegistrationModel(
 	RegistrationBaseModel,
+	ResourceMixin,
 	SpngRegistrationBase,
 	SpngRegistrationFinancialsBase,
 	PlayerRegistrationBase,
 ):
 
 	__tablename__ = 'camp_instance_registrations'
-
-	id = Column(Integer, ForeignKey('registrations.id'), primary_key=True)
 
 
 	camp_instance_id = Column(Integer, ForeignKey('camp_instances.id'))
@@ -70,6 +70,7 @@ class CampInstanceRegistrationModel(
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'camp_instance',
+		'concrete': True, 
 	}
 
 

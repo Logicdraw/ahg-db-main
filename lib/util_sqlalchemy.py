@@ -53,11 +53,11 @@ class ResourceMixin:
 	"""
 
 	created_on = Column(AwareDateTime(),
-							default=tzware_datetime)
+							default=tzware_datetime,)
 
 	updated_on = Column(AwareDateTime(),
 							default=tzware_datetime,
-							onupdate=tzware_datetime)
+							onupdate=tzware_datetime,)
 
 
 

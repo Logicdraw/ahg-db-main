@@ -7,13 +7,10 @@ from typing import (
 )
 
 
+from sqlalchemy import select
+
 from sqlalchemy.ext.asyncio import AsyncSession
 
-
-from sqlalchemy import (
-	func,
-	or_,
-)
 
 
 from main.crud.base import CRUDBase

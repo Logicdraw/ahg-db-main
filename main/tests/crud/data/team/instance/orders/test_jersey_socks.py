@@ -31,6 +31,8 @@ import pytest
 async def test_create_team_instance_jersey_socks_order(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
 
 
@@ -39,6 +41,8 @@ async def test_create_team_instance_jersey_socks_order(
 async def test_create_sync_team_instance_jersey_socks_order(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
 
 
@@ -47,6 +51,8 @@ async def test_create_sync_team_instance_jersey_socks_order(
 async def test_get_team_instance_jersey_socks_order(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
 
 
@@ -55,6 +61,8 @@ async def test_get_team_instance_jersey_socks_order(
 async def test_get_sync_team_instance_jersey_socks_order(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
 
 
@@ -63,6 +71,8 @@ async def test_get_sync_team_instance_jersey_socks_order(
 async def test_update_team_instance_jersey_socks_order(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
 
 
@@ -71,6 +81,8 @@ async def test_update_team_instance_jersey_socks_order(
 async def test_update_sync_team_instance_jersey_socks_order(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
 
 
@@ -79,6 +91,8 @@ async def test_update_sync_team_instance_jersey_socks_order(
 async def test_delete_team_instance_jersey_socks_order(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
 
 
@@ -87,6 +101,8 @@ async def test_delete_team_instance_jersey_socks_order(
 async def test_delete_sync_team_instance_jersey_socks_order(
 	db: AsyncSession,
 ) -> None:
+	# --
+
 	pass
 
 

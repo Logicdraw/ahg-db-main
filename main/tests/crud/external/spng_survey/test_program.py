@@ -34,7 +34,24 @@ async def test_create_spng_survey_program(
 ) -> None:
 	# --
 
-	pass
+	name = random_lower_string()
+	is_active = True
+	type = 'program'
+
+	spng_survey_program_in = SpngSurveyProgramSchemaCreate(
+		name=name,
+		is_active=is_active,
+		type=type,
+	)
+
+	spng_survey_program = await spng_survey_program_crud.create(
+		db=db,
+		obj_in=spng_survey_program_in,
+	)
+
+	assert spng_survey_program.name == name
+	assert spng_survey_program.is_active == is_active
+	assert spng_survey_program.type == type
 
 
 

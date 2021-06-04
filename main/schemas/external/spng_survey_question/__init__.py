@@ -1,6 +1,8 @@
 from typing import (
 	Optional,
 	Any,
+	Dict,
+	List,
 )
 
 from pydantic import (
@@ -14,8 +16,8 @@ from pydantic import (
 
 class SpngSurveyQuestionSchemaBase(BaseModel):
 	use_answer_text_mappings: Optional[bool] = None
-	shared_question_ids: Optional[Any] = None
-	answer_text_mappings: Optional[str] = None
+	shared_question_ids: Optional[List[int]] = None
+	answer_text_mappings: Optional[Dict[Any, Any]] = None
 
 
 

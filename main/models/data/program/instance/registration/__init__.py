@@ -28,15 +28,13 @@ from main.models._base.registration import (
 
 class ProgramInstanceRegistrationModel(
 	RegistrationBaseModel,
+	ResourceMixin,
 	SpngRegistrationBase,
 	SpngRegistrationFinancialsBase,
 	PlayerRegistrationBase,
 ):
 
 	__tablename__ = 'program_instance_registrations'
-
-
-	id = Column(Integer, ForeignKey('registrations.id'), primary_key=True)
 
 
 	program_instance = relationship(
@@ -77,6 +75,7 @@ class ProgramInstanceRegistrationModel(
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'program_instance',
+		'concrete': True,
 	}
 
 

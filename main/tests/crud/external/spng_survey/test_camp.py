@@ -1,3 +1,6 @@
+# Polymorphic :) !
+
+
 from fastapi.encoders import jsonable_encoder
 
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -30,8 +33,26 @@ async def test_create_spng_survey_camp(
 	db: AsyncSession,
 ) -> None:
 	# --
+	
+	name = random_lower_string()
+	is_active = True
+	type = 'camp'
 
-	pass
+	spng_survey_camp_in = SpngSurveyCampSchemaCreate(
+		name=name,
+		is_active=is_active,
+		type=type,
+	)
+
+	spng_survey_camp = await spng_survey_camp_crud.create(
+		db=db,
+		obj_in=spng_survey_camp_in,
+	)
+
+	assert spng_survey_camp.name == name
+	assert spng_survey_camp.is_active == is_active
+	assert spng_survey_camp.type == type
+
 
 
 @pytest.mark.asyncio
@@ -40,7 +61,24 @@ async def test_create_sync_spng_survey_camp(
 ) -> None:
 	# --
 
-	pass
+	name = random_lower_string()
+	is_active = True
+	type = 'camp'
+
+	spng_survey_camp_in = SpngSurveyCampSchemaCreate(
+		name=name,
+		is_active=is_active,
+		type=type,
+	)
+
+	spng_survey_camp = await db.run_sync(
+		spng_survey_camp_crud.create_sync,
+		obj_in=spng_survey_camp_in,
+	)
+
+	assert spng_survey_camp.name == name
+	assert spng_survey_camp.is_active == is_active
+	assert spng_survey_camp.type == type
 
 
 
