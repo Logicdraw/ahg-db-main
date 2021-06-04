@@ -261,6 +261,7 @@ async def test_update_guardian_player(
 
 	guardian_player_2 = await guardians_players_crud.update(
 		db=db,
+		db_obj=guardian_player,
 		obj_in=guardian_player_in_update,
 	)
 
@@ -313,6 +314,7 @@ async def test_update_sync_guardian_player(
 
 	guardian_player_2 = await db.run_sync(
 		guardians_players_crud.update_sync,
+		db_obj=guardian_player,
 		obj_in=guardian_player_in_update,
 	)
 

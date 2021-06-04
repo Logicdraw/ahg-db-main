@@ -14,42 +14,12 @@ import datetime
 
 
 
-
 class RegistrationBaseSchemaBase(BaseModel):
 	placed_at_datetime: Optional[datetime.datetime] = None
 	comment: Optional[str] = None
 	coaches_comment: Optional[str] = None
 	notes: Optional[str] = None
-	type: Optional[str] = None
-
-
-
-class RegistrationBaseSchemaCreate(RegistrationBaseSchemaBase):
-	pass
-
-
-
-class RegistrationBaseSchemaUpdate(RegistrationBaseSchemaBase):
-	pass
-
-
-
-class RegistrationBaseSchemaInDBBase(RegistrationBaseSchemaBase):
-	id: int
-
-	class Config:
-		orm_mode = True
-
-
-
-class RegistrationBaseSchema(RegistrationBaseSchemaInDBBase):
-	pass
-
-
-
-class RegistrationBaseSchemaInDB(RegistrationBaseSchemaInDBBase):
-	pass
-
+	# player_id: Optional[int] = None - Might be different for @declared_attr
 
 
 

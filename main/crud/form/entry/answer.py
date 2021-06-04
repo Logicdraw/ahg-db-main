@@ -19,7 +19,6 @@ from sqlalchemy import (
 from main.crud.base import CRUDBase
 
 from main.models.form.entry.answer import (
-	FormEntryAnswerModel,
 	FormEntryAnswerInputModel,
 	FormEntryAnswerTextareaModel,
 	FormEntryAnswerSelectModel,
@@ -28,8 +27,6 @@ from main.models.form.entry.answer import (
 )
 
 from main.schemas.form.entry.answer import (
-	FormEntryAnswerSchemaCreate,
-	FormEntryAnswerSchemaUpdate,
 	FormEntryAnswerInputSchemaCreate,
 	FormEntryAnswerInputSchemaUpdate,
 	FormEntryAnswerTextareaSchemaCreate,
@@ -42,15 +39,6 @@ from main.schemas.form.entry.answer import (
 	FormEntryAnswerRadioSchemaUpdate,
 )
 
-
-
-class CRUDFormEntryAnswer(
-	CRUDBase[
-		FormEntryAnswerModel,
-		FormEntryAnswerSchemaCreate,
-		FormEntryAnswerSchemaUpdate,
-	]):
-	pass
 
 
 
@@ -104,9 +92,6 @@ class CRUDFormEntryAnswerRadio(
 
 
 
-
-
-form_entry_answer_crud = CRUDFormEntryAnswer(FormEntryAnswerModel)
 
 form_entry_answer_input_crud = CRUDFormEntryAnswerInput(FormEntryAnswerInputModel)
 

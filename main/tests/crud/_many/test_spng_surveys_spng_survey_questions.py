@@ -53,7 +53,9 @@ async def test_create_spng_survey_spng_survey_question(
 ) -> None:
 	# --
 
-	spng_survey_in = SpngSurveyBaseSchemaCreate()
+	spng_survey_in = SpngSurveyBaseSchemaCreate(
+		type='other',
+	)
 
 	spng_survey = await spng_survey_base_crud.create(
 		db=db,
@@ -93,7 +95,9 @@ async def test_create_sync_spng_survey_spng_survey_question(
 ) -> None:
 	# --
 
-	spng_survey_in = SpngSurveyBaseSchemaCreate()
+	spng_survey_in = SpngSurveyBaseSchemaCreate(
+		type='other',
+	)
 
 	spng_survey = await db.run_sync(
 		spng_survey_base_crud.create_sync,
@@ -135,7 +139,9 @@ async def test_get_spng_survey_spng_survey_question(
 ) -> None:
 	# --
 
-	spng_survey_in = SpngSurveyBaseSchemaCreate()
+	spng_survey_in = SpngSurveyBaseSchemaCreate(
+		type='other',
+	)
 
 	spng_survey = await spng_survey_base_crud.create(
 		db=db,
@@ -180,7 +186,9 @@ async def test_get_sync_spng_survey_spng_survey_question(
 ) -> None:
 	# --
 
-	spng_survey_in = SpngSurveyBaseSchemaCreate()
+	spng_survey_in = SpngSurveyBaseSchemaCreate(
+		type='other',
+	)
 
 	spng_survey = await db.run_sync(
 		spng_survey_base_crud.create_sync,
@@ -227,7 +235,9 @@ async def test_update_spng_survey_spng_survey_question(
 ) -> None:
 	# --
 
-	spng_survey_in = SpngSurveyBaseSchemaCreate()
+	spng_survey_in = SpngSurveyBaseSchemaCreate(
+		type='other',
+	)
 
 	spng_survey = await spng_survey_base_crud.create(
 		db=db,
@@ -263,6 +273,7 @@ async def test_update_spng_survey_spng_survey_question(
 
 	spng_survey_spng_survey_question_2 = await spng_surveys_spng_survey_questions_crud.update(
 		db=db,
+		db_obj=spng_survey_spng_survey_question,
 		obj_in=spng_survey_spng_survey_question_in_update,
 	)
 
@@ -279,7 +290,9 @@ async def test_update_sync_spng_survey_spng_survey_question(
 ) -> None:
 	# --
 
-	spng_survey_in = SpngSurveyBaseSchemaCreate()
+	spng_survey_in = SpngSurveyBaseSchemaCreate(
+		type='other',
+	)
 
 	spng_survey = await db.run_sync(
 		spng_survey_base_crud.create_sync,
@@ -315,6 +328,7 @@ async def test_update_sync_spng_survey_spng_survey_question(
 
 	spng_survey_spng_survey_question_2 = await db.run_sync(
 		spng_surveys_spng_survey_questions_crud.update_sync,
+		db_obj=spng_survey_spng_survey_question,
 		obj_in=spng_survey_spng_survey_question_in_update,
 	)
 
@@ -331,7 +345,9 @@ async def test_delete_spng_survey_spng_survey_question(
 ) -> None:
 	# --
 
-	spng_survey_in = SpngSurveyBaseSchemaCreate()
+	spng_survey_in = SpngSurveyBaseSchemaCreate(
+		type='other',
+	)
 
 	spng_survey = await spng_survey_base_crud.create(
 		db=db,
@@ -384,7 +400,9 @@ async def test_delete_sync_spng_survey_spng_survey_question(
 ) -> None:
 	# --
 
-	spng_survey_in = SpngSurveyBaseSchemaCreate()
+	spng_survey_in = SpngSurveyBaseSchemaCreate(
+		type='other',
+	)
 
 	spng_survey = await db.run_sync(
 		spng_survey_base_crud.create_sync,

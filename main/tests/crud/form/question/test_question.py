@@ -7,12 +7,23 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 
 from main.crud.form.question import (
-	form_question_crud,
+	form_question_input_crud,
+	form_question_textarea_crud,
+	form_question_select_crud,
+	form_question_radio_crud,
 )
 
 from main.schemas.form.question import (
-	FormQuestionSchemaCreate,
-	FormQuestionSchemaUpdate,
+	FormQuestionInputSchemaCreate,
+	FormQuestionInputSchemaUpdate,
+	FormQuestionTextareaSchemaCreate,
+	FormQuestionTextareaSchemaUpdate,
+	FormQuestionSelectSchemaCreate,
+	FormQuestionSelectSchemaUpdate,
+	FormQuestionCheckboxSchemaCreate,
+	FormQuestionCheckboxSchemaUpdate,
+	FormQuestionRadioSchemaCreate,
+	FormQuestionRadioSchemaUpdate,
 )
 
 
@@ -25,91 +36,5 @@ from main.tests.utils import (
 
 
 import pytest
-
-
-
-
-@pytest.mark.asyncio
-async def test_create_form_question(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	pass
-
-
-
-@pytest.mark.asyncio
-async def test_create_sync_form_question(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	pass
-
-
-
-@pytest.mark.asyncio
-async def test_get_form_question(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	pass
-
-
-
-@pytest.mark.asyncio
-async def test_get_sync_form_question(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	pass
-
-
-
-@pytest.mark.asyncio
-async def test_update_form_question(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	pass
-
-
-
-@pytest.mark.asyncio
-async def test_update_sync_form_question(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	pass
-
-
-
-@pytest.mark.asyncio
-async def test_delete_form_question(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	pass
-
-
-
-@pytest.mark.asyncio
-async def test_delete_sync_form_question(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	pass
-
-
-
-
-
 
 

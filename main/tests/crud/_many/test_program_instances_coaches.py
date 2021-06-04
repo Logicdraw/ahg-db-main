@@ -162,7 +162,7 @@ async def test_get_program_instance_coach(
 	program_instance_coach_2 = await program_instances_coaches_crud.get(
 		db=db,
 		program_instance_id=program_instance_coach.program_instance_id,
-		coach_id=program_instance_coach.coach_instance_id,
+		coach_id=program_instance_coach.coach_id,
 	)
 
 	assert program_instance_coach_2
@@ -207,7 +207,7 @@ async def test_get_sync_program_instance_coach(
 	program_instance_coach_2 = await db.run_sync(
 		program_instances_coaches_crud.get_sync,
 		program_instance_id=program_instance_coach.program_instance_id,
-		coach_id=program_instance_coach.coach_instance_id,
+		coach_id=program_instance_coach.coach_id,
 	)
 
 	assert program_instance_coach_2
@@ -258,6 +258,7 @@ async def test_update_program_instance_coach(
 
 	program_instance_coach_2 = await program_instances_coaches_crud.update(
 		db=db,
+		db_obj=program_instance_coach,
 		obj_in=program_instance_coach_in_update,
 	)
 
@@ -309,6 +310,7 @@ async def test_update_sync_program_instance_coach(
 
 	program_instance_coach_2 = await db.run_sync(
 		program_instances_coaches_crud.update_sync,
+		db_obj=program_instance_coach,
 		obj_in=program_instance_coach_in_update,
 	)
 
@@ -364,7 +366,7 @@ async def test_delete_program_instance_coach(
 	)
 
 	assert program_instance_coach_3 is None
-	assert program_instance_coach_2.program_instance_id == program_instance_coach.camp_instance_id
+	assert program_instance_coach_2.program_instance_id == program_instance_coach.program_instance_id
 	assert program_instance_coach_2.coach_id == program_instance_coach.coach_id
 
 
@@ -417,7 +419,7 @@ async def test_delete_sync_program_instance_coach(
 	)
 
 	assert program_instance_coach_3 is None
-	assert program_instance_coach_2.program_instance_id == program_instance_coach.camp_instance_id
+	assert program_instance_coach_2.program_instance_id == program_instance_coach.program_instance_id
 	assert program_instance_coach_2.coach_id == program_instance_coach.coach_id
 
 

@@ -258,6 +258,7 @@ async def test_update_camp_instance_coach(
 
 	camp_instance_coach_2 = await camp_instances_coaches_crud.update(
 		db=db,
+		db_obj=camp_instance_coach,
 		obj_in=camp_instance_coach_in_update,
 	)
 
@@ -310,6 +311,7 @@ async def test_update_sync_camp_instance_coach(
 
 	camp_instance_coach_2 = await db.run_sync(
 		camp_instances_coaches_crud.update_sync,
+		db_obj=camp_instance_coach,
 		obj_in=camp_instance_coach_in_update,
 	)
 

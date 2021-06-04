@@ -15,11 +15,6 @@ from main.schemas._base.registration import (
 
 from main.schemas._base.registration import (
 	RegistrationBaseSchemaBase,
-	RegistrationBaseSchemaCreate,
-	RegistrationBaseSchemaUpdate,
-	RegistrationBaseSchemaInDBBase,
-	RegistrationBaseSchema,
-	RegistrationBaseSchemaInDB,
 )
 
 
@@ -39,7 +34,6 @@ class CampInstanceRegistrationSchemaBase(
 
 class CampInstanceRegistrationSchemaCreate(
 	CampInstanceRegistrationSchemaBase,
-	RegistrationBaseSchemaCreate,
 ):
 	pass
 
@@ -47,7 +41,6 @@ class CampInstanceRegistrationSchemaCreate(
 
 class CampInstanceRegistrationSchemaUpdate(
 	CampInstanceRegistrationSchemaBase,
-	RegistrationBaseSchemaUpdate,
 ):
 	pass
 
@@ -55,7 +48,6 @@ class CampInstanceRegistrationSchemaUpdate(
 
 class CampInstanceRegistrationSchemaInDBBase(
 	CampInstanceRegistrationSchemaBase,
-	RegistrationBaseSchemaInDBBase,
 ):
 	id: int
 
@@ -66,7 +58,6 @@ class CampInstanceRegistrationSchemaInDBBase(
 
 class CampInstanceRegistrationSchema(
 	CampInstanceRegistrationSchemaInDBBase,
-	RegistrationBaseSchema,
 ):
 	pass
 
@@ -74,7 +65,6 @@ class CampInstanceRegistrationSchema(
 
 class CampInstanceRegistrationSchemaInDB(
 	CampInstanceRegistrationSchemaInDBBase,
-	RegistrationBaseSchemaInDB,
 ):
 	pass
 

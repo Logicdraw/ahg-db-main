@@ -20,7 +20,6 @@ from main.crud.base import CRUDBase
 
 
 from main.models.form.question import (
-	FormQuestionModel,
 	FormQuestionInputModel,
 	FormQuestionTextareaModel,
 	FormQuestionSelectModel,
@@ -29,8 +28,6 @@ from main.models.form.question import (
 )
 
 from main.schemas.form.question import (
-	FormQuestionSchemaCreate,
-	FormQuestionSchemaUpdate,
 	FormQuestionInputSchemaCreate,
 	FormQuestionInputSchemaUpdate,
 	FormQuestionTextareaSchemaCreate,
@@ -44,15 +41,6 @@ from main.schemas.form.question import (
 )
 
 
-
-
-class CRUDFormQuestion(
-	CRUDBase[
-		FormQuestionModel,
-		FormQuestionSchemaCreate,
-		FormQuestionSchemaUpdate,
-	]):
-	pass
 
 
 
@@ -109,9 +97,6 @@ class CRUDFormQuestionRadio(
 
 
 
-
-
-form_question_crud = CRUDFormQuestion(FormQuestionModel)
 
 form_question_input_crud = CRUDFormQuestionInput(FormQuestionInputModel)
 

@@ -176,7 +176,7 @@ class CRUDBase(
 	) -> Optional[ModelType]:
 		# Update --
 
-		db_obj = db_obj or await self.get(session, **kwargs)
+		db_obj = db_obj or await self.get(db, **kwargs)
 
 		if db_obj is not None:
 
@@ -214,7 +214,7 @@ class CRUDBase(
 	) -> Optional[ModelType]:
 		# Update Sync --
 
-		db_obj = db_obj or self.get_sync(session, **kwargs)
+		db_obj = db_obj or self.get_sync(db, **kwargs)
 
 		if db_obj is not None:
 
