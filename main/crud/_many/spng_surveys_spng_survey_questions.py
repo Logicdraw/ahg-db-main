@@ -36,6 +36,8 @@ class CRUDSpngSurveysSpngSurveyQuestions(
 		SpngSurveysSpngSurveyQuestionsSchemaUpdate,
 	]):
 
+	pass
+
 
 spng_surveys_spng_survey_questions_crud = CRUDSpngSurveysSpngSurveyQuestions(SpngSurveysSpngSurveyQuestionsModel)
 

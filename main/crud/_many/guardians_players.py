@@ -31,6 +31,7 @@ class CRUDGuardiansPlayers(
 		GuardiansPlayersSchemaUpdate,
 	]):
 
+	pass
 
 
 guardians_players_crud = CRUDGuardiansPlayers(GuardiansPlayersModel)

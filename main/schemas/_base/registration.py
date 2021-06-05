@@ -56,7 +56,6 @@ class SpngRegistrationFinancialsBaseSchema(BaseModel):
 
 class PlayerRegistrationBaseSchema(BaseModel):
 	position: Optional[str] = None
-	invited_by_coach: Optional[bool] = None
 	registration_insurance: Optional[bool] = None
 	player_submitted_notes: Optional[str] = None
 

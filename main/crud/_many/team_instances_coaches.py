@@ -30,7 +30,8 @@ class CRUDTeamInstancesCoaches(
 		TeamInstancesCoachesSchemaCreate,
 		TeamInstancesCoachesSchemaUpdate,
 	]):
-
+	
+	pass
 
 
 team_instances_coaches_crud = CRUDTeamInstancesCoaches(TeamInstancesCoachesModel)

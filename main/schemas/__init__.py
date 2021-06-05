@@ -1,8 +1,5 @@
 from main.schemas._base.registration import (
-	RegistrationBaseSchemaCreate,
-	RegistrationBaseSchemaUpdate,
-	RegistrationBaseSchema,
-	RegistrationBaseSchemaInDB,
+	RegistrationBaseSchemaBase,
 )
 from main.schemas._base.spng_survey import (
 	SpngSurveyBaseSchemaCreate,

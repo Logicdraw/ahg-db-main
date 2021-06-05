@@ -56,7 +56,7 @@ async def test_create_form_answer_input(
 	
 	input_answer = random_lower_string()
 
-	form_answer_input_in = FormAnswerInputSchemaCreate(
+	form_answer_input_in = FormEntryAnswerInputSchemaCreate(
 		input_answer=input_answer,
 	)
 
@@ -78,7 +78,7 @@ async def test_create_sync_form_answer_input(
 
 	input_answer = random_lower_string()
 
-	form_answer_input_in = FormAnswerInputSchemaCreate(
+	form_answer_input_in = FormEntryAnswerInputSchemaCreate(
 		input_answer=input_answer,
 	)
 
@@ -100,7 +100,7 @@ async def test_get_form_answer_input(
 
 	input_answer = random_lower_string()
 
-	form_answer_input_in = FormAnswerInputSchemaCreate(
+	form_answer_input_in = FormEntryAnswerInputSchemaCreate(
 		input_answer=input_answer,
 	)
 
@@ -127,7 +127,7 @@ async def test_get_sync_form_answer_input(
 
 	input_answer = random_lower_string()
 
-	form_answer_input_in = FormAnswerInputSchemaCreate(
+	form_answer_input_in = FormEntryAnswerInputSchemaCreate(
 		input_answer=input_answer,
 	)
 
@@ -154,7 +154,7 @@ async def test_update_form_answer_input(
 
 	input_answer = random_lower_string()
 
-	form_answer_input_in = FormAnswerInputSchemaCreate(
+	form_answer_input_in = FormEntryAnswerInputSchemaCreate(
 		input_answer=input_answer,
 	)
 
@@ -166,7 +166,7 @@ async def test_update_form_answer_input(
 
 	new_label = random_lower_string()
 	
-	form_answer_input_in_update = FormAnswerInputSchemaUpdate(
+	form_answer_input_in_update = FormEntryAnswerInputSchemaUpdate(
 		label=new_label,
 	)
 
@@ -189,7 +189,7 @@ async def test_update_sync_form_answer_input(
 
 	input_answer = random_lower_string()
 
-	form_answer_input_in = FormAnswerInputSchemaCreate(
+	form_answer_input_in = FormEntryAnswerInputSchemaCreate(
 		input_answer=input_answer,
 	)
 
@@ -201,7 +201,7 @@ async def test_update_sync_form_answer_input(
 
 	new_label = random_lower_string()
 	
-	form_answer_input_in_update = FormAnswerInputSchemaUpdate(
+	form_answer_input_in_update = FormEntryAnswerInputSchemaUpdate(
 		label=new_label,
 	)
 
@@ -224,7 +224,7 @@ async def test_delete_form_answer_input(
 
 	input_answer = random_lower_string()
 
-	form_answer_input_in = FormAnswerInputSchemaCreate(
+	form_answer_input_in = FormEntryAnswerInputSchemaCreate(
 		input_answer=input_answer,
 	)
 
@@ -257,7 +257,7 @@ async def test_delete_sync_form_answer_input(
 
 	input_answer = random_lower_string()
 
-	form_answer_input_in = FormAnswerInputSchemaCreate(
+	form_answer_input_in = FormEntryAnswerInputSchemaCreate(
 		input_answer=input_answer,
 	)
 
@@ -294,7 +294,7 @@ async def test_create_form_answer_textarea(
 	
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerTextareaSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -316,7 +316,7 @@ async def test_create_sync_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerTextareaSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -338,7 +338,7 @@ async def test_get_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerTextareaSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -365,7 +365,7 @@ async def test_get_sync_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerTextareaSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -392,7 +392,7 @@ async def test_update_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerTextareaSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -404,7 +404,7 @@ async def test_update_form_answer_textarea(
 
 	new_label = random_lower_string()
 	
-	form_answer_textarea_in_update = FormAnswerTextareaSchemaUpdate(
+	form_answer_textarea_in_update = FormEntryAnswerTextareaSchemaUpdate(
 		label=new_label,
 	)
 
@@ -427,7 +427,7 @@ async def test_update_sync_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerTextareaSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -439,7 +439,7 @@ async def test_update_sync_form_answer_textarea(
 
 	new_label = random_lower_string()
 	
-	form_answer_textarea_in_update = FormAnswerTextareaSchemaUpdate(
+	form_answer_textarea_in_update = FormEntryAnswerTextareaSchemaUpdate(
 		label=new_label,
 	)
 
@@ -462,7 +462,7 @@ async def test_delete_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerTextareaSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -495,7 +495,7 @@ async def test_delete_sync_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerTextareaSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -531,7 +531,7 @@ async def test_create_form_answer_textarea(
 	
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerSelectSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -553,7 +553,7 @@ async def test_create_sync_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerSelectSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -575,7 +575,7 @@ async def test_get_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerSelectSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -602,7 +602,7 @@ async def test_get_sync_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerSelectSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -629,7 +629,7 @@ async def test_update_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerSelectSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -641,7 +641,7 @@ async def test_update_form_answer_textarea(
 
 	new_label = random_lower_string()
 	
-	form_answer_textarea_in_update = FormAnswerSelectSchemaUpdate(
+	form_answer_textarea_in_update = FormEntryAnswerSelectSchemaUpdate(
 		label=new_label,
 	)
 
@@ -664,7 +664,7 @@ async def test_update_sync_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerSelectSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -676,7 +676,7 @@ async def test_update_sync_form_answer_textarea(
 
 	new_label = random_lower_string()
 	
-	form_answer_textarea_in_update = FormAnswerSelectSchemaUpdate(
+	form_answer_textarea_in_update = FormEntryAnswerSelectSchemaUpdate(
 		label=new_label,
 	)
 
@@ -699,7 +699,7 @@ async def test_delete_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerSelectSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -732,7 +732,7 @@ async def test_delete_sync_form_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_answer_textarea_in = FormAnswerSelectSchemaCreate(
+	form_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -771,7 +771,7 @@ async def test_create_form_answer_select(
 		'a': 'abc',
 	}
 
-	form_answer_select_in = FormAnswerSelectSchemaCreate(
+	form_answer_select_in = FormEntryAnswerSelectSchemaCreate(
 		select_selected=select_selected,
 	)
 
@@ -795,7 +795,7 @@ async def test_create_sync_form_answer_select(
 		'a': 'abc',
 	}
 
-	form_answer_select_in = FormAnswerSelectSchemaCreate(
+	form_answer_select_in = FormEntryAnswerSelectSchemaCreate(
 		select_selected=select_selected,
 	)
 
@@ -819,7 +819,7 @@ async def test_get_form_answer_select(
 		'a': 'abc',
 	}
 
-	form_answer_select_in = FormAnswerSelectSchemaCreate(
+	form_answer_select_in = FormEntryAnswerSelectSchemaCreate(
 		select_selected=select_selected,
 	)
 
@@ -848,7 +848,7 @@ async def test_get_sync_form_answer_select(
 		'a': 'abc',
 	}
 
-	form_answer_select_in = FormAnswerSelectSchemaCreate(
+	form_answer_select_in = FormEntryAnswerSelectSchemaCreate(
 		select_selected=select_selected,
 	)
 
@@ -877,7 +877,7 @@ async def test_update_form_answer_select(
 		'a': 'abc',
 	}
 
-	form_answer_select_in = FormAnswerSelectSchemaCreate(
+	form_answer_select_in = FormEntryAnswerSelectSchemaCreate(
 		select_selected=select_selected,
 	)
 
@@ -891,7 +891,7 @@ async def test_update_form_answer_select(
 
 	}
 	
-	form_answer_select_in_update = FormAnswerSelectSchemaUpdate(
+	form_answer_select_in_update = FormEntryAnswerSelectSchemaUpdate(
 		label=new_label,
 	)
 
@@ -916,7 +916,7 @@ async def test_update_sync_form_answer_select(
 		'a': 'abc',
 	}
 
-	form_answer_select_in = FormAnswerSelectSchemaCreate(
+	form_answer_select_in = FormEntryAnswerSelectSchemaCreate(
 		select_selected=select_selected,
 	)
 
@@ -930,7 +930,7 @@ async def test_update_sync_form_answer_select(
 
 	}
 	
-	form_answer_select_in_update = FormAnswerSelectSchemaUpdate(
+	form_answer_select_in_update = FormEntryAnswerSelectSchemaUpdate(
 		label=new_label,
 	)
 
@@ -955,7 +955,7 @@ async def test_delete_form_answer_select(
 		'a': 'abc',
 	}
 
-	form_answer_select_in = FormAnswerSelectSchemaCreate(
+	form_answer_select_in = FormEntryAnswerSelectSchemaCreate(
 		select_selected=select_selected,
 	)
 
@@ -990,7 +990,7 @@ async def test_delete_sync_form_answer_select(
 		'a': 'abc',
 	}
 
-	form_answer_select_in = FormAnswerSelectSchemaCreate(
+	form_answer_select_in = FormEntryAnswerSelectSchemaCreate(
 		select_selected=select_selected,
 	)
 
@@ -1026,7 +1026,7 @@ async def test_create_form_answer_checkbox(
 	
 	checkbox_checked = True
 
-	form_answer_checkbox_in = FormAnswerCheckboxSchemaCreate(
+	form_answer_checkbox_in = FormEntryAnswerCheckboxSchemaCreate(
 		checkbox_checked=checkbox_checked,
 	)
 
@@ -1048,7 +1048,7 @@ async def test_create_sync_form_answer_checkbox(
 
 	checkbox_checked = True
 
-	form_answer_checkbox_in = FormAnswerCheckboxSchemaCreate(
+	form_answer_checkbox_in = FormEntryAnswerCheckboxSchemaCreate(
 		checkbox_checked=checkbox_checked,
 	)
 
@@ -1070,7 +1070,7 @@ async def test_get_form_answer_checkbox(
 
 	checkbox_checked = True
 
-	form_answer_checkbox_in = FormAnswerCheckboxSchemaCreate(
+	form_answer_checkbox_in = FormEntryAnswerCheckboxSchemaCreate(
 		checkbox_checked=checkbox_checked,
 	)
 
@@ -1097,7 +1097,7 @@ async def test_get_sync_form_answer_checkbox(
 
 	checkbox_checked = True
 
-	form_answer_checkbox_in = FormAnswerCheckboxSchemaCreate(
+	form_answer_checkbox_in = FormEntryAnswerCheckboxSchemaCreate(
 		checkbox_checked=checkbox_checked,
 	)
 
@@ -1124,7 +1124,7 @@ async def test_update_form_answer_checkbox(
 
 	checkbox_checked = True
 
-	form_answer_checkbox_in = FormAnswerCheckboxSchemaCreate(
+	form_answer_checkbox_in = FormEntryAnswerCheckboxSchemaCreate(
 		checkbox_checked=checkbox_checked,
 	)
 
@@ -1138,7 +1138,7 @@ async def test_update_form_answer_checkbox(
 
 	}
 	
-	form_answer_checkbox_in_update = FormAnswerCheckboxSchemaUpdate(
+	form_answer_checkbox_in_update = FormEntryAnswerCheckboxSchemaUpdate(
 		label=new_label,
 	)
 
@@ -1161,7 +1161,7 @@ async def test_update_sync_form_answer_checkbox(
 
 	checkbox_checked = True
 
-	form_answer_checkbox_in = FormAnswerCheckboxSchemaCreate(
+	form_answer_checkbox_in = FormEntryAnswerCheckboxSchemaCreate(
 		checkbox_checked=checkbox_checked,
 	)
 
@@ -1175,7 +1175,7 @@ async def test_update_sync_form_answer_checkbox(
 
 	}
 	
-	form_answer_checkbox_in_update = FormAnswerCheckboxSchemaUpdate(
+	form_answer_checkbox_in_update = FormEntryAnswerCheckboxSchemaUpdate(
 		label=new_label,
 	)
 
@@ -1198,7 +1198,7 @@ async def test_delete_form_answer_checkbox(
 
 	checkbox_checked = True
 
-	form_answer_checkbox_in = FormAnswerCheckboxSchemaCreate(
+	form_answer_checkbox_in = FormEntryAnswerCheckboxSchemaCreate(
 		checkbox_checked=checkbox_checked,
 	)
 
@@ -1231,7 +1231,7 @@ async def test_delete_sync_form_answer_checkbox(
 
 	checkbox_checked = True
 
-	form_answer_checkbox_in = FormAnswerCheckboxSchemaCreate(
+	form_answer_checkbox_in = FormEntryAnswerCheckboxSchemaCreate(
 		checkbox_checked=checkbox_checked,
 	)
 
@@ -1271,7 +1271,7 @@ async def test_create_form_answer_radio(
 		'a': 'abc',
 	}
 
-	form_answer_radio_in = FormAnswerRadioSchemaCreate(
+	form_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
 		radio_selected=radio_selected,
 	)
 
@@ -1295,7 +1295,7 @@ async def test_create_sync_form_answer_radio(
 		'a': 'abc',
 	}
 
-	form_answer_radio_in = FormAnswerRadioSchemaCreate(
+	form_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
 		radio_selected=radio_selected,
 	)
 
@@ -1319,7 +1319,7 @@ async def test_get_form_answer_radio(
 		'a': 'abc',
 	}
 
-	form_answer_radio_in = FormAnswerRadioSchemaCreate(
+	form_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
 		radio_selected=radio_selected,
 	)
 
@@ -1348,7 +1348,7 @@ async def test_get_sync_form_answer_radio(
 		'a': 'abc',
 	}
 
-	form_answer_radio_in = FormAnswerRadioSchemaCreate(
+	form_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
 		radio_selected=radio_selected,
 	)
 
@@ -1377,7 +1377,7 @@ async def test_update_form_answer_radio(
 		'a': 'abc',
 	}
 
-	form_answer_radio_in = FormAnswerRadioSchemaCreate(
+	form_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
 		radio_selected=radio_selected,
 	)
 
@@ -1391,7 +1391,7 @@ async def test_update_form_answer_radio(
 
 	}
 	
-	form_answer_radio_in_update = FormAnswerRadioSchemaUpdate(
+	form_answer_radio_in_update = FormEntryAnswerRadioSchemaUpdate(
 		label=new_label,
 	)
 
@@ -1416,7 +1416,7 @@ async def test_update_sync_form_answer_radio(
 		'a': 'abc',
 	}
 
-	form_answer_radio_in = FormAnswerRadioSchemaCreate(
+	form_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
 		radio_selected=radio_selected,
 	)
 
@@ -1430,7 +1430,7 @@ async def test_update_sync_form_answer_radio(
 
 	}
 	
-	form_answer_radio_in_update = FormAnswerRadioSchemaUpdate(
+	form_answer_radio_in_update = FormEntryAnswerRadioSchemaUpdate(
 		label=new_label,
 	)
 
@@ -1455,7 +1455,7 @@ async def test_delete_form_answer_radio(
 		'a': 'abc',
 	}
 
-	form_answer_radio_in = FormAnswerRadioSchemaCreate(
+	form_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
 		radio_selected=radio_selected,
 	)
 
@@ -1490,7 +1490,7 @@ async def test_delete_sync_form_answer_radio(
 		'a': 'abc',
 	}
 
-	form_answer_radio_in = FormAnswerRadioSchemaCreate(
+	form_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
 		radio_selected=radio_selected,
 	)
 

@@ -15,11 +15,6 @@ from main.schemas._base.registration import (
 
 from main.schemas._base.registration import (
 	RegistrationBaseSchemaBase,
-	RegistrationBaseSchemaCreate,
-	RegistrationBaseSchemaUpdate,
-	RegistrationBaseSchemaInDBBase,
-	RegistrationBaseSchema,
-	RegistrationBaseSchemaInDB,
 )
 
 
@@ -39,7 +34,6 @@ class ProgramInstanceRegistrationSchemaBase(
 
 class ProgramInstanceRegistrationSchemaCreate(
 	ProgramInstanceRegistrationSchemaBase,
-	RegistrationBaseSchemaCreate,
 ):
 	pass
 
@@ -47,7 +41,6 @@ class ProgramInstanceRegistrationSchemaCreate(
 
 class ProgramInstanceRegistrationSchemaUpdate(
 	ProgramInstanceRegistrationSchemaBase,
-	RegistrationBaseSchemaUpdate,
 ):
 	pass
 
@@ -55,7 +48,6 @@ class ProgramInstanceRegistrationSchemaUpdate(
 
 class ProgramInstanceRegistrationSchemaInDBBase(
 	ProgramInstanceRegistrationSchemaBase,
-	RegistrationBaseSchemaInDBBase,
 ):
 	id: int
 
@@ -66,7 +58,6 @@ class ProgramInstanceRegistrationSchemaInDBBase(
 
 class ProgramInstanceRegistrationSchema(
 	ProgramInstanceRegistrationSchemaInDBBase,
-	RegistrationBaseSchema,
 ):
 	pass
 
@@ -74,7 +65,6 @@ class ProgramInstanceRegistrationSchema(
 
 class ProgramInstanceRegistrationSchemaInDB(
 	ProgramInstanceRegistrationSchemaInDBBase,
-	RegistrationBaseSchemaInDB,
 ):
 	pass
 

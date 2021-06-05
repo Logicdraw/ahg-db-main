@@ -31,7 +31,7 @@ class CRUDProgramInstancesCoaches(
 		ProgramInstancesCoachesSchemaUpdate,
 	]):
 
-
+	pass
 
 
 program_instances_coaches_crud = CRUDProgramInstancesCoaches(ProgramInstancesCoachesModel)

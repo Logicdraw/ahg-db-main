@@ -154,25 +154,25 @@ async def test_update_spng_survey_base(
 		obj_in=spng_survey_base_in,
 	)
 
+
+	new_name = random_name()
+	while new_name == name:
+		new_name = random_name()
+
 	spng_survey_base_in_update = SpngSurveyBaseSchemaUpdate(
-		name=random_name(),
+		name=new_name,
 	)
 
-	await spng_survey_base_crud.update(
+	spng_survey_base_2 = await spng_survey_base_crud.update(
 		db=db,
 		db_obj=spng_survey_base,
 		obj_in=spng_survey_base_in_update,
 	)
 
-	spng_survey_base_2 = await spng_survey_base_crud.get(
-		db=db,
-		id=spng_survey_base.id,
-	)
-
 
 	assert spng_survey_base_2
 	assert spng_survey_base_2.name
-	assert spng_survey_base_2.name != spng_survey_base.name
+	assert spng_survey_base_2.name == new_name
 
 
 
@@ -196,25 +196,24 @@ async def test_update_sync_spng_survey_base(
 		obj_in=spng_survey_base_in,
 	)
 
+	new_name = random_name()
+	while new_name == name:
+		new_name = random_name()
+
 	spng_survey_base_in_update = SpngSurveyBaseSchemaUpdate(
-		name=random_name(),
+		name=new_name,
 	)
 
-	await db.run_sync(
+	spng_survey_base_2 = await db.run_sync(
 		spng_survey_base_crud.update_sync,
 		db_obj=spng_survey_base,
 		obj_in=spng_survey_base_in_update,
 	)
 
-	spng_survey_base_2 = await db.run_sync(
-		spng_survey_base_crud.get_sync,
-		id=spng_survey_base.id,
-	)
-
 
 	assert spng_survey_base_2
 	assert spng_survey_base_2.name
-	assert spng_survey_base_2.name != spng_survey_base.name
+	assert spng_survey_base_2.name == new_name
 
 
 

@@ -1,6 +1,7 @@
 from typing import (
 	Optional,
 	Any,
+	Dict,
 )
 
 from pydantic import (
@@ -164,7 +165,7 @@ class FormQuestionSelectSchemaBase(
 	FormQuestionSchemaBase,
 ):
 	select_is_multiple: Optional[bool] = None
-	select_answers: Optional[str] = None
+	select_answers: Optional[Dict[Any, Any]] = None
 
 
 

@@ -207,6 +207,14 @@ async def test_update_sync_spng_survey_camp(
 		obj_in=spng_survey_camp_in,
 	)
 
+	new_name = random_lower_string()
+	while new_name == name:
+		new_name = random_lower_string()
+
+	spng_survey_camp_in_update = SpngSurveyCampSchemaUpdate(
+		name=new_name,
+	)
+
 	spng_survey_camp_2 = await db.run_sync(
 		spng_survey_camp_crud.update_sync,
 		db_obj=spng_survey_camp,

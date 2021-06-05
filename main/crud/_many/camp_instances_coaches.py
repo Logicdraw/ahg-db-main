@@ -29,7 +29,8 @@ class CRUDCampInstancesCoaches(
 		CampInstancesCoachesSchemaCreate,
 		CampInstancesCoachesSchemaUpdate,
 	]):
-
+	
+	pass
 
 
 

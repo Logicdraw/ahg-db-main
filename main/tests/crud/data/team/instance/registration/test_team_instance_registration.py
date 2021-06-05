@@ -20,12 +20,16 @@ from main.tests.utils import (
 	random_email,
 	random_lower_string,
 	random_name,
+	random_number,
 )
 
 
 import pytest
 
 
+import datetime
+
+import pytz
 
 
 
@@ -65,7 +69,6 @@ async def test_create_team_instance_registration(
 	discounts = float(random_number())
 	refunds = float(random_number())
 	position = random_lower_string()
-	invited_by_coach = True
 	registration_insurance = True
 
 	player_submitted_notes = random_lower_string()
@@ -102,7 +105,6 @@ async def test_create_team_instance_registration(
 		discounts=discounts,
 		refunds=refunds,
 		position=position,
-		invited_by_coach=invited_by_coach,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
 		needs_jersey=needs_jersey,
@@ -155,7 +157,6 @@ async def test_create_sync_team_instance_registration(
 	discounts = float(random_number())
 	refunds = float(random_number())
 	position = random_lower_string()
-	invited_by_coach = True
 	registration_insurance = True
 
 	player_submitted_notes = random_lower_string()
@@ -192,7 +193,6 @@ async def test_create_sync_team_instance_registration(
 		discounts=discounts,
 		refunds=refunds,
 		position=position,
-		invited_by_coach=invited_by_coach,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
 		needs_jersey=needs_jersey,
@@ -245,7 +245,6 @@ async def test_get_team_instance_registration(
 	discounts = float(random_number())
 	refunds = float(random_number())
 	position = random_lower_string()
-	invited_by_coach = True
 	registration_insurance = True
 
 	player_submitted_notes = random_lower_string()
@@ -282,7 +281,6 @@ async def test_get_team_instance_registration(
 		discounts=discounts,
 		refunds=refunds,
 		position=position,
-		invited_by_coach=invited_by_coach,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
 		needs_jersey=needs_jersey,
@@ -339,7 +337,6 @@ async def test_get_sync_team_instance_registration(
 	discounts = float(random_number())
 	refunds = float(random_number())
 	position = random_lower_string()
-	invited_by_coach = True
 	registration_insurance = True
 
 	player_submitted_notes = random_lower_string()
@@ -376,7 +373,6 @@ async def test_get_sync_team_instance_registration(
 		discounts=discounts,
 		refunds=refunds,
 		position=position,
-		invited_by_coach=invited_by_coach,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
 		needs_jersey=needs_jersey,
@@ -435,7 +431,6 @@ async def test_update_team_instance_registration(
 	discounts = float(random_number())
 	refunds = float(random_number())
 	position = random_lower_string()
-	invited_by_coach = True
 	registration_insurance = True
 
 	player_submitted_notes = random_lower_string()
@@ -472,7 +467,6 @@ async def test_update_team_instance_registration(
 		discounts=discounts,
 		refunds=refunds,
 		position=position,
-		invited_by_coach=invited_by_coach,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
 		needs_jersey=needs_jersey,
@@ -540,7 +534,6 @@ async def test_update_sync_team_instance_registration(
 	discounts = float(random_number())
 	refunds = float(random_number())
 	position = random_lower_string()
-	invited_by_coach = True
 	registration_insurance = True
 
 	player_submitted_notes = random_lower_string()
@@ -577,7 +570,6 @@ async def test_update_sync_team_instance_registration(
 		discounts=discounts,
 		refunds=refunds,
 		position=position,
-		invited_by_coach=invited_by_coach,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
 		needs_jersey=needs_jersey,
@@ -645,7 +637,6 @@ async def test_delete_team_instance_registration(
 	discounts = float(random_number())
 	refunds = float(random_number())
 	position = random_lower_string()
-	invited_by_coach = True
 	registration_insurance = True
 
 	player_submitted_notes = random_lower_string()
@@ -682,7 +673,6 @@ async def test_delete_team_instance_registration(
 		discounts=discounts,
 		refunds=refunds,
 		position=position,
-		invited_by_coach=invited_by_coach,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
 		needs_jersey=needs_jersey,
@@ -746,7 +736,6 @@ async def test_delete_sync_team_instance_registration(
 	discounts = float(random_number())
 	refunds = float(random_number())
 	position = random_lower_string()
-	invited_by_coach = True
 	registration_insurance = True
 
 	player_submitted_notes = random_lower_string()
@@ -783,7 +772,6 @@ async def test_delete_sync_team_instance_registration(
 		discounts=discounts,
 		refunds=refunds,
 		position=position,
-		invited_by_coach=invited_by_coach,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
 		needs_jersey=needs_jersey,

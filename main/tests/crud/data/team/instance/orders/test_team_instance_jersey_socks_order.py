@@ -44,7 +44,7 @@ async def test_create_team_instance_jersey_socks_order(
 		socks_size=socks_size,
 	)
 
-	team_instance_jersey_socks_order = await team_instance_registration_jersey_sponsor_crud.create(
+	team_instance_jersey_socks_order = await team_instance_jersey_socks_order_crud.create(
 		db=db,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
@@ -72,7 +72,7 @@ async def test_create_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order = await db.run_sync(
-		team_instance_registration_jersey_sponsor_crud.create_sync,
+		team_instance_registration_jersey_socks_order_crud.create_sync,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
@@ -99,12 +99,12 @@ async def test_get_team_instance_jersey_socks_order(
 		socks_size=socks_size,
 	)
 
-	team_instance_jersey_socks_order = await team_instance_registration_jersey_sponsor_crud.create(
+	team_instance_jersey_socks_order = await team_instance_jersey_socks_order_crud.create(
 		db=db,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
-	team_instance_jersey_socks_order_2 = await team_instance_registration_jersey_sponsor_crud.get(
+	team_instance_jersey_socks_order_2 = await team_instance_jersey_socks_order_crud.get(
 		db=db,
 		id=team_instance_jersey_socks_order.id,
 	)
@@ -131,12 +131,12 @@ async def test_get_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order = await db.run_sync(
-		team_instance_registration_jersey_sponsor_crud.create_sync,
+		team_instance_registration_jersey_socks_order_crud.create_sync,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
 	team_instance_jersey_socks_order_2 = await db.run_sync(
-		team_instance_registration_jersey_sponsor_crud.get_sync,
+		team_instance_registration_jersey_socks_order_crud.get_sync,
 		id=team_instance_jersey_socks_order.id,
 	)
 
@@ -162,7 +162,7 @@ async def test_update_team_instance_jersey_socks_order(
 		socks_size=socks_size,
 	)
 
-	team_instance_jersey_socks_order = await team_instance_registration_jersey_sponsor_crud.create(
+	team_instance_jersey_socks_order = await team_instance_jersey_socks_order_crud.create(
 		db=db,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
@@ -177,7 +177,7 @@ async def test_update_team_instance_jersey_socks_order(
 		jersey_number=new_jersey_number,
 	)
 
-	team_instance_jersey_socks_order_2 = await team_instance_registration_jersey_sponsor_crud.update(
+	team_instance_jersey_socks_order_2 = await team_instance_jersey_socks_order_crud.update(
 		db=db,
 		db_obj=team_instance_jersey_socks_order,
 		obj_in=team_instance_jersey_socks_order_in_update,
@@ -207,7 +207,7 @@ async def test_update_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order = await db.run_sync(
-		team_instance_registration_jersey_sponsor_crud.create_sync,
+		team_instance_registration_jersey_socks_order_crud.create_sync,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
@@ -223,7 +223,7 @@ async def test_update_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order_2 = await db.run_sync(
-		team_instance_registration_jersey_sponsor_crud.update_sync,
+		team_instance_registration_jersey_socks_order_crud.update_sync,
 		db_obj=team_instance_jersey_socks_order,
 		obj_in=team_instance_jersey_socks_order_in_update,
 	)
@@ -250,17 +250,17 @@ async def test_delete_team_instance_jersey_socks_order(
 		socks_size=socks_size,
 	)
 
-	team_instance_jersey_socks_order = await team_instance_registration_jersey_sponsor_crud.create(
+	team_instance_jersey_socks_order = await team_instance_jersey_socks_order_crud.create(
 		db=db,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
-	team_instance_jersey_socks_order_2 = await team_instance_registration_jersey_sponsor_crud.delete(
+	team_instance_jersey_socks_order_2 = await team_instance_jersey_socks_order_crud.delete(
 		db=db,
 		id=team_instance_jersey_socks_order.id,
 	)
 
-	team_instance_jersey_socks_order_3 = await team_instance_registration_jersey_sponsor_crud.get(
+	team_instance_jersey_socks_order_3 = await team_instance_jersey_socks_order_crud.get(
 		db=db,
 		id=team_instance_jersey_socks_order.id,
 	)
@@ -287,17 +287,17 @@ async def test_delete_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order = await db.run_sync(
-		team_instance_registration_jersey_sponsor_crud.create_sync,
+		team_instance_registration_jersey_socks_order_crud.create_sync,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
 	team_instance_jersey_socks_order_2 = await db.run_sync(
-		team_instance_registration_jersey_sponsor_crud.delete_sync,
+		team_instance_registration_jersey_socks_order_crud.delete_sync,
 		id=team_instance_jersey_socks_order.id,
 	)
 
 	team_instance_jersey_socks_order_3 = await db.run_sync(
-		team_instance_registration_jersey_sponsor_crud.get_sync,
+		team_instance_registration_jersey_socks_order_crud.get_sync,
 		id=team_instance_jersey_socks_order.id,
 	)
 
