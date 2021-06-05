@@ -28,6 +28,7 @@ import pytest
 
 
 
+
 @pytest.mark.asyncio
 async def test_create_spng_survey_camp(
 	db: AsyncSession,
