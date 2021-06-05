@@ -30,42 +30,6 @@ class CRUDTeamInstancesPlayers(
 		TeamInstancesPlayersSchemaUpdate,
 	]):
 
-	async def get(
-		self,
-		db: AsyncSession,
-		team_instance_id: int,
-		player_id: int,
-	) -> Optional[TeamInstancesPlayersModel]:
-		# --
-
-		result = await db.execute(
-			select(TeamInstancesPlayersModel).\
-			filter_by(
-				team_instance_id=team_instance_id,
-				player_id=player_id,
-			)
-		)
-
-		return result.scalars().first()
-
-
-	def get_sync(
-		self,
-		db: AsyncSession,
-		team_instance_id: int,
-		player_id: int,
-	) -> Optional[TeamInstancesPlayersModel]:
-		# --
-
-		result = db.execute(
-			select(TeamInstancesPlayersModel).\
-			filter_by(
-				team_instance_id=team_instance_id,
-				player_id=player_id,
-			)
-		)
-
-		return result.scalars().first()
 
 
 

@@ -36,26 +36,6 @@ class CRUDSpngSurveysSpngSurveyQuestions(
 		SpngSurveysSpngSurveyQuestionsSchemaUpdate,
 	]):
 
-	async def get(
-		self,
-		db: AsyncSession,
-		spng_survey_id: int,
-		spng_survey_question_id: int,
-	) -> Optional[SpngSurveysSpngSurveyQuestionsModel]:
-		# --
-
-		result = await db.execute(
-			select(SpngSurveysSpngSurveyQuestionsModel).\
-			filter_by(
-				spng_survey_id=spng_survey_id,
-				spng_survey_question_id=spng_survey_question_id,
-			)
-		)
-
-		return result.scalars().first()
-
-
-
 
 spng_surveys_spng_survey_questions_crud = CRUDSpngSurveysSpngSurveyQuestions(SpngSurveysSpngSurveyQuestionsModel)
 

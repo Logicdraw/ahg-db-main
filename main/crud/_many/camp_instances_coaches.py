@@ -30,43 +30,6 @@ class CRUDCampInstancesCoaches(
 		CampInstancesCoachesSchemaUpdate,
 	]):
 
-	async def get(
-		self,
-		db: AsyncSession,
-		camp_instance_id: int,
-		coach_id: int,
-	) -> Optional[CampInstancesCoachesModel]:
-		# --
-
-		result = await db.execute(
-			select(CampInstancesCoachesModel).\
-			filter_by(
-				camp_instance_id=camp_instance_id,
-				coach_id=coach_id,
-			)
-		)
-
-		return result.scalars().first()
-
-
-	def get_sync(
-		self,
-		db: AsyncSession,
-		camp_instance_id: int,
-		coach_id: int,
-	) -> Optional[CampInstancesCoachesModel]:
-		# --
-
-		result = db.execute(
-			select(CampInstancesCoachesModel).\
-			filter_by(
-				camp_instance_id=camp_instance_id,
-				coach_id=coach_id,
-			)
-		)
-
-		return result.scalars().first()
-
 
 
 

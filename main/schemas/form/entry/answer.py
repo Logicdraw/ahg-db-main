@@ -15,7 +15,6 @@ from pydantic import (
 class FormEntryAnswerSchemaBase(BaseModel):
 	entry_id: Optional[int] = None
 	question_id: Optional[int] = None
-	type: Optional[str] = None
 
 
 

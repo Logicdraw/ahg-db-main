@@ -31,43 +31,6 @@ class CRUDProgramInstancesCoaches(
 		ProgramInstancesCoachesSchemaUpdate,
 	]):
 
-	async def get(
-		self,
-		db: AsyncSession,
-		program_instance_id: int,
-		coach_id: int,
-	) -> Optional[ProgramInstancesCoachesModel]:
-		# --
-
-		result = await db.execute(
-			select(ProgramInstancesCoachesModel).\
-			filter_by(
-				program_instance_id=program_instance_id,
-				coach_id=coach_id,
-			)
-		)
-
-		return result.scalars().first()
-
-
-	def get_sync(
-		self,
-		db: AsyncSession,
-		program_instance_id: int,
-		coach_id: int,
-	) -> Optional[ProgramInstancesCoachesModel]:
-		# --
-
-		result = db.execute(
-			select(ProgramInstancesCoachesModel).\
-			filter_by(
-				program_instance_id=program_instance_id,
-				coach_id=coach_id,
-			)
-		)
-
-		return result.scalars().first()
-
 
 
 

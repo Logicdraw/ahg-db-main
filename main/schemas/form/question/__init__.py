@@ -15,7 +15,6 @@ from pydantic import (
 class FormQuestionSchemaBase(BaseModel):
 	form_id: Optional[int] = None
 	label: Optional[str] = None
-	type: Optional[str] = None
 	is_active: Optional[bool] = None
 
 
