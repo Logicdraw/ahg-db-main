@@ -150,6 +150,9 @@ async def test_update_spng_meta(
 
 	new_access_token_encoded = random_lower_string()
 
+	while new_access_token_encoded == access_token_encoded:
+		new_access_token_encoded = random_lower_string()
+
 	spng_meta_in_update = SpngMetaSchemaUpdate(
 		access_token_encoded=new_access_token_encoded,
 	)
@@ -186,6 +189,10 @@ async def test_update_sync_spng_meta(
 
 
 	new_access_token_encoded = random_lower_string()
+
+	while new_access_token_encoded == access_token_encoded:
+		new_access_token_encoded = random_lower_string()
+
 
 	spng_meta_in_update = SpngMetaSchemaUpdate(
 		access_token_encoded=new_access_token_encoded,
