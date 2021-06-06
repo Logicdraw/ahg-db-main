@@ -29,10 +29,7 @@ class FormEntryAnswerSchemaUpdate(FormEntryAnswerSchemaBase):
 
 
 class FormEntryAnswerSchemaInDBBase(FormEntryAnswerSchemaBase):
-	id: int
-
-	class Config:
-		orm_mode = True
+	pass
 
 
 

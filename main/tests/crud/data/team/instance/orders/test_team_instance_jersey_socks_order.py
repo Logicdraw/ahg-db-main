@@ -72,7 +72,7 @@ async def test_create_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order = await db.run_sync(
-		team_instance_registration_jersey_socks_order_crud.create_sync,
+		team_instance_jersey_socks_order_crud.create_sync,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
@@ -131,12 +131,12 @@ async def test_get_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order = await db.run_sync(
-		team_instance_registration_jersey_socks_order_crud.create_sync,
+		team_instance_jersey_socks_order_crud.create_sync,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
 	team_instance_jersey_socks_order_2 = await db.run_sync(
-		team_instance_registration_jersey_socks_order_crud.get_sync,
+		team_instance_jersey_socks_order_crud.get_sync,
 		id=team_instance_jersey_socks_order.id,
 	)
 
@@ -207,7 +207,7 @@ async def test_update_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order = await db.run_sync(
-		team_instance_registration_jersey_socks_order_crud.create_sync,
+		team_instance_jersey_socks_order_crud.create_sync,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
@@ -223,7 +223,7 @@ async def test_update_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order_2 = await db.run_sync(
-		team_instance_registration_jersey_socks_order_crud.update_sync,
+		team_instance_jersey_socks_order_crud.update_sync,
 		db_obj=team_instance_jersey_socks_order,
 		obj_in=team_instance_jersey_socks_order_in_update,
 	)
@@ -287,17 +287,17 @@ async def test_delete_sync_team_instance_jersey_socks_order(
 	)
 
 	team_instance_jersey_socks_order = await db.run_sync(
-		team_instance_registration_jersey_socks_order_crud.create_sync,
+		team_instance_jersey_socks_order_crud.create_sync,
 		obj_in=team_instance_jersey_socks_order_in,
 	)
 
 	team_instance_jersey_socks_order_2 = await db.run_sync(
-		team_instance_registration_jersey_socks_order_crud.delete_sync,
+		team_instance_jersey_socks_order_crud.delete_sync,
 		id=team_instance_jersey_socks_order.id,
 	)
 
 	team_instance_jersey_socks_order_3 = await db.run_sync(
-		team_instance_registration_jersey_socks_order_crud.get_sync,
+		team_instance_jersey_socks_order_crud.get_sync,
 		id=team_instance_jersey_socks_order.id,
 	)
 

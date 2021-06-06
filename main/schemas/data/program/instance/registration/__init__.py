@@ -27,8 +27,8 @@ class ProgramInstanceRegistrationSchemaBase(
 	PlayerRegistrationBaseSchema,
 ):
 	program_instance_id: Optional[int] = None
-	program_instance_group_id: Optional[int] = None
-	spng_survey_id: Optional[int] = None
+	program_group_instance_id: Optional[int] = None
+	spng_survey_program_id: Optional[int] = None
 
 
 

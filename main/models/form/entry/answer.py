@@ -43,8 +43,8 @@ class FormEntryAnswerModel(
 	Base,
 ):
 
-	id = Column(Integer, primary_key=True, index=True)
-
+	id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+	
 
 	@declared_attr
 	def entry(cls):
@@ -63,6 +63,7 @@ class FormEntryAnswerInputModel(
 ):
 
 	__tablename__ = 'form_entry_answer_inputs'
+
 
 	input_answer = Column(String)
 
@@ -88,6 +89,7 @@ class FormEntryAnswerTextareaModel(
 
 	__tablename__ = 'form_entry_answer_textareas'
 
+
 	textarea_answer = Column(Text)
 
 	question = relationship(
@@ -111,6 +113,7 @@ class FormEntryAnswerSelectModel(
 ):
 
 	__tablename__ = 'form_entry_answer_selects'
+
 
 	# Selected --
 
@@ -144,6 +147,7 @@ class FormEntryAnswerCheckboxModel(
 ):
 
 	__tablename__ = 'form_entry_answer_checkboxes'
+
 	
 	checkbox_checked = Column(Boolean, default=False)
 
@@ -168,6 +172,7 @@ class FormEntryAnswerRadioModel(
 ):
 
 	__tablename__ = 'form_entry_answer_radios'
+
 
 
 	radio_selected = Column(

@@ -67,7 +67,7 @@ async def test_create_sync_team_instance_tracksuit_order(
 	)
 
 	team_instance_tracksuit_order = await db.run_sync(
-		team_instance_tracksuit_order.create_sync,
+		team_instance_tracksuit_order_crud.create_sync,
 		obj_in=team_instance_tracksuit_order_in,
 	)
 
@@ -120,12 +120,12 @@ async def test_get_sync_team_instance_tracksuit_order(
 	)
 
 	team_instance_tracksuit_order = await db.run_sync(
-		team_instance_tracksuit_order.create_sync,
+		team_instance_tracksuit_order_crud.create_sync,
 		obj_in=team_instance_tracksuit_order_in,
 	)
 
 	team_instance_tracksuit_order_2 = await db.run_sync(
-		team_instance_tracksuit_order.get_sync,
+		team_instance_tracksuit_order_crud.get_sync,
 		id=team_instance_tracksuit_order.id,
 	)
 
@@ -188,7 +188,7 @@ async def test_update_sync_team_instance_tracksuit_order(
 	)
 
 	team_instance_tracksuit_order = await db.run_sync(
-		team_instance_tracksuit_order.create_sync,
+		team_instance_tracksuit_order_crud.create_sync,
 		obj_in=team_instance_tracksuit_order_in,
 	)
 
@@ -199,7 +199,7 @@ async def test_update_sync_team_instance_tracksuit_order(
 	)
 
 	team_instance_tracksuit_order_2 = await db.run_sync(
-		team_instance_tracksuit_order.update_sync,
+		team_instance_tracksuit_order_crud.update_sync,
 		db_obj=team_instance_tracksuit_order,
 		obj_in=team_instance_tracksuit_order_in_update,
 	)
@@ -240,7 +240,7 @@ async def test_delete_team_instance_tracksuit_order(
 	)
 
 	assert team_instance_tracksuit_order_3 is None
-	assert team_instance_tracksuit_order_2.id == team_instance_jersey_socks_order.id
+	assert team_instance_tracksuit_order_2.id == team_instance_tracksuit_order.id
 
 
 
@@ -259,7 +259,7 @@ async def test_delete_sync_team_instance_tracksuit_order(
 	)
 
 	team_instance_tracksuit_order = await db.run_sync(
-		team_instance_tracksuit_order.create_sync,
+		team_instance_tracksuit_order_crud.create_sync,
 		obj_in=team_instance_tracksuit_order_in,
 	)
 
@@ -275,7 +275,7 @@ async def test_delete_sync_team_instance_tracksuit_order(
 	)
 
 	assert team_instance_tracksuit_order_3 is None
-	assert team_instance_tracksuit_order_2.id == team_instance_jersey_socks_order.id
+	assert team_instance_tracksuit_order_2.id == team_instance_tracksuit_order.id
 
 
 

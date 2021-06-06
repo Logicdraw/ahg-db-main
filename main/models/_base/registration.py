@@ -42,9 +42,9 @@ from sqlalchemy.ext.declarative import declared_attr
 class RegistrationBaseModel(
 	AbstractConcreteBase,
 	Base,
-):	
+):
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(Integer, primary_key=True, index=True, autoincrement=True)
 	
 
 	placed_at_datetime = Column(AwareDateTime())

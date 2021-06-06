@@ -31,10 +31,7 @@ class FormQuestionSchemaUpdate(FormQuestionSchemaBase):
 
 
 class FormQuestionSchemaInDBBase(FormQuestionSchemaBase):
-	id: int
-
-	class Config:
-		orm_mode = True
+	pass
 
 
 

@@ -66,6 +66,7 @@ from main.crud.form.question import (
 	form_question_input_crud,
 	form_question_textarea_crud,
 	form_question_select_crud,
+	form_question_checkbox_crud,
 	form_question_radio_crud,
 )
 

@@ -104,6 +104,8 @@ form_question_textarea_crud = CRUDFormQuestionTextarea(FormQuestionInputModel)
 
 form_question_select_crud = CRUDFormQuestionSelect(FormQuestionSelectModel)
 
+form_question_checkbox_crud = CRUDFormQuestionCheckbox(FormQuestionCheckboxModel)
+
 form_question_radio_crud = CRUDFormQuestionRadio(FormQuestionRadioModel)
 
 

@@ -42,7 +42,7 @@ class FormQuestionModel(
 	Base,
 ):
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(Integer, primary_key=True, index=True, autoincrement=True)
 
 
 	@declared_attr
@@ -69,6 +69,7 @@ class FormQuestionInputModel(
 
 	__tablename__ = 'form_question_inputs'
 
+
 	# max length ... ?
 	answers = relationship(
 		'FormEntryAnswerInputModel',
@@ -89,6 +90,7 @@ class FormQuestionTextareaModel(
 ):
 
 	__tablename__ = 'form_question_textareas'
+
 
 	# max length ... ?
 	answers = relationship(
@@ -111,6 +113,7 @@ class FormQuestionSelectModel(
 ):
 
 	__tablename__ = 'form_question_selects'
+
 	
 	select_is_multiple = Column(Boolean, default=False)
 
@@ -142,6 +145,7 @@ class FormQuestionCheckboxModel(
 
 	__tablename__ = 'form_question_checkboxes'
 
+
 	answers = relationship(
 		'FormEntryAnswerCheckboxModel',
 		back_populates='question',
@@ -162,6 +166,7 @@ class FormQuestionRadioModel(
 ):
 
 	__tablename__ = 'form_question_radios'
+
 
 
 	radio_answers = Column(

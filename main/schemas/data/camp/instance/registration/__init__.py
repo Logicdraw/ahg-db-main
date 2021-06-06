@@ -27,7 +27,7 @@ class CampInstanceRegistrationSchemaBase(
 	PlayerRegistrationBaseSchema,
 ):
 	camp_instance_id: Optional[int] = None
-	camp_instance_group_id: Optional[int] = None
+	camp_group_instance_id: Optional[int] = None
 	spng_survey_camp_id: Optional[int] = None
 
 
