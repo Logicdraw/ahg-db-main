@@ -45,7 +45,7 @@ class RegistrationBaseModel(
 ):
 
 	id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-	
+
 
 	placed_at_datetime = Column(AwareDateTime())
 

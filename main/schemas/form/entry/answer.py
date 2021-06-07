@@ -216,7 +216,7 @@ class FormEntryAnswerSelectSchemaInDB(
 class FormEntryAnswerCheckboxSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
-	checkbox_checked: Optional[str] = None
+	checkbox_checked: Optional[bool] = None
 
 
 

@@ -531,7 +531,7 @@ async def test_create_form_entry_answer_textarea(
 	
 	textarea_answer = random_lower_string()
 
-	form_entry_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
+	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -553,7 +553,7 @@ async def test_create_sync_form_entry_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_entry_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
+	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -575,7 +575,7 @@ async def test_get_form_entry_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_entry_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
+	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -602,7 +602,7 @@ async def test_get_sync_form_entry_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_entry_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
+	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -629,7 +629,7 @@ async def test_update_form_entry_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_entry_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
+	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -641,7 +641,7 @@ async def test_update_form_entry_answer_textarea(
 
 	new_label = random_lower_string()
 	
-	form_entry_answer_textarea_in_update = FormEntryAnswerSelectSchemaUpdate(
+	form_entry_answer_textarea_in_update = FormEntryAnswerTextareaSchemaUpdate(
 		label=new_label,
 	)
 
@@ -664,7 +664,7 @@ async def test_update_sync_form_entry_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_entry_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
+	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -676,7 +676,7 @@ async def test_update_sync_form_entry_answer_textarea(
 
 	new_label = random_lower_string()
 	
-	form_entry_answer_textarea_in_update = FormEntryAnswerSelectSchemaUpdate(
+	form_entry_answer_textarea_in_update = FormEntryAnswerTextareaSchemaUpdate(
 		label=new_label,
 	)
 
@@ -699,7 +699,7 @@ async def test_delete_form_entry_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_entry_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
+	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -732,7 +732,7 @@ async def test_delete_sync_form_entry_answer_textarea(
 
 	textarea_answer = random_lower_string()
 
-	form_entry_answer_textarea_in = FormEntryAnswerSelectSchemaCreate(
+	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
 		textarea_answer=textarea_answer,
 	)
 
@@ -1387,9 +1387,9 @@ async def test_update_form_entry_answer_radio(
 	)
 
 
-	new_label = {
-
-	}
+	new_label = random_lower_string()
+	while new_label == label:
+		new_label = random_lower_string()
 	
 	form_entry_answer_radio_in_update = FormEntryAnswerRadioSchemaUpdate(
 		label=new_label,
@@ -1426,9 +1426,9 @@ async def test_update_sync_form_entry_answer_radio(
 	)
 
 
-	new_label = {
-
-	}
+	new_label = random_lower_string()
+	while new_label == label:
+		new_label = random_lower_string()
 	
 	form_entry_answer_radio_in_update = FormEntryAnswerRadioSchemaUpdate(
 		label=new_label,
