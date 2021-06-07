@@ -65,8 +65,7 @@ async def test_create_form_entry_answer_input(
 		obj_in=form_entry_answer_input_in,
 	)
 
-	assert form_entry_answer_input.label == label
-	assert form_entry_answer_input.is_active == is_active
+	assert form_entry_answer_input.input_answer == input_answer
 
 
 
@@ -87,8 +86,7 @@ async def test_create_sync_form_entry_answer_input(
 		obj_in=form_entry_answer_input_in,
 	)
 
-	assert form_entry_answer_input.label == label
-	assert form_entry_answer_input.is_active == is_active
+	assert form_entry_answer_input.input_answer == input_answer
 
 
 
@@ -164,10 +162,13 @@ async def test_update_form_entry_answer_input(
 	)
 
 
-	new_label = random_lower_string()
+	new_input_answer = random_lower_string()
+	while new_input_answer == input_answer:
+		new_input_answer = random_lower_string()
+
 	
 	form_entry_answer_input_in_update = FormEntryAnswerInputSchemaUpdate(
-		label=new_label,
+		input_answer=new_input_answer,
 	)
 
 	form_entry_answer_input_2 = await form_entry_answer_input_crud.update(
@@ -177,7 +178,7 @@ async def test_update_form_entry_answer_input(
 	)
 
 	assert form_entry_answer_input_2
-	assert form_entry_answer_input_2.label == new_label
+	assert form_entry_answer_input_2.input_answer == new_input_answer
 
 
 
@@ -199,10 +200,12 @@ async def test_update_sync_form_entry_answer_input(
 	)
 
 
-	new_label = random_lower_string()
+	new_input_answer = random_lower_string()
+	while new_input_answer == input_answer:
+		new_input_answer = random_lower_string()
 	
 	form_entry_answer_input_in_update = FormEntryAnswerInputSchemaUpdate(
-		label=new_label,
+		input_answer=new_input_answer,
 	)
 
 	form_entry_answer_input_2 = await db.run_sync(
@@ -212,7 +215,7 @@ async def test_update_sync_form_entry_answer_input(
 	)
 
 	assert form_entry_answer_input_2
-	assert form_entry_answer_input_2.label == new_label
+	assert form_entry_answer_input_2.input_answer == new_input_answer
 
 
 
@@ -303,8 +306,7 @@ async def test_create_form_entry_answer_textarea(
 		obj_in=form_entry_answer_textarea_in,
 	)
 
-	assert form_entry_answer_textarea.label == label
-	assert form_entry_answer_textarea.is_active == is_active
+	assert form_entry_answer_textarea.textarea_answer == textarea_answer
 
 
 
@@ -325,8 +327,7 @@ async def test_create_sync_form_entry_answer_textarea(
 		obj_in=form_entry_answer_textarea_in,
 	)
 
-	assert form_entry_answer_textarea.label == label
-	assert form_entry_answer_textarea.is_active == is_active
+	assert form_entry_answer_textarea.textarea_answer == textarea_answer
 
 
 
@@ -402,10 +403,12 @@ async def test_update_form_entry_answer_textarea(
 	)
 
 
-	new_label = random_lower_string()
+	new_textarea_answer = random_lower_string()
+	while new_textarea_answer == textarea_answer:
+		new_textarea_answer = random_lower_string()
 	
 	form_entry_answer_textarea_in_update = FormEntryAnswerTextareaSchemaUpdate(
-		label=new_label,
+		textarea_answer=new_textarea_answer,
 	)
 
 	form_entry_answer_textarea_2 = await form_entry_answer_textarea_crud.update(
@@ -415,7 +418,7 @@ async def test_update_form_entry_answer_textarea(
 	)
 
 	assert form_entry_answer_textarea_2
-	assert form_entry_answer_textarea_2.label == new_label
+	assert form_entry_answer_textarea_2.textarea_answer == new_textarea_answer
 
 
 
@@ -437,10 +440,12 @@ async def test_update_sync_form_entry_answer_textarea(
 	)
 
 
-	new_label = random_lower_string()
+	new_textarea_answer = random_lower_string()
+	while new_textarea_answer == textarea_answer:
+		new_textarea_answer = random_lower_string()
 	
 	form_entry_answer_textarea_in_update = FormEntryAnswerTextareaSchemaUpdate(
-		label=new_label,
+		textarea_answer=new_textarea_answer,
 	)
 
 	form_entry_answer_textarea_2 = await db.run_sync(
@@ -450,244 +455,7 @@ async def test_update_sync_form_entry_answer_textarea(
 	)
 
 	assert form_entry_answer_textarea_2
-	assert form_entry_answer_textarea_2.label == new_label
-
-
-
-@pytest.mark.asyncio
-async def test_delete_form_entry_answer_textarea(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	textarea_answer = random_lower_string()
-
-	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
-		textarea_answer=textarea_answer,
-	)
-
-	form_entry_answer_textarea = await form_entry_answer_textarea_crud.create(
-		db=db,
-		obj_in=form_entry_answer_textarea_in,
-	)
-
-	form_entry_answer_textarea_2 = await form_entry_answer_textarea_crud.delete(
-		db=db,
-		id=form_entry_answer_textarea.id,
-	)
-
-	form_entry_answer_textarea_3 = await form_entry_answer_textarea_crud.get(
-		db=db,
-		id=form_entry_answer_textarea.id,
-	)
-
-
-	assert form_entry_answer_textarea_3 is None
-	assert form_entry_answer_textarea_2.id == form_entry_answer_textarea.id
-
-
-
-@pytest.mark.asyncio
-async def test_delete_sync_form_entry_answer_textarea(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	textarea_answer = random_lower_string()
-
-	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
-		textarea_answer=textarea_answer,
-	)
-
-	form_entry_answer_textarea = await db.run_sync(
-		form_entry_answer_textarea_crud.create_sync,
-		obj_in=form_entry_answer_textarea_in,
-	)
-
-	form_entry_answer_textarea_2 = await db.run_sync(
-		form_entry_answer_textarea_crud.delete_sync,
-		id=form_entry_answer_textarea.id,
-	)
-
-	form_entry_answer_textarea_3 = await db.run_sync(
-		form_entry_answer_textarea_crud.get_sync,
-		id=form_entry_answer_textarea.id,
-	)
-
-
-	assert form_entry_answer_textarea_3 is None
-	assert form_entry_answer_textarea_2.id == form_entry_answer_textarea.id
-
-
-
-# Select --
-
-
-@pytest.mark.asyncio
-async def test_create_form_entry_answer_textarea(
-	db: AsyncSession,
-) -> None:
-	# --
-	
-	textarea_answer = random_lower_string()
-
-	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
-		textarea_answer=textarea_answer,
-	)
-
-	form_entry_answer_textarea = await form_entry_answer_textarea_crud.create(
-		db=db,
-		obj_in=form_entry_answer_textarea_in,
-	)
-
-	assert form_entry_answer_textarea.label == label
-	assert form_entry_answer_textarea.is_active == is_active
-
-
-
-@pytest.mark.asyncio
-async def test_create_sync_form_entry_answer_textarea(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	textarea_answer = random_lower_string()
-
-	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
-		textarea_answer=textarea_answer,
-	)
-
-	form_entry_answer_textarea = await db.run_sync(
-		form_entry_answer_textarea_crud.create_sync,
-		obj_in=form_entry_answer_textarea_in,
-	)
-
-	assert form_entry_answer_textarea.label == label
-	assert form_entry_answer_textarea.is_active == is_active
-
-
-
-@pytest.mark.asyncio
-async def test_get_form_entry_answer_textarea(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	textarea_answer = random_lower_string()
-
-	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
-		textarea_answer=textarea_answer,
-	)
-
-	form_entry_answer_textarea = await form_entry_answer_textarea_crud.create(
-		db=db,
-		obj_in=form_entry_answer_textarea_in,
-	)
-
-	form_entry_answer_textarea_2 = await form_entry_answer_textarea_crud.get(
-		db=db,
-		id=form_entry_answer_textarea.id,
-	)
-
-	assert form_entry_answer_textarea_2
-	assert jsonable_encoder(form_entry_answer_textarea_2) == jsonable_encoder(form_entry_answer_textarea)
-
-
-
-@pytest.mark.asyncio
-async def test_get_sync_form_entry_answer_textarea(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	textarea_answer = random_lower_string()
-
-	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
-		textarea_answer=textarea_answer,
-	)
-
-	form_entry_answer_textarea = await db.run_sync(
-		form_entry_answer_textarea_crud.create_sync,
-		obj_in=form_entry_answer_textarea_in,
-	)
-
-	form_entry_answer_textarea_2 = await db.run_sync(
-		form_entry_answer_textarea_crud.get_sync,
-		id=form_entry_answer_textarea.id,
-	)
-
-	assert form_entry_answer_textarea_2
-	assert jsonable_encoder(form_entry_answer_textarea_2) == jsonable_encoder(form_entry_answer_textarea)
-
-
-
-@pytest.mark.asyncio
-async def test_update_form_entry_answer_textarea(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	textarea_answer = random_lower_string()
-
-	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
-		textarea_answer=textarea_answer,
-	)
-
-	form_entry_answer_textarea = await form_entry_answer_textarea_crud.create(
-		db=db,
-		obj_in=form_entry_answer_textarea_in,
-	)
-
-
-	new_label = random_lower_string()
-	
-	form_entry_answer_textarea_in_update = FormEntryAnswerTextareaSchemaUpdate(
-		label=new_label,
-	)
-
-	form_entry_answer_textarea_2 = await form_entry_answer_textarea_crud.update(
-		db=db,
-		db_obj=form_entry_answer_textarea,
-		obj_in=form_entry_answer_textarea_in_update,
-	)
-
-	assert form_entry_answer_textarea_2
-	assert form_entry_answer_textarea_2.label == new_label
-
-
-
-@pytest.mark.asyncio
-async def test_update_sync_form_entry_answer_textarea(
-	db: AsyncSession,
-) -> None:
-	# --
-
-	textarea_answer = random_lower_string()
-
-	form_entry_answer_textarea_in = FormEntryAnswerTextareaSchemaCreate(
-		textarea_answer=textarea_answer,
-	)
-
-	form_entry_answer_textarea = await db.run_sync(
-		form_entry_answer_textarea_crud.create_sync,
-		obj_in=form_entry_answer_textarea_in,
-	)
-
-
-	new_label = random_lower_string()
-	
-	form_entry_answer_textarea_in_update = FormEntryAnswerTextareaSchemaUpdate(
-		label=new_label,
-	)
-
-	form_entry_answer_textarea_2 = await db.run_sync(
-		form_entry_answer_textarea_crud.update_sync,
-		db_obj=form_entry_answer_textarea,
-		obj_in=form_entry_answer_textarea_in_update,
-	)
-
-	assert form_entry_answer_textarea_2
-	assert form_entry_answer_textarea_2.label == new_label
+	assert form_entry_answer_textarea_2.textarea_answer == new_textarea_answer
 
 
 
@@ -780,8 +548,7 @@ async def test_create_form_entry_answer_select(
 		obj_in=form_entry_answer_select_in,
 	)
 
-	assert form_entry_answer_select.label == label
-	assert form_entry_answer_select.is_active == is_active
+	assert form_entry_answer_select.select_selected == select_selected
 
 
 
@@ -804,8 +571,7 @@ async def test_create_sync_form_entry_answer_select(
 		obj_in=form_entry_answer_select_in,
 	)
 
-	assert form_entry_answer_select.label == label
-	assert form_entry_answer_select.is_active == is_active
+	assert form_entry_answer_select.select_selected == select_selected
 
 
 
@@ -887,12 +653,12 @@ async def test_update_form_entry_answer_select(
 	)
 
 
-	new_label = {
-
+	new_select_selected = {
+		'z': 'xyz',
 	}
 	
 	form_entry_answer_select_in_update = FormEntryAnswerSelectSchemaUpdate(
-		label=new_label,
+		select_selected=new_select_selected,
 	)
 
 	form_entry_answer_select_2 = await form_entry_answer_select_crud.update(
@@ -902,7 +668,7 @@ async def test_update_form_entry_answer_select(
 	)
 
 	assert form_entry_answer_select_2
-	assert form_entry_answer_select_2.label == new_label
+	assert form_entry_answer_select_2.select_selected == new_select_selected
 
 
 
@@ -926,12 +692,12 @@ async def test_update_sync_form_entry_answer_select(
 	)
 
 
-	new_label = {
-
+	new_select_selected = {
+		'z': 'xyz',
 	}
 	
 	form_entry_answer_select_in_update = FormEntryAnswerSelectSchemaUpdate(
-		label=new_label,
+		select_selected=new_select_selected,
 	)
 
 	form_entry_answer_select_2 = await db.run_sync(
@@ -941,7 +707,7 @@ async def test_update_sync_form_entry_answer_select(
 	)
 
 	assert form_entry_answer_select_2
-	assert form_entry_answer_select_2.label == new_label
+	assert form_entry_answer_select_2.select_selected == new_select_selected
 
 
 
@@ -1035,8 +801,7 @@ async def test_create_form_entry_answer_checkbox(
 		obj_in=form_entry_answer_checkbox_in,
 	)
 
-	assert form_entry_answer_checkbox.label == label
-	assert form_entry_answer_checkbox.is_active == is_active
+	assert form_entry_answer_checkbox.checkbox_checked == checkbox_checked
 
 
 
@@ -1057,8 +822,7 @@ async def test_create_sync_form_entry_answer_checkbox(
 		obj_in=form_entry_answer_checkbox_in,
 	)
 
-	assert form_entry_answer_checkbox.label == label
-	assert form_entry_answer_checkbox.is_active == is_active
+	assert form_entry_answer_checkbox.checkbox_checked == checkbox_checked
 
 
 
@@ -1134,12 +898,10 @@ async def test_update_form_entry_answer_checkbox(
 	)
 
 
-	new_label = {
-
-	}
+	new_checkbox_checked = False
 	
 	form_entry_answer_checkbox_in_update = FormEntryAnswerCheckboxSchemaUpdate(
-		label=new_label,
+		checkbox_checked=new_checkbox_checked,
 	)
 
 	form_entry_answer_checkbox_2 = await form_entry_answer_checkbox_crud.update(
@@ -1149,7 +911,7 @@ async def test_update_form_entry_answer_checkbox(
 	)
 
 	assert form_entry_answer_checkbox_2
-	assert form_entry_answer_checkbox_2.label == new_label
+	assert form_entry_answer_checkbox_2.checkbox_checked == new_checkbox_checked
 
 
 
@@ -1171,12 +933,10 @@ async def test_update_sync_form_entry_answer_checkbox(
 	)
 
 
-	new_label = {
-
-	}
+	new_checkbox_checked = False
 	
 	form_entry_answer_checkbox_in_update = FormEntryAnswerCheckboxSchemaUpdate(
-		label=new_label,
+		checkbox_checked=new_checkbox_checked,
 	)
 
 	form_entry_answer_checkbox_2 = await db.run_sync(
@@ -1186,7 +946,7 @@ async def test_update_sync_form_entry_answer_checkbox(
 	)
 
 	assert form_entry_answer_checkbox_2
-	assert form_entry_answer_checkbox_2.label == new_label
+	assert form_entry_answer_checkbox_2.checkbox_checked == new_checkbox_checked
 
 
 
@@ -1280,8 +1040,7 @@ async def test_create_form_entry_answer_radio(
 		obj_in=form_entry_answer_radio_in,
 	)
 
-	assert form_entry_answer_radio.label == label
-	assert form_entry_answer_radio.is_active == is_active
+	assert form_entry_answer_radio.radio_selected == radio_selected
 
 
 
@@ -1304,8 +1063,7 @@ async def test_create_sync_form_entry_answer_radio(
 		obj_in=form_entry_answer_radio_in,
 	)
 
-	assert form_entry_answer_radio.label == label
-	assert form_entry_answer_radio.is_active == is_active
+	assert form_entry_answer_radio.radio_selected == radio_selected
 
 
 
@@ -1387,12 +1145,12 @@ async def test_update_form_entry_answer_radio(
 	)
 
 
-	new_label = random_lower_string()
-	while new_label == label:
-		new_label = random_lower_string()
+	new_radio_selected = {
+		'z': 'xyz',
+	}
 	
 	form_entry_answer_radio_in_update = FormEntryAnswerRadioSchemaUpdate(
-		label=new_label,
+		radio_selected=new_radio_selected,
 	)
 
 	form_entry_answer_radio_2 = await form_entry_answer_radio_crud.update(
@@ -1402,7 +1160,7 @@ async def test_update_form_entry_answer_radio(
 	)
 
 	assert form_entry_answer_radio_2
-	assert form_entry_answer_radio_2.label == new_label
+	assert form_entry_answer_radio_2.radio_selected == new_radio_selected
 
 
 
@@ -1426,12 +1184,12 @@ async def test_update_sync_form_entry_answer_radio(
 	)
 
 
-	new_label = random_lower_string()
-	while new_label == label:
-		new_label = random_lower_string()
+	new_radio_selected = {
+		'z': 'xyz',
+	}
 	
 	form_entry_answer_radio_in_update = FormEntryAnswerRadioSchemaUpdate(
-		label=new_label,
+		radio_selected=new_radio_selected,
 	)
 
 	form_entry_answer_radio_2 = await db.run_sync(
@@ -1441,7 +1199,7 @@ async def test_update_sync_form_entry_answer_radio(
 	)
 
 	assert form_entry_answer_radio_2
-	assert form_entry_answer_radio_2.label == new_label
+	assert form_entry_answer_radio_2.radio_selected == new_radio_selected
 
 
 
