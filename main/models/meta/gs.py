@@ -22,7 +22,10 @@ from main.config import settings
 
 # Gamesheet --
 
-class GSMetaModel(Base, ResourceMixin):
+class GSMetaModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'gs_meta'
 

@@ -55,6 +55,7 @@ class SpngSurveyProgramModel(
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'program',
+		'eager_defaults': True,
 	}
 
 

@@ -18,7 +18,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class ProgramInstanceModel(Base, ResourceMixin):
+class ProgramInstanceModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'program_instances'
 

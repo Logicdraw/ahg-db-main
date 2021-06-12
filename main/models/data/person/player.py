@@ -30,7 +30,10 @@ from sqlalchemy.ext.hybrid import (
 
 
 
-class PlayerModel(Base, ResourceMixin):
+class PlayerModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'players'
 

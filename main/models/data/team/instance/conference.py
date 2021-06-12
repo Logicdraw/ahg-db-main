@@ -17,7 +17,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class ConferenceInstanceModel(Base, ResourceMixin):
+class ConferenceInstanceModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'conference_instances'
 

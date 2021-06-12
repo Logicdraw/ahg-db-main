@@ -23,7 +23,10 @@ from main.config import settings
 
 # Form Entry --
 
-class FormModel(Base, ResourceMixin):
+class FormModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'forms'
 

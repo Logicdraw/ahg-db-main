@@ -65,6 +65,11 @@ class RegistrationBaseModel(
 		return Column(Integer, ForeignKey('players.id'))
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
+
 
 	# edited_by_ahg = Column(Boolean, server_default='0') # Non-financials
 	

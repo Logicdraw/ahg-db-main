@@ -55,6 +55,7 @@ class SpngSurveyCampModel(
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'camp',
+		'eager_defaults': True,
 	}
 
 

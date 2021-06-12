@@ -21,7 +21,10 @@ from sqlalchemy.dialects import postgresql
 
 
 
-class UserModel(Base, ResourceMixin):
+class UserModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'users'
 

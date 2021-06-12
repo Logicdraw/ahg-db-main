@@ -17,7 +17,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class DivisionModel(Base, ResourceMixin):
+class DivisionModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'divisions'
 

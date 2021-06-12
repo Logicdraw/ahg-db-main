@@ -17,7 +17,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class SpngMetaModel(Base, ResourceMixin):
+class SpngMetaModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'spng_meta'
 
@@ -29,7 +32,7 @@ class SpngMetaModel(Base, ResourceMixin):
 	refresh_token_encoded = Column(String)
 
 
-	# last_ ...
-	# last fetched registrations ...
+	last_fetched_registrations = Column(AwareDateTime())
+
 
 

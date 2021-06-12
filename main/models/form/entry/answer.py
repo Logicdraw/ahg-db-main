@@ -55,6 +55,10 @@ class FormEntryAnswerModel(
 		return Column(Integer, ForeignKey('form_entries.id'))
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
 
 
 class FormEntryAnswerInputModel(
@@ -175,7 +179,6 @@ class FormEntryAnswerRadioModel(
 ):
 
 	__tablename__ = 'form_entry_answer_radios'
-
 
 
 	radio_selected = Column(

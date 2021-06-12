@@ -18,7 +18,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class CoachModel(Base, ResourceMixin):
+class CoachModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'coaches'
 

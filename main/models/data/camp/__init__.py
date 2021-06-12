@@ -18,7 +18,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class CampModel(Base, ResourceMixin):
+class CampModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'camps'
 

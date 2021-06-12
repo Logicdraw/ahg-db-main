@@ -23,7 +23,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class GuardianModel(Base, ResourceMixin):
+class GuardianModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'guardians'
 

@@ -18,7 +18,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class TeamInstanceTracksuitOrderModel(Base, ResourceMixin):
+class TeamInstanceTracksuitOrderModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'team_instance_tracksuit_orders'
 

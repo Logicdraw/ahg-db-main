@@ -17,7 +17,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class SeasonInstanceModel(Base, ResourceMixin):
+class SeasonInstanceModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'season_instances'
 

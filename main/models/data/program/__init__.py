@@ -18,7 +18,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class ProgramModel(Base, ResourceMixin):
+class ProgramModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'programs'
 

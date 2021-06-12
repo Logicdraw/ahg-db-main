@@ -17,7 +17,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class LeagueInstanceModel(Base, ResourceMixin):
+class LeagueInstanceModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'league_instances'
 

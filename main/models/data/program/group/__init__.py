@@ -18,7 +18,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class ProgramGroupModel(Base, ResourceMixin):
+class ProgramGroupModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'program_groups'
 

@@ -18,7 +18,10 @@ from lib.util_sqlalchemy import (
 
 
 
-class TeamInstanceJerseySocksOrderModel(Base, ResourceMixin):
+class TeamInstanceJerseySocksOrderModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'team_instance_jersey_socks_orders'
 

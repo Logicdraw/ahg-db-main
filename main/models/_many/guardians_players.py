@@ -23,7 +23,10 @@ from collections import OrderedDict
 
 
 
-class GuardiansPlayersModel(Base, ResourceMixin):
+class GuardiansPlayersModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'guardians_players'
 

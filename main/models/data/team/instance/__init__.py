@@ -22,7 +22,10 @@ from collections import OrderedDict
 
 
 
-class TeamInstanceModel(Base, ResourceMixin):
+class TeamInstanceModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'team_instances'
 

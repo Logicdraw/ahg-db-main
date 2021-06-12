@@ -22,7 +22,10 @@ from collections import OrderedDict
 
 
 
-class SpngSurveysSpngSurveyQuestionsModel(Base, ResourceMixin):
+class SpngSurveysSpngSurveyQuestionsModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'spng_surveys_spng_survey_questions'
 

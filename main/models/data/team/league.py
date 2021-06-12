@@ -18,21 +18,39 @@ from lib.util_sqlalchemy import (
 
 
 
-class LeagueModel(Base, ResourceMixin):
+class LeagueModel(
+	Base,
+	ResourceMixin,
+):
 
 	__tablename__ = 'leagues'
 
 	id = Column(Integer, primary_key=True, index=True)
 
 
-	instances = relationship('LeagueInstanceModel', back_populates='league', lazy='selectin')
+	instances = relationship(
+		'LeagueInstanceModel',
+		back_populates='league',
+		lazy='selectin',
+	)
 
+	conferences = relationship(
+		'ConferenceModel',
+		back_populates='league',
+		lazy='selectin',
+	)
 
-	conferences = relationship('ConferenceModel', back_populates='league', lazy='selectin')
+	divisions = relationship(
+		'DivisionModel',
+		back_populates='league',
+		lazy='selectin',
+	)
 
-	divisions = relationship('DivisionModel', back_populates='league', lazy='selectin')
-
-	teams = relationship('TeamModel', back_populates='league', lazy='selectin')
+	teams = relationship(
+		'TeamModel',
+		back_populates='league',
+		lazy='selectin',
+	)
 
 
 	season = relationship(

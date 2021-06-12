@@ -55,6 +55,7 @@ class SpngSurveyTeamModel(
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'team',
+		'eager_defaults': True,
 	}
 
 
