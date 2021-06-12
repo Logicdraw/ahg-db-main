@@ -35,7 +35,7 @@ class FormModel(Base, ResourceMixin):
 	description = Column(String, nullable=True)
 
 
-	has_deadline = Column(Boolean, default=False)
+	has_deadline = Column(Boolean, server_default='0')
 
 	deadline_on = Column(AwareDateTime())
 

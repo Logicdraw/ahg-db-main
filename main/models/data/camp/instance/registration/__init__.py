@@ -70,7 +70,8 @@ class CampInstanceRegistrationModel(
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'camp_instance',
-		'concrete': True, 
+		'concrete': True,
+		'eager_defaults': True,
 	}
 
 

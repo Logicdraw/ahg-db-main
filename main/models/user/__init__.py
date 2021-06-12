@@ -16,6 +16,9 @@ from lib.util_sqlalchemy import (
 )
 
 
+from sqlalchemy.dialects import postgresql
+
+
 
 
 class UserModel(Base, ResourceMixin):
@@ -39,7 +42,12 @@ class UserModel(Base, ResourceMixin):
 	role = Column(String, index=True, nullable=False)
 
 
-	is_active = Column(Boolean, default=True)
+	# roles = (Array)
+	# roles = Column(postgresql.ARRAY(String))
+	# Maybe ... ?
+
+
+	is_active = Column(Boolean, server_default='1')
 
 
 

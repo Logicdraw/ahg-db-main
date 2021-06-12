@@ -78,6 +78,7 @@ class FormEntryAnswerInputModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_inputs',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 
@@ -137,6 +138,7 @@ class FormEntryAnswerSelectModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_selects',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 
@@ -149,7 +151,7 @@ class FormEntryAnswerCheckboxModel(
 	__tablename__ = 'form_entry_answer_checkboxes'
 
 	
-	checkbox_checked = Column(Boolean, default=False)
+	checkbox_checked = Column(Boolean, server_default='0')
 
 	question = relationship(
 		'FormQuestionCheckboxModel',
@@ -162,6 +164,7 @@ class FormEntryAnswerCheckboxModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_checkboxes',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 
@@ -193,6 +196,7 @@ class FormEntryAnswerRadioModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_radios',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 

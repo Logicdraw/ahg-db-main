@@ -76,6 +76,7 @@ class ProgramInstanceRegistrationModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'program_instance',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 

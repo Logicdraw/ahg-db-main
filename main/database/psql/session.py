@@ -7,12 +7,17 @@ from main.config import settings
 
 
 
-if settings.DEVELOPMENT or settings.STAGING:
+echo_on = True
+
+if settings.DEVELOPMENT:
 	SQLALCHEMY_URI = settings.PSQL_DEV_URI
 elif settings.TESTING:
 	SQLALCHEMY_URI = settings.PSQL_TESTING_URI
+elif settings.STAGING:
+	SQLALCHEMY_URI = settings.PSQL_DEV_URI
 elif settings.PRODUCTION:
 	SQLALCHEMY_URI = settings.PSQL_PROD_URI
+	echo_on = False
 
 
 
@@ -20,7 +25,7 @@ elif settings.PRODUCTION:
 engine_psql = create_engine(
 	SQLALCHEMY_URI,
 	pool_pre_ping=True,
-	echo=True,
+	echo=echo_on,
 )
 
 

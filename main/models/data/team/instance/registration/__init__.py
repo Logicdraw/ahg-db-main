@@ -68,9 +68,9 @@ class TeamInstanceRegistrationModel(
 
 
 
-	needs_jersey = Column(Boolean, default=False)
+	needs_jersey = Column(Boolean, server_default='0')
 
-	needs_socks = Column(Boolean, default=False)
+	needs_socks = Column(Boolean, server_default='0')
 
 
 
@@ -88,6 +88,7 @@ class TeamInstanceRegistrationModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'team_instance',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 

@@ -44,7 +44,7 @@ class GuardiansPlayersModel(Base, ResourceMixin):
 
 	role = Column(String)
 
-	is_emergency_contact = Column(Boolean, default=False)
+	is_emergency_contact = Column(Boolean, server_default='0')
 
 
 

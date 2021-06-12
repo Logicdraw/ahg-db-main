@@ -26,6 +26,7 @@ from main.config import settings
 
 class SpngSurveyProgramModel(
 	SpngSurveyBaseModel,
+	ResourceMixin,
 ):
 	# -- Program
 	__tablename__ = 'spng_survey_programs'

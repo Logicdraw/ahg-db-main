@@ -9,6 +9,8 @@ from main.config import settings
 
 
 
+echo_on = True
+
 if settings.DEVELOPMENT:
 	SQLALCHEMY_URI = settings.SQLITE_DEV_URI
 elif settings.TESTING:
@@ -21,7 +23,7 @@ engine_sqlite = create_engine(
 	connect_args={
 		"check_same_thread": False
 	},
-	echo=True,
+	echo=echo_on,
 )
 
 

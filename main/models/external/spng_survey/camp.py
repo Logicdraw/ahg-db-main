@@ -26,6 +26,7 @@ from main.config import settings
 
 class SpngSurveyCampModel(
 	SpngSurveyBaseModel,
+	ResourceMixin,
 ):
 	# -- Camp
 	__tablename__ = 'spng_survey_camps'

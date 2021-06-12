@@ -26,6 +26,7 @@ from main.config import settings
 
 class SpngSurveyTeamModel(
 	SpngSurveyBaseModel,
+	ResourceMixin,
 ):
 	# -- Team
 	__tablename__ = 'spng_survey_teams'

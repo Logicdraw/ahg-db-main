@@ -50,20 +50,24 @@ class SpngSurveyBaseModel(
 
 	name = Column(String, index=True)
 
-	is_active = Column(Boolean, default=False)
+	is_active = Column(Boolean, server_default='1')
 
 
 	type = Column(String(50))
 
 
-	spng_survey_questions = relationship('SpngSurveysSpngSurveyQuestionsModel', back_populates='spng_survey', lazy='selectin',)
-
+	spng_survey_questions = relationship(
+		'SpngSurveysSpngSurveyQuestionsModel',
+		back_populates='spng_survey',
+		lazy='selectin',
+	)
 
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'other',
 		'polymorphic_on': type,
 		'with_polymorphic': '*',
+		'eager_defaults': True,
 	}
 
 

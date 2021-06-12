@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import (
 	create_async_engine,
 )
 
-from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.ext.automap import automap_base
 
 from sqlalchemy.orm import sessionmaker
 
@@ -15,7 +15,7 @@ from main.config import settings
 engine_psql_async_prod = create_async_engine(
 	settings.PSQL_ASYNC_PROD_URI,
 	pool_pre_ping=True,
-	echo=True,
+	echo=False,
 )
 
 

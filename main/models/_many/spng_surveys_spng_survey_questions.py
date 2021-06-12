@@ -40,7 +40,7 @@ class SpngSurveysSpngSurveyQuestionsModel(Base, ResourceMixin):
 
 
 	# Extra Data --
-	included_in_db = Column(Boolean, default=True)
+	included_in_db = Column(Boolean, server_default='1')
 
 
 

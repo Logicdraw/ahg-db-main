@@ -14,6 +14,7 @@ import timeago
 from sqlalchemy import (
 	DateTime,
 	Column,
+	func,
 )
 
 
@@ -52,16 +53,19 @@ class AwareDateTime(TypeDecorator):
 
 
 class ResourceMixin:
-	"""
-	Keep track when records are created and updated, also - url strings
-	"""
+	# Keep track when records are created and updated, also - url strings --
 
 	created_on = Column(AwareDateTime(),
-							default=tzware_datetime,)
+							server_default=func.utcnow(),)
 
 	updated_on = Column(AwareDateTime(),
-							default=tzware_datetime,
-							onupdate=tzware_datetime,)
+							server_default=func.utcnow(),
+							server_onupdate=func.utcnow(),)
+
+
+	__mapper_args__ = {'eager_defaults': True}
+
+
 
 
 

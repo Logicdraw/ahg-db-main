@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import (
 	create_async_engine,
 )
 
-from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.ext.automap import automap_base
 
 from sqlalchemy.orm import sessionmaker
 

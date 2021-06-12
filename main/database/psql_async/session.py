@@ -1,4 +1,4 @@
-# Create PSQL ASYNC Session--
+# Create PSQL ASYNC Session --
 
 
 from sqlalchemy.ext.asyncio import (
@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import (
 	create_async_engine,
 )
 
-from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.ext.automap import automap_base
 
 from sqlalchemy.orm import sessionmaker
 
@@ -15,12 +15,17 @@ from main.config import settings
 
 
 
-if settings.DEVELOPMENT or settings.STAGING:
+echo_on = True
+
+if settings.DEVELOPMENT:
 	SQLALCHEMY_URI = settings.PSQL_ASYNC_DEV_URI
 elif settings.TESTING:
 	SQLALCHEMY_URI = settings.PSQL_ASYNC_TESTING_URI
+elif settings.STAGING:
+	SQLALCHEMY_URI = settings.PSQL_ASYNC_DEV_URI
 elif settings.PRODUCTION:
 	SQLALCHEMY_URI = settings.PSQL_ASYNC_PROD_URI
+	echo_on = False
 
 
 
@@ -28,7 +33,7 @@ elif settings.PRODUCTION:
 engine_psql_async = create_async_engine(
 	SQLALCHEMY_URI,
 	pool_pre_ping=True,
-	echo=True,
+	echo=echo_on,
 )
 
 
@@ -38,5 +43,7 @@ SessionPSQLAsync = sessionmaker(
 	expire_on_commit=False,
 	class_=AsyncSession,
 )
+
+
 
 

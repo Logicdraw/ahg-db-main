@@ -66,9 +66,9 @@ class RegistrationBaseModel(
 
 
 
-	# edited_by_ahg = Column(Boolean, default=False) # Non-financials
+	# edited_by_ahg = Column(Boolean, server_default='0') # Non-financials
 	
-	# edited_financials_by_ahg = Column(Boolean, default=False) # ... Pointless ... ?
+	# edited_financials_by_ahg = Column(Boolean, server_default='0') # ... Pointless ... ?
 
 
 
@@ -135,8 +135,10 @@ class PlayerRegistrationBase:
 	position = Column(String)
 
 
-	registration_insurance = Column(Boolean, default=False)
+	registration_insurance = Column(Boolean, server_default='0')
 
 	player_submitted_notes = Column(String)
+
+
 
 

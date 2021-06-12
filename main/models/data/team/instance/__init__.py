@@ -151,7 +151,7 @@ class TeamInstanceModel(Base, ResourceMixin):
 	# or: 0:10-11,12,13-15:99
 
 
-	has_jersey_size_option = Column(Boolean, default=False)
+	has_jersey_size_option = Column(Boolean, server_default='0')
 
 	jersey_sizes_options = Column(String)
 
@@ -166,7 +166,7 @@ class TeamInstanceModel(Base, ResourceMixin):
 
 	# Socks orders --
 
-	has_socks_size_option = Column(Boolean, default=False)
+	has_socks_size_option = Column(Boolean, server_default='0')
 
 	socks_sizes_options = Column(String)
 

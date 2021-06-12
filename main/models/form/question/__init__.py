@@ -57,8 +57,8 @@ class FormQuestionModel(
 
 	label = Column(String)
 
+	is_active = Column(Boolean, server_default='1')
 
-	is_active = Column(Boolean, default=True)
 
 
 
@@ -80,6 +80,7 @@ class FormQuestionInputModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_inputs',
 		'concrete': True, # inline correct
+		'eager_defaults': True,
 	}
 
 
@@ -102,6 +103,7 @@ class FormQuestionTextareaModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_textareas',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 
@@ -115,7 +117,7 @@ class FormQuestionSelectModel(
 	__tablename__ = 'form_question_selects'
 
 	
-	select_is_multiple = Column(Boolean, default=False)
+	select_is_multiple = Column(Boolean, server_default='0')
 
 
 	select_answers = Column(
@@ -134,6 +136,7 @@ class FormQuestionSelectModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_selects',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 
@@ -155,6 +158,7 @@ class FormQuestionCheckboxModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_checkboxes',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 
@@ -187,6 +191,7 @@ class FormQuestionRadioModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_question_radios',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 
