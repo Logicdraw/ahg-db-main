@@ -38,6 +38,7 @@ async def test_create_coach(
 		full_name=full_name,
 		email=email,
 	)
+	
 	coach = await coach_crud.create(
 		db=db,
 		obj_in=coach_in,

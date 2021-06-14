@@ -96,7 +96,7 @@ async def test_get_program_group(
 
 
 	assert program_group_2
-	assert jsonable_encoder(program_group) == jsonable_encoder(programs_group_2)
+	assert jsonable_encoder(program_group) == jsonable_encoder(program_group_2)
 
 
 
