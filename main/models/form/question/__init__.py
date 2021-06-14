@@ -177,7 +177,6 @@ class FormQuestionRadioModel(
 	__tablename__ = 'form_question_radios'
 
 
-
 	radio_answers = Column(
 		mutable_json_type(
 			dbtype=JSONB,

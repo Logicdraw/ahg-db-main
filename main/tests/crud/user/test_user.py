@@ -392,7 +392,7 @@ async def test_check_if_user_is_active_inactive(
 
 	is_active = user_crud.is_active(user)
 
-	assert is_active
+	assert is_active is False
 
 
 

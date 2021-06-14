@@ -18,6 +18,7 @@ from main.tests.utils import (
 	random_email,
 	random_lower_string,
 	random_name,
+	random_number,
 )
 
 
@@ -33,7 +34,25 @@ async def test_create_program_instance(
 ) -> None:
 	# --
 
-	pass
+	year_start = 2021
+	year_end = 2021
+	se_name_snake = random_lower_string()
+	se_shared_question_id = random_number()
+
+	program_instance_in = ProgramInstanceSchemaCreate(
+		year_start=year_start,
+		year_end=year_end,
+		se_name_snake=se_name_snake,
+		se_shared_question_id=se_shared_question_id,
+	)
+
+	program_instance = await program_instance_crud.create(
+		db=db,
+		obj_in=program_instance_in,
+	)
+
+	assert program_instance.year_start == year_start
+	assert program_instance.se_name_snake == se_name_snake
 
 
 
@@ -43,7 +62,25 @@ async def test_create_sync_program_instance(
 ) -> None:
 	# --
 
-	pass
+	year_start = 2021
+	year_end = 2021
+	se_name_snake = random_lower_string()
+	se_shared_question_id = random_number()
+
+	program_instance_in = ProgramInstanceSchemaCreate(
+		year_start=year_start,
+		year_end=year_end,
+		se_name_snake=se_name_snake,
+		se_shared_question_id=se_shared_question_id,
+	)
+
+	program_instance = await db.run_sync(
+		program_instance_crud.create_sync,
+		obj_in=program_instance_in,
+	)
+
+	assert program_instance.year_start == year_start
+	assert program_instance.se_name_snake == se_name_snake
 
 
 
@@ -53,7 +90,30 @@ async def test_get_program_instance(
 ) -> None:
 	# --
 
-	pass
+	year_start = 2021
+	year_end = 2021
+	se_name_snake = random_lower_string()
+	se_shared_question_id = random_number()
+
+	program_instance_in = ProgramInstanceSchemaCreate(
+		year_start=year_start,
+		year_end=year_end,
+		se_name_snake=se_name_snake,
+		se_shared_question_id=se_shared_question_id,
+	)
+
+	program_instance = await program_instance_crud.create(
+		db=db,
+		obj_in=program_instance_in,
+	)
+
+	program_instance_2 = await program_instance_crud.get(
+		db=db,
+		id=program_instance.id,
+	)
+
+	assert program_instance_2
+	assert jsonable_encoder(program_instance) == jsonable_encoder(program_instance_2)
 
 
 
@@ -63,7 +123,32 @@ async def test_get_sync_program_instance(
 ) -> None:
 	# --
 
-	pass
+	year_start = 2021
+	year_end = 2021
+	se_name_snake = random_lower_string()
+	se_shared_question_id = random_number()
+
+	program_instance_in = ProgramInstanceSchemaCreate(
+		year_start=year_start,
+		year_end=year_end,
+		se_name_snake=se_name_snake,
+		se_shared_question_id=se_shared_question_id,
+	)
+
+	program_instance = await db.run_sync(
+		program_instance_crud.create_sync,
+		obj_in=program_instance_in,
+	)
+
+	program_instance_2 = await db.run_sync(
+		program_instance_crud.get_sync,
+		id=program_instance.id,
+	)
+
+	assert program_instance_2
+	assert jsonable_encoder(program_instance) == jsonable_encoder(program_instance_2)
+
+
 
 
 
@@ -73,7 +158,44 @@ async def test_update_program_instance(
 ) -> None:
 	# --
 
-	pass
+	year_start = 2021
+	year_end = 2021
+	se_name_snake = random_lower_string()
+	se_shared_question_id = random_number()
+
+	program_instance_in = ProgramInstanceSchemaCreate(
+		year_start=year_start,
+		year_end=year_end,
+		se_name_snake=se_name_snake,
+		se_shared_question_id=se_shared_question_id,
+	)
+
+	program_instance = await program_instance_crud.create(
+		db=db,
+		obj_in=program_instance_in,
+	)
+
+	new_se_name_snake = random_lower_string()
+
+	while se_name_snake == new_se_name_snake:
+		new_se_name_snake = random_lower_string()
+
+	program_instance_in_update = ProgramInstanceSchemaUpdate(
+		se_name_snake=new_se_name_snake,
+	)
+
+	program_instance_2 = await program_instance_crud.update(
+		db=db,
+		db_obj=program_instance,
+		obj_in=program_instance_in_update,
+	)
+
+
+	assert program_instance_2
+	assert program_instance_2.se_name_snake
+	assert program_instance_2.se_name_snake == new_se_name_snake
+
+
 
 
 @pytest.mark.asyncio
@@ -82,7 +204,42 @@ async def test_update_sync_program_instance(
 ) -> None:
 	# --
 
-	pass
+	year_start = 2021
+	year_end = 2021
+	se_name_snake = random_lower_string()
+	se_shared_question_id = random_number()
+
+	program_instance_in = ProgramInstanceSchemaCreate(
+		year_start=year_start,
+		year_end=year_end,
+		se_name_snake=se_name_snake,
+		se_shared_question_id=se_shared_question_id,
+	)
+
+	program_instance = await db.run_sync(
+		program_instance_crud.create_sync,
+		obj_in=program_instance_in,
+	)
+
+	new_se_name_snake = random_lower_string()
+
+	while se_name_snake == new_se_name_snake:
+		new_se_name_snake = random_lower_string()
+
+	program_instance_in_update = ProgramInstanceSchemaUpdate(
+		se_name_snake=new_se_name_snake,
+	)
+
+	program_instance_2 = await db.run_sync(
+		program_instance_crud.update_sync,
+		db_obj=program_instance,
+		obj_in=program_instance_in_update,
+	)
+
+
+	assert program_instance_2
+	assert program_instance_2.se_name_snake
+	assert program_instance_2.se_name_snake == new_se_name_snake
 
 
 
@@ -92,7 +249,38 @@ async def test_delete_program_instance(
 ) -> None:
 	# --
 
-	pass
+	year_start = 2021
+	year_end = 2021
+	se_name_snake = random_lower_string()
+	se_shared_question_id = random_number()
+
+	program_instance_in = ProgramInstanceSchemaCreate(
+		year_start=year_start,
+		year_end=year_end,
+		se_name_snake=se_name_snake,
+		se_shared_question_id=se_shared_question_id,
+	)
+
+	program_instance = await program_instance_crud.create(
+		db=db,
+		obj_in=program_instance_in,
+	)
+
+
+	program_instance_2 = await program_instance_crud.delete(
+		db=db,
+		id=program_instance.id,
+	)
+
+
+	program_instance_3 = await program_instance_crud.get(
+		db=db,
+		id=program_instance.id,
+	)
+
+
+	assert program_instance_3 is None
+	assert program_instance_2.id == program_instance.id
 
 
 
@@ -102,7 +290,38 @@ async def test_delete_sync_program_instance(
 ) -> None:
 	# --
 
-	pass
+	year_start = 2021
+	year_end = 2021
+	se_name_snake = random_lower_string()
+	se_shared_question_id = random_number()
+
+	program_instance_in = ProgramInstanceSchemaCreate(
+		year_start=year_start,
+		year_end=year_end,
+		se_name_snake=se_name_snake,
+		se_shared_question_id=se_shared_question_id,
+	)
+
+	program_instance = await db.run_sync(
+		program_instance_crud.create_sync,
+		obj_in=program_instance_in,
+	)
+
+
+	program_instance_2 = await db.run_sync(
+		program_instance_crud.delete_sync,
+		id=program_instance.id,
+	)
+
+
+	program_instance_3 = await db.run_sync(
+		program_instance_crud.get_sync,
+		id=program_instance.id,
+	)
+
+
+	assert program_instance_3 is None
+	assert program_instance_2.id == program_instance.id
 
 
 

@@ -25,6 +25,7 @@ class UserSchemaCreate(UserSchemaBase):
 	password: str
 	confirm_password: str
 	role: str = 'member'
+	is_active: bool = True
 
 
 	@validator('confirm_password')

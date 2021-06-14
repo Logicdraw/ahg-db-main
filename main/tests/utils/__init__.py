@@ -43,3 +43,4 @@ def random_address() -> str:
 
 def random_number(min_digits: int = 6, max_digits: int = 6) -> int:
 	return random.randint(math.pow(10, min_digits), math.pow(10, max_digits + 1) - 1)
+

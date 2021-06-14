@@ -56,6 +56,7 @@ class CRUDUser(
 			password_hash=get_password_hash(obj_in.password),
 			name=obj_in.name,
 			role=obj_in.role,
+			is_active=obj_in.is_active,
 		)
 
 		db.add(db_obj)
@@ -78,6 +79,7 @@ class CRUDUser(
 			password_hash=get_password_hash(obj_in.password),
 			name=obj_in.name,
 			role=obj_in.role,
+			is_active=obj_in.is_active,
 		)
 
 		db.add(db_obj)
