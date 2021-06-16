@@ -83,6 +83,11 @@ class SpngSurveyQuestionModel(
 			nested=False,
 		)
 	)
+
+
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
 	
 	"""
 	Example:

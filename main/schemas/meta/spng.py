@@ -6,12 +6,14 @@ from pydantic import (
 )
 
 
+import datetime
 
 
 
 class SpngMetaSchemaBase(BaseModel):
 	access_token_encoded: Optional[str] = None
 	refresh_token_encoded: Optional[str] = None
+	last_fetched_registrations: Optional[datetime.datetime] = None
 
 
 

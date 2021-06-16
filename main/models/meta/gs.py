@@ -35,3 +35,7 @@ class GSMetaModel(
 	access_token_encoded = Column(String)
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+	

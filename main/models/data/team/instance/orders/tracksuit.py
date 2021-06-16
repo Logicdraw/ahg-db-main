@@ -44,3 +44,8 @@ class TeamInstanceTracksuitOrderModel(
 	pants_size = Column(String(50))
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
+

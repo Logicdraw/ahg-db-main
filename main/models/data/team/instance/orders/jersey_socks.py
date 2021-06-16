@@ -58,6 +58,11 @@ class TeamInstanceJerseySocksOrderModel(
 	socks_size = Column(String)
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
+
 	# size --
 
 	# number --

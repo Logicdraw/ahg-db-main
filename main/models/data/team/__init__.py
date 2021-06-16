@@ -96,4 +96,8 @@ class TeamModel(
 
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+	
 

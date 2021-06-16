@@ -47,3 +47,7 @@ class CampGroupModel(
 	)
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+	

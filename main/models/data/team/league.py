@@ -64,6 +64,9 @@ class LeagueModel(
 	name = Column(String, nullable=False, index=True)
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
 
 	# ...
 

@@ -133,6 +133,12 @@ class PlayerModel(
 
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
+
+
 	@hybrid_property
 	def full_name(self):
 		return f'{self.first_name} {self.last_name}'

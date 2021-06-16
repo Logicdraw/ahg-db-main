@@ -60,5 +60,10 @@ class SpngSurveysSpngSurveyQuestionsModel(
 	)
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
+
 
 

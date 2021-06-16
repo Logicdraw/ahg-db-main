@@ -72,3 +72,8 @@ class ProgramInstanceModel(
 	se_shared_question_id = Column(Integer, index=True)
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
+	

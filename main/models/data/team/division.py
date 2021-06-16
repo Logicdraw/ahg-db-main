@@ -66,6 +66,9 @@ class DivisionModel(
 	conference_id = Column(Integer, ForeignKey('conferences.id'))
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
 
 
 

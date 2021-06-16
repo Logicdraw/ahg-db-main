@@ -53,6 +53,10 @@ class UserModel(
 	is_active = Column(Boolean, server_default='1')
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
 
 
 

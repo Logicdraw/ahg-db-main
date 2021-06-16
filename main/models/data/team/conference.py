@@ -65,4 +65,8 @@ class ConferenceModel(
 	league_id = Column(Integer, ForeignKey('leagues.id'))
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
 

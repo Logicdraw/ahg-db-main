@@ -56,4 +56,9 @@ class ProgramGroupInstanceModel(
 	year_end = Column(Integer)
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
 
+
+	

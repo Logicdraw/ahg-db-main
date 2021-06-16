@@ -35,4 +35,6 @@ class SpngMetaModel(
 	last_fetched_registrations = Column(AwareDateTime())
 
 
-
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}

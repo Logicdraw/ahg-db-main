@@ -64,7 +64,9 @@ class GuardianModel(
 	user_id = Column(Integer, ForeignKey('users.id'))
 
 
-
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
 
 
 

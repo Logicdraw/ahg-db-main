@@ -48,3 +48,7 @@ class TeamInstancesPlayersModel(
 	player = relationship('PlayerModel', back_populates='team_instances')
 
 
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+
