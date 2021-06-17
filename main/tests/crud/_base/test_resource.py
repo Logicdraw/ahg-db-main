@@ -47,7 +47,7 @@ async def test_create_resource_base(
 		obj_in=resource_base_in,
 	)
 
-	assert resource_base.survey_id == survey_id
+	assert resource_base.slug == slug
 	assert resource_base.name == name
 
 
@@ -75,7 +75,7 @@ async def test_create_sync_resource_base(
 		obj_in=resource_base_in,
 	)
 
-	assert resource_base.survey_id == survey_id
+	assert resource_base.slug == slug
 	assert resource_base.name == name
 
 

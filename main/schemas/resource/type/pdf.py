@@ -29,7 +29,7 @@ class ResourcePDFSchemaCreate(
 	ResourcePDFSchemaBase,
 	ResourceBaseSchemaCreate,
 ):
-	pass
+	type: str = 'pdf'
 
 
 

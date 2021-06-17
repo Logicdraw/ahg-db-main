@@ -29,7 +29,7 @@ class ResourceVideoSchemaCreate(
 	ResourceVideoSchemaBase,
 	ResourceBaseSchemaCreate,
 ):
-	pass
+	type: str = 'video'
 
 
 

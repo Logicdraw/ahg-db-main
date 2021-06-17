@@ -3,11 +3,11 @@ from fastapi.encoders import jsonable_encoder
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from main.crud.resource.article import (
+from main.crud.resource.type.article import (
 	resource_article_crud,
 )
 
-from main.schemas.resource.article import (
+from main.schemas.resource.type.article import (
 	ResourceArticleSchemaCreate,
 	ResourceArticleSchemaUpdate,
 )
@@ -151,8 +151,8 @@ async def test_update_resource_article(
 	)
 
 	assert resource_article_2
-	assert resource_article_2.name
-	assert resource_article_2.name == new_name
+	assert resource_article_2.article_body
+	assert resource_article_2.article_body == new_article_body
 
 
 
@@ -188,8 +188,8 @@ async def test_update_sync_resource_article(
 	)
 
 	assert resource_article_2
-	assert resource_article_2.name
-	assert resource_article_2.name == new_name
+	assert resource_article_2.article_body
+	assert resource_article_2.article_body == new_article_body
 
 
 

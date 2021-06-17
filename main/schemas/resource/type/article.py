@@ -29,7 +29,7 @@ class ResourceArticleSchemaCreate(
 	ResourceArticleSchemaBase,
 	ResourceBaseSchemaCreate,
 ):
-	pass
+	type: str = 'article'
 
 
 

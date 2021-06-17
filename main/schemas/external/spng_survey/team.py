@@ -29,7 +29,7 @@ class SpngSurveyTeamSchemaCreate(
 	SpngSurveyTeamSchemaBase,
 	SpngSurveyBaseSchemaCreate,
 ):
-	pass
+	type: str = 'team'
 
 
 

@@ -29,7 +29,7 @@ class SpngSurveyProgramSchemaCreate(
 	SpngSurveyProgramSchemaBase,
 	SpngSurveyBaseSchemaCreate,
 ):
-	pass
+	type: str = 'program'
 
 
 

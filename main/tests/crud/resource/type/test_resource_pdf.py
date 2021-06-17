@@ -3,11 +3,11 @@ from fastapi.encoders import jsonable_encoder
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from main.crud.resource.pdf import (
+from main.crud.resource.type.pdf import (
 	resource_pdf_crud,
 )
 
-from main.schemas.resource.pdf import (
+from main.schemas.resource.type.pdf import (
 	ResourcePDFSchemaCreate,
 	ResourcePDFSchemaUpdate,
 )
@@ -151,8 +151,8 @@ async def test_update_resource_pdf(
 	)
 
 	assert resource_pdf_2
-	assert resource_pdf_2.name
-	assert resource_pdf_2.name == new_name
+	assert resource_pdf_2.pdf_url
+	assert resource_pdf_2.pdf_url == new_pdf_url
 
 
 
@@ -188,8 +188,8 @@ async def test_update_sync_resource_pdf(
 	)
 
 	assert resource_pdf_2
-	assert resource_pdf_2.name
-	assert resource_pdf_2.name == new_name
+	assert resource_pdf_2.pdf_url
+	assert resource_pdf_2.pdf_url == new_pdf_url
 
 
 

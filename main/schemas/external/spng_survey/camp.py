@@ -29,7 +29,7 @@ class SpngSurveyCampSchemaCreate(
 	SpngSurveyCampSchemaBase,
 	SpngSurveyBaseSchemaCreate,
 ):
-	pass
+	type: str = 'camp'
 
 
 

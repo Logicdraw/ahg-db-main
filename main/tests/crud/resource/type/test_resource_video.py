@@ -3,11 +3,11 @@ from fastapi.encoders import jsonable_encoder
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from main.crud.resource.video import (
+from main.crud.resource.type.video import (
 	resource_video_crud,
 )
 
-from main.schemas.resource.video import (
+from main.schemas.resource.type.video import (
 	ResourceVideoSchemaCreate,
 	ResourceVideoSchemaUpdate,
 )
@@ -151,8 +151,8 @@ async def test_update_resource_video(
 	)
 
 	assert resource_video_2
-	assert resource_video_2.name
-	assert resource_video_2.name == new_name
+	assert resource_video_2.video_url
+	assert resource_video_2.video_url == new_video_url
 
 
 
@@ -188,8 +188,8 @@ async def test_update_sync_resource_video(
 	)
 
 	assert resource_video_2
-	assert resource_video_2.name
-	assert resource_video_2.name == new_name
+	assert resource_video_2.video_url
+	assert resource_video_2.video_url == new_video_url
 
 
 
