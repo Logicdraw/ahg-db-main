@@ -20,7 +20,7 @@ class SpngSurveyBaseSchemaBase(BaseModel):
 
 
 class SpngSurveyBaseSchemaCreate(SpngSurveyBaseSchemaBase):
-	pass
+	type: str
 
 
 

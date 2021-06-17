@@ -102,6 +102,12 @@ class TeamInstanceModel(
 		lazy='selectin',
 	)
 
+	adult_reps = relationship(
+		'TeamInstancesAdultRepsModel',
+		back_populates='team_instance',
+		lazy='selectin',
+	)
+
 
 	jersey_socks_orders = relationship(
 		'TeamInstanceJerseySocksOrderModel',

@@ -1,16 +1,19 @@
 
 from main.models._base.registration import RegistrationBaseModel
+from main.models._base.resource import ResourceBaseModel
 from main.models._base.spng_survey import SpngSurveyBaseModel
 
 
 from main.models._many.camp_instances_coaches import CampInstancesCoachesModel
 from main.models._many.program_instances_coaches import ProgramInstancesCoachesModel
+from main.models._many.team_instances_adult_reps import TeamInstancesAdultRepsModel
 from main.models._many.team_instances_coaches import TeamInstancesCoachesModel
 from main.models._many.team_instances_players import TeamInstancesPlayersModel
 from main.models._many.spng_surveys_spng_survey_questions import SpngSurveysSpngSurveyQuestionsModel
 from main.models._many.guardians_players import GuardiansPlayersModel
 
 
+from main.models.data.person.adult_rep import AdultRepModel
 from main.models.data.person.coach import CoachModel
 from main.models.data.person.guardian import GuardianModel
 from main.models.data.person.player import PlayerModel
@@ -76,6 +79,12 @@ from main.models.form.question import (
 
 from main.models.meta.gs import GSMetaModel
 from main.models.meta.spng import SpngMetaModel
+
+from main.models.resource.category import ResourceCategoryModel
+
+from main.models.resource.type.article import ResourceArticleModel
+from main.models.resource.type.pdf import ResourcePDFModel
+from main.models.resource.type.video import ResourceVideoModel
 
 
 from main.models.user import UserModel

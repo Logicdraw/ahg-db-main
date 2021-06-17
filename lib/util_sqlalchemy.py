@@ -15,6 +15,7 @@ from sqlalchemy import (
 	DateTime,
 	Column,
 	func,
+	text,
 )
 
 
@@ -56,11 +57,11 @@ class ResourceMixin:
 	# Keep track when records are created and updated, also - url strings --
 
 	created_on = Column(AwareDateTime(),
-							server_default=func.utcnow(),)
+							server_default=text("timezone('utc'::text, now())"),)
 
 	updated_on = Column(AwareDateTime(),
-							server_default=func.utcnow(),
-							server_onupdate=func.utcnow(),)
+							server_default=text("timezone('utc'::text, now())"),
+							server_onupdate=text("timezone('utc'::text, now())"),)
 
 
 

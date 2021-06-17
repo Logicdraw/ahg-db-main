@@ -30,9 +30,9 @@ from main.config import settings
 
 
 
-from sqlalchemy.ext.declarative import AbstractConcreteBase
+# from sqlalchemy.ext.declarative import AbstractConcreteBase
 
-from sqlalchemy.ext.declarative import declared_attr
+# from sqlalchemy.ext.declarative import declared_attr
 
 
 
