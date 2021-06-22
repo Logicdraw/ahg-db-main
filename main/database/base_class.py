@@ -12,7 +12,7 @@ from sqlalchemy import inspect
 
 @as_declarative()
 class Base:
-	id: Any
+	# id: Any
 	__name__: str
 
 

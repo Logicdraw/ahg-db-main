@@ -108,6 +108,7 @@ class FormEntryAnswerTextareaModel(
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_textareas',
 		'concrete': True,
+		'eager_defaults': True,
 	}
 
 

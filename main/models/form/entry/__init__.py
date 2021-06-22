@@ -32,6 +32,9 @@ class FormEntryModel(
 
 	id = Column(Integer, primary_key=True, index=True)
 
+
+	slug = Column(String, unique=True, index=True)
+
 	# --
 
 	form = relationship(

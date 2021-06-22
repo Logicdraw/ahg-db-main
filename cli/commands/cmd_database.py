@@ -11,25 +11,6 @@ logger = logging.getLogger(__name__)
 
 
 
-# SQLITE --
-
-from main.database.sqlite.dev.session import (
-	# SessionSQLiteDev,
-	engine_sqlite_dev,
-)
-
-from main.database.sqlite.testing.session import (
-	# SessionSQLiteTesting,
-	engine_sqlite_testing,
-)
-
-
-from main.database.sqlite.helpers import (
-	init_sqlite_db,
-	drop_sqlite_db,
-	reset_sqlite_db,
-)
-
 
 # PSQL --
 
@@ -98,49 +79,6 @@ def cli():
 
 
 # Initialize
-
-
-@click.command()
-@click.confirmation_option(prompt='Are you sure you wish to initialize the SQLITE DEV database?')
-def init_sqlite_dev() -> None:
-	# Initialize DB
-
-	logger.info('Initializing SQLITE DEV database!')
-
-	# settings.USE_SQLITE_FOR_TESTING = True
-
-	init_sqlite_db(
-		engine_sqlite=engine_sqlite_dev,
-	)
-
-
-	logger.info('Finished initializing SQLITE DEV database!')
-
-	click.echo(f'DONE')
-
-	return None
-
-
-
-@click.command()
-@click.confirmation_option(prompt='Are you sure you wish to initialize the SQLITE TESTING database?')
-def init_sqlite_testing() -> None:
-	# Initialize DB
-
-	logger.info('Initializing SQLITE TESTING database!')
-
-	# settings.USE_SQLITE_FOR_TESTING = True
-
-	init_sqlite_db(
-		engine_sqlite=engine_sqlite_testing,
-	)
-
-	logger.info('Finished initializing SQLITE TESTING database!')
-
-	click.echo(f'DONE')
-
-	return None
-
 
 
 @click.command()
@@ -261,48 +199,6 @@ def init_psql_async_prod(password) -> None:
 # Reset
 
 
-@click.command()
-@click.confirmation_option(prompt='Are you sure you wish to reset the SQLITE DEV database?')
-def reset_sqlite_dev() -> None:
-	# Reset DB
-
-	logger.info('Resetting SQLITE DEV database!')
-
-	# settings.USE_SQLITE_FOR_TESTING = True
-
-	reset_sqlite_db(
-		engine_sqlite=engine_sqlite_dev,
-	)
-
-	logger.info('Finished resetting SQLITE DEV database!')
-
-	click.echo(f'DONE')
-
-	return None
-
-
-
-@click.command()
-@click.confirmation_option(prompt='Are you sure you wish to reset the SQLITE TESTING database?')
-def reset_sqlite_testing() -> None:
-	# Reset DB
-
-	logger.info('Resetting SQLITE TESTING database!')
-
-	# settings.USE_SQLITE_FOR_TESTING = True
-
-	reset_sqlite_db(
-		engine_sqlite=engine_sqlite_testing,
-	)
-
-	logger.info('Finished resetting SQLITE TESTING database!')
-
-	click.echo(f'DONE')
-
-	return None
-
-
-
 
 @click.command()
 @click.confirmation_option(prompt='Are you sure you wish to reset the PSQL TESTING database?')
@@ -311,8 +207,8 @@ def reset_psql_testing() -> None:
 
 	logger.info('Resetting PSQL TESTING database!')
 
-	reset_sqlite_db(
-		engine_sqlite=engine_psql_testing,
+	reset_psql_db(
+		engine_psql=engine_psql_testing,
 	)
 
 	logger.info('Finished resetting PSQL TESTING database!')
@@ -329,8 +225,8 @@ def reset_psql_dev() -> None:
 
 	logger.info('Resetting PSQL DEV database!')
 
-	reset_sqlite_db(
-		engine_sqlite=engine_psql_dev,
+	reset_psql_db(
+		engine_psql=engine_psql_dev,
 	)
 
 	logger.info('Finished resetting PSQL DEV database!')
@@ -352,7 +248,7 @@ def reset_psql_prod(password) -> None:
 	logger.info('Resetting PSQL PROD database!')
 
 
-	reset_prod_db(
+	reset_psql_db(
 		engine_psql=engine_psql_prod,
 	)
 
@@ -419,46 +315,6 @@ def reset_psql_async_prod(password) -> None:
 
 
 # Drop
-
-
-@click.command()
-@click.confirmation_option(prompt='Are you sure you wish to drop the SQLITE DEV database?')
-def drop_sqlite_dev() -> None:
-	# Drop DB
-
-	logger.info('Dropping SQLITE DEV database!')
-
-	# settings.USE_SQLITE_FOR_TESTING = True
-
-	drop_sqlite_db(
-		engine_sqlite=engine_sqlite_dev,
-	)
-
-	logger.info('Finished dropping SQLITE DEV database!')
-
-	click.echo(f'DONE')
-
-	return None
-
-
-@click.command()
-@click.confirmation_option(prompt='Are you sure you wish to drop the DEV database?')
-def drop_sqlite_testing() -> None:
-	# Drop DB
-
-	logger.info('dropping SQLITE TESTING database!')
-
-	# settings.USE_SQLITE_FOR_TESTING = True
-
-	drop_sqlite_db(
-		engine_sqlite=engine_sqlite_testing,
-	)
-
-	logger.info('Finished dropping SQLITE TESTING database!')
-
-	click.echo(f'DONE')
-
-	return None
 
 
 
@@ -583,8 +439,6 @@ def drop_psql_async_prod(password) -> None:
 
 
 
-cli.add_command(init_sqlite_dev)
-cli.add_command(init_sqlite_testing)
 cli.add_command(init_psql_testing)
 cli.add_command(init_psql_dev)
 cli.add_command(init_psql_prod)
@@ -593,8 +447,6 @@ cli.add_command(init_psql_async_dev)
 cli.add_command(init_psql_async_prod)
 
 
-cli.add_command(reset_sqlite_dev)
-cli.add_command(reset_sqlite_testing)
 cli.add_command(reset_psql_testing)
 cli.add_command(reset_psql_dev)
 cli.add_command(reset_psql_prod)
@@ -603,8 +455,6 @@ cli.add_command(reset_psql_async_dev)
 cli.add_command(reset_psql_async_prod)
 
 
-cli.add_command(drop_sqlite_dev)
-cli.add_command(drop_sqlite_testing)
 cli.add_command(drop_psql_testing)
 cli.add_command(drop_psql_dev)
 cli.add_command(drop_psql_prod)
@@ -618,8 +468,6 @@ cli.add_command(drop_psql_async_prod)
 # In use:
 # -------
 
-# ahg-db-cli database init-sqlite-dev
-# ahg-db-cli database init-sqlite-testing
 # ahg-db-cli database init-psql-testing
 # ahg-db-cli database init-psql-dev
 # ahg-db-cli database init-psql-prod
@@ -627,8 +475,6 @@ cli.add_command(drop_psql_async_prod)
 # ahg-db-cli database init-psql-async-dev
 # ahg-db-cli database init-psql-async-prod
 
-# ahg-db-cli database reset-sqlite-dev
-# ahg-db-cli database reset-sqlite-testing
 # ahg-db-cli database reset-psql-testing
 # ahg-db-cli database reset-psql-dev
 # ahg-db-cli database reset-psql-prod
@@ -636,8 +482,6 @@ cli.add_command(drop_psql_async_prod)
 # ahg-db-cli database reset-psql-async-dev
 # ahg-db-cli database reset-psql-async-prod
 
-# ahg-db-cli database drop-sqlite-dev
-# ahg-db-cli database drop-sqlite-testing
 # ahg-db-cli database drop-psql-testing
 # ahg-db-cli database drop-psql-dev
 # ahg-db-cli database drop-psql-prod

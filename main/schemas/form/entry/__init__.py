@@ -10,6 +10,7 @@ from pydantic import (
 
 
 class FormEntrySchemaBase(BaseModel):
+	slug: Optional[str] = None
 	form_id: Optional[int] = None
 
 

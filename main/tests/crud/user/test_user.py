@@ -536,6 +536,40 @@ async def test_check_if_user_is_guardian(
 
 
 @pytest.mark.asyncio
+async def test_check_if_user_is_adult_rep(
+	db: AsyncSession,
+) -> None:
+	# Check if user is adult rep --
+
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'adult_rep'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_adult_rep = user_crud.is_role(
+		user=user,
+		role='adult_rep',
+	)
+
+	assert is_adult_rep is True
+
+
+
+@pytest.mark.asyncio
 async def test_check_if_user_is_superadmin_as_admin(
 	db: AsyncSession,
 ) -> None:
@@ -634,6 +668,39 @@ async def test_check_if_user_is_superadmin_as_guardian(
 
 
 @pytest.mark.asyncio
+async def test_check_if_user_is_superadmin_as_adult_rep(
+	db: AsyncSession,
+) -> None:
+	# --
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'adult_rep'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_superadmin = user_crud.is_role(
+		user=user,
+		role='superadmin',
+	)
+
+	assert is_superadmin is False
+
+
+
+@pytest.mark.asyncio
 async def test_check_if_user_is_admin_as_superadmin(
 	db: AsyncSession,
 ) -> None:
@@ -666,7 +733,7 @@ async def test_check_if_user_is_admin_as_superadmin(
 
 
 @pytest.mark.asyncio
-async def test_check_fi_user_is_admin_as_coach(
+async def test_check_if_user_is_admin_as_coach(
 	db: AsyncSession,
 ) -> None:
 	# --
@@ -707,6 +774,39 @@ async def test_check_if_user_is_admin_as_guardian(
 	confirm_password = password
 	name = random_name()
 	role = 'guardian'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_admin = user_crud.is_role(
+		user=user,
+		role='admin',
+	)
+
+	assert is_admin is False
+
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_admin_as_adult_rep(
+	db: AsyncSession,
+) -> None:
+	# --
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'adult_rep'
 
 	user_in = UserSchemaCreate(
 		email=email,
@@ -828,6 +928,39 @@ async def test_check_if_user_is_coach_as_guardian(
 
 
 @pytest.mark.asyncio
+async def test_check_if_user_is_coach_as_adult_rep(
+	db: AsyncSession,
+) -> None:
+	# --
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'adult_rep'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_coach = user_crud.is_role(
+		user=user,
+		role='coach',
+	)
+
+	assert is_coach is False
+
+
+
+@pytest.mark.asyncio
 async def test_check_if_user_is_guardian_as_superadmin(
 	db: AsyncSession,
 ) -> None:
@@ -921,6 +1054,172 @@ async def test_check_if_user_is_guardian_as_coach(
 	)
 
 	assert is_guardian is False
+
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_guardian_as_adult_rep(
+	db: AsyncSession,
+) -> None:
+	# --
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'adult_rep'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_guardian = user_crud.is_role(
+		user=user,
+		role='guardian',
+	)
+
+	assert is_guardian is False
+
+
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_adult_rep_as_superadmin(
+	db: AsyncSession,
+) -> None:
+	# --
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'superadmin'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_adult_rep = user_crud.is_role(
+		user=user,
+		role='adult_rep',
+	)
+
+	assert is_adult_rep is False
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_adult_rep_as_admin(
+	db: AsyncSession,
+) -> None:
+	# --
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'admin'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_adult_rep = user_crud.is_role(
+		user=user,
+		role='adult_rep',
+	)
+
+	assert is_adult_rep is False
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_adult_rep_as_coach(
+	db: AsyncSession,
+) -> None:
+	# --
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'coach'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_adult_rep = user_crud.is_role(
+		user=user,
+		role='adult_rep',
+	)
+
+	assert is_adult_rep is False
+
+
+
+@pytest.mark.asyncio
+async def test_check_if_user_is_adult_rep_as_guardian(
+	db: AsyncSession,
+) -> None:
+	# --
+	email = random_email()
+	password = random_lower_string()
+	confirm_password = password
+	name = random_name()
+	role = 'guardian'
+
+	user_in = UserSchemaCreate(
+		email=email,
+		password=password,
+		name=name,
+		confirm_password=confirm_password,
+		role=role,
+	)
+
+	user = await user_crud.create(
+		db=db,
+		obj_in=user_in,
+	)
+
+	is_adult_rep = user_crud.is_role(
+		user=user,
+		role='adult_rep',
+	)
+
+	assert is_adult_rep is False
+
+
 
 
 
