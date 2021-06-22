@@ -215,7 +215,7 @@ class Settings(BaseSettings):
 		'admin',
 		'coach',
 		'guardian',
-		'adult-rep',
+		'adult_rep',
 	]
 
 

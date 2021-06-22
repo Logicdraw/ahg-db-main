@@ -1,6 +1,7 @@
 from typing import (
 	Optional,
 	Any,
+	Dict,
 )
 
 from pydantic import (
@@ -161,7 +162,7 @@ class FormEntryAnswerTextareaSchemaInDB(
 class FormEntryAnswerSelectSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
-	select_selected: Optional[Any] = None
+	select_selected: Optional[Dict[str, bool]] = None
 
 
 
@@ -270,7 +271,7 @@ class FormEntryAnswerCheckboxSchemaInDB(
 class FormEntryAnswerRadioSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
-	radio_selected: Optional[Any] = None
+	radio_selected: Optional[Dict[str, bool]] = None
 
 
 

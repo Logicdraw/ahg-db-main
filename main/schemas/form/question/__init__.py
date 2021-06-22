@@ -162,7 +162,7 @@ class FormQuestionSelectSchemaBase(
 	FormQuestionSchemaBase,
 ):
 	select_is_multiple: Optional[bool] = None
-	select_answers: Optional[Dict[Any, Any]] = None
+	select_answers: Optional[Dict[str, str]] = None
 
 
 
@@ -271,7 +271,7 @@ class FormQuestionCheckboxSchemaInDB(
 class FormQuestionRadioSchemaBase(
 	FormQuestionSchemaBase,
 ):
-	radio_answers: Optional[Any] = None
+	radio_answers: Optional[Dict[str, str]] = None
 
 
 

@@ -536,7 +536,7 @@ async def test_create_form_entry_answer_select(
 	# --
 	
 	select_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_select_in = FormEntryAnswerSelectSchemaCreate(
@@ -559,7 +559,7 @@ async def test_create_sync_form_entry_answer_select(
 	# --
 
 	select_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_select_in = FormEntryAnswerSelectSchemaCreate(
@@ -582,7 +582,7 @@ async def test_get_form_entry_answer_select(
 	# --
 
 	select_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_select_in = FormEntryAnswerSelectSchemaCreate(
@@ -611,7 +611,7 @@ async def test_get_sync_form_entry_answer_select(
 	# --
 
 	select_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_select_in = FormEntryAnswerSelectSchemaCreate(
@@ -640,7 +640,7 @@ async def test_update_form_entry_answer_select(
 	# --
 
 	select_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_select_in = FormEntryAnswerSelectSchemaCreate(
@@ -654,7 +654,7 @@ async def test_update_form_entry_answer_select(
 
 
 	new_select_selected = {
-		'z': 'xyz',
+		'z': True,
 	}
 	
 	form_entry_answer_select_in_update = FormEntryAnswerSelectSchemaUpdate(
@@ -679,7 +679,7 @@ async def test_update_sync_form_entry_answer_select(
 	# --
 
 	select_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_select_in = FormEntryAnswerSelectSchemaCreate(
@@ -693,7 +693,7 @@ async def test_update_sync_form_entry_answer_select(
 
 
 	new_select_selected = {
-		'z': 'xyz',
+		'z': True,
 	}
 	
 	form_entry_answer_select_in_update = FormEntryAnswerSelectSchemaUpdate(
@@ -718,7 +718,7 @@ async def test_delete_form_entry_answer_select(
 	# --
 
 	select_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_select_in = FormEntryAnswerSelectSchemaCreate(
@@ -753,7 +753,7 @@ async def test_delete_sync_form_entry_answer_select(
 	# --
 
 	select_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_select_in = FormEntryAnswerSelectSchemaCreate(
@@ -1028,7 +1028,7 @@ async def test_create_form_entry_answer_radio(
 	# --
 	
 	radio_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
@@ -1051,7 +1051,7 @@ async def test_create_sync_form_entry_answer_radio(
 	# --
 
 	radio_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
@@ -1074,7 +1074,7 @@ async def test_get_form_entry_answer_radio(
 	# --
 
 	radio_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
@@ -1103,7 +1103,7 @@ async def test_get_sync_form_entry_answer_radio(
 	# --
 
 	radio_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
@@ -1132,7 +1132,7 @@ async def test_update_form_entry_answer_radio(
 	# --
 
 	radio_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
@@ -1146,7 +1146,7 @@ async def test_update_form_entry_answer_radio(
 
 
 	new_radio_selected = {
-		'z': 'xyz',
+		'z': True,
 	}
 	
 	form_entry_answer_radio_in_update = FormEntryAnswerRadioSchemaUpdate(
@@ -1171,7 +1171,7 @@ async def test_update_sync_form_entry_answer_radio(
 	# --
 
 	radio_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
@@ -1185,7 +1185,7 @@ async def test_update_sync_form_entry_answer_radio(
 
 
 	new_radio_selected = {
-		'z': 'xyz',
+		'z': True,
 	}
 	
 	form_entry_answer_radio_in_update = FormEntryAnswerRadioSchemaUpdate(
@@ -1210,7 +1210,7 @@ async def test_delete_form_entry_answer_radio(
 	# --
 
 	radio_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
@@ -1245,7 +1245,7 @@ async def test_delete_sync_form_entry_answer_radio(
 	# --
 
 	radio_selected = {
-		'a': 'abc',
+		'a': True,
 	}
 
 	form_entry_answer_radio_in = FormEntryAnswerRadioSchemaCreate(
