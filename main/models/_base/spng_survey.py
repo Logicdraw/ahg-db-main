@@ -43,7 +43,12 @@ class SpngSurveyBaseModel(
 
 	__tablename__ = 'spng_surveys'
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+		autoincrement=True,
+	)
 
 	
 	survey_id = Column(Integer, index=True)

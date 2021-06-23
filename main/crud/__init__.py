@@ -3,7 +3,7 @@ from main.crud._base.spng_survey import spng_survey_base_crud
 
 from main.crud._many.camp_instances_coaches import camp_instances_coaches_crud
 from main.crud._many.program_instances_coaches import program_instances_coaches_crud
-from main.crud._many.team_instances_adult_reps import team_instances_adult_reps
+from main.crud._many.team_instances_adult_reps import team_instances_adult_reps_crud
 from main.crud._many.team_instances_coaches import team_instances_coaches_crud
 from main.crud._many.team_instances_players import team_instances_players_crud
 from main.crud._many.spng_surveys_spng_survey_questions import spng_surveys_spng_survey_questions_crud

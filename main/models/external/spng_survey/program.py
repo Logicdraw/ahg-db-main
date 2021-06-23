@@ -32,7 +32,12 @@ class SpngSurveyProgramModel(
 	__tablename__ = 'spng_survey_programs'
 
 
-	id = Column(Integer, ForeignKey('spng_surveys.id'), primary_key=True)
+	id = Column(
+		Integer,
+		ForeignKey('spng_surveys.id'),
+		primary_key=True,
+		autoincrement=True,
+	)
 
 
 	# default_program_instance = relationship(

@@ -94,8 +94,7 @@ from main.models.resource.type.video import ResourceVideoModel
 from main.models.user import UserModel
 
 
-print(';;;;')
-print(Base.metadata.tables.keys())
+# print(Base.metadata.tables.keys())
 
 
 # Explicity set up mappers. -- AbstractConcreteBase ...

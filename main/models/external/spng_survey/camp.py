@@ -32,7 +32,12 @@ class SpngSurveyCampModel(
 	__tablename__ = 'spng_survey_camps'
 
 
-	id = Column(Integer, ForeignKey('spng_surveys.id'), primary_key=True)
+	id = Column(
+		Integer,
+		ForeignKey('spng_surveys.id'),
+		primary_key=True,
+		autoincrement=True,
+	)
 
 
 	# default_camp_instance = relationship(

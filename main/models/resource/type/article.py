@@ -38,6 +38,7 @@ class ResourceArticleModel(
 		Integer,
 		ForeignKey('resources.id'),
 		primary_key=True,
+		autoincrement=True,
 	)
 
 
