@@ -77,7 +77,7 @@ class FormEntryAnswerInputModel(
 		uselist=False,
 	)
 
-	form_question_inputs_id = Column(Integer, ForeignKey('form_question_inputs.id'))
+	form_question_input_id = Column(Integer, ForeignKey('form_question_inputs.id'))
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_inputs',

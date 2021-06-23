@@ -21,7 +21,8 @@ from main.schemas._base.spng_survey import (
 class SpngSurveyTeamSchemaBase(
 	SpngSurveyBaseSchemaBase,
 ):
-	default_team_instance_id: Optional[int] = None
+	# default_team_instance_id: Optional[int] = None
+	pass
 
 
 

@@ -21,7 +21,8 @@ from main.schemas._base.spng_survey import (
 class SpngSurveyProgramSchemaBase(
 	SpngSurveyBaseSchemaBase,
 ):
-	default_program_instance_id: Optional[int] = None
+	# default_program_instance_id: Optional[int] = None
+	pass
 
 
 

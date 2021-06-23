@@ -14,8 +14,7 @@ from pydantic import (
 
 
 class FormEntryAnswerSchemaBase(BaseModel):
-	entry_id: Optional[int] = None
-	question_id: Optional[int] = None
+	form_entry_id: Optional[int] = None
 
 
 
@@ -55,6 +54,7 @@ class FormEntryAnswerInputSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
 	input_answer: Optional[str] = None
+	form_question_input_id: Optional[int] = None
 
 
 
@@ -109,6 +109,7 @@ class FormEntryAnswerTextareaSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
 	textarea_answer: Optional[str] = None
+	form_question_textarea_id: Optional[int] = None
 
 
 
@@ -163,6 +164,7 @@ class FormEntryAnswerSelectSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
 	select_selected: Optional[Dict[str, bool]] = None
+	form_question_select_id: Optional[int] = None
 
 
 
@@ -218,6 +220,7 @@ class FormEntryAnswerCheckboxSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
 	checkbox_checked: Optional[bool] = None
+	form_question_checkbox_id: Optional[int] = None
 
 
 
@@ -272,6 +275,7 @@ class FormEntryAnswerRadioSchemaBase(
 	FormEntryAnswerSchemaBase,
 ):
 	radio_selected: Optional[Dict[str, bool]] = None
+	form_question_radio_id: Optional[int] = None
 
 
 

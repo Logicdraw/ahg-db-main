@@ -15,7 +15,7 @@ class ResourceBaseSchemaBase(BaseModel):
 	slug: Optional[str] = None
 	thumbnail_image_url: Optional[str] = None
 	type: Optional[str] = None
-	category_id: Optional[int] = None
+	resource_category_id: Optional[int] = None
 
 
 
