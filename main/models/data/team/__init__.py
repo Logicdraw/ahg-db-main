@@ -39,18 +39,11 @@ class TeamModel(
 	province = Column(String, index=True)
 
 
-	GENDERS = OrderedDict([
-		('male', 'Male'),
-		('female', 'Female'),
-		('both', 'Both'),
-	])
-
-	gender = Column(Enum(*GENDERS, name='gender_types', native_enum=False), 
-					index=True, nullable=True)
+	gender = Column(String(25), index=True)
 
 
 
-	division = relationship(
+	divisions_sc = relationship(
 		'DivisionModel',
 		back_populates='teams',
 		uselist=False,
@@ -60,7 +53,7 @@ class TeamModel(
 		ForeignKey('divisions.id'),
 	)
 
-	conference = relationship(
+	conferences_sc = relationship(
 		'ConferenceModel',
 		back_populates='teams',
 		uselist=False,
@@ -70,7 +63,7 @@ class TeamModel(
 		ForeignKey('conferences.id'),
 	)
 
-	league = relationship(
+	leagues_sc = relationship(
 		'LeagueModel',
 		back_populates='teams',
 		uselist=False,
@@ -80,7 +73,7 @@ class TeamModel(
 		ForeignKey('leagues.id'),
 	)
 
-	season = relationship(
+	seasons_sc = relationship(
 		'SeasonModel',
 		back_populates='teams',
 		uselist=False,
@@ -92,7 +85,11 @@ class TeamModel(
 
 
 
-	instances = relationship('TeamInstanceModel', back_populates='team', lazy='selectin')
+	team_instances = relationship(
+		'TeamInstanceModel',
+		back_populates='teams_sc',
+		lazy='selectin',
+	)
 
 
 

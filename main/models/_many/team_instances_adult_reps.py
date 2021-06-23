@@ -44,15 +44,15 @@ class TeamInstancesAdultRepsModel(
 	role = Column(String)
 
 
-	team_instance = relationship(
+	team_instances_sc = relationship(
 		'TeamInstanceModel',
-		back_populates='adult_reps',
+		back_populates='team_instances_adult_reps',
 		uselist=False,
 	)
 
-	adult_rep = relationship(
+	adult_reps_sc = relationship(
 		'AdultRepModel',
-		back_populates='team_instances',
+		back_populates='team_instances_adult_reps',
 		uselist=False,
 	)
 

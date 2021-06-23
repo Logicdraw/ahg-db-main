@@ -62,7 +62,7 @@ class RegistrationBaseModel(
 
 
 	@declared_attr
-	def player(cls):
+	def players_sc(cls):
 		return relationship('PlayerModel', back_populates='registrations', uselist=False,)
 
 	@declared_attr

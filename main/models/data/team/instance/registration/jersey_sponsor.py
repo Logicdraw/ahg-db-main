@@ -28,11 +28,10 @@ class TeamInstanceRegistrationJerseySponsorModel(
 	id = Column(Integer, primary_key=True)
 
 
-	# ... ---
 
-	team_instance_registration = relationship(
+	team_instance_registrations_sc = relationship(
 		'TeamInstanceRegistrationModel',
-		back_populates='jersey_sponsors',
+		back_populates='team_instance_registration_jersey_sponsors',
 		uselist=False,
 	)
 	team_instance_registration_id = Column(

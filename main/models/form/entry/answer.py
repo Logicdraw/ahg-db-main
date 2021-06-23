@@ -47,11 +47,11 @@ class FormEntryAnswerModel(
 	
 
 	@declared_attr
-	def entry(cls):
-		return relationship('FormEntryModel', back_populates='answers', uselist=False,)
+	def form_entries_sc(cls):
+		return relationship('FormEntryModel', back_populates='form_entry_answers', uselist=False,)
 
 	@declared_attr
-	def entry_id(cls):
+	def form_entry_id(cls):
 		return Column(Integer, ForeignKey('form_entries.id'))
 
 
@@ -71,13 +71,13 @@ class FormEntryAnswerInputModel(
 
 	input_answer = Column(String)
 
-	question = relationship(
+	form_question_inputs_sc = relationship(
 		'FormQuestionInputModel',
-		back_populates='answers',
+		back_populates='form_entry_answer_inputs',
 		uselist=False,
 	)
 
-	question_id = Column(Integer, ForeignKey('form_question_inputs.id'))
+	form_question_inputs_id = Column(Integer, ForeignKey('form_question_inputs.id'))
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_inputs',
@@ -97,13 +97,13 @@ class FormEntryAnswerTextareaModel(
 
 	textarea_answer = Column(Text)
 
-	question = relationship(
+	form_question_textareas_sc = relationship(
 		'FormQuestionTextareaModel',
-		back_populates='answers',
+		back_populates='form_entry_answer_textareas',
 		uselist=False,
 	)
 
-	question_id = Column(Integer, ForeignKey('form_question_textareas.id'))
+	form_question_textarea_id = Column(Integer, ForeignKey('form_question_textareas.id'))
 	
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_textareas',
@@ -132,13 +132,13 @@ class FormEntryAnswerSelectModel(
 	)
 
 
-	question = relationship(
+	form_question_selects_sc = relationship(
 		'FormQuestionSelectModel',
-		back_populates='answers',
+		back_populates='form_entry_answer_selects',
 		uselist=False,
 	)
 
-	question_id = Column(Integer, ForeignKey('form_question_selects.id'))
+	form_question_select_id = Column(Integer, ForeignKey('form_question_selects.id'))
 	
 
 	__mapper_args__ = {
@@ -159,13 +159,13 @@ class FormEntryAnswerCheckboxModel(
 	
 	checkbox_checked = Column(Boolean, server_default='0')
 
-	question = relationship(
+	form_question_checkboxes_sc = relationship(
 		'FormQuestionCheckboxModel',
-		back_populates='answers',
+		back_populates='form_entry_answer_checkboxes',
 		uselist=False,
 	)
 
-	question_id = Column(Integer, ForeignKey('form_question_checkboxes.id'))
+	form_question_checkbox_id = Column(Integer, ForeignKey('form_question_checkboxes.id'))
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_checkboxes',
@@ -190,13 +190,14 @@ class FormEntryAnswerRadioModel(
 		)
 	)
 
-	question = relationship(
+	form_question_radios_sc = relationship(
 		'FormQuestionRadioModel',
-		back_populates='answers',
+		back_populates='form_entry_answer_radios',
 		uselist=False,
 	)
 
-	question_id = Column(Integer, ForeignKey('form_question_radios.id'))
+	form_question_radio_id = Column(Integer, ForeignKey('form_question_radios.id'))
+	
 	
 	__mapper_args__ = {
 		'polymorphic_identity': 'form_entry_answer_radios',

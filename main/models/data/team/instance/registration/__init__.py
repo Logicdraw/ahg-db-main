@@ -38,17 +38,17 @@ class TeamInstanceRegistrationModel(
 
 
 	# team_instance ...
-	team_instance = relationship(
+	team_instances_sc = relationship(
 		'TeamInstanceModel',
-		back_populates='registrations',
+		back_populates='team_instance_registrations',
 		uselist=False,
 	)
 	team_instance_id = Column(Integer, ForeignKey('team_instances.id'))
 
 
-	spng_survey_team = relationship(
+	spng_survey_teams_sc = relationship(
 		'SpngSurveyTeamModel',
-		back_populates='registrations',
+		back_populates='team_instance_registrations',
 		uselist=False,
 	)
 	spng_survey_team_id = Column(
@@ -58,9 +58,9 @@ class TeamInstanceRegistrationModel(
 
 
 
-	jersey_sponsors = relationship(
+	team_instance_registration_jersey_sponsors = relationship(
 		'TeamInstanceRegistrationJerseySponsorModel',
-		back_populates='team_instance_registration',
+		back_populates='team_instance_registrations_sc',
 		lazy='selectin',
 	)
 
@@ -74,11 +74,10 @@ class TeamInstanceRegistrationModel(
 
 
 
-	# One - to - One
-	jersey_socks_order = relationship(
+	team_instance_jersey_socks_orders = relationship(
 		'TeamInstanceJerseySocksOrderModel',
-		back_populates='team_instance_registration',
-		uselist=False,
+		back_populates='team_instance_registrations_sc',
+		lazy='selectin',
 	)
 
 
@@ -96,3 +95,6 @@ class TeamInstanceRegistrationModel(
 # staging -- pgweb -- .
 
 # pg-web could be -- .
+
+
+

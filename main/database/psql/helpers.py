@@ -1,7 +1,7 @@
 # ---
-from main.database import base
+from main.database.base import *
 
-from main.database.base_class import Base
+# from main.database.base import Base
 
 
 import logging

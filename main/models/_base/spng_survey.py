@@ -56,9 +56,9 @@ class SpngSurveyBaseModel(
 	type = Column(String(50))
 
 
-	spng_survey_questions = relationship(
+	spng_surveys_spng_survey_questions = relationship(
 		'SpngSurveysSpngSurveyQuestionsModel',
-		back_populates='spng_survey',
+		back_populates='spng_surveys_sc',
 		lazy='selectin',
 	)
 

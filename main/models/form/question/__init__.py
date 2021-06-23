@@ -46,8 +46,8 @@ class FormQuestionModel(
 
 
 	@declared_attr
-	def form(cls):
-		return relationship('FormModel', back_populates='questions', uselist=False,)
+	def forms_sc(cls):
+		return relationship('FormModel', back_populates='form_questions', uselist=False,)
 
 	@declared_attr
 	def form_id(cls):
@@ -76,9 +76,9 @@ class FormQuestionInputModel(
 
 
 	# max length ... ?
-	answers = relationship(
+	form_entry_answer_inputs = relationship(
 		'FormEntryAnswerInputModel',
-		back_populates='question',
+		back_populates='form_question_inputs_sc',
 		lazy='selectin',
 	)
 
@@ -99,9 +99,9 @@ class FormQuestionTextareaModel(
 
 
 	# max length ... ?
-	answers = relationship(
+	form_entry_answer_textareas = relationship(
 		'FormEntryAnswerTextareaModel',
-		back_populates='question',
+		back_populates='form_question_textareas_sc',
 		lazy='selectin',
 	)
 
@@ -132,9 +132,9 @@ class FormQuestionSelectModel(
 		)
 	)
 
-	answers = relationship(
+	form_entry_answer_selects = relationship(
 		'FormEntryAnswerSelectModel',
-		back_populates='question',
+		back_populates='form_question_selects_sc',
 		lazy='selectin',
 	)
 
@@ -154,9 +154,9 @@ class FormQuestionCheckboxModel(
 	__tablename__ = 'form_question_checkboxes'
 
 
-	answers = relationship(
+	form_entry_answer_checkboxes = relationship(
 		'FormEntryAnswerCheckboxModel',
-		back_populates='question',
+		back_populates='form_question_checkboxes_sc',
 		lazy='selectin',
 	)
 
@@ -185,9 +185,9 @@ class FormQuestionRadioModel(
 	)
 
 
-	answers = relationship(
+	form_entry_answer_radios = relationship(
 		'FormEntryAnswerRadioModel',
-		back_populates='question',
+		back_populates='form_question_radios_sc',
 		lazy='selectin',
 	)
 

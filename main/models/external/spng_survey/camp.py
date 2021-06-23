@@ -35,20 +35,20 @@ class SpngSurveyCampModel(
 	id = Column(Integer, ForeignKey('spng_surveys.id'), primary_key=True)
 
 
-	default_camp_instance = relationship(
-		'CampInstanceModel',
-		uselist=False,
-	)
-	default_camp_instance_id = Column(
-		Integer,
-		ForeignKey('camp_instances.id'),
-	)
+	# default_camp_instance = relationship(
+	# 	'CampInstanceModel',
+	# 	uselist=False,
+	# )
+	# default_camp_instance_id = Column(
+	# 	Integer,
+	# 	ForeignKey('camp_instances.id'),
+	# )
 
 
 	# registrations --
-	registrations = relationship(
+	camp_instance_registrations = relationship(
 		'CampInstanceRegistrationModel',
-		back_populates='spng_survey_camp',
+		back_populates='spng_survey_camps_sc',
 		lazy='selectin',
 	)
 

@@ -35,20 +35,20 @@ class SpngSurveyTeamModel(
 	id = Column(Integer, ForeignKey('spng_surveys.id'), primary_key=True)
 
 
-	default_team_instance = relationship(
-		'TeamInstanceModel',
-		uselist=False,
-	)
-	default_team_instance_id = Column(
-		Integer,
-		ForeignKey('team_instances.id'),
-	)
+	# default_team_instance = relationship(
+	# 	'TeamInstanceModel',
+	# 	uselist=False,
+	# )
+	# default_team_instance_id = Column(
+	# 	Integer,
+	# 	ForeignKey('team_instances.id'),
+	# )
 
 
 	# registrations --
-	registrations = relationship(
+	team_instance_registrations = relationship(
 		'TeamInstanceRegistrationModel',
-		back_populates='spng_survey_team',
+		back_populates='spng_survey_teams_sc',
 		lazy='selectin',
 	)
 

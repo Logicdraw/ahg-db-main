@@ -44,7 +44,7 @@ class PlayerModel(
 
 	registrations = relationship(
 		'RegistrationBaseModel',
-		back_populates='player',
+		back_populates='players_sc',
 		lazy='selectin',
 		cascade='delete',
 	)
@@ -76,17 +76,17 @@ class PlayerModel(
 
 	# Many - to - Many
 
-	guardians = relationship(
+	guardians_players = relationship(
 		'GuardiansPlayersModel',
-		back_populates='player',
+		back_populates='players_sc',
 		lazy='selectin',
 	)
 
 	# Many - to - Many
 
-	team_instances = relationship(
+	team_instances_players = relationship(
 		'TeamInstancesPlayersModel',
-		back_populates='player',
+		back_populates='players_sc',
 		lazy='selectin',
 	)
 

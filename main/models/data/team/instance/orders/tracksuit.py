@@ -28,9 +28,9 @@ class TeamInstanceTracksuitOrderModel(
 	id = Column(Integer, primary_key=True)
 
 
-	team_instance = relationship(
+	team_instances_sc = relationship(
 		'TeamInstanceModel',
-		back_populates='tracksuit_orders',
+		back_populates='team_instance_tracksuit_orders',
 		uselist=False,
 	)
 	team_instance_id = Column(

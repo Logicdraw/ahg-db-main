@@ -48,15 +48,15 @@ class ProgramInstancesCoachesModel(
 
 
 
-	program_instance = relationship(
+	program_instances_sc = relationship(
 		'ProgramInstanceModel',
-		back_populates='coaches',
+		back_populates='program_instances_coaches',
 		uselist=False,
 	)
 
-	coach = relationship(
+	coaches_sc = relationship(
 		'CoachModel',
-		back_populates='program_instances',
+		back_populates='program_instances_coaches',
 		uselist=False,
 	)
 

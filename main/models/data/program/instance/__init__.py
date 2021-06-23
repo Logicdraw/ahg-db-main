@@ -29,31 +29,31 @@ class ProgramInstanceModel(
 
 
 
-	program = relationship(
+	programs_sc = relationship(
 		'ProgramModel',
-		back_populates='instances',
+		back_populates='program_instances',
 		uselist=False,
 	)
 	program_id = Column(Integer, ForeignKey('programs.id'))
 
 
 
-	registrations = relationship(
+	program_instance_registrations = relationship(
 		'ProgramInstanceRegistrationModel',
-		back_populates='program_instance',
+		back_populates='program_instances_sc',
 		lazy='selectin',
 	)
 
-	groups = relationship(
+	program_group_instances = relationship(
 		'ProgramGroupInstanceModel',
-		back_populates='program_instance',
+		back_populates='program_instances_sc',
 		lazy='selectin',
 		cascade='delete',
 	)
 
-	coaches = relationship(
+	program_instances_coaches = relationship(
 		'ProgramInstancesCoachesModel',
-		back_populates='program_instance',
+		back_populates='program_instances_sc',
 		lazy='selectin',
 	)
 

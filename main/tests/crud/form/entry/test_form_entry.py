@@ -38,7 +38,11 @@ async def test_create_form_entry(
 ) -> None:
 	# --
 
-	form_entry_in = FormEntrySchemaCreate()
+	slug = random_lower_string()
+
+	form_entry_in = FormEntrySchemaCreate(
+		slug=slug,
+	)
 
 	form_entry = await form_entry_crud.create(
 		db=db,
@@ -55,7 +59,11 @@ async def test_create_sync_form_entry(
 ) -> None:
 	# --
 
-	form_entry_in = FormEntrySchemaCreate()
+	slug = random_lower_string()
+
+	form_entry_in = FormEntrySchemaCreate(
+		slug=slug,
+	)
 
 	form_entry = await db.run_sync(
 		form_entry_crud.create_sync,
@@ -72,7 +80,11 @@ async def test_get_form_entry(
 ) -> None:
 	# --
 
-	form_entry_in = FormEntrySchemaCreate()
+	slug = random_lower_string()
+
+	form_entry_in = FormEntrySchemaCreate(
+		slug=slug,
+	)
 
 	form_entry = await form_entry_crud.create(
 		db=db,
@@ -95,7 +107,11 @@ async def test_get_sync_form_entry(
 ) -> None:
 	# --
 
-	form_entry_in = FormEntrySchemaCreate()
+	slug = random_lower_string()
+
+	form_entry_in = FormEntrySchemaCreate(
+		slug=slug,
+	)
 
 	form_entry = await db.run_sync(
 		form_entry_crud.create_sync,
@@ -118,7 +134,11 @@ async def test_update_form_entry(
 ) -> None:
 	# --
 
-	form_entry_in = FormEntrySchemaCreate()
+	slug = random_lower_string()
+
+	form_entry_in = FormEntrySchemaCreate(
+		slug=slug,
+	)
 
 	form_entry = await form_entry_crud.create(
 		db=db,
@@ -144,7 +164,11 @@ async def test_update_sync_form_entry(
 ) -> None:
 	# --
 
-	form_entry_in = FormEntrySchemaCreate()
+	slug = random_lower_string()
+
+	form_entry_in = FormEntrySchemaCreate(
+		slug=slug,
+	)
 
 	form_entry = await db.run_sync(
 		form_entry_crud.create_sync,
@@ -169,7 +193,11 @@ async def test_delete_form_entry(
 ) -> None:
 	# --
 
-	form_entry_in = FormEntrySchemaCreate()
+	slug = random_lower_string()
+
+	form_entry_in = FormEntrySchemaCreate(
+		slug=slug,
+	)
 
 	form_entry = await form_entry_crud.create(
 		db=db,
@@ -198,7 +226,11 @@ async def test_delete_sync_form_entry(
 ) -> None:
 	# --
 
-	form_entry_in = FormEntrySchemaCreate()
+	slug = random_lower_string()
+
+	form_entry_in = FormEntrySchemaCreate(
+		slug=slug,
+	)
 
 	form_entry = await db.run_sync(
 		form_entry_crud.create_sync,

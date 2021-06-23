@@ -31,17 +31,17 @@ class CampGroupModel(
 	name = Column(String)
 
 
-	camp = relationship(
+	camps_sc = relationship(
 		'CampModel',
-		back_populates='groups',
+		back_populates='camp_groups',
 		uselist=False,
 	)
 	camp_id = Column(Integer, ForeignKey('camps.id'))
 
 
-	instances = relationship(
+	camp_group_instances = relationship(
 		'CampGroupInstanceModel',
-		back_populates='camp_group',
+		back_populates='camp_groups_sc',
 		lazy='selectin',
 		cascade='delete',
 	)

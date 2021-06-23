@@ -32,9 +32,9 @@ class ConferenceInstanceModel(
 	year_end = Column(Integer)
 
 
-	conference = relationship(
+	conferences_sc = relationship(
 		'ConferenceModel',
-		back_populates='instances',
+		back_populates='conference_instances',
 		uselist=False,
 	)
 	conference_id = Column(
@@ -45,18 +45,18 @@ class ConferenceInstanceModel(
 
 	team_instances = relationship(
 		'TeamInstanceModel',
-		back_populates='conference_instance',
+		back_populates='conference_instances_sc',
 		lazy='selectin',
 	)
 
 	division_instances = relationship(
 		'DivisionInstanceModel',
-		back_populates='conference_instance',
+		back_populates='conference_instances_sc',
 		lazy='selectin',
 	)
 
 
-	league_instance = relationship(
+	league_instances_sc = relationship(
 		'LeagueInstanceModel',
 		back_populates='conference_instances',
 		uselist=False,
@@ -66,7 +66,7 @@ class ConferenceInstanceModel(
 		ForeignKey('league_instances.id'),
 	)
 
-	season_instance = relationship(
+	season_instances_sc = relationship(
 		'SeasonInstanceModel',
 		back_populates='conference_instances',
 		uselist=False,

@@ -43,16 +43,16 @@ class SpngSurveyQuestionModel(
 
 
 	# Many To Many with SpngSurvey -- |~|
-	spng_surveys = relationship(
+	spng_surveys_spng_survey_questions = relationship(
 		'SpngSurveysSpngSurveyQuestionsModel',
-		back_populates='spng_survey_question',
+		back_populates='spng_survey_questions_sc',
 		lazy='selectin',
 	)
 
 
-	table_maps = relationship(
+	spng_survey_question_table_maps = relationship(
 		'SpngSurveyQuestionTableMapModel',
-		back_populates='spng_survey_question',
+		back_populates='spng_survey_questions_sc',
 		lazy='selectin',
 		cascade='delete', # Correct > ???
 	)

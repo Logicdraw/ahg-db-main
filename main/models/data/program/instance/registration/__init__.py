@@ -37,9 +37,9 @@ class ProgramInstanceRegistrationModel(
 	__tablename__ = 'program_instance_registrations'
 
 
-	program_instance = relationship(
+	program_instances_sc = relationship(
 		'ProgramInstanceModel',
-		back_populates='registrations',
+		back_populates='program_instance_registrations',
 		uselist=False,
 	)
 	program_instance_id = Column(
@@ -49,9 +49,9 @@ class ProgramInstanceRegistrationModel(
 	
 
 	# Optional :) - nice dropdown on interface --
-	program_group_instance = relationship(
+	program_group_instances_sc = relationship(
 		'ProgramGroupInstanceModel',
-		back_populates='registrations',
+		back_populates='program_instance_registrations',
 		uselist=False,
 	)
 	program_group_instance_id = Column(
@@ -60,9 +60,9 @@ class ProgramInstanceRegistrationModel(
 	)
 
 
-	spng_survey_program = relationship(
+	spng_survey_programs_sc = relationship(
 		'SpngSurveyProgramModel',
-		back_populates='registrations',
+		back_populates='program_instance_registrations',
 		uselist=False,
 	)
 	spng_survey_program_id = Column(

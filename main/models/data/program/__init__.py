@@ -31,16 +31,16 @@ class ProgramModel(
 	name = Column(String)
 
 
-	instances = relationship(
+	program_instances = relationship(
 		'ProgramInstanceModel',
-		back_populates='program',
+		back_populates='programs_sc',
 		lazy='selectin',
 		cascade='delete',
 	)
 
-	groups = relationship(
+	program_groups = relationship(
 		'ProgramGroupModel',
-		back_populates='program',
+		back_populates='programs_sc',
 		lazy='selectin',
 		cascade='delete',
 	)

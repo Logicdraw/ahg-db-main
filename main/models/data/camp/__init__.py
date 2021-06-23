@@ -31,16 +31,16 @@ class CampModel(
 	name = Column(String)
 
 
-	instances = relationship(
+	camp_instances = relationship(
 		'CampInstanceModel',
-		back_populates='camp',
+		back_populates='camps_sc',
 		lazy='selectin',
 		cascade='delete',
 	)
 
-	groups = relationship(
+	camp_groups = relationship(
 		'CampGroupModel',
-		back_populates='camp',
+		back_populates='camps_sc',
 		lazy='selectin',
 		cascade='delete',
 	)

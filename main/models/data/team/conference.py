@@ -30,39 +30,49 @@ class ConferenceModel(
 	name = Column(String, nullable=False, index=True)
 
 
-	instances = relationship(
+	conference_instances = relationship(
 		'ConferenceInstanceModel',
-		back_populates='conference',
+		back_populates='conferences_sc',
 		lazy='selectin',
 	)
 
 
 	teams = relationship(
 		'TeamModel',
-		back_populates='conference',
+		back_populates='conferences_sc',
 		lazy='selectin',
 	)
 
 	divisions = relationship(
 		'DivisionModel',
-		back_populates='conference',
+		back_populates='conferences_sc',
 		lazy='selectin',
 	)
 
 
-	season = relationship(
+	seasons_sc = relationship(
 		'SeasonModel',
 		back_populates='conferences',
 		uselist=False,
 	)
-	season_id = Column(Integer, ForeignKey('seasons.id'))
 
-	league = relationship(
+	season_id = Column(
+		Integer,
+		ForeignKey('seasons.id'),
+	)
+
+
+	leagues_sc = relationship(
 		'LeagueModel',
 		back_populates='conferences',
 		uselist=False,
 	)
-	league_id = Column(Integer, ForeignKey('leagues.id'))
+
+	league_id = Column(
+		Integer,
+		ForeignKey('leagues.id'),
+	)
+
 
 
 	__mapper_args__ = {

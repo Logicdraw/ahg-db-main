@@ -30,34 +30,34 @@ class SeasonModel(
 	name = Column(String, nullable=False, index=True)
 
 
-	instances = relationship(
+	season_instances = relationship(
 		'SeasonInstanceModel',
-		back_populates='season',
+		back_populates='seasons_sc',
 		lazy='selectin',
 	)
 
 
 	leagues = relationship(
 		'LeagueModel',
-		back_populates='season',
+		back_populates='seasons_sc',
 		lazy='selectin',
 	)
 
 	conferences = relationship(
 		'ConferenceModel',
-		back_populates='season',
+		back_populates='seasons_sc',
 		lazy='selectin',
 	)
 
 	divisions = relationship(
 		'DivisionModel',
-		back_populates='season',
+		back_populates='seasons_sc',
 		lazy='selectin',
 	)
 
 	teams = relationship(
 		'TeamModel',
-		back_populates='season',
+		back_populates='seasons_sc',
 		lazy='selectin',
 	)
 

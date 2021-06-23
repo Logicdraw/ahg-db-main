@@ -44,15 +44,15 @@ class TeamInstancesCoachesModel(
 	role = Column(String)
 
 
-	team_instance = relationship(
+	team_instances_sc = relationship(
 		'TeamInstanceModel',
-		back_populates='coaches',
+		back_populates='team_instances_coaches',
 		uselist=False,
 	)
 
-	coach = relationship(
+	coaches_sc = relationship(
 		'CoachModel',
-		back_populates='team_instances',
+		back_populates='team_instances_coaches',
 		uselist=False,
 	)
 

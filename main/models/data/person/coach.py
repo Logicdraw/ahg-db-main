@@ -33,30 +33,30 @@ class CoachModel(
 	email = Column(String, unique=True)
 
 
-	team_instances = relationship(
+	team_instances_coaches = relationship(
 		'TeamInstancesCoachesModel',
-		back_populates='coach',
+		back_populates='coaches_sc',
 		lazy='selectin',
 		cascade='delete',
 	)
 
-	camp_instances = relationship(
+	camp_instances_coaches = relationship(
 		'CampInstancesCoachesModel',
-		back_populates='coach',
+		back_populates='coaches_sc',
 		lazy='selectin',
 		cascade='delete',
 	)
 
-	program_instances = relationship(
+	program_instances_coaches = relationship(
 		'ProgramInstancesCoachesModel',
-		back_populates='coach',
+		back_populates='coaches_sc',
 		lazy='selectin',
 		cascade='delete',
 	)
 
 
 
-	user = relationship(
+	users_sc = relationship(
 		'UserModel',
 		uselist=False,
 	)

@@ -31,17 +31,17 @@ class ProgramGroupModel(
 	name = Column(String)
 
 
-	program = relationship(
+	programs_sc = relationship(
 		'ProgramModel',
-		back_populates='groups',
+		back_populates='program_groups',
 		uselist=False,
 	)
 	program_id = Column(Integer, ForeignKey('programs.id'))
 
 
-	instances = relationship(
+	program_group_instances = relationship(
 		'ProgramGroupInstanceModel',
-		back_populates='program_group',
+		back_populates='program_groups_sc',
 		lazy='selectin',
 		cascade='delete',
 	)

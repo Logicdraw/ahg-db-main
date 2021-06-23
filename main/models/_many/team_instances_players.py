@@ -29,8 +29,17 @@ class TeamInstancesPlayersModel(
 
 	__tablename__ = 'team_instances_players'
 
-	team_instance_id = Column(Integer, ForeignKey('team_instances.id'), primary_key=True)
-	player_id = Column(Integer, ForeignKey('players.id'), primary_key=True)
+	team_instance_id = Column(
+		Integer,
+		ForeignKey('team_instances.id'),
+		primary_key=True,
+	)
+
+	player_id = Column(
+		Integer,
+		ForeignKey('players.id'),
+		primary_key=True,
+	)
 
 
 	comment = Column(String, index=True)
@@ -44,8 +53,17 @@ class TeamInstancesPlayersModel(
 
 
 
-	team_instance = relationship('TeamInstanceModel', back_populates='players')
-	player = relationship('PlayerModel', back_populates='team_instances')
+	team_instances_sc = relationship(
+		'TeamInstanceModel',
+		back_populates='team_instances_players',
+		uselist=False,
+	)
+	
+	players_sc = relationship(
+		'PlayerModel',
+		back_populates='team_instances_players',
+		uselist=False,
+	)
 
 
 	__mapper_args__ = {

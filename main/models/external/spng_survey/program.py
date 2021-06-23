@@ -35,20 +35,20 @@ class SpngSurveyProgramModel(
 	id = Column(Integer, ForeignKey('spng_surveys.id'), primary_key=True)
 
 
-	default_program_instance = relationship(
-		'ProgramInstanceModel',
-		uselist=False,
-	)
-	default_program_instance_id = Column(
-		Integer,
-		ForeignKey('program_instances.id'),
-	)
+	# default_program_instance = relationship(
+	# 	'ProgramInstanceModel',
+	# 	uselist=False,
+	# )
+	# default_program_instance_id = Column(
+	# 	Integer,
+	# 	ForeignKey('program_instances.id'),
+	# )
 
 
 	# registrations --
-	registrations = relationship(
+	program_instance_registrations = relationship(
 		'ProgramInstanceRegistrationModel',
-		back_populates='spng_survey_program',
+		back_populates='spng_survey_programs_sc',
 		lazy='selectin',
 	)
 

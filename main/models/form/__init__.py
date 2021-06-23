@@ -50,16 +50,16 @@ class FormModel(
 
 
 
-	questions = relationship(
+	form_questions = relationship(
 		'FormQuestionModel',
-		back_populates='form',
+		back_populates='forms_sc',
 		lazy='selectin',
 	)
 
 
-	entries = relationship(
+	form_entries = relationship(
 		'FormEntryModel',
-		back_populates='form',
+		back_populates='forms_sc',
 		lazy='selectin',
 	)
 

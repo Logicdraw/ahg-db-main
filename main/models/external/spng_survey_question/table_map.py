@@ -43,9 +43,9 @@ class SpngSurveyQuestionTableMapModel(
 	# relationships -- 
 
 
-	spng_survey_question = relationship(
+	spng_survey_questions_sc = relationship(
 		'SpngSurveyQuestionModel',
-		back_populates='table_maps',
+		back_populates='spng_survey_question_table_maps',
 		uselist=False,
 	)
 

@@ -37,9 +37,9 @@ class FormEntryModel(
 
 	# --
 
-	form = relationship(
+	forms_sc = relationship(
 		'FormModel',
-		back_populates='entries',
+		back_populates='form_entries',
 		uselist=False,
 	)
 	form_id = Column(Integer, ForeignKey('forms.id'))
@@ -47,9 +47,9 @@ class FormEntryModel(
 
 	# which form ? id ...
 
-	answers = relationship(
+	form_entry_answers = relationship(
 		'FormEntryAnswerModel',
-		back_populates='entry',
+		back_populates='form_entries_sc',
 		lazy='selectin',
 	)
 

@@ -37,27 +37,35 @@ class CampInstanceRegistrationModel(
 	__tablename__ = 'camp_instance_registrations'
 
 
-	camp_instance_id = Column(Integer, ForeignKey('camp_instances.id'))
-	camp_instance = relationship(
+	camp_instance_id = Column(
+		Integer,
+		ForeignKey('camp_instances.id'),
+	)
+
+	camp_instances_sc = relationship(
 		'CampInstanceModel',
-		back_populates='registrations',
+		back_populates='camp_instance_registrations',
 		uselist=False,
 	)
 
 
 	# Optional :) - nice dropdown on interface --
-	camp_group_instance = relationship(
+	camp_group_instances_sc = relationship(
 		'CampGroupInstanceModel',
-		back_populates='registrations',
+		back_populates='camp_instance_registrations',
 		uselist=False,
 	)
-	camp_group_instance_id = Column(Integer, ForeignKey('camp_group_instances.id'))
+
+	camp_group_instance_id = Column(
+		Integer,
+		ForeignKey('camp_group_instances.id'),
+	)
 
 
 
-	spng_survey_camp = relationship(
+	spng_survey_camps_sc = relationship(
 		'SpngSurveyCampModel',
-		back_populates='registrations',
+		back_populates='camp_instance_registrations',
 		uselist=False,
 	)
 	spng_survey_camp_id = Column(

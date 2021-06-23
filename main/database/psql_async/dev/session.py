@@ -15,7 +15,7 @@ from main.config import settings
 engine_psql_async_dev = create_async_engine(
 	settings.PSQL_ASYNC_DEV_URI,
 	pool_pre_ping=True,
-	echo=True,
+	# echo=True,
 )
 
 

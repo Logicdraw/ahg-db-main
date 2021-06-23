@@ -35,9 +35,9 @@ class GuardianModel(
 
 	# Relationships
 
-	players = relationship(
+	guardians_players = relationship(
 		'GuardiansPlayersModel',
-		back_populates='guardian',
+		back_populates='guardians_sc',
 		lazy='selectin',
 	)
 
@@ -57,7 +57,7 @@ class GuardianModel(
 
 
 
-	user = relationship(
+	users_sc = relationship(
 		'UserModel',
 		uselist=False,
 	)

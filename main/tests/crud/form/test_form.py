@@ -41,12 +41,16 @@ async def test_create_form(
 	description = random_lower_string()
 	has_deadline = True
 	deadline_on = datetime.datetime.now(pytz.utc)
+	is_live = True
+	slug = random_lower_string()
 
 	form_in = FormSchemaCreate(
 		title=title,
 		description=description,
 		has_deadline=has_deadline,
 		deadline_on=deadline_on,
+		is_live=is_live,
+		slug=slug,
 	)
 
 	form = await form_crud.create(
@@ -71,12 +75,16 @@ async def test_create_sync_form(
 	description = random_lower_string()
 	has_deadline = True
 	deadline_on = datetime.datetime.now(pytz.utc)
+	is_live = True
+	slug = random_lower_string()
 
 	form_in = FormSchemaCreate(
 		title=title,
 		description=description,
 		has_deadline=has_deadline,
 		deadline_on=deadline_on,
+		is_live=is_live,
+		slug=slug,
 	)
 
 	form = await db.run_sync(
@@ -101,12 +109,16 @@ async def test_get_form(
 	description = random_lower_string()
 	has_deadline = True
 	deadline_on = datetime.datetime.now(pytz.utc)
+	is_live = True
+	slug = random_lower_string()
 
 	form_in = FormSchemaCreate(
 		title=title,
 		description=description,
 		has_deadline=has_deadline,
 		deadline_on=deadline_on,
+		is_live=is_live,
+		slug=slug,
 	)
 
 	form = await form_crud.create(
@@ -134,12 +146,16 @@ async def test_get_sync_form(
 	description = random_lower_string()
 	has_deadline = True
 	deadline_on = datetime.datetime.now(pytz.utc)
+	is_live = True
+	slug = random_lower_string()
 
 	form_in = FormSchemaCreate(
 		title=title,
 		description=description,
 		has_deadline=has_deadline,
 		deadline_on=deadline_on,
+		is_live=is_live,
+		slug=slug,
 	)
 
 	form = await db.run_sync(
@@ -167,12 +183,16 @@ async def test_update_form(
 	description = random_lower_string()
 	has_deadline = True
 	deadline_on = datetime.datetime.now(pytz.utc)
+	is_live = True
+	slug = random_lower_string()
 
 	form_in = FormSchemaCreate(
 		title=title,
 		description=description,
 		has_deadline=has_deadline,
 		deadline_on=deadline_on,
+		is_live=is_live,
+		slug=slug,
 	)
 
 	form = await form_crud.create(
@@ -212,12 +232,16 @@ async def test_update_sync_form(
 	description = random_lower_string()
 	has_deadline = True
 	deadline_on = datetime.datetime.now(pytz.utc)
+	is_live = True
+	slug = random_lower_string()
 
 	form_in = FormSchemaCreate(
 		title=title,
 		description=description,
 		has_deadline=has_deadline,
 		deadline_on=deadline_on,
+		is_live=is_live,
+		slug=slug,
 	)
 
 	form = await db.run_sync(
@@ -256,12 +280,16 @@ async def test_delete_form(
 	description = random_lower_string()
 	has_deadline = True
 	deadline_on = datetime.datetime.now(pytz.utc)
+	is_live = True
+	slug = random_lower_string()
 
 	form_in = FormSchemaCreate(
 		title=title,
 		description=description,
 		has_deadline=has_deadline,
 		deadline_on=deadline_on,
+		is_live=is_live,
+		slug=slug,
 	)
 
 	form = await form_crud.create(
@@ -295,12 +323,16 @@ async def test_delete_sync_form(
 	description = random_lower_string()
 	has_deadline = True
 	deadline_on = datetime.datetime.now(pytz.utc)
+	is_live = True
+	slug = random_lower_string()
 
 	form_in = FormSchemaCreate(
 		title=title,
 		description=description,
 		has_deadline=has_deadline,
 		deadline_on=deadline_on,
+		is_live=is_live,
+		slug=slug,
 	)
 
 	form = await db.run_sync(

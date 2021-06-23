@@ -40,7 +40,7 @@ class ResourceCategoryModel(
 
 	resources = relationship(
 		'ResourceBaseModel',
-		back_populates='category',
+		back_populates='resource_categories_sc',
 		lazy='selectin',
 	)
 

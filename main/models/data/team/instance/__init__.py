@@ -33,15 +33,15 @@ class TeamInstanceModel(
 	id = Column(Integer, primary_key=True, index=True)
 
 
-	team = relationship(
+	teams_sc = relationship(
 		'TeamModel',
-		back_populates='instances',
+		back_populates='team_instances',
 		uselist=False,
 	)
 	team_id = Column(Integer, ForeignKey('teams.id'))
 
 
-	division_instance = relationship(
+	division_instances_sc = relationship(
 		'DivisionInstanceModel',
 		back_populates='team_instances',
 		uselist=False,
@@ -51,7 +51,7 @@ class TeamInstanceModel(
 		ForeignKey('division_instances.id'),
 	)
 
-	conference_instance = relationship(
+	conference_instances_sc = relationship(
 		'ConferenceInstanceModel',
 		back_populates='team_instances',
 		uselist=False,
@@ -61,7 +61,7 @@ class TeamInstanceModel(
 		ForeignKey('conference_instances.id'),
 	)
 
-	league_instance = relationship(
+	league_instances_sc = relationship(
 		'LeagueInstanceModel',
 		back_populates='team_instances',
 		uselist=False,
@@ -71,7 +71,7 @@ class TeamInstanceModel(
 		ForeignKey('league_instances.id'),
 	)
 
-	season_instance = relationship(
+	season_instances_sc = relationship(
 		'SeasonInstanceModel',
 		back_populates='team_instances',
 		uselist=False,
@@ -83,41 +83,41 @@ class TeamInstanceModel(
 
 
 
-	registrations = relationship(
+	team_instance_registrations = relationship(
 		'TeamInstanceRegistrationModel',
-		back_populates='team_instance',
+		back_populates='team_instances_sc',
 		lazy='selectin',
 	)
 
 
-	players = relationship(
+	team_instances_players = relationship(
 		'TeamInstancesPlayersModel',
-		back_populates='team_instance',
+		back_populates='team_instances_sc',
 		lazy='selectin',
 	)
 
-	coaches = relationship(
+	team_instances_coaches = relationship(
 		'TeamInstancesCoachesModel',
-		back_populates='team_instance',
+		back_populates='team_instances_sc',
 		lazy='selectin',
 	)
 
-	adult_reps = relationship(
+	team_instances_adult_reps = relationship(
 		'TeamInstancesAdultRepsModel',
-		back_populates='team_instance',
+		back_populates='team_instances_sc',
 		lazy='selectin',
 	)
 
 
-	jersey_socks_orders = relationship(
+	team_instance_jersey_socks_orders = relationship(
 		'TeamInstanceJerseySocksOrderModel',
-		back_populates='team_instance',
+		back_populates='team_instances_sc',
 		lazy='selectin',
 	)
 
-	tracksuit_orders = relationship(
+	team_instance_tracksuit_orders = relationship(
 		'TeamInstanceTracksuitOrderModel',
-		back_populates='team_instance',
+		back_populates='team_instances_sc',
 		lazy='selectin',
 	)
 

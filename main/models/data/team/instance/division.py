@@ -32,22 +32,25 @@ class DivisionInstanceModel(
 	year_end = Column(Integer)
 
 
-	division = relationship(
+	divisions_sc = relationship(
 		'DivisionModel',
-		back_populates='instances',
+		back_populates='division_instances',
 		uselist=False,
 	)
-	division_id = Column(Integer, ForeignKey('divisions.id'))
+	division_id = Column(
+		Integer,
+		ForeignKey('divisions.id'),
+	)
 
 
 	team_instances = relationship(
 		'TeamInstanceModel',
-		back_populates='division_instance',
+		back_populates='division_instances_sc',
 		lazy='selectin',
 	)
 
 
-	season_instance = relationship(
+	season_instances_sc = relationship(
 		'SeasonInstanceModel',
 		back_populates='division_instances',
 		uselist=False,
@@ -57,7 +60,7 @@ class DivisionInstanceModel(
 		ForeignKey('season_instances.id'),
 	)
 
-	league_instance = relationship(
+	league_instances_sc = relationship(
 		'LeagueInstanceModel',
 		back_populates='division_instances',
 		uselist=False,
@@ -67,7 +70,7 @@ class DivisionInstanceModel(
 		ForeignKey('league_instances.id'),
 	)
 
-	conference_instance = relationship(
+	conference_instances_sc = relationship(
 		'ConferenceInstanceModel',
 		back_populates='division_instances',
 		uselist=False,

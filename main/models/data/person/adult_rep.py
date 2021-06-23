@@ -33,19 +33,22 @@ class AdultRepModel(
 	email = Column(String, unique=True)
 
 
-	team_instances = relationship(
+	team_instances_adult_reps = relationship(
 		'TeamInstancesAdultRepsModel',
-		back_populates='adult_rep',
+		back_populates='adult_reps_sc',
 		lazy='selectin',
 		cascade='delete',
 	)
 
 
-	user = relationship(
+	users_sc = relationship(
 		'UserModel',
 		uselist=False,
 	)
-	user_id = Column(Integer, ForeignKey('users.id'))
+	user_id = Column(
+		Integer,
+		ForeignKey('users.id'),
+	)
 
 
 

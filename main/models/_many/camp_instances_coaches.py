@@ -47,15 +47,15 @@ class CampInstancesCoachesModel(
 
 
 
-	camp_instance = relationship(
+	camp_instances_sc = relationship(
 		'CampInstanceModel',
-		back_populates='coaches',
+		back_populates='camp_instances_coaches',
 		uselist=False,
 	)
 
-	coach = relationship(
+	coaches_sc = relationship(
 		'CoachModel',
-		back_populates='camp_instances',
+		back_populates='camp_instances_coaches',
 		uselist=False,
 	)
 

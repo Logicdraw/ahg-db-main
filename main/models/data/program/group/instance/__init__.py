@@ -28,25 +28,31 @@ class ProgramGroupInstanceModel(
 	id = Column(Integer, primary_key=True)
 
 
-	program_instance = relationship(
+	program_instances_sc = relationship(
 		'ProgramInstanceModel',
-		back_populates='groups',
+		back_populates='program_group_instances',
 		uselist=False,
 	)
-	program_instance_id = Column(Integer, ForeignKey('program_instances.id'))
+	program_instance_id = Column(
+		Integer,
+		ForeignKey('program_instances.id'),
+	)
 
-	program_group = relationship(
+	program_groups_sc = relationship(
 		'ProgramGroupModel',
-		back_populates='instances',
+		back_populates='program_group_instances',
 		uselist=False,
 	)
-	program_group_id = Column(Integer, ForeignKey('program_groups.id'))
+	program_group_id = Column(
+		Integer,
+		ForeignKey('program_groups.id'),
+	)
 
 
 
-	registrations = relationship(
+	program_instance_registrations = relationship(
 		'ProgramInstanceRegistrationModel',
-		back_populates='program_group_instance',
+		back_populates='program_group_instances_sc',
 		lazy='selectin',
 	)
 

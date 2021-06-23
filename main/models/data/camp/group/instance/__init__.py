@@ -28,25 +28,31 @@ class CampGroupInstanceModel(
 	id = Column(Integer, primary_key=True)
 
 
-	camp_instance = relationship(
+	camp_instances_sc = relationship(
 		'CampInstanceModel',
-		back_populates='groups',
+		back_populates='camp_group_instances',
 		uselist=False,
 	)
-	camp_instance_id = Column(Integer, ForeignKey('camp_instances.id'))
+	camp_instance_id = Column(
+		Integer,
+		ForeignKey('camp_instances.id'),
+	)
 
 
-	camp_group = relationship(
+	camp_groups_sc = relationship(
 		'CampGroupModel',
-		back_populates='instances',
+		back_populates='camp_group_instances',
 		uselist=False,
 	)
-	camp_group_id = Column(Integer, ForeignKey('camp_groups.id'))
+	camp_group_id = Column(
+		Integer,
+		ForeignKey('camp_groups.id'),
+	)
 
 
-	registrations = relationship(
+	camp_instance_registrations = relationship(
 		'CampInstanceRegistrationModel',
-		back_populates='camp_group_instance',
+		back_populates='camp_group_instances_sc',
 		lazy='selectin',
 	)
 

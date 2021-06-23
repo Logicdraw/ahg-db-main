@@ -21,6 +21,12 @@ from main.schemas._many.program_instances_coaches import (
 	ProgramInstancesCoachesSchema,
 	ProgramInstancesCoachesSchemaInDB,
 )
+from main.schemas._many.team_instances_adult_reps import (
+	TeamInstancesAdultRepsSchemaCreate,
+	TeamInstancesAdultRepsSchemaUpdate,
+	TeamInstancesAdultRepsSchema,
+	TeamInstancesAdultRepsSchemaInDB,
+)
 from main.schemas._many.team_instances_coaches import (
 	TeamInstancesCoachesSchemaCreate,
 	TeamInstancesCoachesSchemaUpdate,
@@ -345,6 +351,33 @@ from main.schemas.meta.spng import (
 	SpngMetaSchemaUpdate,
 	SpngMetaSchema,
 	SpngMetaSchemaInDB,
+)
+
+
+from main.schemas.resource.category import (
+	ResourceCategorySchemaCreate,
+	ResourceCategorySchemaUpdate,
+	ResourceCategorySchema,
+	ResourceCategorySchemaInDB,
+)
+
+from main.schemas.resource.type.article import (
+	ResourceArticleSchemaCreate,
+	ResourceArticleSchemaUpdate,
+	ResourceArticleSchema,
+	ResourceArticleSchemaInDB,
+)
+from main.schemas.resource.type.pdf import (
+	ResourcePDFSchemaCreate,
+	ResourcePDFSchemaUpdate,
+	ResourcePDFSchema,
+	ResourcePDFSchemaInDB,
+)
+from main.schemas.resource.type.video import (
+	ResourceVideoSchemaCreate,
+	ResourceVideoSchemaUpdate,
+	ResourceVideoSchema,
+	ResourceVideoSchemaInDB,
 )
 
 
