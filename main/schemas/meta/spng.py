@@ -11,21 +11,19 @@ import datetime
 
 
 class SpngMetaSchemaBase(BaseModel):
-	access_token_encoded: Optional[str] = None
-	refresh_token_encoded: Optional[str] = None
 	last_fetched_registrations: Optional[datetime.datetime] = None
 
 
 
 class SpngMetaSchemaCreate(SpngMetaSchemaBase):
-	pass
-	# access_token ...
-	# refresh_token ...
+	access_token: Optional[str] = None
+	refresh_token: Optional[str] = None
 
 
 
 class SpngMetaSchemaUpdate(SpngMetaSchemaBase):
-	pass
+	access_token: Optional[str] = None
+	refresh_token: Optional[str] = None
 
 
 
@@ -38,7 +36,8 @@ class SpngMetaSchemaInDBBase(SpngMetaSchemaBase):
 
 
 class SpngMetaSchema(SpngMetaSchemaInDBBase):
-	pass
+	access_token_encoded: Optional[str] = None
+	refresh_token_encoded: Optional[str] = None
 
 
 

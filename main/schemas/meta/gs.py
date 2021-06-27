@@ -10,18 +10,17 @@ from pydantic import (
 
 
 class GSMetaSchemaBase(BaseModel):
-	access_token_encoded: Optional[str] = None
+	pass
 
 
 
 class GSMetaSchemaCreate(GSMetaSchemaBase):
-	pass
-	# access_token ...
+	access_token: Optional[str] = None
 
 
 
 class GSMetaSchemaUpdate(GSMetaSchemaBase):
-	pass
+	access_token: Optional[str] = None
 
 
 
@@ -34,7 +33,7 @@ class GSMetaSchemaInDBBase(GSMetaSchemaBase):
 
 
 class GSMetaSchema(GSMetaSchemaInDBBase):
-	pass
+	access_token_encoded: Optional[str] = None
 
 
 
