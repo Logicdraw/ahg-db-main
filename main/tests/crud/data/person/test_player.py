@@ -47,7 +47,7 @@ async def test_create_player(
 	province = 'NB'
 	country = 'Canada'
 	gender = 'male'
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
@@ -61,7 +61,7 @@ async def test_create_player(
 		province=province,
 		country=country,
 		gender=gender,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 	)
 
 	player = await player_crud.create(
@@ -92,7 +92,7 @@ async def test_create_sync_player(
 	province = 'NB'
 	country = 'Canada'
 	gender = 'male'
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
@@ -106,7 +106,7 @@ async def test_create_sync_player(
 		province=province,
 		country=country,
 		gender=gender,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 	)
 
 	player = await db.run_sync(
@@ -137,7 +137,7 @@ async def test_get_player(
 	province = 'NB'
 	country = 'Canada'
 	gender = 'male'
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	
 
 	player_in = PlayerSchemaCreate(
@@ -152,7 +152,7 @@ async def test_get_player(
 		province=province,
 		country=country,
 		gender=gender,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 	)
 
 	player = await player_crud.create(
@@ -187,7 +187,7 @@ async def test_get_sync_player(
 	province = 'NB'
 	country = 'Canada'
 	gender = 'male'
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	
 
 	player_in = PlayerSchemaCreate(
@@ -202,7 +202,7 @@ async def test_get_sync_player(
 		province=province,
 		country=country,
 		gender=gender,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 	)
 
 	player = await db.run_sync(
@@ -237,7 +237,7 @@ async def test_update_player(
 	province = 'NB'
 	country = 'Canada'
 	gender = 'male'
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	
 
 	player_in = PlayerSchemaCreate(
@@ -252,7 +252,7 @@ async def test_update_player(
 		province=province,
 		country=country,
 		gender=gender,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 	)
 
 	player = await player_crud.create(
@@ -296,7 +296,7 @@ async def test_update_sync_player(
 	province = 'NB'
 	country = 'Canada'
 	gender = 'male'
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	
 
 	player_in = PlayerSchemaCreate(
@@ -311,7 +311,7 @@ async def test_update_sync_player(
 		province=province,
 		country=country,
 		gender=gender,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 	)
 
 	player = await db.run_sync(
@@ -356,7 +356,7 @@ async def test_delete_player(
 	province = 'NB'
 	country = 'Canada'
 	gender = 'male'
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
@@ -370,7 +370,7 @@ async def test_delete_player(
 		province=province,
 		country=country,
 		gender=gender,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 	)
 
 	player = await player_crud.create(
@@ -411,7 +411,7 @@ async def test_delete_sync_player(
 	province = 'NB'
 	country = 'Canada'
 	gender = 'male'
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
@@ -425,7 +425,7 @@ async def test_delete_sync_player(
 		province=province,
 		country=country,
 		gender=gender,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 	)
 
 	player = await db.run_sync(

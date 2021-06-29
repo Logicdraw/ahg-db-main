@@ -36,14 +36,14 @@ async def test_create_program_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	program_instance_in = ProgramInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	program_instance = await program_instance_crud.create(
@@ -52,7 +52,7 @@ async def test_create_program_instance(
 	)
 
 	assert program_instance.year_start == year_start
-	assert program_instance.se_name_snake == se_name_snake
+	assert program_instance.spng_name_snake == spng_name_snake
 
 
 
@@ -64,14 +64,14 @@ async def test_create_sync_program_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	program_instance_in = ProgramInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	program_instance = await db.run_sync(
@@ -80,7 +80,7 @@ async def test_create_sync_program_instance(
 	)
 
 	assert program_instance.year_start == year_start
-	assert program_instance.se_name_snake == se_name_snake
+	assert program_instance.spng_name_snake == spng_name_snake
 
 
 
@@ -92,14 +92,14 @@ async def test_get_program_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	program_instance_in = ProgramInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	program_instance = await program_instance_crud.create(
@@ -125,14 +125,14 @@ async def test_get_sync_program_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	program_instance_in = ProgramInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	program_instance = await db.run_sync(
@@ -160,14 +160,14 @@ async def test_update_program_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	program_instance_in = ProgramInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	program_instance = await program_instance_crud.create(
@@ -175,13 +175,13 @@ async def test_update_program_instance(
 		obj_in=program_instance_in,
 	)
 
-	new_se_name_snake = random_lower_string()
+	new_spng_name_snake = random_lower_string()
 
-	while se_name_snake == new_se_name_snake:
-		new_se_name_snake = random_lower_string()
+	while spng_name_snake == new_spng_name_snake:
+		new_spng_name_snake = random_lower_string()
 
 	program_instance_in_update = ProgramInstanceSchemaUpdate(
-		se_name_snake=new_se_name_snake,
+		spng_name_snake=new_spng_name_snake,
 	)
 
 	program_instance_2 = await program_instance_crud.update(
@@ -192,8 +192,8 @@ async def test_update_program_instance(
 
 
 	assert program_instance_2
-	assert program_instance_2.se_name_snake
-	assert program_instance_2.se_name_snake == new_se_name_snake
+	assert program_instance_2.spng_name_snake
+	assert program_instance_2.spng_name_snake == new_spng_name_snake
 
 
 
@@ -206,14 +206,14 @@ async def test_update_sync_program_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	program_instance_in = ProgramInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	program_instance = await db.run_sync(
@@ -221,13 +221,13 @@ async def test_update_sync_program_instance(
 		obj_in=program_instance_in,
 	)
 
-	new_se_name_snake = random_lower_string()
+	new_spng_name_snake = random_lower_string()
 
-	while se_name_snake == new_se_name_snake:
-		new_se_name_snake = random_lower_string()
+	while spng_name_snake == new_spng_name_snake:
+		new_spng_name_snake = random_lower_string()
 
 	program_instance_in_update = ProgramInstanceSchemaUpdate(
-		se_name_snake=new_se_name_snake,
+		spng_name_snake=new_spng_name_snake,
 	)
 
 	program_instance_2 = await db.run_sync(
@@ -238,8 +238,8 @@ async def test_update_sync_program_instance(
 
 
 	assert program_instance_2
-	assert program_instance_2.se_name_snake
-	assert program_instance_2.se_name_snake == new_se_name_snake
+	assert program_instance_2.spng_name_snake
+	assert program_instance_2.spng_name_snake == new_spng_name_snake
 
 
 
@@ -251,14 +251,14 @@ async def test_delete_program_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	program_instance_in = ProgramInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	program_instance = await program_instance_crud.create(
@@ -292,14 +292,14 @@ async def test_delete_sync_program_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	program_instance_in = ProgramInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	program_instance = await db.run_sync(

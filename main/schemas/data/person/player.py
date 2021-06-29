@@ -23,7 +23,7 @@ class PlayerSchemaBase(BaseModel):
 	country: Optional[str] = None
 	gender: Optional[str] = None
 	language: Optional[str] = None
-	se_persona_id: Optional[int] = None
+	spng_persona_id: Optional[int] = None
 
 
 class PlayerSchemaCreate(PlayerSchemaBase):

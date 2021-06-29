@@ -20,18 +20,18 @@ from lib.util_sqlalchemy import (
 
 from main.models._base.registration import (
 	RegistrationBaseModel,
-	SpngRegistrationBase,
-	SpngRegistrationFinancialsBase,
-	PlayerRegistrationBase,
+	SpngRegistrationMixin,
+	SpngRegistrationFinancialsMixin,
+	PlayerRegistrationMixin,
 )
 
 
 class CampInstanceRegistrationModel(
 	RegistrationBaseModel,
 	ResourceMixin,
-	SpngRegistrationBase,
-	SpngRegistrationFinancialsBase,
-	PlayerRegistrationBase,
+	SpngRegistrationMixin,
+	SpngRegistrationFinancialsMixin,
+	PlayerRegistrationMixin,
 ):
 
 	__tablename__ = 'camp_instance_registrations'

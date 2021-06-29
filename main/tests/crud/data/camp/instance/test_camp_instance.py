@@ -36,14 +36,14 @@ async def test_create_camp_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	camp_instance_in = CampInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	camp_instance = await camp_instance_crud.create(
@@ -53,7 +53,7 @@ async def test_create_camp_instance(
 
 
 	assert camp_instance.year_start == year_start
-	assert camp_instance.se_name_snake == se_name_snake
+	assert camp_instance.spng_name_snake == spng_name_snake
 
 
 
@@ -65,14 +65,14 @@ async def test_create_sync_camp_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	camp_instance_in = CampInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	camp_instance = await db.run_sync(
@@ -82,7 +82,7 @@ async def test_create_sync_camp_instance(
 
 
 	assert camp_instance.year_start == year_start
-	assert camp_instance.se_name_snake == se_name_snake
+	assert camp_instance.spng_name_snake == spng_name_snake
 
 
 
@@ -94,14 +94,14 @@ async def test_get_camp_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	camp_instance_in = CampInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	camp_instance = await camp_instance_crud.create(
@@ -130,14 +130,14 @@ async def test_get_sync_camp_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	camp_instance_in = CampInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	camp_instance = await db.run_sync(
@@ -166,14 +166,14 @@ async def test_update_camp_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	camp_instance_in = CampInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	camp_instance = await camp_instance_crud.create(
@@ -181,10 +181,10 @@ async def test_update_camp_instance(
 		obj_in=camp_instance_in,
 	)
 
-	new_se_name_snake = random_lower_string()
+	new_spng_name_snake = random_lower_string()
 
 	camp_instance_in_update = CampInstanceSchemaUpdate(
-		se_name_snake=new_se_name_snake,
+		spng_name_snake=new_spng_name_snake,
 	)
 
 	camp_instance_2 = await camp_instance_crud.update(
@@ -195,8 +195,8 @@ async def test_update_camp_instance(
 
 
 	assert camp_instance_2
-	assert camp_instance_2.se_name_snake
-	assert camp_instance_2.se_name_snake == new_se_name_snake
+	assert camp_instance_2.spng_name_snake
+	assert camp_instance_2.spng_name_snake == new_spng_name_snake
 
 
 
@@ -208,14 +208,14 @@ async def test_update_sync_camp_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	camp_instance_in = CampInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	camp_instance = await db.run_sync(
@@ -223,10 +223,10 @@ async def test_update_sync_camp_instance(
 		obj_in=camp_instance_in,
 	)
 
-	new_se_name_snake = random_lower_string()
+	new_spng_name_snake = random_lower_string()
 
 	camp_instance_in_update = CampInstanceSchemaUpdate(
-		se_name_snake=new_se_name_snake,
+		spng_name_snake=new_spng_name_snake,
 	)
 
 	camp_instance_2 = await db.run_sync(
@@ -237,8 +237,8 @@ async def test_update_sync_camp_instance(
 
 
 	assert camp_instance_2
-	assert camp_instance_2.se_name_snake
-	assert camp_instance_2.se_name_snake == new_se_name_snake
+	assert camp_instance_2.spng_name_snake
+	assert camp_instance_2.spng_name_snake == new_spng_name_snake
 
 
 
@@ -250,14 +250,14 @@ async def test_delete_camp_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	camp_instance_in = CampInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	camp_instance = await camp_instance_crud.create(
@@ -291,14 +291,14 @@ async def test_delete_sync_camp_instance(
 
 	year_start = 2021
 	year_end = 2021
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	camp_instance_in = CampInstanceSchemaCreate(
 		year_start=year_start,
 		year_end=year_end,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 	)
 
 	camp_instance = await db.run_sync(

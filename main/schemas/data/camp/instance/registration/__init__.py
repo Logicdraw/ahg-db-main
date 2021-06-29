@@ -7,9 +7,9 @@ from pydantic import (
 
 
 from main.schemas._base.registration import (
-	SpngRegistrationBaseSchema,
-	SpngRegistrationFinancialsBaseSchema,
-	PlayerRegistrationBaseSchema,
+	SpngRegistrationMixinSchema,
+	SpngRegistrationFinancialsMixinSchema,
+	PlayerRegistrationMixinSchema,
 )
 
 
@@ -22,9 +22,9 @@ from main.schemas._base.registration import (
 
 class CampInstanceRegistrationSchemaBase(
 	RegistrationBaseSchemaBase,
-	SpngRegistrationBaseSchema,
-	SpngRegistrationFinancialsBaseSchema,
-	PlayerRegistrationBaseSchema,
+	SpngRegistrationMixinSchema,
+	SpngRegistrationFinancialsMixinSchema,
+	PlayerRegistrationMixinSchema,
 ):
 	camp_instance_id: Optional[int] = None
 	camp_group_instance_id: Optional[int] = None

@@ -16,6 +16,7 @@ from pydantic import (
 
 class SpngSurveyQuestionSchemaBase(BaseModel):
 	use_answer_text_mappings: Optional[bool] = None
+	exclude_non_set_answer_text_mapping_keys: Optional[bool] = None
 	shared_question_ids: Optional[List[int]] = None
 	answer_text_mappings: Optional[Dict[Any, Any]] = None
 

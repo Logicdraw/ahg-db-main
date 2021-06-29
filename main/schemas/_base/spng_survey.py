@@ -15,7 +15,7 @@ class SpngSurveyBaseSchemaBase(BaseModel):
 	is_active: Optional[bool] = None
 	type: Optional[str] = None
 
-	# relationship -- /
+	# relationships ?? -- /
 
 
 

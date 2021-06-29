@@ -49,7 +49,7 @@ async def test_create_program_instance_registration(
 
 	se_survey_id = random_number()
 	se_survey_result_id = random_number()
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	se_user_id = random_number()
 	roster_player_id = random_number()
 	status = random_lower_string()
@@ -84,7 +84,7 @@ async def test_create_program_instance_registration(
 		notes=notes,
 		se_survey_id=se_survey_id,
 		se_survey_result_id=se_survey_result_id,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 		se_user_id=se_user_id,
 		roster_player_id=roster_player_id,
 		status=status,
@@ -131,7 +131,7 @@ async def test_create_sync_program_instance_registration(
 	
 	se_survey_id = random_number()
 	se_survey_result_id = random_number()
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	se_user_id = random_number()
 	roster_player_id = random_number()
 	status = random_lower_string()
@@ -166,7 +166,7 @@ async def test_create_sync_program_instance_registration(
 		notes=notes,
 		se_survey_id=se_survey_id,
 		se_survey_result_id=se_survey_result_id,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 		se_user_id=se_user_id,
 		roster_player_id=roster_player_id,
 		status=status,
@@ -213,7 +213,7 @@ async def test_get_program_instance_registration(
 
 	se_survey_id = random_number()
 	se_survey_result_id = random_number()
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	se_user_id = random_number()
 	roster_player_id = random_number()
 	status = random_lower_string()
@@ -248,7 +248,7 @@ async def test_get_program_instance_registration(
 		notes=notes,
 		se_survey_id=se_survey_id,
 		se_survey_result_id=se_survey_result_id,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 		se_user_id=se_user_id,
 		roster_player_id=roster_player_id,
 		status=status,
@@ -299,7 +299,7 @@ async def test_get_sync_program_instance_registration(
 	
 	se_survey_id = random_number()
 	se_survey_result_id = random_number()
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	se_user_id = random_number()
 	roster_player_id = random_number()
 	status = random_lower_string()
@@ -334,7 +334,7 @@ async def test_get_sync_program_instance_registration(
 		notes=notes,
 		se_survey_id=se_survey_id,
 		se_survey_result_id=se_survey_result_id,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 		se_user_id=se_user_id,
 		roster_player_id=roster_player_id,
 		status=status,
@@ -387,7 +387,7 @@ async def test_update_program_instance_registration(
 
 	se_survey_id = random_number()
 	se_survey_result_id = random_number()
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	se_user_id = random_number()
 	roster_player_id = random_number()
 	status = random_lower_string()
@@ -422,7 +422,7 @@ async def test_update_program_instance_registration(
 		notes=notes,
 		se_survey_id=se_survey_id,
 		se_survey_result_id=se_survey_result_id,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 		se_user_id=se_user_id,
 		roster_player_id=roster_player_id,
 		status=status,
@@ -484,7 +484,7 @@ async def test_update_sync_program_instance_registration(
 	
 	se_survey_id = random_number()
 	se_survey_result_id = random_number()
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	se_user_id = random_number()
 	roster_player_id = random_number()
 	status = random_lower_string()
@@ -519,7 +519,7 @@ async def test_update_sync_program_instance_registration(
 		notes=notes,
 		se_survey_id=se_survey_id,
 		se_survey_result_id=se_survey_result_id,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 		se_user_id=se_user_id,
 		roster_player_id=roster_player_id,
 		status=status,
@@ -581,7 +581,7 @@ async def test_delete_program_instance_registration(
 
 	se_survey_id = random_number()
 	se_survey_result_id = random_number()
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	se_user_id = random_number()
 	roster_player_id = random_number()
 	status = random_lower_string()
@@ -616,7 +616,7 @@ async def test_delete_program_instance_registration(
 		notes=notes,
 		se_survey_id=se_survey_id,
 		se_survey_result_id=se_survey_result_id,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 		se_user_id=se_user_id,
 		roster_player_id=roster_player_id,
 		status=status,
@@ -674,7 +674,7 @@ async def test_delete_sync_program_instance_registration(
 	
 	se_survey_id = random_number()
 	se_survey_result_id = random_number()
-	se_persona_id = random_number()
+	spng_persona_id = random_number()
 	se_user_id = random_number()
 	roster_player_id = random_number()
 	status = random_lower_string()
@@ -709,7 +709,7 @@ async def test_delete_sync_program_instance_registration(
 		notes=notes,
 		se_survey_id=se_survey_id,
 		se_survey_result_id=se_survey_result_id,
-		se_persona_id=se_persona_id,
+		spng_persona_id=spng_persona_id,
 		se_user_id=se_user_id,
 		roster_player_id=roster_player_id,
 		status=status,

@@ -123,7 +123,7 @@ class PlayerModel(
 
 
 
-	se_persona_id = Column(Integer, unique=True)
+	spng_persona_id = Column(Integer, unique=True)
 	
 
 	# updated? -- updated_on > created_on ...?

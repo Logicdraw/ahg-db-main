@@ -13,8 +13,8 @@ class ProgramInstanceSchemaBase(BaseModel):
 	program_id: Optional[int] = None
 	year_end: Optional[int] = None
 	year_start: Optional[int] = None
-	se_name_snake: Optional[str] = None
-	se_shared_question_id: Optional[int] = None
+	spng_name_snake: Optional[str] = None
+	spng_shared_question_id: Optional[int] = None
 
 
 

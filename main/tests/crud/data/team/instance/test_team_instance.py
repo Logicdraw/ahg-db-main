@@ -39,8 +39,8 @@ async def test_create_team_instance(
 
 	birth_year = 2010
 
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	gs_team_id = random_number()
 
@@ -60,8 +60,8 @@ async def test_create_team_instance(
 		year_start=year_start,
 		year_end=year_end,
 		birth_year=birth_year,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 		gs_team_id=gs_team_id,
 		number_of_tracksuits_available=number_of_tracksuits_available,
 		has_jersey_size_option=has_jersey_size_option,
@@ -82,8 +82,8 @@ async def test_create_team_instance(
 	assert team_instance.year_start == year_start
 	assert team_instance.year_end == year_end
 	assert team_instance.birth_year == birth_year
-	assert team_instance.se_name_snake == se_name_snake
-	assert team_instance.se_shared_question_id == se_shared_question_id
+	assert team_instance.spng_name_snake == spng_name_snake
+	assert team_instance.spng_shared_question_id == spng_shared_question_id
 	assert team_instance.gs_team_id == gs_team_id
 	assert team_instance.number_of_tracksuits_available == number_of_tracksuits_available
 	assert team_instance.has_jersey_size_option == has_jersey_size_option
@@ -107,8 +107,8 @@ async def test_create_sync_team_instance(
 
 	birth_year = 2010
 
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	gs_team_id = random_number()
 
@@ -128,8 +128,8 @@ async def test_create_sync_team_instance(
 		year_start=year_start,
 		year_end=year_end,
 		birth_year=birth_year,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 		gs_team_id=gs_team_id,
 		number_of_tracksuits_available=number_of_tracksuits_available,
 		has_jersey_size_option=has_jersey_size_option,
@@ -150,8 +150,8 @@ async def test_create_sync_team_instance(
 	assert team_instance.year_start == year_start
 	assert team_instance.year_end == year_end
 	assert team_instance.birth_year == birth_year
-	assert team_instance.se_name_snake == se_name_snake
-	assert team_instance.se_shared_question_id == se_shared_question_id
+	assert team_instance.spng_name_snake == spng_name_snake
+	assert team_instance.spng_shared_question_id == spng_shared_question_id
 	assert team_instance.gs_team_id == gs_team_id
 	assert team_instance.number_of_tracksuits_available == number_of_tracksuits_available
 	assert team_instance.has_jersey_size_option == has_jersey_size_option
@@ -176,8 +176,8 @@ async def test_get_team_instance(
 
 	birth_year = 2010
 
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	gs_team_id = random_number()
 
@@ -197,8 +197,8 @@ async def test_get_team_instance(
 		year_start=year_start,
 		year_end=year_end,
 		birth_year=birth_year,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 		gs_team_id=gs_team_id,
 		number_of_tracksuits_available=number_of_tracksuits_available,
 		has_jersey_size_option=has_jersey_size_option,
@@ -236,8 +236,8 @@ async def test_get_sync_team_instance(
 
 	birth_year = 2010
 
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	gs_team_id = random_number()
 
@@ -257,8 +257,8 @@ async def test_get_sync_team_instance(
 		year_start=year_start,
 		year_end=year_end,
 		birth_year=birth_year,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 		gs_team_id=gs_team_id,
 		number_of_tracksuits_available=number_of_tracksuits_available,
 		has_jersey_size_option=has_jersey_size_option,
@@ -297,8 +297,8 @@ async def test_update_team_instance(
 
 	birth_year = 2010
 
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	gs_team_id = random_number()
 
@@ -318,8 +318,8 @@ async def test_update_team_instance(
 		year_start=year_start,
 		year_end=year_end,
 		birth_year=birth_year,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 		gs_team_id=gs_team_id,
 		number_of_tracksuits_available=number_of_tracksuits_available,
 		has_jersey_size_option=has_jersey_size_option,
@@ -338,13 +338,13 @@ async def test_update_team_instance(
 	)
 
 
-	new_se_name_snake = random_lower_string()
-	while new_se_name_snake == se_name_snake:
-		se_name_snake = random_lower_string()
+	new_spng_name_snake = random_lower_string()
+	while new_spng_name_snake == spng_name_snake:
+		spng_name_snake = random_lower_string()
 
 
 	team_instance_in_update = TeamInstanceSchemaUpdate(
-		se_name_snake=new_se_name_snake,
+		spng_name_snake=new_spng_name_snake,
 	)
 
 	team_instance_2 = await team_instance_crud.update(
@@ -354,8 +354,8 @@ async def test_update_team_instance(
 	)
 
 	assert team_instance_2
-	assert team_instance_2.se_name_snake
-	assert team_instance_2.se_name_snake == new_se_name_snake
+	assert team_instance_2.spng_name_snake
+	assert team_instance_2.spng_name_snake == new_spng_name_snake
 
 
 
@@ -370,8 +370,8 @@ async def test_update_sync_team_instance(
 
 	birth_year = 2010
 
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	gs_team_id = random_number()
 
@@ -391,8 +391,8 @@ async def test_update_sync_team_instance(
 		year_start=year_start,
 		year_end=year_end,
 		birth_year=birth_year,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 		gs_team_id=gs_team_id,
 		number_of_tracksuits_available=number_of_tracksuits_available,
 		has_jersey_size_option=has_jersey_size_option,
@@ -411,13 +411,13 @@ async def test_update_sync_team_instance(
 	)
 
 
-	new_se_name_snake = random_lower_string()
-	while new_se_name_snake == se_name_snake:
-		se_name_snake = random_lower_string()
+	new_spng_name_snake = random_lower_string()
+	while new_spng_name_snake == spng_name_snake:
+		spng_name_snake = random_lower_string()
 
 
 	team_instance_in_update = TeamInstanceSchemaUpdate(
-		se_name_snake=new_se_name_snake,
+		spng_name_snake=new_spng_name_snake,
 	)
 
 	team_instance_2 = await db.run_sync(
@@ -427,8 +427,8 @@ async def test_update_sync_team_instance(
 	)
 
 	assert team_instance_2
-	assert team_instance_2.se_name_snake
-	assert team_instance_2.se_name_snake == new_se_name_snake
+	assert team_instance_2.spng_name_snake
+	assert team_instance_2.spng_name_snake == new_spng_name_snake
 
 
 
@@ -443,8 +443,8 @@ async def test_delete_team_instance(
 
 	birth_year = 2010
 
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	gs_team_id = random_number()
 
@@ -464,8 +464,8 @@ async def test_delete_team_instance(
 		year_start=year_start,
 		year_end=year_end,
 		birth_year=birth_year,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 		gs_team_id=gs_team_id,
 		number_of_tracksuits_available=number_of_tracksuits_available,
 		has_jersey_size_option=has_jersey_size_option,
@@ -509,8 +509,8 @@ async def test_delete_sync_team_instance(
 
 	birth_year = 2010
 
-	se_name_snake = random_lower_string()
-	se_shared_question_id = random_number()
+	spng_name_snake = random_lower_string()
+	spng_shared_question_id = random_number()
 
 	gs_team_id = random_number()
 
@@ -530,8 +530,8 @@ async def test_delete_sync_team_instance(
 		year_start=year_start,
 		year_end=year_end,
 		birth_year=birth_year,
-		se_name_snake=se_name_snake,
-		se_shared_question_id=se_shared_question_id,
+		spng_name_snake=spng_name_snake,
+		spng_shared_question_id=spng_shared_question_id,
 		gs_team_id=gs_team_id,
 		number_of_tracksuits_available=number_of_tracksuits_available,
 		has_jersey_size_option=has_jersey_size_option,

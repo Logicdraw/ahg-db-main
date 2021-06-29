@@ -21,8 +21,8 @@ class TeamInstanceSchemaBase(BaseModel):
 
 	birth_year: Optional[int] = None
 
-	se_name_snake: Optional[str] = None
-	se_shared_question_id: Optional[int] = None
+	spng_name_snake: Optional[str] = None
+	spng_shared_question_id: Optional[int] = None
 
 	gs_team_id: Optional[int]
 

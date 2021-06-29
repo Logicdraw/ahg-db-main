@@ -134,9 +134,9 @@ class TeamInstanceModel(
 
 	# SportsEngine --
 
-	se_name_snake = Column(String, index=True)
+	spng_name_snake = Column(String, index=True)
 
-	se_shared_question_id = Column(Integer, index=True)
+	spng_shared_question_id = Column(Integer, index=True)
 
 
 	# Gamesheet --

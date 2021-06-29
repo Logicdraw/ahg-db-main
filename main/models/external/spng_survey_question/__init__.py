@@ -75,6 +75,10 @@ class SpngSurveyQuestionModel(
 	use_answer_text_mappings = Column(Boolean)
 
 
+	# ...
+	exclude_non_set_answer_text_mapping_keys = Column(Boolean, server_default='0')
+
+
 	shared_question_ids = Column(postgresql.ARRAY(Integer))
 
 	answer_text_mappings = Column(
@@ -83,12 +87,6 @@ class SpngSurveyQuestionModel(
 			nested=False,
 		)
 	)
-
-
-	__mapper_args__ = {
-		'eager_defaults': True,
-	}
-	
 	"""
 	Example:
 
@@ -104,6 +102,13 @@ class SpngSurveyQuestionModel(
 	# Pydantic will make the transition to boolean
 	# Pydantic - ...
 	"""
+
+
+
+	__mapper_args__ = {
+		'eager_defaults': True,
+	}
+	
 
 
 

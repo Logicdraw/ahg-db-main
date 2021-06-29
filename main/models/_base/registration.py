@@ -83,13 +83,13 @@ class RegistrationBaseModel(
 
 
 
-class SpngRegistrationBase:
+class SpngRegistrationMixin:
 
-	se_survey_id = Column(Integer)
-	se_survey_result_id = Column(Integer, unique=True)
+	spng_survey_id = Column(Integer)
+	spng_survey_result_id = Column(Integer, unique=True)
 
-	se_persona_id = Column(Integer)
-	se_user_id = Column(Integer)
+	spng_persona_id = Column(Integer)
+	spng_user_id = Column(Integer)
 	roster_player_id = Column(Integer)
 
 	status = Column(String)
@@ -114,7 +114,7 @@ class SpngRegistrationBase:
 
 
 
-class SpngRegistrationFinancialsBase:
+class SpngRegistrationFinancialsMixin:
 
 	gross = Column(Float)
 
@@ -140,7 +140,7 @@ class SpngRegistrationFinancialsBase:
 
 
 
-class PlayerRegistrationBase:
+class PlayerRegistrationMixin:
 
 	position = Column(String)
 

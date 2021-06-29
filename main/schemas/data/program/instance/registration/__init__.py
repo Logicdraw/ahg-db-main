@@ -7,9 +7,9 @@ from pydantic import (
 
 
 from main.schemas._base.registration import (
-	SpngRegistrationBaseSchema,
-	SpngRegistrationFinancialsBaseSchema,
-	PlayerRegistrationBaseSchema,
+	SpngRegistrationMixinSchema,
+	SpngRegistrationFinancialsMixinSchema,
+	PlayerRegistrationMixinSchema,
 )
 
 
@@ -22,9 +22,9 @@ from main.schemas._base.registration import (
 
 class ProgramInstanceRegistrationSchemaBase(
 	RegistrationBaseSchemaBase,
-	SpngRegistrationBaseSchema,
-	SpngRegistrationFinancialsBaseSchema,
-	PlayerRegistrationBaseSchema,
+	SpngRegistrationMixinSchema,
+	SpngRegistrationFinancialsMixinSchema,
+	PlayerRegistrationMixinSchema,
 ):
 	program_instance_id: Optional[int] = None
 	program_group_instance_id: Optional[int] = None

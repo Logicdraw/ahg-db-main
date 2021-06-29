@@ -19,9 +19,9 @@ from lib.util_sqlalchemy import (
 
 from main.models._base.registration import (
 	RegistrationBaseModel,
-	PlayerRegistrationBase,
-	SpngRegistrationBase,
-	SpngRegistrationFinancialsBase,
+	PlayerRegistrationMixin,
+	SpngRegistrationMixin,
+	SpngRegistrationFinancialsMixin,
 )
 
 
@@ -29,9 +29,9 @@ from main.models._base.registration import (
 class ProgramInstanceRegistrationModel(
 	RegistrationBaseModel,
 	ResourceMixin,
-	SpngRegistrationBase,
-	SpngRegistrationFinancialsBase,
-	PlayerRegistrationBase,
+	SpngRegistrationMixin,
+	SpngRegistrationFinancialsMixin,
+	PlayerRegistrationMixin,
 ):
 
 	__tablename__ = 'program_instance_registrations'
