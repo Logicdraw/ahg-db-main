@@ -13,7 +13,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import relationship
 
 
-from lib.util_sqlalchemy import (
+from main.utils.sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
 )
@@ -51,14 +51,25 @@ class SpngSurveyBaseModel(
 	)
 
 	
-	survey_id = Column(Integer, index=True)
+	survey_id = Column(
+		Integer,
+		index=True,
+	)
 
-	name = Column(String, index=True)
+	name = Column(
+		String,
+		index=True,
+	)
 
-	is_active = Column(Boolean, server_default='1')
+	is_active = Column(
+		Boolean,
+		server_default='1',
+	)
 
 
-	type = Column(String(50))
+	type = Column(
+		String(50),
+	)
 
 
 	spng_surveys_spng_survey_questions = relationship(

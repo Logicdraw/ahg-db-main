@@ -12,7 +12,7 @@ from sqlalchemy.orm import relationship
 
 from main.database.base_class import Base
 
-from lib.util_sqlalchemy import (
+from main.utils.sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
 )
@@ -41,7 +41,9 @@ class TeamInstancesAdultRepsModel(
 	)
 
 
-	role = Column(String)
+	role = Column(
+		String,
+	)
 
 
 	team_instances_sc = relationship(

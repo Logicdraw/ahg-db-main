@@ -13,7 +13,7 @@ from sqlalchemy import (
 
 from sqlalchemy.orm import relationship
 
-from lib.util_sqlalchemy import (
+from main.utils.sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
 )
@@ -52,13 +52,21 @@ class RegistrationBaseModel(
 	)
 
 
-	placed_at_datetime = Column(AwareDateTime())
+	placed_at_datetime = Column(
+		AwareDateTime(),
+	)
 
-	comment = Column(Text)
+	comment = Column(
+		Text,
+	)
 
-	coaches_comment = Column(Text)
+	coaches_comment = Column(
+		Text,
+	)
 
-	notes = Column(String)
+	notes = Column(
+		String,
+	)
 
 
 	@declared_attr
@@ -84,23 +92,44 @@ class RegistrationBaseModel(
 
 
 class SpngRegistrationMixin:
+	# --
 
-	spng_survey_id = Column(Integer)
-	spng_survey_result_id = Column(Integer, unique=True)
+	spng_survey_id = Column(
+		Integer,
+	)
+	spng_survey_result_id = Column(
+		Integer,
+		unique=True,
+	)
 
-	spng_persona_id = Column(Integer)
-	spng_user_id = Column(Integer)
-	roster_player_id = Column(Integer)
+	spng_persona_id = Column(
+		Integer,
+	)
+	spng_user_id = Column(
+		Integer,
+	)
+	roster_player_id = Column(
+		Integer,
+	)
 
-	status = Column(String)
-	completed = Column(Boolean)
+	status = Column(
+		String,
+	)
+	completed = Column(
+		Boolean,
+	)
 
-	registration_sport = Column(String)
+	registration_sport = Column(
+		String,
+	)
 
-	registration_type = Column(String)
+	registration_type = Column(
+		String,
+	)
 
-	registrant_type = Column(String)
-
+	registrant_type = Column(
+		String,
+	)
 
 
 	extra_question_answers = Column(
@@ -113,41 +142,71 @@ class SpngRegistrationMixin:
 
 
 
-
 class SpngRegistrationFinancialsMixin:
+	# --
 
-	gross = Column(Float)
+	gross = Column(
+		Float,
+	)
 
-	net = Column(Float)
+	net = Column(
+		Float,
+	)
 
-	service_fee = Column(Float)
+	service_fee = Column(
+		Float,
+	)
 
-	gross_forecast = Column(Float)
+	gross_forecast = Column(
+		Float,
+	)
 
-	net_forecast = Column(Float)
+	net_forecast = Column(
+		Float,
+	)
 
-	service_fee_forecast = Column(Float)
+	service_fee_forecast = Column(
+		Float,
+	)
 
-	gross_outstanding = Column(Float)
+	gross_outstanding = Column(
+		Float,
+	)
 
-	order_number = Column(String)
+	order_number = Column(
+		String,
+	)
 
-	discounts = Column(Float)
-	discount_names = Column(String)
+	discounts = Column(
+		Float,
+	)
+	discount_names = Column(
+		String,
+	)
 
-	refunds = Column(Float)
+	refunds = Column(
+		Float,
+	)
 
 
 
 
 class PlayerRegistrationMixin:
+	# --
 
-	position = Column(String)
+	position = Column(
+		String,
+	)
 
 
-	registration_insurance = Column(Boolean, server_default='0')
+	registration_insurance = Column(
+		Boolean,
+		server_default='0',
+	)
 
-	player_submitted_notes = Column(String)
+	player_submitted_notes = Column(
+		String,
+	)
 
 
 

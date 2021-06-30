@@ -11,7 +11,7 @@ from sqlalchemy.orm import relationship
 
 from main.database.base_class import Base
 
-from lib.util_sqlalchemy import (
+from main.utils.sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
 )
@@ -25,7 +25,10 @@ class CampInstanceModel(
 
 	__tablename__ = 'camp_instances'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 	camps_sc = relationship(
@@ -33,7 +36,11 @@ class CampInstanceModel(
 		back_populates='camp_instances',
 		uselist=False,
 	)
-	camp_id = Column(Integer, ForeignKey('camps.id'))
+
+	camp_id = Column(
+		Integer,
+		ForeignKey('camps.id'),
+	)
 
 
 
@@ -58,9 +65,13 @@ class CampInstanceModel(
 
 
 
-	year_start = Column(Integer)
+	year_start = Column(
+		Integer,
+	)
 
-	year_end = Column(Integer)
+	year_end = Column(
+		Integer,
+	)
 
 
 	spng_name_snake = Column(String, index=True)

@@ -12,7 +12,7 @@ from sqlalchemy.orm import relationship
 
 from main.database.base_class import Base
 
-from lib.util_sqlalchemy import (
+from main.utils.sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
 )
@@ -42,12 +42,19 @@ class TeamInstancesPlayersModel(
 	)
 
 
-	comment = Column(String, index=True)
+	comment = Column(
+		String,
+		index=True,
+	)
 
 
-	position = Column(String)
+	position = Column(
+		String,
+	)
 
-	sponsors = Column(Text)
+	sponsors = Column(
+		Text,
+	)
 
 	# sponsors Json...?
 
@@ -69,4 +76,7 @@ class TeamInstancesPlayersModel(
 	__mapper_args__ = {
 		'eager_defaults': True,
 	}
+
+
+
 

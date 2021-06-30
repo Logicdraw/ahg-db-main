@@ -12,7 +12,7 @@ from sqlalchemy.orm import relationship
 
 from main.database.base_class import Base
 
-from lib.util_sqlalchemy import (
+from main.utils.sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
 )
@@ -45,9 +45,14 @@ class GuardiansPlayersModel(
 
 
 
-	role = Column(String)
+	role = Column(
+		String,
+	)
 
-	is_emergency_contact = Column(Boolean, server_default='0')
+	is_emergency_contact = Column(
+		Boolean,
+		server_default='0',
+	)
 
 
 

@@ -13,7 +13,7 @@ from sqlalchemy import (
 
 from sqlalchemy.orm import relationship
 
-from lib.util_sqlalchemy import (
+from main.utils.sqlalchemy import (
 	AwareDateTime,
 	ResourceMixin,
 )
@@ -53,18 +53,29 @@ class ResourceBaseModel(
 	)
 
 	
-	is_live = Column(Boolean, server_default='1')
+	is_live = Column(
+		Boolean,
+		server_default='1',
+	)
 
 
-	name = Column(String)
+	name = Column(
+		String,
+	)
 
-	slug = Column(String)
+	slug = Column(
+		String,
+	)
 
 
-	thumbnail_image_url = Column(String)
+	thumbnail_image_url = Column(
+		String,
+	)
 
 
-	type = Column(String(50))
+	type = Column(
+		String(50),
+	)
 
 
 	# Relationship -- one to one

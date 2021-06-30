@@ -198,14 +198,6 @@ class Settings(BaseSettings):
 
 
 
-
-	SQLITE_DEV_URI: str = 'sqlite:///' + os.path.join(base_dir, '_dev_.db')
-
-	SQLITE_TESTING_URI: str = 'sqlite:///' + os.path.join(base_dir, '_testing_.db')
-
-
-
-
 	CLI_PASSWORD: str
 
 
