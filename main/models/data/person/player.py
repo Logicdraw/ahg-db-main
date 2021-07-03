@@ -37,7 +37,10 @@ class PlayerModel(
 
 	__tablename__ = 'players'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 	# Relationships
@@ -92,41 +95,71 @@ class PlayerModel(
 
 
 
-	first_name = Column(String, index=True)
+	first_name = Column(
+		String,
+		index=True,
+	)
 
-	last_name = Column(String, index=True)
-
-
-	date_of_birth = Column(Date, index=True)
-
-
-	medicare_number = Column(String)
-
-
-	street_address_1 = Column(String)
-
-	street_address_2 = Column(String)
-
-	postal_code = Column(String)
-
-	city = Column(String)
-
-	province = Column(String)
-
-	country = Column(String)
+	last_name = Column(
+		String,
+		index=True,
+	)
 
 
+	date_of_birth = Column(
+		Date,
+		index=True,
+	)
 
-	gender = Column(String)
 
-	language = Column(String)
+	medicare_number = Column(
+		String,
+	)
+
+
+	street_address_1 = Column(
+		String,
+	)
+
+	street_address_2 = Column(
+		String,
+	)
+
+	postal_code = Column(
+		String,
+	)
+
+	city = Column(
+		String,
+	)
+
+	province = Column(
+		String,
+	)
+
+	country = Column(
+		String,
+	)
 
 
 
-	spng_persona_id = Column(Integer, unique=True)
+	gender = Column(
+		String,
+	)
+
+	language = Column(
+		String,
+	)
+
+
+
+	spng_persona_id = Column(
+		Integer,
+		unique=True,
+	)
 	
 
-	# updated? -- updated_on > created_on ...?
+	
 
 
 	# Parents

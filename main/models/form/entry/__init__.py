@@ -30,10 +30,20 @@ class FormEntryModel(
 
 	__tablename__ = 'form_entries'
 
-	id = Column(Integer, primary_key=True, index=True)
+
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
-	slug = Column(String, unique=True, index=True)
+	slug = Column(
+		String,
+		unique=True,
+		index=True,
+	)
+
 
 	# --
 
@@ -42,7 +52,11 @@ class FormEntryModel(
 		back_populates='form_entries',
 		uselist=False,
 	)
-	form_id = Column(Integer, ForeignKey('forms.id'))
+
+	form_id = Column(
+		Integer,
+		ForeignKey('forms.id'),
+	)
 
 
 	# which form ? id ...

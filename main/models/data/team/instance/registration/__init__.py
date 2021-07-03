@@ -43,6 +43,7 @@ class TeamInstanceRegistrationModel(
 		back_populates='team_instance_registrations',
 		uselist=False,
 	)
+
 	team_instance_id = Column(Integer, ForeignKey('team_instances.id'))
 
 
@@ -51,6 +52,7 @@ class TeamInstanceRegistrationModel(
 		back_populates='team_instance_registrations',
 		uselist=False,
 	)
+
 	spng_survey_team_id = Column(
 		Integer,
 		ForeignKey('spng_survey_teams.id'),
@@ -68,9 +70,15 @@ class TeamInstanceRegistrationModel(
 
 
 
-	needs_jersey = Column(Boolean, server_default='0')
+	needs_jersey = Column(
+		Boolean,
+		server_default='0',
+	)
 
-	needs_socks = Column(Boolean, server_default='0')
+	needs_socks = Column(
+		Boolean,
+		server_default='0',
+	)
 
 
 

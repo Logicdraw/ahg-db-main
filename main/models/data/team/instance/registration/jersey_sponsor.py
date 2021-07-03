@@ -25,7 +25,10 @@ class TeamInstanceRegistrationJerseySponsorModel(
 
 	__tablename__ = 'team_instance_registration_jersey_sponsors'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 
@@ -34,6 +37,7 @@ class TeamInstanceRegistrationJerseySponsorModel(
 		back_populates='team_instance_registration_jersey_sponsors',
 		uselist=False,
 	)
+
 	team_instance_registration_id = Column(
 		Integer,
 		ForeignKey('team_instance_registrations.id'),
@@ -41,9 +45,14 @@ class TeamInstanceRegistrationJerseySponsorModel(
 
 
 
-	name = Column(String, index=True)
+	name = Column(
+		String,
+		index=True,
+	)
 
-	amount = Column(Float)
+	amount = Column(
+		Float,
+	)
 
 
 	# Other options ???/

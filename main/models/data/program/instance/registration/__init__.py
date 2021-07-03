@@ -42,6 +42,7 @@ class ProgramInstanceRegistrationModel(
 		back_populates='program_instance_registrations',
 		uselist=False,
 	)
+
 	program_instance_id = Column(
 		Integer,
 		ForeignKey('program_instances.id'),
@@ -54,6 +55,7 @@ class ProgramInstanceRegistrationModel(
 		back_populates='program_instance_registrations',
 		uselist=False,
 	)
+
 	program_group_instance_id = Column(
 		Integer,
 		ForeignKey('program_group_instances.id'),
@@ -65,6 +67,7 @@ class ProgramInstanceRegistrationModel(
 		back_populates='program_instance_registrations',
 		uselist=False,
 	)
+	
 	spng_survey_program_id = Column(
 		Integer,
 		ForeignKey('spng_survey_programs.id'),

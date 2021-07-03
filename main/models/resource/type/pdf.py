@@ -42,7 +42,9 @@ class ResourcePDFModel(
 	)
 
 
-	pdf_url = Column(String)
+	pdf_url = Column(
+		String,
+	)
 
 
 	__mapper_args__ = {

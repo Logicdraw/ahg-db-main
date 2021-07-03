@@ -39,7 +39,11 @@ class SpngSurveyQuestionModel(
 
 	__tablename__ = 'spng_survey_questions'
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
 	# Many To Many with SpngSurvey -- |~|
@@ -72,14 +76,21 @@ class SpngSurveyQuestionModel(
 	# -- -- --
 
 
-	use_answer_text_mappings = Column(Boolean)
+	use_answer_text_mappings = Column(
+		Boolean,
+	)
 
 
 	# ...
-	exclude_non_set_answer_text_mapping_keys = Column(Boolean, server_default='0')
+	exclude_non_set_answer_text_mapping_keys = Column(
+		Boolean,
+		server_default='0',
+	)
 
 
-	shared_question_ids = Column(postgresql.ARRAY(Integer))
+	shared_question_ids = Column(
+		postgresql.ARRAY(Integer),
+	)
 
 	answer_text_mappings = Column(
 		mutable_json_type(

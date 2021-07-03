@@ -75,9 +75,6 @@ if 'db' not in cmd_kwargs:
 
 # Our DB URLS :) --
 db_uris = {
-	# SQLITE --
-	'sqlite_dev': settings.SQLITE_DEV_URI,
-	'sqlite_testing': settings.SQLITE_TESTING_URI,
 	# PSQL --
 	# 'psql_dev': settings.PSQL_DEV_URI,
 	# 'psql_testing': settings.PSQL_TESTING_URI,

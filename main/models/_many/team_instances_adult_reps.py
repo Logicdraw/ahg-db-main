@@ -34,6 +34,7 @@ class TeamInstancesAdultRepsModel(
 		ForeignKey('team_instances.id'),
 		primary_key=True,
 	)
+
 	adult_rep_id = Column(
 		Integer,
 		ForeignKey('adult_reps.id'),

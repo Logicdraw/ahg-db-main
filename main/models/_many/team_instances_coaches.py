@@ -34,6 +34,7 @@ class TeamInstancesCoachesModel(
 		ForeignKey('team_instances.id'),
 		primary_key=True,
 	)
+	
 	coach_id = Column(
 		Integer,
 		ForeignKey('coaches.id'),

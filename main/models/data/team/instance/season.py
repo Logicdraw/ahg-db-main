@@ -24,12 +24,20 @@ class SeasonInstanceModel(
 
 	__tablename__ = 'season_instances'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	year_start = Column(Integer)
+	year_start = Column(
+		Integer,
+	)
 
-	year_end = Column(Integer)
+	year_end = Column(
+		Integer,
+	)
+	
 	
 
 	seasons_sc = relationship(

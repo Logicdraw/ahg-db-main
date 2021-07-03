@@ -42,7 +42,9 @@ class ResourceVideoModel(
 	)
 
 
-	video_url = Column(String)
+	video_url = Column(
+		String,
+	)
 
 
 	__mapper_args__ = {

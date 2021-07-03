@@ -25,7 +25,10 @@ class CampGroupInstanceModel(
 
 	__tablename__ = 'camp_group_instances'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 	camp_instances_sc = relationship(
@@ -33,6 +36,7 @@ class CampGroupInstanceModel(
 		back_populates='camp_group_instances',
 		uselist=False,
 	)
+
 	camp_instance_id = Column(
 		Integer,
 		ForeignKey('camp_instances.id'),
@@ -44,6 +48,7 @@ class CampGroupInstanceModel(
 		back_populates='camp_group_instances',
 		uselist=False,
 	)
+
 	camp_group_id = Column(
 		Integer,
 		ForeignKey('camp_groups.id'),
@@ -57,9 +62,13 @@ class CampGroupInstanceModel(
 	)
 
 
-	year_start = Column(Integer)
+	year_start = Column(
+		Integer,
+	)
 
-	year_end = Column(Integer)
+	year_end = Column(
+		Integer,
+	)
 
 
 

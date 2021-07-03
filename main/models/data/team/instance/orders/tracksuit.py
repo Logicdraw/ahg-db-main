@@ -25,7 +25,10 @@ class TeamInstanceTracksuitOrderModel(
 
 	__tablename__ = 'team_instance_tracksuit_orders'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 	team_instances_sc = relationship(
@@ -33,15 +36,20 @@ class TeamInstanceTracksuitOrderModel(
 		back_populates='team_instance_tracksuit_orders',
 		uselist=False,
 	)
+
 	team_instance_id = Column(
 		Integer,
 		ForeignKey('team_instances.id'),
 	)
 
 
-	jacket_size = Column(String(50))
+	jacket_size = Column(
+		String(50),
+	)
 
-	pants_size = Column(String(50))
+	pants_size = Column(
+		String(50),
+	)
 
 
 	__mapper_args__ = {

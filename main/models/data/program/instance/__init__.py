@@ -25,7 +25,11 @@ class ProgramInstanceModel(
 
 	__tablename__ = 'program_instances'
 
-	id = Column(Integer, primary_key=True)
+
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 
@@ -34,7 +38,11 @@ class ProgramInstanceModel(
 		back_populates='program_instances',
 		uselist=False,
 	)
-	program_id = Column(Integer, ForeignKey('programs.id'))
+
+	program_id = Column(
+		Integer,
+		ForeignKey('programs.id'),
+	)
 
 
 
@@ -59,17 +67,27 @@ class ProgramInstanceModel(
 
 
 
-	year_start = Column(Integer)
+	year_start = Column(
+		Integer,
+	)
 
-	year_end = Column(Integer)
+	year_end = Column(
+		Integer,
+	)
 
 
 
 	# SportsEngine --
 
-	spng_name_snake = Column(String, index=True)
+	spng_name_snake = Column(
+		String,
+		index=True,
+	)
 
-	spng_shared_question_id = Column(Integer, index=True)
+	spng_shared_question_id = Column(
+		Integer,
+		index=True,
+	)
 
 
 	__mapper_args__ = {

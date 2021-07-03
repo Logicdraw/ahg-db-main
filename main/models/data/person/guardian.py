@@ -30,7 +30,10 @@ class GuardianModel(
 
 	__tablename__ = 'guardians'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 	# Relationships
@@ -42,18 +45,30 @@ class GuardianModel(
 	)
 
 
-	full_name = Column(String, index=True)
+	full_name = Column(
+		String,
+		index=True,
+	)
 
 
-	mobile_phone = Column(String)
+	mobile_phone = Column(
+		String,
+	)
 
-	home_phone = Column(String)
+	home_phone = Column(
+		String,
+	)
 
-	work_phone = Column(String)
+	work_phone = Column(
+		String,
+	)
 
 
 	# Email -- will be unique identifier of guardian!
-	email = Column(String, unique=True)
+	email = Column(
+		String,
+		unique=True,
+	)
 
 
 
@@ -61,7 +76,11 @@ class GuardianModel(
 		'UserModel',
 		uselist=False,
 	)
-	user_id = Column(Integer, ForeignKey('users.id'))
+
+	user_id = Column(
+		Integer,
+		ForeignKey('users.id'),
+	)
 
 
 	__mapper_args__ = {

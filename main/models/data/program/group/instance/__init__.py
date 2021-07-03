@@ -33,6 +33,7 @@ class ProgramGroupInstanceModel(
 		back_populates='program_group_instances',
 		uselist=False,
 	)
+
 	program_instance_id = Column(
 		Integer,
 		ForeignKey('program_instances.id'),
@@ -43,6 +44,7 @@ class ProgramGroupInstanceModel(
 		back_populates='program_group_instances',
 		uselist=False,
 	)
+
 	program_group_id = Column(
 		Integer,
 		ForeignKey('program_groups.id'),
@@ -57,9 +59,13 @@ class ProgramGroupInstanceModel(
 	)
 
 
-	year_start = Column(Integer)
+	year_start = Column(
+		Integer,
+	)
 
-	year_end = Column(Integer)
+	year_end = Column(
+		Integer,
+	)
 
 
 	__mapper_args__ = {

@@ -68,6 +68,7 @@ class CampInstanceRegistrationModel(
 		back_populates='camp_instance_registrations',
 		uselist=False,
 	)
+	
 	spng_survey_camp_id = Column(
 		Integer,
 		ForeignKey('spng_survey_camps.id'),

@@ -25,10 +25,15 @@ class ProgramGroupModel(
 
 	__tablename__ = 'program_groups'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	name = Column(String)
+	name = Column(
+		String,
+	)
 
 
 	programs_sc = relationship(
@@ -36,7 +41,11 @@ class ProgramGroupModel(
 		back_populates='program_groups',
 		uselist=False,
 	)
-	program_id = Column(Integer, ForeignKey('programs.id'))
+
+	program_id = Column(
+		Integer,
+		ForeignKey('programs.id'),
+	)
 
 
 	program_group_instances = relationship(

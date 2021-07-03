@@ -24,12 +24,19 @@ class DivisionInstanceModel(
 
 	__tablename__ = 'division_instances'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	year_start = Column(Integer)
+	year_start = Column(
+		Integer,
+	)
 
-	year_end = Column(Integer)
+	year_end = Column(
+		Integer,
+	)
 
 
 	divisions_sc = relationship(
@@ -37,6 +44,7 @@ class DivisionInstanceModel(
 		back_populates='division_instances',
 		uselist=False,
 	)
+
 	division_id = Column(
 		Integer,
 		ForeignKey('divisions.id'),
@@ -55,26 +63,31 @@ class DivisionInstanceModel(
 		back_populates='division_instances',
 		uselist=False,
 	)
+
 	season_instance_id = Column(
 		Integer,
 		ForeignKey('season_instances.id'),
 	)
+
 
 	league_instances_sc = relationship(
 		'LeagueInstanceModel',
 		back_populates='division_instances',
 		uselist=False,
 	)
+
 	league_instance_id = Column(
 		Integer,
 		ForeignKey('league_instances.id'),
 	)
+
 
 	conference_instances_sc = relationship(
 		'ConferenceInstanceModel',
 		back_populates='division_instances',
 		uselist=False,
 	)
+	
 	conference_instance_id = Column(
 		Integer,
 		ForeignKey('conference_instances.id'),

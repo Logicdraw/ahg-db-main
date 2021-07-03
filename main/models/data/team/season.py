@@ -24,10 +24,18 @@ class SeasonModel(
 
 	__tablename__ = 'seasons'
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
-	name = Column(String, nullable=False, index=True)
+	name = Column(
+		String,
+		nullable=False,
+		index=True,
+	)
 
 
 	season_instances = relationship(

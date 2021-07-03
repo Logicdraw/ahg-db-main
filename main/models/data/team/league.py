@@ -25,10 +25,18 @@ class LeagueModel(
 
 	__tablename__ = 'leagues'
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
-	name = Column(String, nullable=False, index=True)
+	name = Column(
+		String,
+		nullable=False,
+		index=True,
+	)
 
 
 
@@ -73,6 +81,6 @@ class LeagueModel(
 		'eager_defaults': True,
 	}
 
-	# ...
+
 
 

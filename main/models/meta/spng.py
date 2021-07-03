@@ -24,17 +24,31 @@ class SpngMetaModel(
 
 	__tablename__ = 'spng_meta'
 
-	id = Column(Integer, primary_key=True, index=True)
+
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
-	access_token_encoded = Column(String)
+	access_token_encoded = Column(
+		String,
+	)
 
-	refresh_token_encoded = Column(String)
+	refresh_token_encoded = Column(
+		String,
+	)
 
 
-	last_fetched_registrations = Column(AwareDateTime())
+	last_fetched_registrations = Column(
+		AwareDateTime(),
+	)
 
 
 	__mapper_args__ = {
 		'eager_defaults': True,
 	}
+
+
+

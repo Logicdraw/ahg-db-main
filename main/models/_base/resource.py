@@ -79,10 +79,12 @@ class ResourceBaseModel(
 
 
 	# Relationship -- one to one
+	
 	resource_category_id = Column(
 		Integer,
 		ForeignKey('resource_categories.id'),
 	)
+
 	resource_categories_sc = relationship(
 		'ResourceCategoryModel',
 		uselist=False,

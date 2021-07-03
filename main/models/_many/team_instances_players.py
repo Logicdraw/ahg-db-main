@@ -29,6 +29,7 @@ class TeamInstancesPlayersModel(
 
 	__tablename__ = 'team_instances_players'
 
+
 	team_instance_id = Column(
 		Integer,
 		ForeignKey('team_instances.id'),

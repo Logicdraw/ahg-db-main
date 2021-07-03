@@ -29,13 +29,25 @@ class ResourceCategoryModel(
 
 	__tablename__ = 'resource_categories'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
-	is_live = Column(Boolean, server_default='1')
 
-	name = Column(String)
+	is_live = Column(
+		Boolean,
+		server_default='1',
+	)
 
-	slug = Column(String)
+
+	name = Column(
+		String,
+	)
+
+	slug = Column(
+		String,
+	)
 
 
 	resources = relationship(

@@ -30,13 +30,25 @@ class SpngSurveyQuestionTableMapModel(
 
 	__tablename__ = 'spng_survey_question_table_maps'
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
-	db_table_name = Column(String, index=True, nullable=False)
+	db_table_name = Column(
+		String,
+		index=True,
+		nullable=False,
+	)
 	# e.g. players
 
-	db_table_column_name = Column(String, index=True, nullable=False)
+	db_table_column_name = Column(
+		String,
+		index=True,
+		nullable=False,
+	)
 
 
 

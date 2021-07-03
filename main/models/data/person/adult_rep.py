@@ -25,12 +25,21 @@ class AdultRepModel(
 
 	__tablename__ = 'adult_reps'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	full_name = Column(String, index=True)
+	full_name = Column(
+		String,
+		index=True,
+	)
 
-	email = Column(String, unique=True)
+	email = Column(
+		String,
+		unique=True,
+	)
 
 
 	team_instances_adult_reps = relationship(
@@ -45,6 +54,7 @@ class AdultRepModel(
 		'UserModel',
 		uselist=False,
 	)
+
 	user_id = Column(
 		Integer,
 		ForeignKey('users.id'),

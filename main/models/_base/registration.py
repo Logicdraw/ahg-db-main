@@ -71,23 +71,24 @@ class RegistrationBaseModel(
 
 	@declared_attr
 	def players_sc(cls):
-		return relationship('PlayerModel', back_populates='registrations', uselist=False,)
+		return relationship(
+			'PlayerModel',
+			back_populates='registrations',
+			uselist=False,
+		)
 
 	@declared_attr
 	def player_id(cls):
-		return Column(Integer, ForeignKey('players.id'))
+		return Column(
+			Integer,
+			ForeignKey('players.id'),
+		)
 
 
 
 	__mapper_args__ = {
 		'eager_defaults': True,
 	}
-
-
-	# edited_by_ahg = Column(Boolean, server_default='0') # Non-financials
-	
-	# edited_financials_by_ahg = Column(Boolean, server_default='0') # ... Pointless ... ?
-
 
 
 

@@ -25,7 +25,10 @@ class TeamInstanceJerseySocksOrderModel(
 
 	__tablename__ = 'team_instance_jersey_socks_orders'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 	team_instances_sc = relationship(
@@ -33,6 +36,7 @@ class TeamInstanceJerseySocksOrderModel(
 		back_populates='team_instance_jersey_socks_orders',
 		uselist=False,
 	)
+
 	team_instance_id = Column(
 		Integer,
 		ForeignKey('team_instances.id'),
@@ -44,32 +48,30 @@ class TeamInstanceJerseySocksOrderModel(
 		back_populates='team_instance_jersey_socks_orders',
 		uselist=False,
 	)
+
 	team_instance_registration_id = Column(
 		Integer,
 		ForeignKey('team_instance_registrations.id')
 	)
 
 
-	jersey_number = Column(Integer)
+	jersey_number = Column(
+		Integer,
+	)
 
-	jersey_size = Column(String)
+	jersey_size = Column(
+		String,
+	)
 
 
-	socks_size = Column(String)
+	socks_size = Column(
+		String,
+	)
 
 
 	__mapper_args__ = {
 		'eager_defaults': True,
 	}
-
-
-	# size --
-
-	# number --
-
-
-	# data...
-
 
 
 

@@ -42,7 +42,9 @@ class ResourceArticleModel(
 	)
 
 
-	article_body = Column(String)
+	article_body = Column(
+		String,
+	)
 
 
 	__mapper_args__ = {

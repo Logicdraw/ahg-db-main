@@ -29,10 +29,16 @@ class GSMetaModel(
 
 	__tablename__ = 'gs_meta'
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
-	access_token_encoded = Column(String)
+	access_token_encoded = Column(
+		String,
+	)
 
 
 	__mapper_args__ = {

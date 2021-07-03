@@ -25,10 +25,15 @@ class ProgramModel(
 
 	__tablename__ = 'programs'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	name = Column(String)
+	name = Column(
+		String,
+	)
 
 
 	program_instances = relationship(

@@ -24,10 +24,17 @@ class ConferenceModel(
 
 	__tablename__ = 'conferences'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	name = Column(String, nullable=False, index=True)
+	name = Column(
+		String,
+		nullable=False,
+		index=True,
+	)
 
 
 	conference_instances = relationship(

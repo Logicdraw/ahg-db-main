@@ -29,17 +29,33 @@ class TeamModel(
 
 	__tablename__ = 'teams'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
-	name = Column(String, index=True)
+	name = Column(
+		String,
+		index=True,
+	)
 
 
-	city = Column(String, index=True)
+	city = Column(
+		String,
+		index=True,
+	)
 
-	province = Column(String, index=True)
+
+	province = Column(
+		String,
+		index=True,
+	)
 
 
-	gender = Column(String(25), index=True)
+	gender = Column(
+		String(25),
+		index=True,
+	)
 
 
 
@@ -48,36 +64,43 @@ class TeamModel(
 		back_populates='teams',
 		uselist=False,
 	)
+	
 	division_id = Column(
 		Integer,
 		ForeignKey('divisions.id'),
 	)
+
 
 	conferences_sc = relationship(
 		'ConferenceModel',
 		back_populates='teams',
 		uselist=False,
 	)
+
 	conference_id = Column(
 		Integer,
 		ForeignKey('conferences.id'),
 	)
+
 
 	leagues_sc = relationship(
 		'LeagueModel',
 		back_populates='teams',
 		uselist=False,
 	)
+
 	league_id = Column(
 		Integer,
 		ForeignKey('leagues.id'),
 	)
+
 
 	seasons_sc = relationship(
 		'SeasonModel',
 		back_populates='teams',
 		uselist=False,
 	)
+
 	season_id = Column(
 		Integer,
 		ForeignKey('seasons.id'),

@@ -25,10 +25,15 @@ class CampGroupModel(
 
 	__tablename__ = 'camp_groups'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	name = Column(String)
+	name = Column(
+		String,
+	)
 
 
 	camps_sc = relationship(
@@ -36,6 +41,7 @@ class CampGroupModel(
 		back_populates='camp_groups',
 		uselist=False,
 	)
+	
 	camp_id = Column(Integer, ForeignKey('camps.id'))
 
 

@@ -30,7 +30,11 @@ class TeamInstanceModel(
 	__tablename__ = 'team_instances'
 
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
 	teams_sc = relationship(
@@ -38,6 +42,7 @@ class TeamInstanceModel(
 		back_populates='team_instances',
 		uselist=False,
 	)
+
 	team_id = Column(Integer, ForeignKey('teams.id'))
 
 
@@ -46,10 +51,12 @@ class TeamInstanceModel(
 		back_populates='team_instances',
 		uselist=False,
 	)
+
 	division_instance_id = Column(
 		Integer,
 		ForeignKey('division_instances.id'),
 	)
+
 
 	conference_instances_sc = relationship(
 		'ConferenceInstanceModel',
@@ -61,6 +68,7 @@ class TeamInstanceModel(
 		ForeignKey('conference_instances.id'),
 	)
 
+
 	league_instances_sc = relationship(
 		'LeagueInstanceModel',
 		back_populates='team_instances',
@@ -71,11 +79,13 @@ class TeamInstanceModel(
 		ForeignKey('league_instances.id'),
 	)
 
+
 	season_instances_sc = relationship(
 		'SeasonInstanceModel',
 		back_populates='team_instances',
 		uselist=False,
 	)
+
 	season_instance_id = Column(
 		Integer,
 		ForeignKey('season_instances.id'),
@@ -123,25 +133,39 @@ class TeamInstanceModel(
 
 
 
-	year_start = Column(Integer)
+	year_start = Column(
+		Integer,
+	)
 
-	year_end = Column(Integer)
+	year_end = Column(
+		Integer,
+	)
 	
 	
-	birth_year = Column(Integer)
+	birth_year = Column(
+		Integer,
+	)
 
 
 
 	# SportsEngine --
 
-	spng_name_snake = Column(String, index=True)
+	spng_name_snake = Column(
+		String,
+		index=True,
+	)
 
-	spng_shared_question_id = Column(Integer, index=True)
+	spng_shared_question_id = Column(
+		Integer,
+		index=True,
+	)
 
 
 	# Gamesheet --
 
-	gs_team_id = Column(Integer)
+	gs_team_id = Column(
+		Integer,
+	)
 
 
 
@@ -149,20 +173,29 @@ class TeamInstanceModel(
 
 	# Tracksuit Orders --
 
-	number_of_tracksuits_available = Column(Integer)
+	number_of_tracksuits_available = Column(
+		Integer,
+	)
 
 
 
 	# Jersey orders --
 
-	jersey_numbers_options = Column(String)
+	jersey_numbers_options = Column(
+		String,
+	)
 	# Example: 0:68-70:99 | (inclusive)
 	# or: 0:10-11,12,13-15:99
 
 
-	has_jersey_size_option = Column(Boolean, server_default='0')
+	has_jersey_size_option = Column(
+		Boolean,
+		server_default='0',
+	)
 
-	jersey_sizes_options = Column(String)
+	jersey_sizes_options = Column(
+		String,
+	)
 
 
 
@@ -175,9 +208,14 @@ class TeamInstanceModel(
 
 	# Socks orders --
 
-	has_socks_size_option = Column(Boolean, server_default='0')
+	has_socks_size_option = Column(
+		Boolean,
+		server_default='0',
+	)
 
-	socks_sizes_options = Column(String)
+	socks_sizes_options = Column(
+		String,
+	)
 
 
 	# What does this mean? --

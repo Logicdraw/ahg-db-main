@@ -42,22 +42,39 @@ class FormQuestionModel(
 	Base,
 ):
 
-	id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+		autoincrement=True,
+	)
 
 
 	@declared_attr
 	def forms_sc(cls):
-		return relationship('FormModel', back_populates='form_questions', uselist=False,)
+		return relationship(
+			'FormModel',
+			back_populates='form_questions',
+			uselist=False,
+		)
 
 	@declared_attr
 	def form_id(cls):
-		return Column(Integer, ForeignKey('forms.id'))
+		return Column(
+			Integer,
+			ForeignKey('forms.id'),
+		)
 
 
 
-	label = Column(String)
+	label = Column(
+		String,
+	)
 
-	is_active = Column(Boolean, server_default='1')
+	is_active = Column(
+		Boolean,
+		server_default='1',
+	)
 
 
 	__mapper_args__ = {
@@ -122,7 +139,10 @@ class FormQuestionSelectModel(
 	__tablename__ = 'form_question_selects'
 
 	
-	select_is_multiple = Column(Boolean, server_default='0')
+	select_is_multiple = Column(
+		Boolean,
+		server_default='0',
+	)
 
 
 	select_answers = Column(

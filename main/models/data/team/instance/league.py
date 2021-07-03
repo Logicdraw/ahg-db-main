@@ -24,12 +24,19 @@ class LeagueInstanceModel(
 
 	__tablename__ = 'league_instances'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	year_start = Column(Integer)
+	year_start = Column(
+		Integer,
+	)
 
-	year_end = Column(Integer)
+	year_end = Column(
+		Integer,
+	)
 
 
 	leagues_sc = relationship(
@@ -37,6 +44,7 @@ class LeagueInstanceModel(
 		back_populates='league_instances',
 		uselist=False,
 	)
+
 	league_id = Column(
 		Integer,
 		ForeignKey('leagues.id'),
@@ -67,6 +75,7 @@ class LeagueInstanceModel(
 		back_populates='league_instances',
 		uselist=False,
 	)
+	
 	season_instance_id = Column(
 		Integer,
 		ForeignKey('season_instances.id'),

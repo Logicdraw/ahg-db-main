@@ -25,12 +25,21 @@ class CoachModel(
 
 	__tablename__ = 'coaches'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	full_name = Column(String, index=True)
+	full_name = Column(
+		String,
+		index=True,
+	)
 
-	email = Column(String, unique=True)
+	email = Column(
+		String,
+		unique=True,
+	)
 
 
 	team_instances_coaches = relationship(
@@ -60,7 +69,11 @@ class CoachModel(
 		'UserModel',
 		uselist=False,
 	)
-	user_id = Column(Integer, ForeignKey('users.id'))
+
+	user_id = Column(
+		Integer,
+		ForeignKey('users.id'),
+	)
 
 
 

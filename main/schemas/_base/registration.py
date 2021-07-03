@@ -28,7 +28,7 @@ class SpngRegistrationMixinSchema(BaseModel):
 	se_survey_id: Optional[int] = None
 	se_survey_result_id: Optional[int] = None
 	spng_persona_id: Optional[int] = None
-	se_user_id: Optional[int] = None
+	spng_user_id: Optional[int] = None
 	roster_player_id: Optional[int] = None
 	status: Optional[str] = None
 	completed: Optional[bool] = None

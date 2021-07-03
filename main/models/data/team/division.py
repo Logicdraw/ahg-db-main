@@ -24,10 +24,17 @@ class DivisionModel(
 
 	__tablename__ = 'divisions'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
-	name = Column(String, nullable=False, index=True)
+	name = Column(
+		String,
+		nullable=False,
+		index=True,
+	)
 
 
 	division_instances = relationship(
@@ -49,6 +56,7 @@ class DivisionModel(
 		back_populates='divisions',
 		uselist=False,
 	)
+	
 	season_id = Column(
 		Integer, 
 		ForeignKey('seasons.id'),
@@ -60,6 +68,7 @@ class DivisionModel(
 		back_populates='divisions',
 		uselist=False,
 	)
+
 	league_id = Column(
 		Integer,
 		ForeignKey('leagues.id'),
@@ -71,6 +80,7 @@ class DivisionModel(
 		back_populates='divisions',
 		uselist=False,
 	)
+
 	conference_id = Column(
 		Integer,
 		ForeignKey('conferences.id'),
