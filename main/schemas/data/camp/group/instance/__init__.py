@@ -9,7 +9,9 @@ from pydantic import (
 
 
 
-class CampGroupInstanceSchemaBase(BaseModel):
+class CampGroupInstanceSchemaBase(
+	BaseModel,
+):
 	camp_instance_id: Optional[int] = None
 	camp_group_id: Optional[int] = None
 	year_end: Optional[int] = None
@@ -17,17 +19,23 @@ class CampGroupInstanceSchemaBase(BaseModel):
 
 
 
-class CampGroupInstanceSchemaCreate(CampGroupInstanceSchemaBase):
+class CampGroupInstanceSchemaCreate(
+	CampGroupInstanceSchemaBase,
+):
 	pass
 
 
 
-class CampGroupInstanceSchemaUpdate(CampGroupInstanceSchemaBase):
+class CampGroupInstanceSchemaUpdate(
+	CampGroupInstanceSchemaBase,
+):
 	pass
 
 
 
-class CampGroupInstanceSchemaInDBBase(CampGroupInstanceSchemaBase):
+class CampGroupInstanceSchemaInDBBase(
+	CampGroupInstanceSchemaBase,
+):
 	id: int
 
 	class Config:
@@ -35,12 +43,16 @@ class CampGroupInstanceSchemaInDBBase(CampGroupInstanceSchemaBase):
 
 
 
-class CampGroupInstanceSchema(CampGroupInstanceSchemaInDBBase):
+class CampGroupInstanceSchema(
+	CampGroupInstanceSchemaInDBBase,
+):
 	pass
 
 
 
-class CampGroupInstanceSchemaInDB(CampGroupInstanceSchemaInDBBase):
+class CampGroupInstanceSchemaInDB(
+	CampGroupInstanceSchemaInDBBase,
+):
 	pass
 
 

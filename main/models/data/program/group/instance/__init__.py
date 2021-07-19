@@ -25,7 +25,10 @@ class ProgramGroupInstanceModel(
 
 	__tablename__ = 'program_group_instances'
 
-	id = Column(Integer, primary_key=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+	)
 
 
 	program_instances_sc = relationship(

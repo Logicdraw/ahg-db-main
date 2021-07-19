@@ -44,9 +44,9 @@ from main.crud.data.team.instance.orders.tracksuit import team_instance_tracksui
 from main.crud.data.team.instance.registration import team_instance_registration_crud
 from main.crud.data.team.instance.registration.jersey_sponsor import team_instance_registration_jersey_sponsor_crud
 
-from main.crud.external.spng_survey.camp import spng_survey_camp_crud
-from main.crud.external.spng_survey.program import spng_survey_program_crud
-from main.crud.external.spng_survey.team import spng_survey_team_crud
+from main.crud.external.spng_survey.camp_instance import spng_survey_camp_instance_crud
+from main.crud.external.spng_survey.program_instance import spng_survey_program_instance_crud
+from main.crud.external.spng_survey.team_instance import spng_survey_team_instance_crud
 
 from main.crud.external.spng_survey_question import spng_survey_question_crud
 from main.crud.external.spng_survey_question.table_map import spng_survey_question_table_map_crud

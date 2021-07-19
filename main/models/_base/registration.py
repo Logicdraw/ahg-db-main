@@ -142,51 +142,45 @@ class SpngRegistrationMixin:
 
 
 
-
-class SpngRegistrationFinancialsMixin:
+class RegistrationFinancialsMixin:
 	# --
 
-	gross = Column(
+	total = Column(
 		Float,
 	)
 
-	net = Column(
+	paid = Column(
 		Float,
 	)
 
-	service_fee = Column(
+	owes = Column(
 		Float,
 	)
 
-	gross_forecast = Column(
-		Float,
-	)
-
-	net_forecast = Column(
-		Float,
-	)
-
-	service_fee_forecast = Column(
-		Float,
-	)
-
-	gross_outstanding = Column(
-		Float,
-	)
-
-	order_number = Column(
-		String,
-	)
 
 	discounts = Column(
 		Float,
 	)
+
 	discount_names = Column(
 		String,
 	)
 
 	refunds = Column(
 		Float,
+	)
+
+	refund_reason = Column(
+		Text,
+	)
+
+
+
+class SpngRegistrationFinancialsMixin:
+	# --
+
+	order_number = Column(
+		String,
 	)
 
 

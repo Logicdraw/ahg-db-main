@@ -18,32 +18,32 @@ from main.schemas._base.spng_survey import (
 
 
 
-class SpngSurveyCampSchemaBase(
+class SpngSurveyTeamInstanceSchemaBase(
 	SpngSurveyBaseSchemaBase,
 ):
-	# default_camp_instance_id: Optional[int] = None
+	# default_team_instance_id: Optional[int] = None
 	pass
 
 
 
-class SpngSurveyCampSchemaCreate(
-	SpngSurveyCampSchemaBase,
+class SpngSurveyTeamInstanceSchemaCreate(
+	SpngSurveyTeamInstanceSchemaBase,
 	SpngSurveyBaseSchemaCreate,
 ):
-	type: str = 'camp'
+	type: str = 'team_instance'
 
 
 
-class SpngSurveyCampSchemaUpdate(
-	SpngSurveyCampSchemaBase,
+class SpngSurveyTeamInstanceSchemaUpdate(
+	SpngSurveyTeamInstanceSchemaBase,
 	SpngSurveyBaseSchemaUpdate,
 ):
 	pass
 
 
 
-class SpngSurveyCampSchemaInDBBase(
-	SpngSurveyCampSchemaBase,
+class SpngSurveyTeamInstanceSchemaInDBBase(
+	SpngSurveyTeamInstanceSchemaBase,
 	SpngSurveyBaseSchemaInDBBase,
 ):
 	id: int
@@ -53,16 +53,16 @@ class SpngSurveyCampSchemaInDBBase(
 
 
 
-class SpngSurveyCampSchema(
-	SpngSurveyCampSchemaInDBBase,
+class SpngSurveyTeamInstanceSchema(
+	SpngSurveyTeamInstanceSchemaInDBBase,
 	SpngSurveyBaseSchema,
 ):
 	pass
 
 
 
-class SpngSurveyCampSchemaInDB(
-	SpngSurveyCampSchemaInDBBase,
+class SpngSurveyTeamInstanceSchemaInDB(
+	SpngSurveyTeamInstanceSchemaInDBBase,
 	SpngSurveyBaseSchemaInDB,
 ):
 	pass

@@ -17,17 +17,23 @@ class ProgramGroupInstanceSchemaBase(BaseModel):
 
 
 
-class ProgramGroupInstanceSchemaCreate(ProgramGroupInstanceSchemaBase):
+class ProgramGroupInstanceSchemaCreate(
+	ProgramGroupInstanceSchemaBase,
+):
 	pass
 
 
 
-class ProgramGroupInstanceSchemaUpdate(ProgramGroupInstanceSchemaBase):
+class ProgramGroupInstanceSchemaUpdate(
+	ProgramGroupInstanceSchemaBase,
+):
 	pass
 
 
 
-class ProgramGroupInstanceSchemaInDBBase(ProgramGroupInstanceSchemaBase):
+class ProgramGroupInstanceSchemaInDBBase(
+	ProgramGroupInstanceSchemaBase,
+):
 	id: int
 
 	class Config:
@@ -35,12 +41,16 @@ class ProgramGroupInstanceSchemaInDBBase(ProgramGroupInstanceSchemaBase):
 
 
 
-class ProgramGroupInstanceSchema(ProgramGroupInstanceSchemaInDBBase):
+class ProgramGroupInstanceSchema(
+	ProgramGroupInstanceSchemaInDBBase,
+):
 	pass
 
 
 
-class ProgramGroupInstanceSchemaInDB(ProgramGroupInstanceSchemaInDBBase):
+class ProgramGroupInstanceSchemaInDB(
+	ProgramGroupInstanceSchemaInDBBase,
+):
 	pass
 
 

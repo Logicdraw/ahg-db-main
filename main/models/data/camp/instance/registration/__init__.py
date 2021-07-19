@@ -21,6 +21,7 @@ from main.utils.sqlalchemy import (
 from main.models._base.registration import (
 	RegistrationBaseModel,
 	SpngRegistrationMixin,
+	RegistrationFinancialsMixin,
 	SpngRegistrationFinancialsMixin,
 	PlayerRegistrationMixin,
 )
@@ -30,6 +31,7 @@ class CampInstanceRegistrationModel(
 	RegistrationBaseModel,
 	ResourceMixin,
 	SpngRegistrationMixin,
+	RegistrationFinancialsMixin,
 	SpngRegistrationFinancialsMixin,
 	PlayerRegistrationMixin,
 ):
@@ -63,15 +65,15 @@ class CampInstanceRegistrationModel(
 
 
 
-	spng_survey_camps_sc = relationship(
-		'SpngSurveyCampModel',
+	spng_survey_camp_instances_sc = relationship(
+		'SpngSurveyCampInstanceModel',
 		back_populates='camp_instance_registrations',
 		uselist=False,
 	)
 	
-	spng_survey_camp_id = Column(
+	spng_survey_camp_instance_id = Column(
 		Integer,
-		ForeignKey('spng_survey_camps.id'),
+		ForeignKey('spng_survey_camp_instances.id'),
 	)
 
 

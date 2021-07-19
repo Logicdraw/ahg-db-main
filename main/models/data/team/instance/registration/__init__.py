@@ -20,6 +20,7 @@ from main.utils.sqlalchemy import (
 from main.models._base.registration import (
 	RegistrationBaseModel,
 	SpngRegistrationMixin,
+	RegistrationFinancialsMixin,
 	SpngRegistrationFinancialsMixin,
 	PlayerRegistrationMixin,
 )
@@ -30,6 +31,7 @@ class TeamInstanceRegistrationModel(
 	RegistrationBaseModel,
 	ResourceMixin,
 	SpngRegistrationMixin,
+	RegistrationFinancialsMixin,
 	SpngRegistrationFinancialsMixin,
 	PlayerRegistrationMixin,
 ):
@@ -44,18 +46,21 @@ class TeamInstanceRegistrationModel(
 		uselist=False,
 	)
 
-	team_instance_id = Column(Integer, ForeignKey('team_instances.id'))
+	team_instance_id = Column(
+		Integer,
+		ForeignKey('team_instances.id'),
+	)
 
 
-	spng_survey_teams_sc = relationship(
-		'SpngSurveyTeamModel',
+	spng_survey_team_instances_sc = relationship(
+		'SpngSurveyTeamInstanceModel',
 		back_populates='team_instance_registrations',
 		uselist=False,
 	)
 
-	spng_survey_team_id = Column(
+	spng_survey_team_instance_id = Column(
 		Integer,
-		ForeignKey('spng_survey_teams.id'),
+		ForeignKey('spng_survey_team_instances.id'),
 	)
 
 

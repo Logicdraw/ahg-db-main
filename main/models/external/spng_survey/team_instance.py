@@ -24,12 +24,12 @@ from main.config import settings
 
 
 
-class SpngSurveyTeamModel(
+class SpngSurveyTeamInstanceModel(
 	SpngSurveyBaseModel,
 	ResourceMixin,
 ):
 	# -- Team
-	__tablename__ = 'spng_survey_teams'
+	__tablename__ = 'spng_survey_team_instances'
 
 
 	id = Column(
@@ -53,13 +53,13 @@ class SpngSurveyTeamModel(
 	# registrations --
 	team_instance_registrations = relationship(
 		'TeamInstanceRegistrationModel',
-		back_populates='spng_survey_teams_sc',
+		back_populates='spng_survey_team_instances_sc',
 		lazy='selectin',
 	)
 
 
 	__mapper_args__ = {
-		'polymorphic_identity': 'team',
+		'polymorphic_identity': 'team_instance',
 		'eager_defaults': True,
 	}
 

@@ -1,0 +1,4 @@
+
+		[console_scripts]
+		ahg-db-main-cli=cli.cli:cli
+	

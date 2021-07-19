@@ -24,12 +24,12 @@ from main.config import settings
 
 
 
-class SpngSurveyProgramModel(
+class SpngSurveyCampInstanceModel(
 	SpngSurveyBaseModel,
 	ResourceMixin,
 ):
-	# -- Program
-	__tablename__ = 'spng_survey_programs'
+	# -- Camp
+	__tablename__ = 'spng_survey_camp_instances'
 
 
 	id = Column(
@@ -40,29 +40,28 @@ class SpngSurveyProgramModel(
 	)
 
 
-	# default_program_instance = relationship(
-	# 	'ProgramInstanceModel',
+	# default_camp_instance = relationship(
+	# 	'CampInstanceModel',
 	# 	uselist=False,
 	# )
-	# default_program_instance_id = Column(
+	# default_camp_instance_id = Column(
 	# 	Integer,
-	# 	ForeignKey('program_instances.id'),
+	# 	ForeignKey('camp_instances.id'),
 	# )
 
 
 	# registrations --
-	program_instance_registrations = relationship(
-		'ProgramInstanceRegistrationModel',
-		back_populates='spng_survey_programs_sc',
+	camp_instance_registrations = relationship(
+		'CampInstanceRegistrationModel',
+		back_populates='spng_survey_camp_instances_sc',
 		lazy='selectin',
 	)
 
 
 	__mapper_args__ = {
-		'polymorphic_identity': 'program',
+		'polymorphic_identity': 'camp_instance',
 		'eager_defaults': True,
 	}
-
 
 
 

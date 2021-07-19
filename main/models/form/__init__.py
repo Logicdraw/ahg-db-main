@@ -30,23 +30,46 @@ class FormModel(
 
 	__tablename__ = 'forms'
 
-	id = Column(Integer, primary_key=True, index=True)
+	id = Column(
+		Integer,
+		primary_key=True,
+		index=True,
+	)
 
 
-	slug = Column(String, unique=True, index=True)
+	slug = Column(
+		String,
+		unique=True,
+		index=True,
+	)
 
 
-	title = Column(String(500), index=True, nullable=False)
+	title = Column(
+		String(500),
+		index=True,
+		nullable=False,
+	)
 
-	description = Column(String, nullable=True)
+	description = Column(
+		String,
+		nullable=True,
+	)
 
 
-	has_deadline = Column(Boolean, server_default='0')
+	has_deadline = Column(
+		Boolean,
+		server_default='0',
+	)
 
-	deadline_on = Column(AwareDateTime())
+	deadline_on = Column(
+		AwareDateTime(),
+	)
 
 
-	is_live = Column(Boolean, server_default='0')
+	is_live = Column(
+		Boolean,
+		server_default='0',
+	)
 
 
 

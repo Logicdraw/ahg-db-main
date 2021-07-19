@@ -32,11 +32,7 @@ base_dir = os.path.abspath(
 
 class Settings(BaseSettings):
 
-	PROJECT_NAME: str = 'ahg-db'
-
-
-	USE_SQLITE_FOR_TESTING: bool = False
-	# USE_SQLITE_FOR_TESTING: bool = True
+	PROJECT_NAME: str = 'ahg-db-main'
 
 
 
@@ -209,6 +205,30 @@ class Settings(BaseSettings):
 		'guardian',
 		'adult_rep',
 	]
+
+
+
+	FIRST_SUPERADMIN_NAME: str
+	FIRST_SUPERADMIN_EMAIL: str
+	FIRST_SUPERADMIN_PASSWORD: SecretStr
+
+	FIRST_ADMIN_NAME: str
+	FIRST_ADMIN_EMAIL: str
+	FIRST_ADMIN_PASSWORD: SecretStr
+
+	FIRST_COACH_NAME: str
+	FIRST_COACH_EMAIL: str
+	FIRST_COACH_PASSWORD: SecretStr
+
+	FIRST_GUARDIAN_NAME: str
+	FIRST_GUARDIAN_EMAIL: str
+	FIRST_GUARDIAN_PASSWORD: SecretStr
+
+	FIRST_ADULT_REP_NAME: str
+	FIRST_ADULT_REP_EMAIL: str
+	FIRST_ADULT_REP_PASSWORD: SecretStr
+
+
 
 
 

@@ -222,23 +222,23 @@ from main.schemas.data.team.instance.registration.jersey_sponsor import (
 	TeamInstanceRegistrationJerseySponsorSchemaInDB,
 )
 
-from main.schemas.external.spng_survey.camp import (
-	SpngSurveyCampSchemaCreate,
-	SpngSurveyCampSchemaUpdate,
-	SpngSurveyCampSchema,
-	SpngSurveyCampSchemaInDB,
+from main.schemas.external.spng_survey.camp_instance import (
+	SpngSurveyCampInstanceSchemaCreate,
+	SpngSurveyCampInstanceSchemaUpdate,
+	SpngSurveyCampInstanceSchema,
+	SpngSurveyCampInstanceSchemaInDB,
 )
-from main.schemas.external.spng_survey.program import (
-	SpngSurveyProgramSchemaCreate,
-	SpngSurveyProgramSchemaUpdate,
-	SpngSurveyProgramSchema,
-	SpngSurveyProgramSchemaInDB,
+from main.schemas.external.spng_survey.program_instance import (
+	SpngSurveyProgramInstanceSchemaCreate,
+	SpngSurveyProgramInstanceSchemaUpdate,
+	SpngSurveyProgramInstanceSchema,
+	SpngSurveyProgramInstanceSchemaInDB,
 )
-from main.schemas.external.spng_survey.team import (
-	SpngSurveyTeamSchemaCreate,
-	SpngSurveyTeamSchemaUpdate,
-	SpngSurveyTeamSchema,
-	SpngSurveyTeamSchemaInDB,
+from main.schemas.external.spng_survey.team_instance import (
+	SpngSurveyTeamInstanceSchemaCreate,
+	SpngSurveyTeamInstanceSchemaUpdate,
+	SpngSurveyTeamInstanceSchema,
+	SpngSurveyTeamInstanceSchemaInDB,
 )
 
 from main.schemas.external.spng_survey_question import (

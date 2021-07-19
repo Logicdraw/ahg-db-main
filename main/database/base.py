@@ -52,9 +52,9 @@ from main.models.data.team.instance.orders.tracksuit import TeamInstanceTracksui
 from main.models.data.team.instance.registration import TeamInstanceRegistrationModel
 from main.models.data.team.instance.registration.jersey_sponsor import TeamInstanceRegistrationJerseySponsorModel
 
-from main.models.external.spng_survey.camp import SpngSurveyCampModel
-from main.models.external.spng_survey.program import SpngSurveyProgramModel
-from main.models.external.spng_survey.team import SpngSurveyTeamModel
+from main.models.external.spng_survey.camp_instance import SpngSurveyCampInstanceModel
+from main.models.external.spng_survey.program_instance import SpngSurveyProgramInstanceModel
+from main.models.external.spng_survey.team_instance import SpngSurveyTeamInstanceModel
 
 from main.models.external.spng_survey_question import SpngSurveyQuestionModel
 from main.models.external.spng_survey_question.table_map import SpngSurveyQuestionTableMapModel

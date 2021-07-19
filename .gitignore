@@ -1,7 +1,7 @@
 .env
 /venv
 
-*.egg-info
+# *.egg-info
 
 
 *.db
