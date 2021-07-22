@@ -12,7 +12,10 @@ from pydantic import (
 class TeamInstanceTracksuitOrderUpdateSchemaBase(
 	BaseModel,
 ):
-	pass
+	team_instance_tracksuit_order_id: Optional[int] = None
+	new_coach_full_name: Optional[str] = None
+	new_jacket_size: Optional[str] = None
+	new_pants_size: Optional[str] = None
 
 
 

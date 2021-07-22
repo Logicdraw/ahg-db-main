@@ -14,6 +14,7 @@ class TeamInstanceJerseySocksOrderSchemaBase(
 ):
 	team_instance_id: Optional[int] = None
 	team_instance_registration_id: Optional[int] = None
+	player_full_name: Optional[str] = None
 	jersey_number: Optional[int] = None
 	jersey_size: Optional[str] = None
 	socks_size: Optional[str] = None

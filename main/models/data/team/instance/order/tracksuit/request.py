@@ -34,7 +34,7 @@ class TeamInstanceTracksuitOrderRequestModel(
 
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
-		back_populates='team_instance_tracksuit_orders',
+		back_populates='team_instance_tracksuit_order_requests',
 		uselist=False,
 	)
 
@@ -42,6 +42,19 @@ class TeamInstanceTracksuitOrderRequestModel(
 		Integer,
 		ForeignKey('team_instances.id'),
 	)
+
+
+	team_instance_tracksuit_orders_sc = relationship(
+		'TeamInstanceTracksuitOrderModel',
+		back_populates='team_instance_tracksuit_order_requests',
+		uselist=False,
+	)
+
+	team_instance_tracksuit_order_id = Column(
+		Integer,
+		ForeignKey('team_instance_tracksuit_orders.id')
+	)
+
 
 
 	jacket_size = Column(

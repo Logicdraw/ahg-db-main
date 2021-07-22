@@ -95,6 +95,14 @@ class TeamInstanceRegistrationModel(
 
 
 
+	team_instance_jersey_socks_order_requests = relationship(
+		'TeamInstanceJerseySocksOrderRequestModel',
+		back_populates='team_instance_registrations_sc',
+		lazy='selectin',
+	)
+
+
+
 	# Polymorphic identity ---
 
 	__mapper_args__ = {

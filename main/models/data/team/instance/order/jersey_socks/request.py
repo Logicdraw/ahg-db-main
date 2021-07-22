@@ -60,6 +60,19 @@ class TeamInstanceJerseySocksOrderRequestModel(
 	)
 
 
+
+	team_instance_jersey_socks_orders_sc = relationship(
+		'TeamInstanceJerseySocksOrderModel',
+		back_populates='team_instance_jersey_socks_order_requests',
+		uselist=False,
+	)
+
+	team_instance_jersey_socks_order_id = Column(
+		Integer,
+		ForeignKey('team_instance_jersey_socks_orders.id')
+	)
+
+
 	# optional
 	player_full_name = Column(
 		String,

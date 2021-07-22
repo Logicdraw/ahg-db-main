@@ -39,7 +39,7 @@ class TeamInstanceTracksuitOrderGroupSheetModel(
 
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
-		back_populates='team_instance_jersey_socks_orders',
+		back_populates='team_instance_tracksuit_order_group_sheets',
 		uselist=False,
 	)
 

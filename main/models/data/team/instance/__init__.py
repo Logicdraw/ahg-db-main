@@ -133,8 +133,28 @@ class TeamInstanceModel(
 
 
 
+	team_instance_jersey_socks_order_requests = relationship(
+		'TeamInstanceJerseySocksOrderRequestModel',
+		back_populates='team_instances_sc',
+		lazy='selectin',
+	)
+
+	team_instance_tracksuit_order_requests = relationship(
+		'TeamInstanceTracksuitOrderRequestModel',
+		back_populates='team_instances_sc',
+		lazy='selectin',
+	)
+
+
+
 	team_instance_jersey_socks_order_group_sheets = relationship(
 		'TeamInstanceJerseySocksOrderGroupSheetModel',
+		back_populates='team_instances_sc',
+		lazy='selectin',
+	)
+
+	team_instance_tracksuit_order_group_sheets = relationship(
+		'TeamInstanceTracksuitOrderGroupSheetModel',
 		back_populates='team_instances_sc',
 		lazy='selectin',
 	)

@@ -13,6 +13,7 @@ class TeamInstanceTracksuitOrderSchemaBase(
 	BaseModel,
 ):
 	team_instance_id: Optional[int] = None
+	coach_full_name: Optional[str] = None
 	jacket_size: Optional[str] = None
 	pants_size: Optional[str] = None
 

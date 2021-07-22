@@ -12,7 +12,8 @@ from pydantic import (
 class TeamInstanceJerseySocksOrderGroupSheetSchemaBase(
 	BaseModel,
 ):
-	pass
+	uuid: Optional[str] = None
+	team_instance_id: Optional[int] = None
 
 
 

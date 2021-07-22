@@ -61,15 +61,15 @@ class TeamInstanceTracksuitOrderModel(
 
 
 	team_instance_tracksuit_order_requests = relationship(
-		'TeamInstanceJerseySocksOrderRequestModel',
-		back_populates='team_instance_jersey_socks_orders_sc',
+		'TeamInstanceTracksuitOrderRequestModel',
+		back_populates='team_instance_tracksuit_orders_sc',
 		lazy='selectin',
 	)
 
 
 	team_instance_tracksuit_order_updates = relationship(
-		'TeamInstanceJerseySocksOrderUpdateModel',
-		back_populates='team_instance_jersey_socks_orders_sc',
+		'TeamInstanceTracksuitOrderUpdateModel',
+		back_populates='team_instance_tracksuit_orders_sc',
 		lazy='selectin',
 	)
 

@@ -12,7 +12,14 @@ from pydantic import (
 class TeamInstanceTracksuitOrderRequestSchemaBase(
 	BaseModel,
 ):
-	pass
+	team_instance_id: Optional[int] = None
+	team_instance_tracksuit_order_id: Optional[int] = None
+	jacket_size: Optional[str] = None
+	pants_size: Optional[str] = None
+	details: Optional[str] = None
+	approved: Optional[bool] = None
+	rejected: Optional[bool] = None
+	rejection_reason: Optional[str] = None
 
 
 
