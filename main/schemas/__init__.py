@@ -196,13 +196,13 @@ from main.schemas.data.team.instance.season import (
 	SeasonInstanceSchemaInDB,
 )
 
-from main.schemas.data.team.instance.orders.jersey_socks import (
+from main.schemas.data.team.instance.order.jersey_socks import (
 	TeamInstanceJerseySocksOrderSchemaCreate,
 	TeamInstanceJerseySocksOrderSchemaUpdate,
 	TeamInstanceJerseySocksOrderSchema,
 	TeamInstanceJerseySocksOrderSchemaInDB,
 )
-from main.schemas.data.team.instance.orders.tracksuit import (
+from main.schemas.data.team.instance.order.tracksuit import (
 	TeamInstanceTracksuitOrderSchemaCreate,
 	TeamInstanceTracksuitOrderSchemaUpdate,
 	TeamInstanceTracksuitOrderSchema,

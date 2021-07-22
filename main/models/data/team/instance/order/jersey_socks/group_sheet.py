@@ -5,6 +5,7 @@ from sqlalchemy import (
 	Integer,
 	String,
 	Float,
+	Text,
 )
 
 from sqlalchemy.orm import relationship
@@ -18,16 +19,21 @@ from main.utils.sqlalchemy import (
 
 
 
-class TeamInstanceJerseySocksOrderModel(
+class TeamInstanceJerseySocksOrderGroupSheetModel(
 	Base,
 	ResourceMixin,
 ):
 
-	__tablename__ = 'team_instance_jersey_socks_orders'
+	__tablename__ = 'team_instance_jersey_socks_order_group_sheets'
 
 	id = Column(
 		Integer,
 		primary_key=True,
+	)
+
+	uuid = Column(
+		String(32),
+		nullable=False,
 	)
 
 
@@ -43,38 +49,12 @@ class TeamInstanceJerseySocksOrderModel(
 	)
 
 
-	team_instance_registrations_sc = relationship(
-		'TeamInstanceRegistrationModel',
-		back_populates='team_instance_jersey_socks_orders',
-		uselist=False,
-	)
-
-	team_instance_registration_id = Column(
-		Integer,
-		ForeignKey('team_instance_registrations.id')
-	)
-
-
-	jersey_number = Column(
-		Integer,
-	)
-
-	jersey_size = Column(
-		String,
-	)
-
-
-	socks_size = Column(
-		String,
-	)
-
-
 	__mapper_args__ = {
 		'eager_defaults': True,
 	}
 
 
 
-
+# Merge requests ??
 
 

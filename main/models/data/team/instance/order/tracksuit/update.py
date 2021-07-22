@@ -18,12 +18,12 @@ from main.utils.sqlalchemy import (
 
 
 
-class TeamInstanceTracksuitOrderModel(
+class TeamInstanceTracksuitOrderUpdateModel(
 	Base,
 	ResourceMixin,
 ):
 
-	__tablename__ = 'team_instance_tracksuit_orders'
+	__tablename__ = 'team_instance_tracksuit_order_updates'
 
 	id = Column(
 		Integer,
@@ -31,23 +31,24 @@ class TeamInstanceTracksuitOrderModel(
 	)
 
 
-	team_instances_sc = relationship(
-		'TeamInstanceModel',
-		back_populates='team_instance_tracksuit_orders',
+
+	team_instance_tracksuit_orders_sc = relationship(
+		'TeamInstanceTracksuitOrdersModel',
+		back_populates='team_instance_tracksuit_order_updates',
 		uselist=False,
 	)
 
-	team_instance_id = Column(
+	team_instance_tracksuit_order_id = Column(
 		Integer,
-		ForeignKey('team_instances.id'),
+		ForeignKey('team_instance_tracksuit_orders.id')
 	)
 
 
-	jacket_size = Column(
+	new_jacket_size = Column(
 		String(50),
 	)
 
-	pants_size = Column(
+	new_pants_size = Column(
 		String(50),
 	)
 
@@ -55,5 +56,9 @@ class TeamInstanceTracksuitOrderModel(
 	__mapper_args__ = {
 		'eager_defaults': True,
 	}
+
+
+
+
 
 

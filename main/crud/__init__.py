@@ -38,8 +38,8 @@ from main.crud.data.team.instance.division import division_instance_crud
 from main.crud.data.team.instance.league import league_instance_crud
 from main.crud.data.team.instance.season import season_instance_crud
 
-from main.crud.data.team.instance.orders.jersey_socks import team_instance_jersey_socks_order_crud
-from main.crud.data.team.instance.orders.tracksuit import team_instance_tracksuit_order_crud
+from main.crud.data.team.instance.order.jersey_socks import team_instance_jersey_socks_order_crud
+from main.crud.data.team.instance.order.tracksuit import team_instance_tracksuit_order_crud
 
 from main.crud.data.team.instance.registration import team_instance_registration_crud
 from main.crud.data.team.instance.registration.jersey_sponsor import team_instance_registration_jersey_sponsor_crud
