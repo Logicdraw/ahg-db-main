@@ -133,6 +133,14 @@ class TeamInstanceModel(
 
 
 
+	team_instance_jersey_socks_order_group_sheets = relationship(
+		'TeamInstanceJerseySocksOrderGroupSheetModel',
+		back_populates='team_instances_sc',
+		lazy='selectin',
+	)
+
+
+
 	year_start = Column(
 		Integer,
 	)

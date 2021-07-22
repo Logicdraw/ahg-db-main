@@ -44,6 +44,12 @@ class TeamInstanceTracksuitOrderUpdateModel(
 	)
 
 
+	# Optional ...
+	new_coach_full_name = Column(
+		String(120),
+	)
+
+
 	new_jacket_size = Column(
 		String(50),
 	)

@@ -43,12 +43,34 @@ class TeamInstanceTracksuitOrderModel(
 	)
 
 
+
+	# Optional ...
+	coach_full_name = Column(
+		String(120),
+	)
+
+
 	jacket_size = Column(
 		String(50),
 	)
 
 	pants_size = Column(
 		String(50),
+	)
+
+
+
+	team_instance_tracksuit_order_requests = relationship(
+		'TeamInstanceJerseySocksOrderRequestModel',
+		back_populates='team_instance_jersey_socks_orders_sc',
+		lazy='selectin',
+	)
+
+
+	team_instance_tracksuit_order_updates = relationship(
+		'TeamInstanceJerseySocksOrderUpdateModel',
+		back_populates='team_instance_jersey_socks_orders_sc',
+		lazy='selectin',
 	)
 
 

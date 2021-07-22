@@ -18,9 +18,9 @@ from sqlalchemy import (
 
 from main.crud.base import CRUDBase
 
-from main.models.data.team.instance.orders.tracksuit import TeamInstanceTracksuitOrderModel
+from main.models.data.team.instance.order.tracksuit import TeamInstanceTracksuitOrderModel
 
-from main.schemas.data.team.instance.orders.tracksuit import (
+from main.schemas.data.team.instance.order.tracksuit import (
 	TeamInstanceTracksuitOrderSchemaCreate,
 	TeamInstanceTracksuitOrderSchemaUpdate,
 )

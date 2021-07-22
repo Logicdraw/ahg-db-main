@@ -43,7 +43,14 @@ from main.models.data.team.instance.league import LeagueInstanceModel
 from main.models.data.team.instance.season import SeasonInstanceModel
 
 from main.models.data.team.instance.order.jersey_socks import TeamInstanceJerseySocksOrderModel
+from main.models.data.team.instance.order.jersey_socks.group_sheet import TeamInstanceJerseySocksOrderGroupSheetModel
+from main.models.data.team.instance.order.jersey_socks.request import TeamInstanceJerseySocksOrderRequestModel
+from main.models.data.team.instance.order.jersey_socks.update import TeamInstanceJerseySocksOrderUpdateModel
+
 from main.models.data.team.instance.order.tracksuit import TeamInstanceTracksuitOrderModel
+from main.models.data.team.instance.order.tracksuit.group_sheet import TeamInstanceTracksuitOrderGroupSheetModel
+from main.models.data.team.instance.order.tracksuit.request import TeamInstanceTracksuitOrderRequestModel
+from main.models.data.team.instance.order.tracksuit.update import TeamInstanceTracksuitOrderUpdateModel
 
 from main.models.data.team.instance.registration import TeamInstanceRegistrationModel
 from main.models.data.team.instance.registration.jersey_sponsor import TeamInstanceRegistrationJerseySponsorModel

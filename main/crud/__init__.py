@@ -39,7 +39,14 @@ from main.crud.data.team.instance.league import league_instance_crud
 from main.crud.data.team.instance.season import season_instance_crud
 
 from main.crud.data.team.instance.order.jersey_socks import team_instance_jersey_socks_order_crud
+from main.crud.data.team.instance.order.jersey_socks.group_sheet import team_instance_jersey_socks_order_group_sheet_crud
+from main.crud.data.team.instance.order.jersey_socks.request import team_instance_jersey_socks_order_request_crud
+from main.crud.data.team.instance.order.jersey_socks.update import team_instance_jersey_socks_order_update_crud
+
 from main.crud.data.team.instance.order.tracksuit import team_instance_tracksuit_order_crud
+from main.crud.data.team.instance.order.tracksuit.group_sheet import team_instance_tracksuit_order_group_sheet_crud
+from main.crud.data.team.instance.order.tracksuit.request import team_instance_tracksuit_order_request_crud
+from main.crud.data.team.instance.order.tracksuit.update import team_instance_tracksuit_order_update_crud
 
 from main.crud.data.team.instance.registration import team_instance_registration_crud
 from main.crud.data.team.instance.registration.jersey_sponsor import team_instance_registration_jersey_sponsor_crud

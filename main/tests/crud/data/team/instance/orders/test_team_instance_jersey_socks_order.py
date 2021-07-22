@@ -3,11 +3,11 @@ from fastapi.encoders import jsonable_encoder
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from main.crud.data.team.instance.orders.jersey_socks import (
+from main.crud.data.team.instance.order.jersey_socks import (
 	team_instance_jersey_socks_order_crud,
 )
 
-from main.schemas.data.team.instance.orders.jersey_socks import (
+from main.schemas.data.team.instance.order.jersey_socks import (
 	TeamInstanceJerseySocksOrderSchemaCreate,
 	TeamInstanceJerseySocksOrderSchemaUpdate,
 )

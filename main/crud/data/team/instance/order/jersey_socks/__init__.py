@@ -18,9 +18,9 @@ from sqlalchemy import (
 
 from main.crud.base import CRUDBase
 
-from main.models.data.team.instance.orders.jersey_socks import TeamInstanceJerseySocksOrderModel
+from main.models.data.team.instance.order.jersey_socks import TeamInstanceJerseySocksOrderModel
 
-from main.schemas.data.team.instance.orders.jersey_socks import (
+from main.schemas.data.team.instance.order.jersey_socks import (
 	TeamInstanceJerseySocksOrderSchemaCreate,
 	TeamInstanceJerseySocksOrderSchemaUpdate,
 )

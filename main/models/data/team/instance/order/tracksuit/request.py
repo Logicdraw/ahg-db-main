@@ -69,6 +69,11 @@ class TeamInstanceTracksuitOrderRequestModel(
 	)
 
 
+	rejection_reason = Column(
+		String,
+	)
+
+
 	__mapper_args__ = {
 		'eager_defaults': True,
 	}

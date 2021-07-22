@@ -75,9 +75,20 @@ class TeamInstanceJerseySocksOrderModel(
 	)
 
 
-	team_instance_jersey_socks_order_requests = None
 
-	# team_instance_jersey_socks_order_updates = None
+	team_instance_jersey_socks_order_requests = relationship(
+		'TeamInstanceJerseySocksOrderRequestModel',
+		back_populates='team_instance_jersey_socks_orders_sc',
+		lazy='selectin',
+	)
+
+
+	team_instance_jersey_socks_order_updates = relationship(
+		'TeamInstanceJerseySocksOrderUpdateModel',
+		back_populates='team_instance_jersey_socks_orders_sc',
+		lazy='selectin',
+	)
+
 
 
 	__mapper_args__ = {

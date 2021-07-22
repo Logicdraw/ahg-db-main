@@ -3,11 +3,11 @@ from fastapi.encoders import jsonable_encoder
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from main.crud.data.team.instance.orders.tracksuit import (
+from main.crud.data.team.instance.order.tracksuit import (
 	team_instance_tracksuit_order_crud,
 )
 
-from main.schemas.data.team.instance.orders.tracksuit import (
+from main.schemas.data.team.instance.order.tracksuit import (
 	TeamInstanceTracksuitOrderSchemaCreate,
 	TeamInstanceTracksuitOrderSchemaUpdate,
 )
