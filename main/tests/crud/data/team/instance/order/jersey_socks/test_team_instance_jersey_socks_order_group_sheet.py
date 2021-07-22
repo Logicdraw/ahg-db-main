@@ -8,8 +8,8 @@ from main.crud.data.team.instance.order.jersey_socks.group_sheet import (
 )
 
 from main.schemas.data.team.instance.order.jersey_socks.group_sheet import (
-	TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate,
-	TeamInstanceJerseySocksOrderGroupSheet9SchemaUpdate,
+	TeamInstanceJerseySocksOrderGroupSheetSchemaCreate,
+	TeamInstanceJerseySocksOrderGroupSheetSchemaUpdate,
 )
 
 
@@ -20,6 +20,9 @@ from main.tests.utils import (
 	random_name,
 	random_number,
 )
+
+
+import uuid as _uuid
 
 
 import pytest
@@ -34,14 +37,10 @@ async def test_create_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	jersey_number = random_number(min_digits=1, max_digits=2)
-	jersey_size = 'YXL'
-	socks_size = '24in'
+	uuid = _uuid.hex()
 
-	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate(
-		jersey_number=jersey_number,
-		jersey_size=jersey_size,
-		socks_size=socks_size,
+	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
+		uuid=uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet = await team_instance_jersey_socks_order_group_sheet_crud.create(
@@ -49,8 +48,7 @@ async def test_create_team_instance_jersey_socks_order_group_sheet(
 		obj_in=team_instance_jersey_socks_order_group_sheet_in,
 	)
 
-	assert team_instance_jersey_socks_order_group_sheet.jersey_number == jersey_number
-	assert team_instance_jersey_socks_order_group_sheet.jersey_size == jersey_size
+	assert team_instance_jersey_socks_order_group_sheet.uuid == uuid
 
 
 
@@ -61,14 +59,10 @@ async def test_create_sync_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	jersey_number = random_number(min_digits=1, max_digits=2)
-	jersey_size = 'YXL'
-	socks_size = '24in'
+	uuid = _uuid.hex()
 
-	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate(
-		jersey_number=jersey_number,
-		jersey_size=jersey_size,
-		socks_size=socks_size,
+	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
+		uuid=uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet = await db.run_sync(
@@ -76,9 +70,7 @@ async def test_create_sync_team_instance_jersey_socks_order_group_sheet(
 		obj_in=team_instance_jersey_socks_order_group_sheet_in,
 	)
 
-	assert team_instance_jersey_socks_order_group_sheet.jersey_number == jersey_number
-	assert team_instance_jersey_socks_order_group_sheet.jersey_size == jersey_size
-
+	assert team_instance_jersey_socks_order_group_sheet.uuid == uuid
 
 
 
@@ -89,14 +81,10 @@ async def test_get_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	jersey_number = random_number(min_digits=1, max_digits=2)
-	jersey_size = 'YXL'
-	socks_size = '24in'
+	uuid = _uuid.hex()
 
-	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate(
-		jersey_number=jersey_number,
-		jersey_size=jersey_size,
-		socks_size=socks_size,
+	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
+		uuid=uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet = await team_instance_jersey_socks_order_group_sheet_crud.create(
@@ -120,14 +108,10 @@ async def test_get_sync_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	jersey_number = random_number(min_digits=1, max_digits=2)
-	jersey_size = 'YXL'
-	socks_size = '24in'
+	uuid = _uuid.hex()
 
-	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate(
-		jersey_number=jersey_number,
-		jersey_size=jersey_size,
-		socks_size=socks_size,
+	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
+		uuid=uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet = await db.run_sync(
@@ -152,14 +136,10 @@ async def test_update_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	jersey_number = random_number(min_digits=1, max_digits=2)
-	jersey_size = 'YXL'
-	socks_size = '24in'
+	uuid = _uuid.hex()
 
-	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate(
-		jersey_number=jersey_number,
-		jersey_size=jersey_size,
-		socks_size=socks_size,
+	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
+		uuid=uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet = await team_instance_jersey_socks_order_group_sheet_crud.create(
@@ -167,14 +147,11 @@ async def test_update_team_instance_jersey_socks_order_group_sheet(
 		obj_in=team_instance_jersey_socks_order_group_sheet_in,
 	)
 
-	new_jersey_number = random_number(min_digits=1, max_digits=2)
-
-	while new_jersey_number == jersey_number:
-		new_jersey_number = random_number(min_digits=1, max_digits=2)
+	new_uuid = _uuid.hex()
 
 
-	team_instance_jersey_socks_order_group_sheet_in_update = TeamInstanceJerseySocksOrderGroupSheet9SchemaUpdate(
-		jersey_number=new_jersey_number,
+	team_instance_jersey_socks_order_group_sheet_in_update = TeamInstanceJerseySocksOrderGroupSheetSchemaUpdate(
+		uuid=new_uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet_2 = await team_instance_jersey_socks_order_group_sheet_crud.update(
@@ -184,8 +161,8 @@ async def test_update_team_instance_jersey_socks_order_group_sheet(
 	)
 
 	assert team_instance_jersey_socks_order_group_sheet_2
-	assert team_instance_jersey_socks_order_group_sheet_2.jersey_number
-	assert team_instance_jersey_socks_order_group_sheet_2.jersey_number == new_jersey_number
+	assert team_instance_jersey_socks_order_group_sheet_2.uuid
+	assert team_instance_jersey_socks_order_group_sheet_2.uuid == new_uuid
 
 
 
@@ -196,14 +173,10 @@ async def test_update_sync_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	jersey_number = random_number(min_digits=1, max_digits=2)
-	jersey_size = 'YXL'
-	socks_size = '24in'
+	uuid = _uuid.hex()
 
-	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate(
-		jersey_number=jersey_number,
-		jersey_size=jersey_size,
-		socks_size=socks_size,
+	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
+		uuid=uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet = await db.run_sync(
@@ -212,14 +185,11 @@ async def test_update_sync_team_instance_jersey_socks_order_group_sheet(
 	)
 
 
-	new_jersey_number = random_number(min_digits=1, max_digits=2)
-
-	while new_jersey_number == jersey_number:
-		new_jersey_number = random_number(min_digits=1, max_digits=2)
+	new_uuid = _uuid.hex()
 
 
-	team_instance_jersey_socks_order_group_sheet_in_update = TeamInstanceJerseySocksOrderGroupSheet9SchemaUpdate(
-		jersey_number=new_jersey_number,
+	team_instance_jersey_socks_order_group_sheet_in_update = TeamInstanceJerseySocksOrderGroupSheetSchemaUpdate(
+		uuid=new_uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet_2 = await db.run_sync(
@@ -229,8 +199,8 @@ async def test_update_sync_team_instance_jersey_socks_order_group_sheet(
 	)
 
 	assert team_instance_jersey_socks_order_group_sheet_2
-	assert team_instance_jersey_socks_order_group_sheet_2.jersey_number
-	assert team_instance_jersey_socks_order_group_sheet_2.jersey_number == new_jersey_number
+	assert team_instance_jersey_socks_order_group_sheet_2.uuid
+	assert team_instance_jersey_socks_order_group_sheet_2.uuid == new_uuid
 
 
 
@@ -240,14 +210,10 @@ async def test_delete_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	jersey_number = random_number(min_digits=1, max_digits=2)
-	jersey_size = 'YXL'
-	socks_size = '24in'
+	uuid = _uuid.hex()
 
-	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate(
-		jersey_number=jersey_number,
-		jersey_size=jersey_size,
-		socks_size=socks_size,
+	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
+		uuid=uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet = await team_instance_jersey_socks_order_group_sheet_crud.create(
@@ -276,14 +242,10 @@ async def test_delete_sync_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	jersey_number = random_number(min_digits=1, max_digits=2)
-	jersey_size = 'YXL'
-	socks_size = '24in'
+	uuid = _uuid.hex()
 
-	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheet9SchemaCreate(
-		jersey_number=jersey_number,
-		jersey_size=jersey_size,
-		socks_size=socks_size,
+	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
+		uuid=uuid,
 	)
 
 	team_instance_jersey_socks_order_group_sheet = await db.run_sync(
