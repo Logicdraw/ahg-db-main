@@ -36,7 +36,6 @@ class ProgramInstanceModel(
 	programs_sc = relationship(
 		'ProgramModel',
 		back_populates='program_instances',
-		uselist=False,
 	)
 
 	program_id = Column(
@@ -46,11 +45,13 @@ class ProgramInstanceModel(
 
 
 
-	program_instance_registrations = relationship(
-		'ProgramInstanceRegistrationModel',
+	program_instances_program_instance_registrations = relationship(
+		'ProgramInstancesProgramInstanceRegistrationsModel',
 		back_populates='program_instances_sc',
 		lazy='selectin',
 	)
+
+
 
 	program_group_instances = relationship(
 		'ProgramGroupInstanceModel',
@@ -64,6 +65,13 @@ class ProgramInstanceModel(
 		back_populates='program_instances_sc',
 		lazy='selectin',
 	)
+
+
+	# program_instance_registration_invites = relationship(
+	# 	'ProgramInstanceRegistrationInviteModel',
+	# 	back_populates='program_instances_sc',
+	# 	lazy='selectin',
+	# )
 
 
 

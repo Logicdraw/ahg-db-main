@@ -39,23 +39,17 @@ class TeamInstanceRegistrationModel(
 	__tablename__ = 'team_instance_registrations'
 
 
-	# team_instance ...
-	team_instances_sc = relationship(
-		'TeamInstanceModel',
-		back_populates='team_instance_registrations',
-		uselist=False,
+	team_instances_team_instance_registrations = relationship(
+		'TeamInstancesTeamInstanceRegistrationsModel',
+		back_populates='team_instance_registrations_sc',
+		lazy='selectin',
 	)
 
-	team_instance_id = Column(
-		Integer,
-		ForeignKey('team_instances.id'),
-	)
 
 
 	spng_survey_team_instances_sc = relationship(
 		'SpngSurveyTeamInstanceModel',
 		back_populates='team_instance_registrations',
-		uselist=False,
 	)
 
 	spng_survey_team_instance_id = Column(
@@ -99,6 +93,14 @@ class TeamInstanceRegistrationModel(
 		'TeamInstanceJerseySocksOrderRequestModel',
 		back_populates='team_instance_registrations_sc',
 		lazy='selectin',
+	)
+
+
+
+	team_instance_registration_invites_sc = relationship(
+		'TeamInstanceRegistrationInviteModel',
+		back_populates='team_instance_registrations_sc',
+		uselist=False,
 	)
 
 

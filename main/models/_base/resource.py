@@ -87,7 +87,7 @@ class ResourceBaseModel(
 
 	resource_categories_sc = relationship(
 		'ResourceCategoryModel',
-		uselist=False,
+		back_populates='resources',
 	)
 
 

@@ -53,13 +53,11 @@ class SpngSurveysSpngSurveyQuestionsModel(
 	spng_surveys_sc = relationship(
 		'SpngSurveyBaseModel',
 		back_populates='spng_surveys_spng_survey_questions',
-		uselist=False,
 	)
 
 	spng_survey_questions_sc = relationship(
 		'SpngSurveyQuestionModel',
 		back_populates='spng_surveys_spng_survey_questions',
-		uselist=False,
 	)
 
 

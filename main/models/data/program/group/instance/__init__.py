@@ -34,7 +34,6 @@ class ProgramGroupInstanceModel(
 	program_instances_sc = relationship(
 		'ProgramInstanceModel',
 		back_populates='program_group_instances',
-		uselist=False,
 	)
 
 	program_instance_id = Column(
@@ -45,7 +44,6 @@ class ProgramGroupInstanceModel(
 	program_groups_sc = relationship(
 		'ProgramGroupModel',
 		back_populates='program_group_instances',
-		uselist=False,
 	)
 
 	program_group_id = Column(

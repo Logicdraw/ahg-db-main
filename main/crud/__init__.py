@@ -1,11 +1,15 @@
+from main.crud._base.resource import resource_base_crud
 from main.crud._base.spng_survey import spng_survey_base_crud
 
 
+from main.crud._many.camp_instances_camp_instance_registrations import camp_instances_camp_instance_registrations_crud
 from main.crud._many.camp_instances_coaches import camp_instances_coaches_crud
 from main.crud._many.program_instances_coaches import program_instances_coaches_crud
+from main.crud._many.program_instances_program_instance_registrations import program_instances_program_instance_registrations_crud
 from main.crud._many.team_instances_adult_reps import team_instances_adult_reps_crud
 from main.crud._many.team_instances_coaches import team_instances_coaches_crud
 from main.crud._many.team_instances_players import team_instances_players_crud
+from main.crud._many.team_instances_team_instance_registrations import team_instances_team_instance_registrations_crud
 from main.crud._many.spng_surveys_spng_survey_questions import spng_surveys_spng_survey_questions_crud
 from main.crud._many.guardians_players import guardians_players_crud
 
@@ -19,12 +23,13 @@ from main.crud.data.camp.group import camp_group_crud
 from main.crud.data.camp.group.instance import camp_group_instance_crud
 from main.crud.data.camp.instance import camp_instance_crud
 from main.crud.data.camp.instance.registration import camp_instance_registration_crud
+# from main.crud.data.camp.instance.registration.invite import camp_instance_registration_invite_crud
 
 from main.crud.data.program import program_crud
 from main.crud.data.program.group import program_group_crud
 from main.crud.data.program.group.instance import program_group_instance_crud
-from main.crud.data.program.instance import program_instance_crud
 from main.crud.data.program.instance.registration import program_instance_registration_crud
+# from main.crud.data.program.instance.registration.invite import program_instance_registration_invite_crud
 
 from main.crud.data.team import team_crud
 from main.crud.data.team.conference import conference_crud
@@ -49,6 +54,7 @@ from main.crud.data.team.instance.order.tracksuit.request import team_instance_t
 from main.crud.data.team.instance.order.tracksuit.update import team_instance_tracksuit_order_update_crud
 
 from main.crud.data.team.instance.registration import team_instance_registration_crud
+from main.crud.data.team.instance.registration.invite import team_instance_registration_invite_crud
 from main.crud.data.team.instance.registration.jersey_sponsor import team_instance_registration_jersey_sponsor_crud
 
 from main.crud.external.spng_survey.camp_instance import spng_survey_camp_instance_crud

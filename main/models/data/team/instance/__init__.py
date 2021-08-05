@@ -40,16 +40,17 @@ class TeamInstanceModel(
 	teams_sc = relationship(
 		'TeamModel',
 		back_populates='team_instances',
-		uselist=False,
 	)
 
-	team_id = Column(Integer, ForeignKey('teams.id'))
+	team_id = Column(
+		Integer,
+		ForeignKey('teams.id'),
+	)
 
 
 	division_instances_sc = relationship(
 		'DivisionInstanceModel',
 		back_populates='team_instances',
-		uselist=False,
 	)
 
 	division_instance_id = Column(
@@ -61,7 +62,6 @@ class TeamInstanceModel(
 	conference_instances_sc = relationship(
 		'ConferenceInstanceModel',
 		back_populates='team_instances',
-		uselist=False,
 	)
 	conference_instance_id = Column(
 		Integer,
@@ -72,7 +72,6 @@ class TeamInstanceModel(
 	league_instances_sc = relationship(
 		'LeagueInstanceModel',
 		back_populates='team_instances',
-		uselist=False,
 	)
 	league_instance_id = Column(
 		Integer,
@@ -83,7 +82,6 @@ class TeamInstanceModel(
 	season_instances_sc = relationship(
 		'SeasonInstanceModel',
 		back_populates='team_instances',
-		uselist=False,
 	)
 
 	season_instance_id = Column(
@@ -93,8 +91,8 @@ class TeamInstanceModel(
 
 
 
-	team_instance_registrations = relationship(
-		'TeamInstanceRegistrationModel',
+	team_instances_team_instance_registrations = relationship(
+		'TeamInstancesTeamInstanceRegistrationsModel',
 		back_populates='team_instances_sc',
 		lazy='selectin',
 	)
@@ -155,6 +153,13 @@ class TeamInstanceModel(
 
 	team_instance_tracksuit_order_group_sheets = relationship(
 		'TeamInstanceTracksuitOrderGroupSheetModel',
+		back_populates='team_instances_sc',
+		lazy='selectin',
+	)
+
+
+	team_instance_registration_invites = relationship(
+		'TeamInstanceRegistrationInviteModel',
 		back_populates='team_instances_sc',
 		lazy='selectin',
 	)

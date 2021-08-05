@@ -35,7 +35,6 @@ class TeamInstanceTracksuitOrderRequestModel(
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
 		back_populates='team_instance_tracksuit_order_requests',
-		uselist=False,
 	)
 
 	team_instance_id = Column(
@@ -47,7 +46,6 @@ class TeamInstanceTracksuitOrderRequestModel(
 	team_instance_tracksuit_orders_sc = relationship(
 		'TeamInstanceTracksuitOrderModel',
 		back_populates='team_instance_tracksuit_order_requests',
-		uselist=False,
 	)
 
 	team_instance_tracksuit_order_id = Column(
@@ -82,7 +80,7 @@ class TeamInstanceTracksuitOrderRequestModel(
 	)
 
 
-	rejection_reason = Column(
+	rejected_reason = Column(
 		String,
 	)
 

@@ -68,7 +68,6 @@ class LeagueModel(
 	seasons_sc = relationship(
 		'SeasonModel',
 		back_populates='leagues',
-		uselist=False,
 	)
 
 	season_id = Column(

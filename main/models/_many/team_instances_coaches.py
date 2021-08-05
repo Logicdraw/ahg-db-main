@@ -47,16 +47,20 @@ class TeamInstancesCoachesModel(
 	)
 
 
+	is_parent_coach = Column(
+		Boolean,
+		default=False,
+	)
+
+
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
 		back_populates='team_instances_coaches',
-		uselist=False,
 	)
 
 	coaches_sc = relationship(
 		'CoachModel',
 		back_populates='team_instances_coaches',
-		uselist=False,
 	)
 
 

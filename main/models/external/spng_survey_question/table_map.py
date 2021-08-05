@@ -58,7 +58,6 @@ class SpngSurveyQuestionTableMapModel(
 	spng_survey_questions_sc = relationship(
 		'SpngSurveyQuestionModel',
 		back_populates='spng_survey_question_table_maps',
-		uselist=False,
 	)
 
 	# ForeignKey --

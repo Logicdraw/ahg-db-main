@@ -64,13 +64,11 @@ class TeamInstancesPlayersModel(
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
 		back_populates='team_instances_players',
-		uselist=False,
 	)
 	
 	players_sc = relationship(
 		'PlayerModel',
 		back_populates='team_instances_players',
-		uselist=False,
 	)
 
 

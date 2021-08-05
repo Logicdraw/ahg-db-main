@@ -43,7 +43,6 @@ class SeasonInstanceModel(
 	seasons_sc = relationship(
 		'SeasonModel',
 		back_populates='season_instances',
-		uselist=False,
 	)
 
 	season_id = Column(

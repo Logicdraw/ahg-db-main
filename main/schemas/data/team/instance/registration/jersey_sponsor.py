@@ -9,23 +9,31 @@ from pydantic import (
 
 
 
-class TeamInstanceRegistrationJerseySponsorSchemaBase(BaseModel):
+class TeamInstanceRegistrationJerseySponsorSchemaBase(
+	BaseModel,
+):
 	name: Optional[str] = None
 	amount: Optional[float] = None
 
 
 
-class TeamInstanceRegistrationJerseySponsorSchemaCreate(TeamInstanceRegistrationJerseySponsorSchemaBase):
+class TeamInstanceRegistrationJerseySponsorSchemaCreate(
+	TeamInstanceRegistrationJerseySponsorSchemaBase,
+):
 	pass
 
 
 
-class TeamInstanceRegistrationJerseySponsorSchemaUpdate(TeamInstanceRegistrationJerseySponsorSchemaBase):
+class TeamInstanceRegistrationJerseySponsorSchemaUpdate(
+	TeamInstanceRegistrationJerseySponsorSchemaBase,
+):
 	pass
 
 
 
-class TeamInstanceRegistrationJerseySponsorSchemaInDBBase(TeamInstanceRegistrationJerseySponsorSchemaBase):
+class TeamInstanceRegistrationJerseySponsorSchemaInDBBase(
+	TeamInstanceRegistrationJerseySponsorSchemaBase,
+):
 	id: int
 
 	class Config:
@@ -33,12 +41,18 @@ class TeamInstanceRegistrationJerseySponsorSchemaInDBBase(TeamInstanceRegistrati
 
 
 
-class TeamInstanceRegistrationJerseySponsorSchema(TeamInstanceRegistrationJerseySponsorSchemaInDBBase):
+class TeamInstanceRegistrationJerseySponsorSchema(
+	TeamInstanceRegistrationJerseySponsorSchemaInDBBase,
+):
 	pass
 
 
 
-class TeamInstanceRegistrationJerseySponsorSchemaInDB(TeamInstanceRegistrationJerseySponsorSchemaInDBBase):
+class TeamInstanceRegistrationJerseySponsorSchemaInDB(
+	TeamInstanceRegistrationJerseySponsorSchemaInDBBase,
+):
 	pass
+
+
 
 

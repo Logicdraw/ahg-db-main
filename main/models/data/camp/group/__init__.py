@@ -39,10 +39,12 @@ class CampGroupModel(
 	camps_sc = relationship(
 		'CampModel',
 		back_populates='camp_groups',
-		uselist=False,
 	)
 	
-	camp_id = Column(Integer, ForeignKey('camps.id'))
+	camp_id = Column(
+		Integer,
+		ForeignKey('camps.id'),
+	)
 
 
 	camp_group_instances = relationship(

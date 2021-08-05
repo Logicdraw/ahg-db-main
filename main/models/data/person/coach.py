@@ -67,7 +67,6 @@ class CoachModel(
 
 	users_sc = relationship(
 		'UserModel',
-		uselist=False,
 	)
 
 	user_id = Column(

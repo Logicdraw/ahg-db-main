@@ -39,15 +39,10 @@ class ProgramInstanceRegistrationModel(
 	__tablename__ = 'program_instance_registrations'
 
 
-	program_instances_sc = relationship(
-		'ProgramInstanceModel',
-		back_populates='program_instance_registrations',
-		uselist=False,
-	)
-
-	program_instance_id = Column(
-		Integer,
-		ForeignKey('program_instances.id'),
+	program_instances_program_instance_registrations = relationship(
+		'ProgramInstancesProgramInstanceRegistrationsModel',
+		back_populates='program_instance_registrations_sc',
+		lazy='selectin',
 	)
 	
 
@@ -55,7 +50,6 @@ class ProgramInstanceRegistrationModel(
 	program_group_instances_sc = relationship(
 		'ProgramGroupInstanceModel',
 		back_populates='program_instance_registrations',
-		uselist=False,
 	)
 
 	program_group_instance_id = Column(
@@ -67,13 +61,19 @@ class ProgramInstanceRegistrationModel(
 	spng_survey_program_instances_sc = relationship(
 		'SpngSurveyProgramInstanceModel',
 		back_populates='program_instance_registrations',
-		uselist=False,
 	)
 	
 	spng_survey_program_instance_id = Column(
 		Integer,
 		ForeignKey('spng_survey_program_instances.id'),
 	)
+
+
+	# program_instance_registration_invites_sc = relationship(
+	# 	'ProgramInstanceRegistrationInviteModel',
+	# 	back_populates='program_instance_registrations_sc',
+	# 	uselist=False,
+	# )
 
 
 	# polymorphic identity --

@@ -15,6 +15,11 @@ from main.schemas._base.registration import (
 
 from main.schemas._base.registration import (
 	RegistrationBaseSchemaBase,
+	RegistrationBaseSchemaCreate,
+	RegistrationBaseSchemaUpdate,
+	RegistrationBaseSchemaInDBBase,
+	RegistrationBaseSchema,
+	RegistrationBaseSchemaInDB,
 )
 
 
@@ -34,6 +39,7 @@ class TeamInstanceRegistrationSchemaBase(
 
 
 class TeamInstanceRegistrationSchemaCreate(
+	RegistrationBaseSchemaCreate,
 	TeamInstanceRegistrationSchemaBase,
 ):
 	pass
@@ -41,6 +47,7 @@ class TeamInstanceRegistrationSchemaCreate(
 
 
 class TeamInstanceRegistrationSchemaUpdate(
+	RegistrationBaseSchemaUpdate,
 	TeamInstanceRegistrationSchemaBase,
 ):
 	pass
@@ -48,6 +55,7 @@ class TeamInstanceRegistrationSchemaUpdate(
 
 
 class TeamInstanceRegistrationSchemaInDBBase(
+	RegistrationBaseSchemaInDBBase,
 	TeamInstanceRegistrationSchemaBase,
 ):
 	id: int
@@ -58,6 +66,7 @@ class TeamInstanceRegistrationSchemaInDBBase(
 
 
 class TeamInstanceRegistrationSchema(
+	RegistrationBaseSchema,
 	TeamInstanceRegistrationSchemaInDBBase,
 ):
 	pass
@@ -65,6 +74,7 @@ class TeamInstanceRegistrationSchema(
 
 
 class TeamInstanceRegistrationSchemaInDB(
+	RegistrationBaseSchemaInDB,
 	TeamInstanceRegistrationSchemaInDBBase,
 ):
 	pass

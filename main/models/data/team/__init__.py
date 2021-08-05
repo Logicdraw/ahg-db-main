@@ -62,7 +62,6 @@ class TeamModel(
 	divisions_sc = relationship(
 		'DivisionModel',
 		back_populates='teams',
-		uselist=False,
 	)
 	
 	division_id = Column(
@@ -74,7 +73,6 @@ class TeamModel(
 	conferences_sc = relationship(
 		'ConferenceModel',
 		back_populates='teams',
-		uselist=False,
 	)
 
 	conference_id = Column(
@@ -86,7 +84,6 @@ class TeamModel(
 	leagues_sc = relationship(
 		'LeagueModel',
 		back_populates='teams',
-		uselist=False,
 	)
 
 	league_id = Column(
@@ -98,7 +95,6 @@ class TeamModel(
 	seasons_sc = relationship(
 		'SeasonModel',
 		back_populates='teams',
-		uselist=False,
 	)
 
 	season_id = Column(

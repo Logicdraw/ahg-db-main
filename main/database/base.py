@@ -4,15 +4,19 @@ from main.database.base_class import Base  # noqa
 
 
 from main.models._base.registration import RegistrationBaseModel
+from main.models._base.registration_invite import RegistrationInviteBaseModel
 from main.models._base.resource import ResourceBaseModel
 from main.models._base.spng_survey import SpngSurveyBaseModel
 
 
+from main.models._many.camp_instances_camp_instance_registrations import CampInstancesCampInstanceRegistrationsModel
 from main.models._many.camp_instances_coaches import CampInstancesCoachesModel
 from main.models._many.program_instances_coaches import ProgramInstancesCoachesModel
+from main.models._many.program_instances_program_instance_registrations import ProgramInstancesProgramInstanceRegistrationsModel
 from main.models._many.team_instances_adult_reps import TeamInstancesAdultRepsModel
 from main.models._many.team_instances_coaches import TeamInstancesCoachesModel
 from main.models._many.team_instances_players import TeamInstancesPlayersModel
+from main.models._many.team_instances_team_instance_registrations import TeamInstancesTeamInstanceRegistrationsModel
 from main.models._many.spng_surveys_spng_survey_questions import SpngSurveysSpngSurveyQuestionsModel
 from main.models._many.guardians_players import GuardiansPlayersModel
 
@@ -27,12 +31,14 @@ from main.models.data.camp.group import CampGroupModel
 from main.models.data.camp.group.instance import CampGroupInstanceModel
 from main.models.data.camp.instance import CampInstanceModel
 from main.models.data.camp.instance.registration import CampInstanceRegistrationModel
+# from main.models.data.team.instance.registration.invite import CampInstanceRegistrationInviteModel
 
 from main.models.data.program import ProgramModel
 from main.models.data.program.group import ProgramGroupModel
 from main.models.data.program.group.instance import ProgramGroupInstanceModel
 from main.models.data.program.instance import ProgramInstanceModel
 from main.models.data.program.instance.registration import ProgramInstanceRegistrationModel
+# from main.models.data.program.instance.registration.invite import ProgramInstanceRegistrationInviteModel
 
 from main.models.data.team import TeamModel
 from main.models.data.team.conference import ConferenceModel
@@ -57,6 +63,7 @@ from main.models.data.team.instance.order.tracksuit.request import TeamInstanceT
 from main.models.data.team.instance.order.tracksuit.update import TeamInstanceTracksuitOrderUpdateModel
 
 from main.models.data.team.instance.registration import TeamInstanceRegistrationModel
+from main.models.data.team.instance.registration.invite import TeamInstanceRegistrationInviteModel
 from main.models.data.team.instance.registration.jersey_sponsor import TeamInstanceRegistrationJerseySponsorModel
 
 from main.models.external.spng_survey.camp_instance import SpngSurveyCampInstanceModel
@@ -101,10 +108,9 @@ from main.models.resource.type.video import ResourceVideoModel
 from main.models.user import UserModel
 
 
-# print(Base.metadata.tables.keys())
 
 
-# Explicity set up mappers. -- AbstractConcreteBase ...
+# Explicity set up mappers. -- AbstractConcreteBase.
 from sqlalchemy.orm import configure_mappers
 configure_mappers()
 

@@ -50,13 +50,11 @@ class TeamInstancesAdultRepsModel(
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
 		back_populates='team_instances_adult_reps',
-		uselist=False,
 	)
 
 	adult_reps_sc = relationship(
 		'AdultRepModel',
 		back_populates='team_instances_adult_reps',
-		uselist=False,
 	)
 
 

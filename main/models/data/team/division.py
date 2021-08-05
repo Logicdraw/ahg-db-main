@@ -66,7 +66,6 @@ class DivisionModel(
 	leagues_sc = relationship(
 		'LeagueModel',
 		back_populates='divisions',
-		uselist=False,
 	)
 
 	league_id = Column(
@@ -78,7 +77,6 @@ class DivisionModel(
 	conferences_sc = relationship(
 		'ConferenceModel',
 		back_populates='divisions',
-		uselist=False,
 	)
 
 	conference_id = Column(

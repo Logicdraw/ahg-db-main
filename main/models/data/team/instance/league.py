@@ -42,7 +42,6 @@ class LeagueInstanceModel(
 	leagues_sc = relationship(
 		'LeagueModel',
 		back_populates='league_instances',
-		uselist=False,
 	)
 
 	league_id = Column(
@@ -73,7 +72,6 @@ class LeagueInstanceModel(
 	season_instances_sc = relationship(
 		'SeasonInstanceModel',
 		back_populates='league_instances',
-		uselist=False,
 	)
 	
 	season_instance_id = Column(

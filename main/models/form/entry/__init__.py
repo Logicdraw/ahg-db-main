@@ -50,7 +50,6 @@ class FormEntryModel(
 	forms_sc = relationship(
 		'FormModel',
 		back_populates='form_entries',
-		uselist=False,
 	)
 
 	form_id = Column(

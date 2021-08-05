@@ -35,7 +35,6 @@ class TeamInstanceJerseySocksOrderRequestModel(
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
 		back_populates='team_instance_jersey_socks_order_requests',
-		uselist=False,
 	)
 
 	team_instance_id = Column(
@@ -51,7 +50,6 @@ class TeamInstanceJerseySocksOrderRequestModel(
 	team_instance_registrations_sc = relationship(
 		'TeamInstanceRegistrationModel',
 		back_populates='team_instance_jersey_socks_order_requests',
-		uselist=False,
 	)
 
 	team_instance_registration_id = Column(
@@ -64,7 +62,6 @@ class TeamInstanceJerseySocksOrderRequestModel(
 	team_instance_jersey_socks_orders_sc = relationship(
 		'TeamInstanceJerseySocksOrderModel',
 		back_populates='team_instance_jersey_socks_order_requests',
-		uselist=False,
 	)
 
 	team_instance_jersey_socks_order_id = Column(
@@ -110,7 +107,7 @@ class TeamInstanceJerseySocksOrderRequestModel(
 	)
 
 
-	rejection_reason = Column(
+	rejected_reason = Column(
 		String,
 	)
 

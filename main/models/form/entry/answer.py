@@ -56,7 +56,6 @@ class FormEntryAnswerModel(
 		return relationship(
 			'FormEntryModel',
 			back_populates='form_entry_answers',
-			uselist=False,
 		)
 
 	@declared_attr
@@ -88,7 +87,6 @@ class FormEntryAnswerInputModel(
 	form_question_inputs_sc = relationship(
 		'FormQuestionInputModel',
 		back_populates='form_entry_answer_inputs',
-		uselist=False,
 	)
 
 	form_question_input_id = Column(
@@ -119,7 +117,6 @@ class FormEntryAnswerTextareaModel(
 	form_question_textareas_sc = relationship(
 		'FormQuestionTextareaModel',
 		back_populates='form_entry_answer_textareas',
-		uselist=False,
 	)
 
 	form_question_textarea_id = Column(
@@ -157,7 +154,6 @@ class FormEntryAnswerSelectModel(
 	form_question_selects_sc = relationship(
 		'FormQuestionSelectModel',
 		back_populates='form_entry_answer_selects',
-		uselist=False,
 	)
 
 	form_question_select_id = Column(
@@ -190,7 +186,6 @@ class FormEntryAnswerCheckboxModel(
 	form_question_checkboxes_sc = relationship(
 		'FormQuestionCheckboxModel',
 		back_populates='form_entry_answer_checkboxes',
-		uselist=False,
 	)
 
 	form_question_checkbox_id = Column(
@@ -224,7 +219,6 @@ class FormEntryAnswerRadioModel(
 	form_question_radios_sc = relationship(
 		'FormQuestionRadioModel',
 		back_populates='form_entry_answer_radios',
-		uselist=False,
 	)
 
 	form_question_radio_id = Column(

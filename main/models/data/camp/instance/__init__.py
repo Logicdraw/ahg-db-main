@@ -44,11 +44,12 @@ class CampInstanceModel(
 
 
 
-	camp_instance_registrations = relationship(
-		'CampInstanceRegistrationModel',
+	camp_instances_camp_instance_registrations = relationship(
+		'CampInstancesCampInstanceRegistrationsModel',
 		back_populates='camp_instances_sc',
 		lazy='selectin',
 	)
+
 
 	camp_group_instances = relationship(
 		'CampGroupInstanceModel',
@@ -62,6 +63,13 @@ class CampInstanceModel(
 		back_populates='camp_instances_sc',
 		lazy='selectin',
 	)
+
+
+	# camp_instance_registration_invites = relationship(
+	# 	'CampInstanceRegistrationInviteModel',
+	# 	back_populates='camp_instances_sc',
+	# 	lazy='selectin',
+	# )
 
 
 

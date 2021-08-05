@@ -16,7 +16,7 @@ class TeamInstanceJerseySocksOrderUpdateSchemaBase(
 	new_player_full_name: Optional[str] = None
 	new_jersey_number: Optional[int] = None
 	new_jersey_size: Optional[str] = None
-	new_socks_size: Optional[str] = NMone
+	new_socks_size: Optional[str] = None
 
 
 

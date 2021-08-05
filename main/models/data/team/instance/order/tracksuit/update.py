@@ -35,7 +35,6 @@ class TeamInstanceTracksuitOrderUpdateModel(
 	team_instance_tracksuit_orders_sc = relationship(
 		'TeamInstanceTracksuitOrderModel',
 		back_populates='team_instance_tracksuit_order_updates',
-		uselist=False,
 	)
 
 	team_instance_tracksuit_order_id = Column(

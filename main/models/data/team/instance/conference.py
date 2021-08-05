@@ -42,7 +42,6 @@ class ConferenceInstanceModel(
 	conferences_sc = relationship(
 		'ConferenceModel',
 		back_populates='conference_instances',
-		uselist=False,
 	)
 
 	conference_id = Column(
@@ -67,7 +66,6 @@ class ConferenceInstanceModel(
 	league_instances_sc = relationship(
 		'LeagueInstanceModel',
 		back_populates='conference_instances',
-		uselist=False,
 	)
 
 	league_instance_id = Column(
@@ -79,7 +77,6 @@ class ConferenceInstanceModel(
 	season_instances_sc = relationship(
 		'SeasonInstanceModel',
 		back_populates='conference_instances',
-		uselist=False,
 	)
 
 	season_instance_id = Column(

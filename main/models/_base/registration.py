@@ -74,7 +74,6 @@ class RegistrationBaseModel(
 		return relationship(
 			'PlayerModel',
 			back_populates='registrations',
-			uselist=False,
 		)
 
 	@declared_attr

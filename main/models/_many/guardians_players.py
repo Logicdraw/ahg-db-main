@@ -59,13 +59,11 @@ class GuardiansPlayersModel(
 	guardians_sc = relationship(
 		'GuardianModel',
 		back_populates='guardians_players',
-		uselist=False,
 	)
 
 	players_sc = relationship(
 		'PlayerModel',
 		back_populates='guardians_players',
-		uselist=False,
 	)
 
 

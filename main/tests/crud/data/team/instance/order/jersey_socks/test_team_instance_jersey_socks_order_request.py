@@ -37,7 +37,14 @@ async def test_create_team_instance_jersey_socks_order_request(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	player_full_name = random_lower_string()
+	jersey_number = random_number(min_digits=1, max_digits=2)
+	jersey_size = 'YXL'
+	socks_size = '24in'
+	details = random_lower_string()
+	approved = False
+	rejected = True
+	rejected_reason = random_lower_string()
 
 	team_instance_jersey_socks_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
 		uuid=uuid,

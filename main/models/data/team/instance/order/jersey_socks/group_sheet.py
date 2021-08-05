@@ -40,7 +40,6 @@ class TeamInstanceJerseySocksOrderGroupSheetModel(
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
 		back_populates='team_instance_jersey_socks_order_group_sheets',
-		uselist=False,
 	)
 
 	team_instance_id = Column(

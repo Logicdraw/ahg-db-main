@@ -39,7 +39,6 @@ class ProgramGroupModel(
 	programs_sc = relationship(
 		'ProgramModel',
 		back_populates='program_groups',
-		uselist=False,
 	)
 
 	program_id = Column(

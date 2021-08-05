@@ -39,15 +39,10 @@ class CampInstanceRegistrationModel(
 	__tablename__ = 'camp_instance_registrations'
 
 
-	camp_instance_id = Column(
-		Integer,
-		ForeignKey('camp_instances.id'),
-	)
-
-	camp_instances_sc = relationship(
-		'CampInstanceModel',
-		back_populates='camp_instance_registrations',
-		uselist=False,
+	camp_instances_camp_instance_registrations = relationship(
+		'CampInstancesCampInstanceRegistrationsModel',
+		back_populates='camp_instance_registrations_sc',
+		lazy='selectin',
 	)
 
 
@@ -55,7 +50,6 @@ class CampInstanceRegistrationModel(
 	camp_group_instances_sc = relationship(
 		'CampGroupInstanceModel',
 		back_populates='camp_instance_registrations',
-		uselist=False,
 	)
 
 	camp_group_instance_id = Column(
@@ -68,13 +62,20 @@ class CampInstanceRegistrationModel(
 	spng_survey_camp_instances_sc = relationship(
 		'SpngSurveyCampInstanceModel',
 		back_populates='camp_instance_registrations',
-		uselist=False,
 	)
 	
 	spng_survey_camp_instance_id = Column(
 		Integer,
 		ForeignKey('spng_survey_camp_instances.id'),
 	)
+
+
+
+	# camp_instance_registration_invites_sc = relationship(
+	# 	'CampInstanceRegistrationInviteModel',
+	# 	back_populates='camp_instance_registrations_sc',
+	# 	uselist=False,
+	# )
 
 
 	# polymorphic identity --

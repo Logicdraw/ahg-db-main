@@ -55,7 +55,6 @@ class FormQuestionModel(
 		return relationship(
 			'FormModel',
 			back_populates='form_questions',
-			uselist=False,
 		)
 
 	@declared_attr

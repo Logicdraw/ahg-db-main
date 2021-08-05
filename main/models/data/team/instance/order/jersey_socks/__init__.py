@@ -34,7 +34,6 @@ class TeamInstanceJerseySocksOrderModel(
 	team_instances_sc = relationship(
 		'TeamInstanceModel',
 		back_populates='team_instance_jersey_socks_orders',
-		uselist=False,
 	)
 
 	team_instance_id = Column(
@@ -46,7 +45,6 @@ class TeamInstanceJerseySocksOrderModel(
 	team_instance_registrations_sc = relationship(
 		'TeamInstanceRegistrationModel',
 		back_populates='team_instance_jersey_socks_orders',
-		uselist=False,
 	)
 
 	team_instance_registration_id = Column(

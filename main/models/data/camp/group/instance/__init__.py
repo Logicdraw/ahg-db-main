@@ -34,7 +34,6 @@ class CampGroupInstanceModel(
 	camp_instances_sc = relationship(
 		'CampInstanceModel',
 		back_populates='camp_group_instances',
-		uselist=False,
 	)
 
 	camp_instance_id = Column(
@@ -46,7 +45,6 @@ class CampGroupInstanceModel(
 	camp_groups_sc = relationship(
 		'CampGroupModel',
 		back_populates='camp_group_instances',
-		uselist=False,
 	)
 
 	camp_group_id = Column(
