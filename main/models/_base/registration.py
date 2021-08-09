@@ -32,8 +32,6 @@ from main.config import settings
 
 from sqlalchemy.ext.declarative import AbstractConcreteBase
 
-
-
 from sqlalchemy.ext.declarative import declared_attr
 
 
@@ -187,6 +185,15 @@ class SpngRegistrationFinancialsMixin:
 
 class PlayerRegistrationMixin:
 	# --
+
+	jersey_number = Column(
+		Integer,
+	)
+
+	jersey_size = Column(
+		String,
+	)
+	
 
 	position = Column(
 		String,

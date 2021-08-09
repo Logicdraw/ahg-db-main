@@ -56,6 +56,8 @@ class SpngRegistrationFinancialsMixinSchema(BaseModel):
 
 
 class PlayerRegistrationMixinSchema(BaseModel):
+	jersey_size: Optional[str] = None
+	jersey_number: Optional[int] = None
 	position: Optional[str] = None
 	registration_insurance: Optional[bool] = None
 	player_submitted_notes: Optional[str] = None

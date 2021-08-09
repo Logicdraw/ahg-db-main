@@ -33,6 +33,11 @@ from main.config import settings
 from sqlalchemy.ext.declarative import AbstractConcreteBase
 
 
+from sqlalchemy.dialects.postgresql import JSONB
+
+from sqlalchemy_json import mutable_json_type
+
+
 
 from sqlalchemy.ext.declarative import declared_attr
 
@@ -60,6 +65,14 @@ class RegistrationInviteBaseModel(
 	has_registered = Column(
 		Boolean,
 		default=False,
+	)
+
+
+	extra_question_answers = Column(
+		mutable_json_type(
+			dbtype=JSONB,
+			nested=False,
+		)
 	)
 
 

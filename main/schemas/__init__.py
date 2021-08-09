@@ -88,7 +88,18 @@ from main.schemas._many.guardians_players import (
 	GuardiansPlayersSchemaInDB,
 )
 
-
+from main.schemas.data.person.address import (
+	AddressSchemaCreate,
+	AddressSchemaUpdate,
+	AddressSchema,
+	AddressSchemaInDB,
+)
+from main.schemas.data.person.adult_rep import (
+	AdultRepSchemaCreate,
+	AdultRepSchemaUpdate,
+	AdultRepSchema,
+	AdultRepSchemaInDB,
+)
 from main.schemas.data.person.coach import (
 	CoachSchemaCreate,
 	CoachSchemaUpdate,

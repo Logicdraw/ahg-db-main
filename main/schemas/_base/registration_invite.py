@@ -1,4 +1,7 @@
-from typing import Optional
+from typing import (
+	Optional,
+	Any,
+)
 
 from pydantic import (
 	BaseModel,
@@ -12,6 +15,7 @@ from pydantic import (
 class RegistrationInviteBaseSchemaBase(BaseModel):
 	email_to: Optional[EmailStr] = None
 	has_registered: Optional[bool] = None
+	extra_question_answers: Optional[Any] = None
 
 
 
