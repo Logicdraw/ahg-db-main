@@ -197,6 +197,9 @@ class Settings(BaseSettings):
 	CLI_PASSWORD: str
 
 
+	SECRET_KEY: SecretStr
+
+
 
 	USER_ROLES = [
 		'superadmin',

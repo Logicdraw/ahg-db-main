@@ -36,7 +36,7 @@ async def test_create_spng_survey_program_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'program'
+	type = 'program_instance'
 
 	spng_survey_program_instance_in = SpngSurveyProgramInstanceSchemaCreate(
 		name=name,
@@ -63,7 +63,7 @@ async def test_create_spng_survey_program_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'program'
+	type = 'program_instance'
 
 	spng_survey_program_instance_in = SpngSurveyProgramInstanceSchemaCreate(
 		name=name,
@@ -90,7 +90,7 @@ async def test_get_spng_survey_program_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'program'
+	type = 'program_instance'
 
 	spng_survey_program_instance_in = SpngSurveyProgramInstanceSchemaCreate(
 		name=name,
@@ -121,7 +121,7 @@ async def test_get_sync_spng_survey_program_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'program'
+	type = 'program_instance'
 
 	spng_survey_program_instance_in = SpngSurveyProgramInstanceSchemaCreate(
 		name=name,
@@ -152,7 +152,7 @@ async def test_update_spng_survey_program_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'program'
+	type = 'program_instance'
 
 	spng_survey_program_instance_in = SpngSurveyProgramInstanceSchemaCreate(
 		name=name,
@@ -193,7 +193,7 @@ async def test_update_sync_spng_survey_program_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'program'
+	type = 'program_instance'
 
 	spng_survey_program_instance_in = SpngSurveyProgramInstanceSchemaCreate(
 		name=name,
@@ -233,7 +233,7 @@ async def test_delete_spng_survey_program_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'program'
+	type = 'program_instance'
 
 	spng_survey_program_instance_in = SpngSurveyProgramInstanceSchemaCreate(
 		name=name,
@@ -268,7 +268,7 @@ async def test_delete_sync_spng_survey_program_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'program'
+	type = 'program_instance'
 
 	spng_survey_program_instance_in = SpngSurveyProgramInstanceSchemaCreate(
 		name=name,

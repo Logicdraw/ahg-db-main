@@ -32,10 +32,10 @@ async def test_create_gs_meta(
 	db: AsyncSession,
 ) -> None:
 	# --
-	access_token_encoded = random_lower_string()
+	access_token = random_lower_string()
 
 	gs_meta_in = GSMetaSchemaCreate(
-		access_token_encoded=access_token_encoded,
+		access_token=access_token,
 	)
 
 	gs_meta = await gs_meta_crud.create(
@@ -43,7 +43,7 @@ async def test_create_gs_meta(
 		obj_in=gs_meta_in,
 	)
 
-	assert gs_meta.access_token_encoded == access_token_encoded
+	assert hasattr(gs_meta, 'access_token_encoded')
 
 
 
@@ -52,10 +52,10 @@ async def test_create_sync_gs_meta(
 	db: AsyncSession,
 ) -> None:
 	# --
-	access_token_encoded = random_lower_string()
+	access_token = random_lower_string()
 
 	gs_meta_in = GSMetaSchemaCreate(
-		access_token_encoded=access_token_encoded,
+		access_token=access_token,
 	)
 
 	gs_meta = await db.run_sync(
@@ -63,7 +63,7 @@ async def test_create_sync_gs_meta(
 		obj_in=gs_meta_in,
 	)
 
-	assert gs_meta.access_token_encoded == access_token_encoded
+	assert hasattr(gs_meta, 'access_token_encoded')
 
 
 
@@ -72,10 +72,10 @@ async def test_get_gs_meta(
 	db: AsyncSession,
 ) -> None:
 	# --
-	access_token_encoded = random_lower_string()
+	access_token = random_lower_string()
 
 	gs_meta_in = GSMetaSchemaCreate(
-		access_token_encoded=access_token_encoded,
+		access_token=access_token,
 	)
 
 	gs_meta = await gs_meta_crud.create(
@@ -98,10 +98,10 @@ async def test_get_sync_gs_meta(
 	db: AsyncSession,
 ) -> None:
 	# --
-	access_token_encoded = random_lower_string()
+	access_token = random_lower_string()
 
 	gs_meta_in = GSMetaSchemaCreate(
-		access_token_encoded=access_token_encoded,
+		access_token=access_token,
 	)
 
 	gs_meta = await db.run_sync(
@@ -124,10 +124,10 @@ async def test_update_gs_meta(
 	db: AsyncSession,
 ) -> None:
 	# --
-	access_token_encoded = random_lower_string()
+	access_token = random_lower_string()
 
 	gs_meta_in = GSMetaSchemaCreate(
-		access_token_encoded=access_token_encoded,
+		access_token=access_token,
 	)
 
 	gs_meta = await gs_meta_crud.create(
@@ -135,10 +135,10 @@ async def test_update_gs_meta(
 		obj_in=gs_meta_in,
 	)
 
-	new_access_token_encoded = random_lower_string()
+	new_access_token = random_lower_string()
 
 	gs_meta_in_update = GSMetaSchemaUpdate(
-		access_token_encoded=new_access_token_encoded,
+		access_token=new_access_token,
 	)
 
 	gs_meta_2 = await gs_meta_crud.update(
@@ -148,8 +148,8 @@ async def test_update_gs_meta(
 	)
 
 	assert gs_meta_2
-	assert gs_meta_2.access_token_encoded
-	assert gs_meta_2.access_token_encoded == new_access_token_encoded
+	assert hasattr(gs_meta_2, 'access_token_encoded')
+	# ...
 
 
 
@@ -158,10 +158,10 @@ async def test_update_sync_gs_meta(
 	db: AsyncSession,
 ) -> None:
 	# --
-	access_token_encoded = random_lower_string()
+	access_token = random_lower_string()
 
 	gs_meta_in = GSMetaSchemaCreate(
-		access_token_encoded=access_token_encoded,
+		access_token=access_token,
 	)
 
 	gs_meta = await db.run_sync(
@@ -169,10 +169,10 @@ async def test_update_sync_gs_meta(
 		obj_in=gs_meta_in,
 	)
 
-	new_access_token_encoded = random_lower_string()
+	new_access_token = random_lower_string()
 
 	gs_meta_in_update = GSMetaSchemaUpdate(
-		access_token_encoded=new_access_token_encoded,
+		access_token=new_access_token,
 	)
 
 	gs_meta_2 = await db.run_sync(
@@ -182,8 +182,7 @@ async def test_update_sync_gs_meta(
 	)
 
 	assert gs_meta_2
-	assert gs_meta_2.access_token_encoded
-	assert gs_meta_2.access_token_encoded == new_access_token_encoded
+	assert hasattr(gs_meta_2, 'access_token_encoded')
 
 
 
@@ -192,10 +191,10 @@ async def test_delete_gs_meta(
 	db: AsyncSession,
 ) -> None:
 	# --
-	access_token_encoded = random_lower_string()
+	access_token = random_lower_string()
 
 	gs_meta_in = GSMetaSchemaCreate(
-		access_token_encoded=access_token_encoded,
+		access_token=access_token,
 	)
 
 	gs_meta = await gs_meta_crud.create(
@@ -224,10 +223,10 @@ async def test_delete_sync_gs_meta(
 	db: AsyncSession,
 ) -> None:
 	# --
-	access_token_encoded = random_lower_string()
+	access_token = random_lower_string()
 
 	gs_meta_in = GSMetaSchemaCreate(
-		access_token_encoded=access_token_encoded,
+		access_token=access_token,
 	)
 
 	gs_meta = await db.run_sync(

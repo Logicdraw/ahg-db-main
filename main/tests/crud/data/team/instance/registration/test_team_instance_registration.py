@@ -58,16 +58,16 @@ async def test_create_team_instance_registration(
 		'apple': 'pie',
 	}
 
-	gross = float(random_number())
-	net = float(random_number())
-	service_fee = float(random_number())
-	gross_forecast = float(random_number())
-	net_forecast = float(random_number())
-	service_fee_forecast = float(random_number())
-	gross_outstanding = float(random_number())
-	order_number = float(random_number())
+	total = float(random_number())
+	paid = float(random_number())
+	owes = float(random_number())
 	discounts = float(random_number())
+	discount_names = random_lower_string()
 	refunds = float(random_number())
+	refund_reason = random_lower_string()
+
+	spng_order_number = random_lower_string()
+
 	position = random_lower_string()
 	registration_insurance = True
 
@@ -94,16 +94,14 @@ async def test_create_team_instance_registration(
 		registration_type=registration_type,
 		registrant_type=registrant_type,
 		extra_question_answers=extra_question_answers,
-		gross=gross,
-		net=net,
-		service_fee=service_fee,
-		gross_forecast=gross_forecast,
-		net_forecast=net_forecast,
-		service_fee_forecast=service_fee_forecast,
-		gross_outstanding=gross_outstanding,
-		order_number=order_number,
+		total=total,
+		paid=paid,
+		owes=owes,
 		discounts=discounts,
+		discount_names=discount_names,
 		refunds=refunds,
+		refund_reason=refund_reason,
+		spng_order_number=spng_order_number,
 		position=position,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
@@ -146,16 +144,16 @@ async def test_create_sync_team_instance_registration(
 		'apple': 'pie',
 	}
 
-	gross = float(random_number())
-	net = float(random_number())
-	service_fee = float(random_number())
-	gross_forecast = float(random_number())
-	net_forecast = float(random_number())
-	service_fee_forecast = float(random_number())
-	gross_outstanding = float(random_number())
-	order_number = float(random_number())
+	total = float(random_number())
+	paid = float(random_number())
+	owes = float(random_number())
 	discounts = float(random_number())
+	discount_names = random_lower_string()
 	refunds = float(random_number())
+	refund_reason = random_lower_string()
+
+	spng_order_number = random_lower_string()
+
 	position = random_lower_string()
 	registration_insurance = True
 
@@ -182,16 +180,14 @@ async def test_create_sync_team_instance_registration(
 		registration_type=registration_type,
 		registrant_type=registrant_type,
 		extra_question_answers=extra_question_answers,
-		gross=gross,
-		net=net,
-		service_fee=service_fee,
-		gross_forecast=gross_forecast,
-		net_forecast=net_forecast,
-		service_fee_forecast=service_fee_forecast,
-		gross_outstanding=gross_outstanding,
-		order_number=order_number,
+		total=total,
+		paid=paid,
+		owes=owes,
 		discounts=discounts,
+		discount_names=discount_names,
 		refunds=refunds,
+		refund_reason=refund_reason,
+		spng_order_number=spng_order_number,
 		position=position,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
@@ -234,16 +230,16 @@ async def test_get_team_instance_registration(
 		'apple': 'pie',
 	}
 
-	gross = float(random_number())
-	net = float(random_number())
-	service_fee = float(random_number())
-	gross_forecast = float(random_number())
-	net_forecast = float(random_number())
-	service_fee_forecast = float(random_number())
-	gross_outstanding = float(random_number())
-	order_number = float(random_number())
+	total = float(random_number())
+	paid = float(random_number())
+	owes = float(random_number())
 	discounts = float(random_number())
+	discount_names = random_lower_string()
 	refunds = float(random_number())
+	refund_reason = random_lower_string()
+
+	spng_order_number = random_lower_string()
+
 	position = random_lower_string()
 	registration_insurance = True
 
@@ -270,16 +266,14 @@ async def test_get_team_instance_registration(
 		registration_type=registration_type,
 		registrant_type=registrant_type,
 		extra_question_answers=extra_question_answers,
-		gross=gross,
-		net=net,
-		service_fee=service_fee,
-		gross_forecast=gross_forecast,
-		net_forecast=net_forecast,
-		service_fee_forecast=service_fee_forecast,
-		gross_outstanding=gross_outstanding,
-		order_number=order_number,
+		total=total,
+		paid=paid,
+		owes=owes,
 		discounts=discounts,
+		discount_names=discount_names,
 		refunds=refunds,
+		refund_reason=refund_reason,
+		spng_order_number=spng_order_number,
 		position=position,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
@@ -326,16 +320,16 @@ async def test_get_sync_team_instance_registration(
 		'apple': 'pie',
 	}
 
-	gross = float(random_number())
-	net = float(random_number())
-	service_fee = float(random_number())
-	gross_forecast = float(random_number())
-	net_forecast = float(random_number())
-	service_fee_forecast = float(random_number())
-	gross_outstanding = float(random_number())
-	order_number = float(random_number())
+	total = float(random_number())
+	paid = float(random_number())
+	owes = float(random_number())
 	discounts = float(random_number())
+	discount_names = random_lower_string()
 	refunds = float(random_number())
+	refund_reason = random_lower_string()
+
+	spng_order_number = random_lower_string()
+
 	position = random_lower_string()
 	registration_insurance = True
 
@@ -362,16 +356,14 @@ async def test_get_sync_team_instance_registration(
 		registration_type=registration_type,
 		registrant_type=registrant_type,
 		extra_question_answers=extra_question_answers,
-		gross=gross,
-		net=net,
-		service_fee=service_fee,
-		gross_forecast=gross_forecast,
-		net_forecast=net_forecast,
-		service_fee_forecast=service_fee_forecast,
-		gross_outstanding=gross_outstanding,
-		order_number=order_number,
+		total=total,
+		paid=paid,
+		owes=owes,
 		discounts=discounts,
+		discount_names=discount_names,
 		refunds=refunds,
+		refund_reason=refund_reason,
+		spng_order_number=spng_order_number,
 		position=position,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
@@ -420,16 +412,16 @@ async def test_update_team_instance_registration(
 		'apple': 'pie',
 	}
 
-	gross = float(random_number())
-	net = float(random_number())
-	service_fee = float(random_number())
-	gross_forecast = float(random_number())
-	net_forecast = float(random_number())
-	service_fee_forecast = float(random_number())
-	gross_outstanding = float(random_number())
-	order_number = float(random_number())
+	total = float(random_number())
+	paid = float(random_number())
+	owes = float(random_number())
 	discounts = float(random_number())
+	discount_names = random_lower_string()
 	refunds = float(random_number())
+	refund_reason = random_lower_string()
+
+	spng_order_number = random_lower_string()
+
 	position = random_lower_string()
 	registration_insurance = True
 
@@ -456,16 +448,14 @@ async def test_update_team_instance_registration(
 		registration_type=registration_type,
 		registrant_type=registrant_type,
 		extra_question_answers=extra_question_answers,
-		gross=gross,
-		net=net,
-		service_fee=service_fee,
-		gross_forecast=gross_forecast,
-		net_forecast=net_forecast,
-		service_fee_forecast=service_fee_forecast,
-		gross_outstanding=gross_outstanding,
-		order_number=order_number,
+		total=total,
+		paid=paid,
+		owes=owes,
 		discounts=discounts,
+		discount_names=discount_names,
 		refunds=refunds,
+		refund_reason=refund_reason,
+		spng_order_number=spng_order_number,
 		position=position,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
@@ -523,16 +513,16 @@ async def test_update_sync_team_instance_registration(
 		'apple': 'pie',
 	}
 
-	gross = float(random_number())
-	net = float(random_number())
-	service_fee = float(random_number())
-	gross_forecast = float(random_number())
-	net_forecast = float(random_number())
-	service_fee_forecast = float(random_number())
-	gross_outstanding = float(random_number())
-	order_number = float(random_number())
+	total = float(random_number())
+	paid = float(random_number())
+	owes = float(random_number())
 	discounts = float(random_number())
+	discount_names = random_lower_string()
 	refunds = float(random_number())
+	refund_reason = random_lower_string()
+
+	spng_order_number = random_lower_string()
+
 	position = random_lower_string()
 	registration_insurance = True
 
@@ -559,16 +549,14 @@ async def test_update_sync_team_instance_registration(
 		registration_type=registration_type,
 		registrant_type=registrant_type,
 		extra_question_answers=extra_question_answers,
-		gross=gross,
-		net=net,
-		service_fee=service_fee,
-		gross_forecast=gross_forecast,
-		net_forecast=net_forecast,
-		service_fee_forecast=service_fee_forecast,
-		gross_outstanding=gross_outstanding,
-		order_number=order_number,
+		total=total,
+		paid=paid,
+		owes=owes,
 		discounts=discounts,
+		discount_names=discount_names,
 		refunds=refunds,
+		refund_reason=refund_reason,
+		spng_order_number=spng_order_number,
 		position=position,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
@@ -626,16 +614,16 @@ async def test_delete_team_instance_registration(
 		'apple': 'pie',
 	}
 
-	gross = float(random_number())
-	net = float(random_number())
-	service_fee = float(random_number())
-	gross_forecast = float(random_number())
-	net_forecast = float(random_number())
-	service_fee_forecast = float(random_number())
-	gross_outstanding = float(random_number())
-	order_number = float(random_number())
+	total = float(random_number())
+	paid = float(random_number())
+	owes = float(random_number())
 	discounts = float(random_number())
+	discount_names = random_lower_string()
 	refunds = float(random_number())
+	refund_reason = random_lower_string()
+
+	spng_order_number = random_lower_string()
+
 	position = random_lower_string()
 	registration_insurance = True
 
@@ -662,16 +650,14 @@ async def test_delete_team_instance_registration(
 		registration_type=registration_type,
 		registrant_type=registrant_type,
 		extra_question_answers=extra_question_answers,
-		gross=gross,
-		net=net,
-		service_fee=service_fee,
-		gross_forecast=gross_forecast,
-		net_forecast=net_forecast,
-		service_fee_forecast=service_fee_forecast,
-		gross_outstanding=gross_outstanding,
-		order_number=order_number,
+		total=total,
+		paid=paid,
+		owes=owes,
 		discounts=discounts,
+		discount_names=discount_names,
 		refunds=refunds,
+		refund_reason=refund_reason,
+		spng_order_number=spng_order_number,
 		position=position,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,
@@ -725,16 +711,16 @@ async def test_delete_sync_team_instance_registration(
 		'apple': 'pie',
 	}
 
-	gross = float(random_number())
-	net = float(random_number())
-	service_fee = float(random_number())
-	gross_forecast = float(random_number())
-	net_forecast = float(random_number())
-	service_fee_forecast = float(random_number())
-	gross_outstanding = float(random_number())
-	order_number = float(random_number())
+	total = float(random_number())
+	paid = float(random_number())
+	owes = float(random_number())
 	discounts = float(random_number())
+	discount_names = random_lower_string()
 	refunds = float(random_number())
+	refund_reason = random_lower_string()
+
+	spng_order_number = random_lower_string()
+
 	position = random_lower_string()
 	registration_insurance = True
 
@@ -761,16 +747,14 @@ async def test_delete_sync_team_instance_registration(
 		registration_type=registration_type,
 		registrant_type=registrant_type,
 		extra_question_answers=extra_question_answers,
-		gross=gross,
-		net=net,
-		service_fee=service_fee,
-		gross_forecast=gross_forecast,
-		net_forecast=net_forecast,
-		service_fee_forecast=service_fee_forecast,
-		gross_outstanding=gross_outstanding,
-		order_number=order_number,
+		total=total,
+		paid=paid,
+		owes=owes,
 		discounts=discounts,
+		discount_names=discount_names,
 		refunds=refunds,
+		refund_reason=refund_reason,
+		spng_order_number=spng_order_number,
 		position=position,
 		registration_insurance=registration_insurance,
 		player_submitted_notes=player_submitted_notes,

@@ -26,8 +26,8 @@ class RegistrationBaseSchemaBase(BaseModel):
 
 
 class SpngRegistrationMixinSchema(BaseModel):
-	se_survey_id: Optional[int] = None
-	se_survey_result_id: Optional[int] = None
+	spng_survey_id: Optional[int] = None
+	spng_survey_result_id: Optional[int] = None
 	spng_persona_id: Optional[int] = None
 	spng_user_id: Optional[int] = None
 	roster_player_id: Optional[int] = None
@@ -40,18 +40,18 @@ class SpngRegistrationMixinSchema(BaseModel):
 
 
 
-class SpngRegistrationFinancialsMixinSchema(BaseModel):
-	gross: Optional[float] = None
-	net: Optional[float] = None
-	service_fee: Optional[float] = None
-	gross_forecast: Optional[float] = None
-	net_forecast: Optional[float] = None
-	service_fee_forecast: Optional[float] = None
-	gross_outstanding: Optional[float] = None
-	order_number: Optional[str] = None
+class RegistrationFinancialsMixinSchema(BaseModel):
+	total: Optional[float] = None
+	paid: Optional[float] = None
+	owes: Optional[float] = None
 	discounts: Optional[float] = None
-	refunds: Optional[str] = None
+	discount_names: Optional[str] = None
+	refunds: Optional[float] = None
+	refund_reason: Optional[str] = None
 
+
+class SpngRegistrationFinancialsMixinSchema(BaseModel):
+	spng_order_number: Optional[str] = None
 
 
 

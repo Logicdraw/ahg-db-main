@@ -22,7 +22,7 @@ from main.tests.utils import (
 )
 
 
-import uuid as _uuid
+from uuid import uuid4
 
 
 import pytest
@@ -37,7 +37,7 @@ async def test_create_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	uuid = uuid4().hex
 
 	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
 		uuid=uuid,
@@ -59,7 +59,7 @@ async def test_create_sync_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	uuid = uuid4().hex
 
 	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
 		uuid=uuid,
@@ -81,7 +81,7 @@ async def test_get_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	uuid = uuid4().hex
 
 	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
 		uuid=uuid,
@@ -108,7 +108,7 @@ async def test_get_sync_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	uuid = uuid4().hex
 
 	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
 		uuid=uuid,
@@ -136,7 +136,7 @@ async def test_update_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	uuid = uuid4().hex
 
 	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
 		uuid=uuid,
@@ -147,7 +147,7 @@ async def test_update_team_instance_jersey_socks_order_group_sheet(
 		obj_in=team_instance_jersey_socks_order_group_sheet_in,
 	)
 
-	new_uuid = _uuid.hex()
+	new_uuid = uuid4().hex
 
 
 	team_instance_jersey_socks_order_group_sheet_in_update = TeamInstanceJerseySocksOrderGroupSheetSchemaUpdate(
@@ -173,7 +173,7 @@ async def test_update_sync_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	uuid = uuid4().hex
 
 	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
 		uuid=uuid,
@@ -185,7 +185,7 @@ async def test_update_sync_team_instance_jersey_socks_order_group_sheet(
 	)
 
 
-	new_uuid = _uuid.hex()
+	new_uuid = uuid4().hex
 
 
 	team_instance_jersey_socks_order_group_sheet_in_update = TeamInstanceJerseySocksOrderGroupSheetSchemaUpdate(
@@ -210,7 +210,7 @@ async def test_delete_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	uuid = uuid4().hex
 
 	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
 		uuid=uuid,
@@ -242,7 +242,7 @@ async def test_delete_sync_team_instance_jersey_socks_order_group_sheet(
 ) -> None:
 	# --
 
-	uuid = _uuid.hex()
+	uuid = uuid4().hex
 
 	team_instance_jersey_socks_order_group_sheet_in = TeamInstanceJerseySocksOrderGroupSheetSchemaCreate(
 		uuid=uuid,

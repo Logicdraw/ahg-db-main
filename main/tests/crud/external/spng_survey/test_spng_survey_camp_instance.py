@@ -37,7 +37,7 @@ async def test_create_spng_survey_camp_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'camp'
+	type = 'camp_instance'
 
 	spng_survey_camp_instance_in = SpngSurveyCampInstanceSchemaCreate(
 		name=name,
@@ -64,7 +64,7 @@ async def test_create_spng_survey_camp_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'camp'
+	type = 'camp_instance'
 
 	spng_survey_camp_instance_in = SpngSurveyCampInstanceSchemaCreate(
 		name=name,
@@ -91,7 +91,7 @@ async def test_get_spng_survey_camp_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'camp'
+	type = 'camp_instance'
 
 	spng_survey_camp_instance_in = SpngSurveyCampInstanceSchemaCreate(
 		name=name,
@@ -122,7 +122,7 @@ async def test_get_sync_spng_survey_camp_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'camp'
+	type = 'camp_instance'
 
 	spng_survey_camp_instance_in = SpngSurveyCampInstanceSchemaCreate(
 		name=name,
@@ -153,7 +153,7 @@ async def test_update_spng_survey_camp_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'camp'
+	type = 'camp_instance'
 
 	spng_survey_camp_instance_in = SpngSurveyCampInstanceSchemaCreate(
 		name=name,
@@ -194,7 +194,7 @@ async def test_update_sync_spng_survey_camp_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'camp'
+	type = 'camp_instance'
 
 	spng_survey_camp_instance_in = SpngSurveyCampInstanceSchemaCreate(
 		name=name,
@@ -234,7 +234,7 @@ async def test_delete_spng_survey_camp_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'camp'
+	type = 'camp_instance'
 
 	spng_survey_camp_instance_in = SpngSurveyCampInstanceSchemaCreate(
 		name=name,
@@ -269,7 +269,7 @@ async def test_delete_sync_spng_survey_camp_instance(
 
 	name = random_lower_string()
 	is_active = True
-	type = 'camp'
+	type = 'camp_instance'
 
 	spng_survey_camp_instance_in = SpngSurveyCampInstanceSchemaCreate(
 		name=name,

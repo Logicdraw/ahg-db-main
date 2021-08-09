@@ -178,7 +178,7 @@ class RegistrationFinancialsMixin:
 class SpngRegistrationFinancialsMixin:
 	# --
 
-	order_number = Column(
+	spng_order_number = Column(
 		String,
 	)
 
