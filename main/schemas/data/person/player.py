@@ -13,6 +13,8 @@ import datetime
 class PlayerSchemaBase(BaseModel):
 	first_name: Optional[str] = None
 	last_name: Optional[str] = None
+	email: Optional[EmailStr] = None
+	mobile_phone: Optional[str] = None
 	date_of_birth: Optional[datetime.date] = None
 	medicare_number: Optional[str] = None
 	street_address_1: Optional[str] = None

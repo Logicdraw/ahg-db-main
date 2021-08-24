@@ -1,4 +1,5 @@
 from main.schemas._base.registration import (
+	RegistrationBaseSchemaBase,
 	RegistrationBaseSchemaCreate,
 	RegistrationBaseSchemaUpdate,
 	RegistrationBaseSchema,
@@ -280,6 +281,31 @@ from main.schemas.data.team.instance.order.jersey_socks.update import (
 	TeamInstanceJerseySocksOrderUpdateSchemaInDB,
 )
 
+from main.schemas.data.team.instance.order.jersey_sponsor import (
+	TeamInstanceJerseySponsorOrderSchemaCreate,
+	TeamInstanceJerseySponsorOrderSchemaUpdate,
+	TeamInstanceJerseySponsorOrderSchema,
+	TeamInstanceJerseySponsorOrderSchemaInDB,
+)
+from main.schemas.data.team.instance.order.jersey_sponsor.group_sheet import (
+	TeamInstanceJerseySponsorOrderGroupSheetSchemaCreate,
+	TeamInstanceJerseySponsorOrderGroupSheetSchemaUpdate,
+	TeamInstanceJerseySponsorOrderGroupSheetSchema,
+	TeamInstanceJerseySponsorOrderGroupSheetSchemaInDB,
+)
+from main.schemas.data.team.instance.order.jersey_sponsor.request import (
+	TeamInstanceJerseySponsorOrderRequestSchemaCreate,
+	TeamInstanceJerseySponsorOrderRequestSchemaUpdate,
+	TeamInstanceJerseySponsorOrderRequestSchema,
+	TeamInstanceJerseySponsorOrderRequestSchemaInDB,
+)
+from main.schemas.data.team.instance.order.jersey_sponsor.update import (
+	TeamInstanceJerseySponsorOrderUpdateSchemaCreate,
+	TeamInstanceJerseySponsorOrderUpdateSchemaUpdate,
+	TeamInstanceJerseySponsorOrderUpdateSchema,
+	TeamInstanceJerseySponsorOrderUpdateSchemaInDB,
+)
+
 from main.schemas.data.team.instance.order.tracksuit import (
 	TeamInstanceTracksuitOrderSchemaCreate,
 	TeamInstanceTracksuitOrderSchemaUpdate,
@@ -316,12 +342,6 @@ from main.schemas.data.team.instance.registration.invite import (
 	TeamInstanceRegistrationInviteSchemaUpdate,
 	TeamInstanceRegistrationInviteSchema,
 	TeamInstanceRegistrationInviteSchemaInDB,
-)
-from main.schemas.data.team.instance.registration.jersey_sponsor import (
-	TeamInstanceRegistrationJerseySponsorSchemaCreate,
-	TeamInstanceRegistrationJerseySponsorSchemaUpdate,
-	TeamInstanceRegistrationJerseySponsorSchema,
-	TeamInstanceRegistrationJerseySponsorSchemaInDB,
 )
 
 from main.schemas.external.spng_survey.camp_instance import (

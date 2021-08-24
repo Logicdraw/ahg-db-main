@@ -52,6 +52,11 @@ from main.models.data.team.instance.order.jersey_socks.group_sheet import TeamIn
 from main.models.data.team.instance.order.jersey_socks.request import TeamInstanceJerseySocksOrderRequestModel
 from main.models.data.team.instance.order.jersey_socks.update import TeamInstanceJerseySocksOrderUpdateModel
 
+from main.models.data.team.instance.order.jersey_sponsor import TeamInstanceJerseySponsorOrderModel
+from main.models.data.team.instance.order.jersey_sponsor.group_sheet import TeamInstanceJerseySponsorOrderGroupSheetModel
+from main.models.data.team.instance.order.jersey_sponsor.request import TeamInstanceJerseySponsorOrderRequestModel
+from main.models.data.team.instance.order.jersey_sponsor.update import TeamInstanceJerseySponsorOrderUpdateModel
+
 from main.models.data.team.instance.order.tracksuit import TeamInstanceTracksuitOrderModel
 from main.models.data.team.instance.order.tracksuit.group_sheet import TeamInstanceTracksuitOrderGroupSheetModel
 from main.models.data.team.instance.order.tracksuit.request import TeamInstanceTracksuitOrderRequestModel
@@ -59,7 +64,6 @@ from main.models.data.team.instance.order.tracksuit.update import TeamInstanceTr
 
 from main.models.data.team.instance.registration import TeamInstanceRegistrationModel
 from main.models.data.team.instance.registration.invite import TeamInstanceRegistrationInviteModel
-from main.models.data.team.instance.registration.jersey_sponsor import TeamInstanceRegistrationJerseySponsorModel
 
 from main.models.external.spng_survey.camp_instance import SpngSurveyCampInstanceModel
 from main.models.external.spng_survey.program_instance import SpngSurveyProgramInstanceModel

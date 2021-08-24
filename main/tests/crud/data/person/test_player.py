@@ -38,6 +38,7 @@ async def test_create_player(
 	# --
 	first_name = random_name().split()[0]
 	last_name = random_name().split()[-1]
+	email = random_email()
 	date_of_birth: datetime.date = datetime.date.today()
 	medicare_number = random_lower_string()
 	street_address_1 = random_lower_string()
@@ -52,6 +53,7 @@ async def test_create_player(
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
 		last_name=last_name,
+		email=email,
 		date_of_birth=date_of_birth,
 		medicare_number=medicare_number,
 		street_address_1=street_address_1,
@@ -83,6 +85,7 @@ async def test_create_sync_player(
 	# --
 	first_name = random_name().split()[0]
 	last_name = random_name().split()[-1]
+	email = random_email()
 	date_of_birth: datetime.date = datetime.date.today()
 	medicare_number = random_lower_string()
 	street_address_1 = random_lower_string()
@@ -97,6 +100,7 @@ async def test_create_sync_player(
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
 		last_name=last_name,
+		email=email,
 		date_of_birth=date_of_birth,
 		medicare_number=medicare_number,
 		street_address_1=street_address_1,
@@ -128,6 +132,7 @@ async def test_get_player(
 	# --
 	first_name = random_name().split()[0]
 	last_name = random_name().split()[-1]
+	email = random_email()
 	date_of_birth: datetime.date = datetime.date.today()
 	medicare_number = random_lower_string()
 	street_address_1 = random_lower_string()
@@ -143,6 +148,7 @@ async def test_get_player(
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
 		last_name=last_name,
+		email=email,
 		date_of_birth=date_of_birth,
 		medicare_number=medicare_number,
 		street_address_1=street_address_1,
@@ -178,6 +184,7 @@ async def test_get_sync_player(
 	# --
 	first_name = random_name().split()[0]
 	last_name = random_name().split()[-1]
+	email = random_email()
 	date_of_birth: datetime.date = datetime.date.today()
 	medicare_number = random_lower_string()
 	street_address_1 = random_lower_string()
@@ -193,6 +200,7 @@ async def test_get_sync_player(
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
 		last_name=last_name,
+		email=email,
 		date_of_birth=date_of_birth,
 		medicare_number=medicare_number,
 		street_address_1=street_address_1,
@@ -228,6 +236,7 @@ async def test_update_player(
 	# --
 	first_name = random_name().split()[0]
 	last_name = random_name().split()[-1]
+	email = random_email()
 	date_of_birth: datetime.date = datetime.date.today()
 	medicare_number = random_lower_string()
 	street_address_1 = random_lower_string()
@@ -243,6 +252,7 @@ async def test_update_player(
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
 		last_name=last_name,
+		email=email,
 		date_of_birth=date_of_birth,
 		medicare_number=medicare_number,
 		street_address_1=street_address_1,
@@ -287,6 +297,7 @@ async def test_update_sync_player(
 	# --
 	first_name = random_name().split()[0]
 	last_name = random_name().split()[-1]
+	email = random_email()
 	date_of_birth: datetime.date = datetime.date.today()
 	medicare_number = random_lower_string()
 	street_address_1 = random_lower_string()
@@ -302,6 +313,7 @@ async def test_update_sync_player(
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
 		last_name=last_name,
+		email=email,
 		date_of_birth=date_of_birth,
 		medicare_number=medicare_number,
 		street_address_1=street_address_1,
@@ -347,6 +359,7 @@ async def test_delete_player(
 	# --
 	first_name = random_name().split()[0]
 	last_name = random_name().split()[-1]
+	email = random_email()
 	date_of_birth: datetime.date = datetime.date.today()
 	medicare_number = random_lower_string()
 	street_address_1 = random_lower_string()
@@ -361,6 +374,7 @@ async def test_delete_player(
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
 		last_name=last_name,
+		email=email,
 		date_of_birth=date_of_birth,
 		medicare_number=medicare_number,
 		street_address_1=street_address_1,
@@ -402,6 +416,7 @@ async def test_delete_sync_player(
 	# --
 	first_name = random_name().split()[0]
 	last_name = random_name().split()[-1]
+	email = random_email()
 	date_of_birth: datetime.date = datetime.date.today()
 	medicare_number = random_lower_string()
 	street_address_1 = random_lower_string()
@@ -416,6 +431,7 @@ async def test_delete_sync_player(
 	player_in = PlayerSchemaCreate(
 		first_name=first_name,
 		last_name=last_name,
+		email=email,
 		date_of_birth=date_of_birth,
 		medicare_number=medicare_number,
 		street_address_1=street_address_1,

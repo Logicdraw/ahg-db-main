@@ -48,6 +48,11 @@ from main.crud.data.team.instance.order.jersey_socks.group_sheet import team_ins
 from main.crud.data.team.instance.order.jersey_socks.request import team_instance_jersey_socks_order_request_crud
 from main.crud.data.team.instance.order.jersey_socks.update import team_instance_jersey_socks_order_update_crud
 
+from main.crud.data.team.instance.order.jersey_sponsor import team_instance_jersey_sponsor_order_crud
+from main.crud.data.team.instance.order.jersey_sponsor.group_sheet import team_instance_jersey_sponsor_order_group_sheet_crud
+from main.crud.data.team.instance.order.jersey_sponsor.request import team_instance_jersey_sponsor_order_request_crud
+from main.crud.data.team.instance.order.jersey_sponsor.update import team_instance_jersey_sponsor_order_update_crud
+
 from main.crud.data.team.instance.order.tracksuit import team_instance_tracksuit_order_crud
 from main.crud.data.team.instance.order.tracksuit.group_sheet import team_instance_tracksuit_order_group_sheet_crud
 from main.crud.data.team.instance.order.tracksuit.request import team_instance_tracksuit_order_request_crud
@@ -55,7 +60,6 @@ from main.crud.data.team.instance.order.tracksuit.update import team_instance_tr
 
 from main.crud.data.team.instance.registration import team_instance_registration_crud
 from main.crud.data.team.instance.registration.invite import team_instance_registration_invite_crud
-from main.crud.data.team.instance.registration.jersey_sponsor import team_instance_registration_jersey_sponsor_crud
 
 from main.crud.external.spng_survey.camp_instance import spng_survey_camp_instance_crud
 from main.crud.external.spng_survey.program_instance import spng_survey_program_instance_crud

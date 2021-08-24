@@ -106,6 +106,20 @@ class PlayerModel(
 	)
 
 
+	email = Column(
+		String,
+		index=True,
+		unique=True,
+	)
+
+
+	mobile_phone = Column(
+		String,
+		index=True,
+		unique=True,
+	)
+
+
 	date_of_birth = Column(
 		Date,
 		index=True,

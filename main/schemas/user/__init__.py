@@ -24,7 +24,7 @@ class UserSchemaCreate(UserSchemaBase):
 	email: EmailStr
 	password: str
 	confirm_password: str
-	role: str = 'member'
+	role: str = 'admin'
 	is_active: bool = True
 
 

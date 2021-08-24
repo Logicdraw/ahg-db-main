@@ -59,12 +59,6 @@ class TeamInstanceRegistrationModel(
 
 
 
-	team_instance_registration_jersey_sponsors = relationship(
-		'TeamInstanceRegistrationJerseySponsorModel',
-		back_populates='team_instance_registrations_sc',
-		lazy='selectin',
-	)
-
 	# sum jersey_sponsors total (quick function)
 
 
@@ -101,6 +95,21 @@ class TeamInstanceRegistrationModel(
 		'TeamInstanceRegistrationInviteModel',
 		back_populates='team_instance_registrations_sc',
 		uselist=False,
+	)
+
+
+
+	team_instance_jersey_sponsor_orders = relationship(
+		'TeamInstanceJerseySponsorOrderModel',
+		back_populates='team_instance_registrations_sc',
+		lazy='dynamic',
+	)
+
+
+	team_instance_jersey_sponsor_order_requests = relationship(
+		'TeamInstanceJerseySponsorOrderRequestModel',
+		back_populates='team_instance_registrations_sc',
+		lazy='dynamic',
 	)
 
 

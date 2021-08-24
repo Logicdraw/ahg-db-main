@@ -44,6 +44,26 @@ class TeamInstanceJerseySocksOrderUpdateModel(
 
 
 
+	old_player_full_name = Column(
+		String,
+	)
+
+
+	old_jersey_number = Column(
+		Integer,
+	)
+
+	old_jersey_size = Column(
+		String,
+	)
+
+
+	old_socks_size = Column(
+		String,
+	)
+
+
+
 	new_player_full_name = Column(
 		String,
 	)

@@ -13,6 +13,10 @@ class TeamInstanceJerseySocksOrderUpdateSchemaBase(
 	BaseModel,
 ):
 	team_instance_jersey_socks_order_id: Optional[int] = None
+	old_player_full_name: Optional[str] = None
+	old_jersey_number: Optional[int] = None
+	old_jersey_size: Optional[str] = None
+	old_socks_size: Optional[str] = None
 	new_player_full_name: Optional[str] = None
 	new_jersey_number: Optional[int] = None
 	new_jersey_size: Optional[str] = None
