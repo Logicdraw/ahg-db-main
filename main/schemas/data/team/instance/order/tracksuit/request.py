@@ -19,7 +19,7 @@ class TeamInstanceTracksuitOrderRequestSchemaBase(
 	details: Optional[str] = None
 	approved: Optional[bool] = None
 	rejected: Optional[bool] = None
-	rejection_reason: Optional[str] = None
+	rejected_reason: Optional[str] = None
 
 
 

@@ -8,8 +8,8 @@ from main.crud.data.team.instance.order.jersey_sponsor.request import (
 )
 
 from main.schemas.data.team.instance.order.jersey_sponsor.request import (
-	TeamInstanceJerseySocksOrderRequestSchemaCreate,
-	TeamInstanceJerseySocksOrderRequestSchemaUpdate,
+	TeamInstanceJerseySponsorOrderRequestSchemaCreate,
+	TeamInstanceJerseySponsorOrderRequestSchemaUpdate,
 )
 
 
@@ -43,7 +43,7 @@ async def test_create_team_instance_jersey_sponsor_order_request(
 	rejected = True
 	rejected_reason = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
+	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySponsorOrderRequestSchemaCreate(
 		player_full_name=player_full_name,
 		details=details,
 		approved=approved,
@@ -73,7 +73,7 @@ async def test_create_sync_team_instance_jersey_sponsor_order_request(
 	rejected = True
 	rejected_reason = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
+	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySponsorOrderRequestSchemaCreate(
 		player_full_name=player_full_name,
 		details=details,
 		approved=approved,
@@ -103,7 +103,7 @@ async def test_get_team_instance_jersey_sponsor_order_request(
 	rejected = True
 	rejected_reason = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
+	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySponsorOrderRequestSchemaCreate(
 		player_full_name=player_full_name,
 		details=details,
 		approved=approved,
@@ -138,7 +138,7 @@ async def test_get_sync_team_instance_jersey_sponsor_order_request(
 	rejected = True
 	rejected_reason = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
+	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySponsorOrderRequestSchemaCreate(
 		player_full_name=player_full_name,
 		details=details,
 		approved=approved,
@@ -174,7 +174,7 @@ async def test_update_team_instance_jersey_sponsor_order_request(
 	rejected = True
 	rejected_reason = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
+	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySponsorOrderRequestSchemaCreate(
 		player_full_name=player_full_name,
 		details=details,
 		approved=approved,
@@ -189,7 +189,7 @@ async def test_update_team_instance_jersey_sponsor_order_request(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in_update = TeamInstanceJerseySocksOrderRequestSchemaUpdate(
+	team_instance_jersey_sponsor_order_request_in_update = TeamInstanceJerseySponsorOrderRequestSchemaUpdate(
 		player_full_name=new_player_full_name,
 	)
 
@@ -218,7 +218,7 @@ async def test_update_sync_team_instance_jersey_sponsor_order_request(
 	rejected = True
 	rejected_reason = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
+	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySponsorOrderRequestSchemaCreate(
 		player_full_name=player_full_name,
 		details=details,
 		approved=approved,
@@ -239,7 +239,7 @@ async def test_update_sync_team_instance_jersey_sponsor_order_request(
 	rejected_reason = random_lower_string()
 
 
-	team_instance_jersey_sponsor_order_request_in_update = TeamInstanceJerseySocksOrderRequestSchemaUpdate(
+	team_instance_jersey_sponsor_order_request_in_update = TeamInstanceJerseySponsorOrderRequestSchemaUpdate(
 		player_full_name=new_player_full_name,
 	)
 
@@ -267,7 +267,7 @@ async def test_delete_team_instance_jersey_sponsor_order_request(
 	rejected = True
 	rejected_reason = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
+	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySponsorOrderRequestSchemaCreate(
 		player_full_name=player_full_name,
 		details=details,
 		approved=approved,
@@ -307,7 +307,7 @@ async def test_delete_sync_team_instance_jersey_sponsor_order_request(
 	rejected = True
 	rejected_reason = random_lower_string()
 
-	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySocksOrderRequestSchemaCreate(
+	team_instance_jersey_sponsor_order_request_in = TeamInstanceJerseySponsorOrderRequestSchemaCreate(
 		player_full_name=player_full_name,
 		details=details,
 		approved=approved,

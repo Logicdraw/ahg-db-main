@@ -18,9 +18,9 @@ from sqlalchemy import (
 
 from main.crud.base import CRUDBase
 
-from main.models.data.team.instance.order.tracksuit import TeamInstanceJerseySponsorOrderModel
+from main.models.data.team.instance.order.jersey_sponsor import TeamInstanceJerseySponsorOrderModel
 
-from main.schemas.data.team.instance.order.tracksuit import (
+from main.schemas.data.team.instance.order.jersey_sponsor import (
 	TeamInstanceJerseySponsorOrderSchemaCreate,
 	TeamInstanceJerseySponsorOrderSchemaUpdate,
 )
@@ -39,7 +39,7 @@ class CRUDTeamInstanceJerseySponsorOrder(
 
 
 
-team_instance_tracksuit_order_crud = CRUDTeamInstanceJerseySponsorOrder(TeamInstanceJerseySponsorOrderModel)
+team_instance_jersey_sponsor_order_crud = CRUDTeamInstanceJerseySponsorOrder(TeamInstanceJerseySponsorOrderModel)
 
 
 

@@ -14,12 +14,13 @@ class TeamInstanceJerseySponsorOrderRequestSchemaBase(
 ):
 	team_instance_id: Optional[int] = None
 	team_instance_jersey_sponsor_order_id: Optional[int] = None
+	player_full_name: Optional[str] = None
 	name: Optional[str] = None
 	amount: Optional[float] = None
 	details: Optional[str] = None
 	approved: Optional[bool] = None
 	rejected: Optional[bool] = None
-	rejection_reason: Optional[str] = None
+	rejected_reason: Optional[str] = None
 
 
 

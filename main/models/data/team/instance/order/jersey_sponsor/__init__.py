@@ -53,6 +53,11 @@ class TeamInstanceJerseySponsorOrderModel(
 	)
 
 
+	player_full_name = Column(
+		String,
+		index=True,
+	)
+
 	name = Column(
 		String,
 		index=True,

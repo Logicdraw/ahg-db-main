@@ -48,7 +48,7 @@ async def test_create_team_instance_jersey_sponsor_order(
 	)
 
 	assert team_instance_jersey_sponsor_order.amount == amount
-	assert team_instance_jersey_sponsor_order.jersey_size == jersey_size
+	assert team_instance_jersey_sponsor_order.name == name
 
 
 
@@ -73,7 +73,7 @@ async def test_create_sync_team_instance_jersey_sponsor_order(
 	)
 
 	assert team_instance_jersey_sponsor_order.amount == amount
-	assert team_instance_jersey_sponsor_order.jersey_size == jersey_size
+	assert team_instance_jersey_sponsor_order.name == name
 
 
 

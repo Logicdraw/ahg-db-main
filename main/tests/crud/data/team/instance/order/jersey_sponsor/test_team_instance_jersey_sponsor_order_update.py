@@ -8,8 +8,8 @@ from main.crud.data.team.instance.order.jersey_sponsor.update import (
 )
 
 from main.schemas.data.team.instance.order.jersey_sponsor.update import (
-	TeamInstanceJerseySocksOrderUpdateSchemaCreate,
-	TeamInstanceJerseySocksOrderUpdateSchemaUpdate,
+	TeamInstanceJerseySponsorOrderUpdateSchemaCreate,
+	TeamInstanceJerseySponsorOrderUpdateSchemaUpdate,
 )
 
 
@@ -39,7 +39,7 @@ async def test_create_team_instance_jersey_sponsor_order_update(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySocksOrderUpdateSchemaCreate(
+	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySponsorOrderUpdateSchemaCreate(
 		new_player_full_name=new_player_full_name,
 	)
 
@@ -61,7 +61,7 @@ async def test_create_sync_team_instance_jersey_sponsor_order_update(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySocksOrderUpdateSchemaCreate(
+	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySponsorOrderUpdateSchemaCreate(
 		new_player_full_name=new_player_full_name,
 	)
 
@@ -83,7 +83,7 @@ async def test_get_team_instance_jersey_sponsor_order_update(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySocksOrderUpdateSchemaCreate(
+	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySponsorOrderUpdateSchemaCreate(
 		new_player_full_name=new_player_full_name,
 	)
 
@@ -110,7 +110,7 @@ async def test_get_sync_team_instance_jersey_sponsor_order_update(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySocksOrderUpdateSchemaCreate(
+	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySponsorOrderUpdateSchemaCreate(
 		new_player_full_name=new_player_full_name,
 	)
 
@@ -138,7 +138,7 @@ async def test_update_team_instance_jersey_sponsor_order_update(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySocksOrderUpdateSchemaCreate(
+	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySponsorOrderUpdateSchemaCreate(
 		new_player_full_name=new_player_full_name,
 	)
 
@@ -149,7 +149,7 @@ async def test_update_team_instance_jersey_sponsor_order_update(
 
 	new_new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in_update = TeamInstanceJerseySocksOrderUpdateSchemaUpdate(
+	team_instance_jersey_sponsor_order_update_in_update = TeamInstanceJerseySponsorOrderUpdateSchemaUpdate(
 		new_player_full_name=new_new_player_full_name,
 	)
 
@@ -173,7 +173,7 @@ async def test_update_sync_team_instance_jersey_sponsor_order_update(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySocksOrderUpdateSchemaCreate(
+	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySponsorOrderUpdateSchemaCreate(
 		new_player_full_name=new_player_full_name,
 	)
 
@@ -185,7 +185,7 @@ async def test_update_sync_team_instance_jersey_sponsor_order_update(
 
 	new_new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in_update = TeamInstanceJerseySocksOrderUpdateSchemaUpdate(
+	team_instance_jersey_sponsor_order_update_in_update = TeamInstanceJerseySponsorOrderUpdateSchemaUpdate(
 		new_player_full_name=new_new_player_full_name,
 	)
 
@@ -208,7 +208,7 @@ async def test_delete_team_instance_jersey_sponsor_order_update(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySocksOrderUpdateSchemaCreate(
+	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySponsorOrderUpdateSchemaCreate(
 		new_player_full_name=new_player_full_name,
 	)
 
@@ -240,7 +240,7 @@ async def test_delete_sync_team_instance_jersey_sponsor_order_update(
 
 	new_player_full_name = random_lower_string()
 
-	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySocksOrderUpdateSchemaCreate(
+	team_instance_jersey_sponsor_order_update_in = TeamInstanceJerseySponsorOrderUpdateSchemaCreate(
 		new_player_full_name=new_player_full_name,
 	)
 
