@@ -57,11 +57,11 @@ class UserModel(
 
 
 
-	role = Column(
-		String,
-		index=True,
-		nullable=False,
+	
+	roles = Column(
+		postgresql.ARRAY(String),
 	)
+
 
 
 	# roles = (Array)
